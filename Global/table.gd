@@ -2,34 +2,37 @@ extends Node2D
 
 signal state_changed(new_state: TableState)
 
+@export_group("Shuffle Settings")
 @export var shuffle_duration: float = 1.1
 @export var shuffle_time_randomness: float = 0.2
+@export var shuffle_messiness: float = 80.0
+@export var shuffle_rotation_messiness: float = 20.0
+@export var shuffle_scale_randomness: float = 0.1
 
+@export_group("Card Draw Settings")
 @export var draw_duration: float = 0.5
 @export var draw_time_randomness: float = 0.1
 @export var draw_time_stagger: float = 0.2
+@export var draw_pile_messiness: float = 10.0
+@export var draw_pile_rotation_messiness: float = 5.0
 
+@export_group("Card Discard Settings")
 @export var discard_duration: float = 0.5
 @export var discard_time_randomness: float = 0.1
 @export var discard_time_stagger: float = 0.1
-
-@export var draw_pile_messiness: float = 10.0
-@export var shuffle_messiness: float = 80.0
-@export var hand_messiness: float = 2.0
 @export var discard_pile_messiness: float = 20.0
-
-@export var draw_pile_rotation_messiness: float = 5.0
-@export var shuffle_rotation_messiness: float = 20.0
-@export var hand_rotation_messiness: float = 2.0
-@export var hand_rotation_spread: float = 50.0
 @export var discard_pile_rotation_messiness: float = 10.0
 
-
-@export var shuffle_scale_randomness: float = 0.1
-@export var card_scale: float = 0.3
-
+@export_group("Hand Layout Settings")
+@export var hand_messiness: float = 2.0
+@export var hand_rotation_messiness: float = 2.0
+@export var hand_rotation_spread: float = 50.0
 @export var hand_card_spacing: float = 150.0
 @export var hand_fan_height: float = 40.0
+
+@export_group("Card Settings")
+@export var card_scale: float = 0.3
+
 
 enum TableState {
 	Idle,
