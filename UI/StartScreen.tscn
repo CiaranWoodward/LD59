@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dlcvto3andy8x"]
 
 [ext_resource type="Script" uid="uid://dragg4qxx8ki6" path="res://UI/play.gd" id="1_oq7qy"]
-[ext_resource type="PackedScene" uid="uid://bmbknhela3tf8" path="res://Global/table.tscn" id="2_4n4q3"]
+[ext_resource type="PackedScene" uid="uid://djacq543arxcb" path="res://World/Level.tscn" id="2_4n4q3"]
 
 [node name="CenterContainer" type="CenterContainer" unique_id=15537329]
 anchors_preset = 15
