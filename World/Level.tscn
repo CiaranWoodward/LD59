@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://djacq543arxcb"]
+
+[ext_resource type="PackedScene" uid="uid://d4e4sqe5sbcwc" path="res://World/Environment/SunMoon.tscn" id="1_yeduk"]
+[ext_resource type="PackedScene" uid="uid://bxcbuqukhqmbm" path="res://World/Environment/Campfire.tscn" id="2_vccdb"]
+[ext_resource type="PackedScene" uid="uid://sm6uk6e3vdyu" path="res://World/Environment/Tree.tscn" id="3_k1dps"]
+
+[sub_resource type="Animation" id="Animation_vccdb"]
+resource_name = "DayNightCycle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k1dps"]
+_data = {
+&"DayNightCycle": SubResource("Animation_vccdb")
+}
+
+[node name="Level" type="Node2D" unique_id=1164261592]
+
+[node name="SunMoon" parent="." unique_id=496009198 instance=ExtResource("1_yeduk")]
+position = Vector2(77, 102)
+
+[node name="Campfire" parent="." unique_id=1083176764 instance=ExtResource("2_vccdb")]
+position = Vector2(602, 479)
+
+[node name="DayNightCycle" type="AnimationPlayer" parent="." unique_id=843868308]
+libraries/ = SubResource("AnimationLibrary_k1dps")
+
+[node name="TreelineBack" type="Parallax2D" parent="." unique_id=1773472124]
+scroll_scale = Vector2(1.4, 1.4)
+scroll_offset = Vector2(47, 19)
+
+[node name="Tree" parent="TreelineBack" unique_id=1777520435 instance=ExtResource("3_k1dps")]
+position = Vector2(64, 305)
+
+[node name="Tree2" parent="TreelineBack" unique_id=808222025 instance=ExtResource("3_k1dps")]
+position = Vector2(153, 305)
+
+[node name="Tree3" parent="TreelineBack" unique_id=1653633140 instance=ExtResource("3_k1dps")]
+position = Vector2(233, 305)
+
+[node name="Tree4" parent="TreelineBack" unique_id=117577198 instance=ExtResource("3_k1dps")]
+position = Vector2(313, 305)
+
+[node name="Tree5" parent="TreelineBack" unique_id=290949816 instance=ExtResource("3_k1dps")]
+position = Vector2(393, 305)
+
+[node name="Tree6" parent="TreelineBack" unique_id=1429776563 instance=ExtResource("3_k1dps")]
+position = Vector2(463, 305)
+
+[node name="Tree7" parent="TreelineBack" unique_id=715338609 instance=ExtResource("3_k1dps")]
+position = Vector2(562, 305)
+
+[node name="Tree8" parent="TreelineBack" unique_id=613282853 instance=ExtResource("3_k1dps")]
+position = Vector2(650, 305)
+
+[node name="Tree9" parent="TreelineBack" unique_id=206122416 instance=ExtResource("3_k1dps")]
+position = Vector2(756, 305)
+
+[node name="Tree10" parent="TreelineBack" unique_id=508417984 instance=ExtResource("3_k1dps")]
+position = Vector2(822, 305)
+
+[node name="TreelineMid" type="Parallax2D" parent="." unique_id=848182110]
+scroll_scale = Vector2(1.2, 1.2)
+scroll_offset = Vector2(0, 59)
+
+[node name="Tree" parent="TreelineMid" unique_id=1100836254 instance=ExtResource("3_k1dps")]
+position = Vector2(64, 305)
+
+[node name="Tree2" parent="TreelineMid" unique_id=1952421793 instance=ExtResource("3_k1dps")]
+position = Vector2(153, 305)
+
+[node name="Tree3" parent="TreelineMid" unique_id=1631006539 instance=ExtResource("3_k1dps")]
+position = Vector2(233, 305)
+
+[node name="Tree4" parent="TreelineMid" unique_id=679472979 instance=ExtResource("3_k1dps")]
+position = Vector2(313, 305)
+
+[node name="Tree5" parent="TreelineMid" unique_id=2076860276 instance=ExtResource("3_k1dps")]
+position = Vector2(393, 305)
+
+[node name="Tree6" parent="TreelineMid" unique_id=2135069154 instance=ExtResource("3_k1dps")]
+position = Vector2(463, 305)
+
+[node name="Tree7" parent="TreelineMid" unique_id=1186064299 instance=ExtResource("3_k1dps")]
+position = Vector2(562, 305)
+
+[node name="Tree8" parent="TreelineMid" unique_id=228277529 instance=ExtResource("3_k1dps")]
+position = Vector2(650, 305)
+
+[node name="Tree9" parent="TreelineMid" unique_id=1836211637 instance=ExtResource("3_k1dps")]
+position = Vector2(756, 305)
+
+[node name="Tree10" parent="TreelineMid" unique_id=73530553 instance=ExtResource("3_k1dps")]
+position = Vector2(822, 305)
+
+[node name="TreelineFore" type="Parallax2D" parent="." unique_id=2138457012]
+scroll_offset = Vector2(288, 84)
+
+[node name="Tree" parent="TreelineFore" unique_id=98548712 instance=ExtResource("3_k1dps")]
+position = Vector2(64, 305)
+
+[node name="Tree2" parent="TreelineFore" unique_id=442020495 instance=ExtResource("3_k1dps")]
+position = Vector2(153, 305)
+
+[node name="Tree3" parent="TreelineFore" unique_id=353896079 instance=ExtResource("3_k1dps")]
+position = Vector2(233, 305)
+
+[node name="Tree4" parent="TreelineFore" unique_id=1838311762 instance=ExtResource("3_k1dps")]
+position = Vector2(313, 305)
+
+[node name="Tree5" parent="TreelineFore" unique_id=1663723665 instance=ExtResource("3_k1dps")]
+position = Vector2(393, 305)
+
+[node name="Tree6" parent="TreelineFore" unique_id=1929270966 instance=ExtResource("3_k1dps")]
+position = Vector2(463, 305)
+
+[node name="Tree7" parent="TreelineFore" unique_id=1616276728 instance=ExtResource("3_k1dps")]
+position = Vector2(562, 305)
+
+[node name="Tree8" parent="TreelineFore" unique_id=1325823694 instance=ExtResource("3_k1dps")]
+position = Vector2(650, 305)
+
+[node name="Tree9" parent="TreelineFore" unique_id=418950501 instance=ExtResource("3_k1dps")]
+position = Vector2(756, 305)
+
+[node name="Tree10" parent="TreelineFore" unique_id=2092635581 instance=ExtResource("3_k1dps")]
+position = Vector2(822, 305)
