@@ -28,6 +28,7 @@ offset_left = -194.0
 offset_top = 46.0
 offset_right = 214.0
 offset_bottom = 381.0
+mouse_filter = 2
 theme = ExtResource("3_nry7q")
 bbcode_enabled = true
 text = "Card Description"

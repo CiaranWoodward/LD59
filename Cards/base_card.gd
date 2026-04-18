@@ -56,7 +56,9 @@ var selected: bool = false:
 		selected = value
 		
 # True when the mouse is hovering over this card.
-var hovered: bool = false
+var hovered: bool = false:
+	set(value):
+		hovered = value
 
 # Card Lifecycle:
 # Idle -> Hovered

@@ -28,7 +28,7 @@ signal state_changed(new_state: TableState)
 @export var hand_rotation_messiness: float = 2.0
 @export var hand_rotation_spread: float = 50.0
 @export var hand_card_spacing: float = 150.0
-@export var hand_fan_height: float = 40.0
+@export var hand_fan_height: float = 80.0
 
 @export_group("Card Settings")
 @export var card_scale: float = 0.3
