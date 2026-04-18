@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://brd1msi1vo5u"]
+
+[ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_urmyb"]
+[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_7ed8r"]
+
+[node name="TinderboxCard" unique_id=105035990 instance=ExtResource("1_urmyb")]
+card_name = "Tinderbox"
+description = "Light the campfire
+
+[i]Does nothing if there is no wood on the campfire[/i]"
+image = ExtResource("2_7ed8r")
+card_type = 2
+card_timing = 1
+action = true
+
+[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="0" unique_id=933147433]
+text = "Tinderbox"
+
+[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="1" unique_id=376343130]
+text = "Light the campfire
+
+[i]Does nothing if there is no wood on the campfire[/i]"
+
+[node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="2" unique_id=1941202912]
+texture = ExtResource("2_7ed8r")

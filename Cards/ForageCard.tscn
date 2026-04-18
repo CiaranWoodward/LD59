@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://je7fljscgukr"]
+
+[ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_qiw6e"]
+[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_gpoas"]
+
+[node name="ForageCard" unique_id=105035990 instance=ExtResource("1_qiw6e")]
+card_name = "Forage"
+description = "Gain one available environmental resource of choice
+
+[i]Removed from deck when played"
+image = ExtResource("2_gpoas")
+card_type = 3
+consumable = true
+environment = true
+
+[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="0" unique_id=933147433]
+text = "Forage"
+
+[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="1" unique_id=376343130]
+text = "Gain one available environmental resource of choice
+
+[i]Removed from deck when played"
+
+[node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="2" unique_id=1941202912]
+texture = ExtResource("2_gpoas")

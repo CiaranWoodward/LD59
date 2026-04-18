@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c6b5xcocr7s1x"]
+
+[ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_pei80"]
+[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_x8rco"]
+
+[node name="AxeCard" unique_id=105035990 instance=ExtResource("1_pei80")]
+card_name = "Axe"
+description = "Gain two [b]wood[/b] cards"
+image = ExtResource("2_x8rco")
+card_type = 2
+action = true
+
+[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="0" unique_id=933147433]
+text = "Axe"
+
+[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="1" unique_id=376343130]
+text = "Gain two [b]wood[/b] cards"
+
+[node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="2" unique_id=1941202912]
+texture = ExtResource("2_x8rco")
