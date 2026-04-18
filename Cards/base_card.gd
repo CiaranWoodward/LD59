@@ -6,7 +6,6 @@ class_name BaseCard
 signal mouse_hovered(card: BaseCard)
 signal mouse_unhovered(card: BaseCard)
 signal mouse_event(card: BaseCard, event: InputEventMouseButton)
-signal play(card: BaseCard)
 signal discard(card: BaseCard, burn: bool)
 
 enum CardType {
@@ -57,6 +56,7 @@ var hovered: bool = false
 # Played -> Discarded/Burned
 # In all cases, the card is responsible for its own play logic
 # The table manages top-level visuals - the card can apply additional visuals on top of that
+# The card will be centered on the table when it is being played, so it can apply its own visuals without worrying about position
 
 func _ready():
     _sync_front_visuals()
@@ -89,12 +89,16 @@ func _sync_front_visuals():
     if image_sprite:
         image_sprite.texture = image
 
+func play():
+    await on_play()
+
 # Action callbacks - these are meant to be overridden by specific cards
 func on_post_draw():
     pass
 
 func on_play():
-    pass
+    await get_tree().create_timer(0.5).timeout
+    emit_signal("discard", self, false)
 
 func on_pre_discard():
     pass

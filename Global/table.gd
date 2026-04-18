@@ -38,6 +38,15 @@ signal state_changed(new_state: TableState)
 @export var mousedown_time: float = 0.2
 @export var mousedown_scale: float = 0.35
 
+@export_group("Selected Card Follow Settings")
+@export var selected_follow_stiffness: float = 100.0
+@export var selected_follow_damping: float = 10.0
+@export var selected_follow_max_speed: float = 10000.0
+
+@export_group("Card Play Settings")
+@export var play_card_move_duration: float = 0.3
+
+
 enum TableState {
 	Idle,
 	PlayingCard,
@@ -53,7 +62,9 @@ var hand: Array[BaseCard] = []
 var hovered_cards: Array[BaseCard] = []
 var currently_hovered_card: BaseCard = null
 var currently_selected_card: BaseCard = null
+var selected_card_index := 0
 var state = TableState.ShufflingDeck
+var selected_follow_velocity: Vector2 = Vector2.ZERO
 signal _turn_ended()
 
 
@@ -62,6 +73,25 @@ signal _turn_ended()
 
 func _ready() -> void:
 	forever_game_loop()
+
+func _process(delta: float) -> void:
+	_poll_selected_card_movement(delta)
+
+func _input(event: InputEvent) -> void:
+	if currently_selected_card == null:
+		return
+
+	if not (event is InputEventMouseButton):
+		return
+
+	var mouse_event := event as InputEventMouseButton
+	if not mouse_event.pressed:
+		return
+
+	if mouse_event.button_index == MouseButton.MOUSE_BUTTON_RIGHT:
+		_cancel_selected_card_play()
+	elif mouse_event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
+		_play_selected_card()
 
 func forever_game_loop():
 	# Initalize the deck
@@ -85,18 +115,25 @@ func forever_game_loop():
 
 		_change_state(TableState.DiscardingHand)
 		await _discard_hand()
-	
+
 func end_turn():
 	emit_signal("_turn_ended")
 
 # Add a card and hook it up
 func add_card_to_discard_pile(card: BaseCard):
+	_tween_card_discard(card, 0)
 	discard_pile.append(card)
 	_attach_mouse_watchers(card)
 
 # General helper functions
 func _change_state(new_state: TableState):
 	state = new_state
+
+	if state == TableState.Idle:
+		# Check for automatic end of turn
+		if hand.size() == 0 || Global.statistics[Global.Statistic.ACTION_POINTS] <= 0:
+			end_turn()
+
 	emit_signal("state_changed", new_state)
 
 func _collect_base_cards(container: Node):
@@ -108,6 +145,8 @@ func _collect_base_cards(container: Node):
 			push_warning("Child '%s' is not a BaseCard and will be skipped." % child.name)
 
 func _attach_mouse_watchers(card: BaseCard):
+	if card.mouse_hovered.has_connections():
+		return
 	card.mouse_hovered.connect(func(c):
 		if c not in hand:
 			return
@@ -136,6 +175,8 @@ func _attach_mouse_watchers(card: BaseCard):
 		_set_currently_hovered_card(_pick_next_hovered_card())
 	)
 	card.mouse_event.connect(func(c, event):
+		if state != TableState.Idle:
+			return
 		if event is InputEventMouseButton:
 			if event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 				if event.pressed:
@@ -145,18 +186,7 @@ func _attach_mouse_watchers(card: BaseCard):
 				else:
 					_set_mouseup_visual(c)
 	)
-	card.play.connect(func(c):
-		if currently_selected_card != c:
-			push_warning("Play signal received for card that isn't currently selected.")
-			return
-		c.selected = false
-		c.hovered = false
-		hand.erase(c))
 	card.discard.connect(func(c, burn):
-		if currently_selected_card != c:
-			push_warning("Discard signal received for card that isn't currently selected.")
-			return
-		_set_currently_selected_card(null)
 		c.selected = false
 		c.hovered = false
 		hovered_cards.erase(c)
@@ -175,13 +205,58 @@ func _set_currently_selected_card(card: BaseCard):
 		currently_selected_card.selected = false
 		if currently_selected_card in hand:
 			_apply_unhover_visual(currently_selected_card)
-			_change_state(TableState.Idle)
 
 	currently_selected_card = card
+	selected_follow_velocity = Vector2.ZERO
 
 	if currently_selected_card != null:
 		currently_selected_card.selected = true
 		_change_state(TableState.PlayingCard)
+
+func _poll_selected_card_movement(delta: float):
+	if currently_selected_card == null:
+		selected_follow_velocity = Vector2.ZERO
+		return
+
+	var displacement = get_global_mouse_position() - currently_selected_card.global_position
+	selected_follow_velocity += displacement * selected_follow_stiffness * delta
+	selected_follow_velocity *= max(0.0, 1.0 - selected_follow_damping * delta)
+
+	if selected_follow_velocity.length() > selected_follow_max_speed:
+		selected_follow_velocity = selected_follow_velocity.normalized() * selected_follow_max_speed
+
+	currently_selected_card.global_position += selected_follow_velocity * delta
+
+func _cancel_selected_card_play():
+	if currently_selected_card == null:
+		return
+
+	_set_currently_selected_card(null)
+	_set_currently_hovered_card(null)
+	_change_state(TableState.Idle)
+	_reorder_hand()
+
+func _play_selected_card():
+	if currently_selected_card == null:
+		return
+
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(currently_selected_card, "global_position", $PlayPoint.global_position, play_card_move_duration)
+	tween.parallel().tween_property(currently_selected_card, "rotation_degrees", 0, play_card_move_duration)
+
+	var card = currently_selected_card
+	await tween.finished
+	hand.erase(card)
+	card.selected = false
+	card.hovered = false
+	hovered_cards.erase(card)
+	_set_currently_selected_card(null)
+	_reorder_hand()
+
+	await card.play()
+	if state == TableState.PlayingCard:
+		_change_state(TableState.Idle)
 
 func _set_mousedown_visual(card: BaseCard):
 	var mousedown_tween = create_tween()
@@ -255,7 +330,7 @@ func _calculate_card_position_in_hand(index: int) -> Vector2:
 
 func _calculate_card_rotation_in_hand(index: int) -> float:
 	var hand_size = hand.size()
-	if hand_size == 0:
+	if hand_size == 0 || hand_size == 1:
 		return 0.0
 	var rotation_range = hand_rotation_spread
 	var start_rotation = rotation_range / 2
@@ -314,6 +389,12 @@ func _draw_cards_into_hand():
 	for i in range(original_hand_size, hand.size()):
 		all_tweens.append(_tween_card_draw(hand[i], i, delay_timer))
 		delay_timer += draw_time_stagger
+	await WaitAllTweens.wait_all_tweens(all_tweens)
+
+func _reorder_hand():
+	var all_tweens: Array[Tween] = []
+	for i in range(hand.size()):
+		all_tweens.append(_tween_card_hand_move(hand[i], i))
 	await WaitAllTweens.wait_all_tweens(all_tweens)
 
 func _tween_card_draw(card: BaseCard, hand_index: int, delay: float) -> Tween:

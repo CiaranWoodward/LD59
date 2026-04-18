@@ -5,30 +5,6 @@
 
 [node name="Table" type="Node2D" unique_id=1954673422]
 script = ExtResource("1_rcskp")
-shuffle_duration = null
-shuffle_time_randomness = null
-shuffle_messiness = null
-shuffle_rotation_messiness = null
-shuffle_scale_randomness = null
-draw_duration = null
-draw_time_randomness = null
-draw_time_stagger = null
-draw_pile_messiness = null
-draw_pile_rotation_messiness = null
-discard_duration = null
-discard_time_randomness = null
-discard_time_stagger = null
-discard_pile_messiness = null
-discard_pile_rotation_messiness = null
-hand_messiness = null
-hand_rotation_messiness = null
-hand_rotation_spread = null
-hand_card_spacing = null
-hand_fan_height = null
-card_scale = null
-hover_scale = null
-hover_time = null
-selected_scale = null
 
 [node name="Cards" type="Node2D" parent="." unique_id=630168821]
 
