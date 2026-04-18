@@ -1,0 +1,29 @@
+Deck builder.
+
+Card.
+- on-post-draw
+- on-pre-discard
+- on-action
+- is-playable
+- type
+- cost
+- time_availability: day/night/both
+
+Passives.
+- on-draw
+- on-discard
+- on-action
+- on-turn-end
+
+Effects
+- delta stat (increase, decrease, set absolute)
+  - delta
+  - stat type
+- damage enemy
+- add card
+- remove card
+
+Stat types:
+- fire size
+- health
+- insanity

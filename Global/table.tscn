@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bmbknhela3tf8"]
+
+[ext_resource type="Script" uid="uid://du72ge3que2qk" path="res://Global/table.gd" id="1_rcskp"]
+[ext_resource type="PackedScene" uid="uid://bfhb54qgyqtv6" path="res://Cards/test_card.tscn" id="2_ar3em"]
+
+[node name="Table" type="Node2D" unique_id=1954673422]
+script = ExtResource("1_rcskp")
+
+[node name="Cards" type="Node2D" parent="." unique_id=630168821]
+
+[node name="TestCard" parent="Cards" unique_id=105035990 instance=ExtResource("2_ar3em")]
+position = Vector2(-321, 1695)
+
+[node name="TestCard2" parent="Cards" unique_id=1425754636 instance=ExtResource("2_ar3em")]
+position = Vector2(545, 2151)
+
+[node name="TestCard3" parent="Cards" unique_id=1520444320 instance=ExtResource("2_ar3em")]
+position = Vector2(1661, 2054)
+
+[node name="TestCard4" parent="Cards" unique_id=34609427 instance=ExtResource("2_ar3em")]
+position = Vector2(1034, 3324)
+
+[node name="TestCard5" parent="Cards" unique_id=1218779818 instance=ExtResource("2_ar3em")]
+position = Vector2(-321, 1695)
+
+[node name="TestCard6" parent="Cards" unique_id=973105248 instance=ExtResource("2_ar3em")]
+position = Vector2(545, 2151)
+
+[node name="TestCard7" parent="Cards" unique_id=849398017 instance=ExtResource("2_ar3em")]
+position = Vector2(1661, 2054)
+
+[node name="TestCard8" parent="Cards" unique_id=1475682732 instance=ExtResource("2_ar3em")]
+position = Vector2(1034, 3324)
+
+[node name="ShufflePoint" type="Marker2D" parent="." unique_id=526775094]
+position = Vector2(954, 362)
+gizmo_extents = 36.3
+
+[node name="DiscardPoint" type="Marker2D" parent="." unique_id=1599572385]
+position = Vector2(1743, 916)
+gizmo_extents = 36.3
+
+[node name="DrawPoint" type="Marker2D" parent="." unique_id=1735254152]
+position = Vector2(222, 899)
+gizmo_extents = 36.3
+
+[node name="HandPoint" type="Marker2D" parent="." unique_id=575611703]
+position = Vector2(987, 912)
+gizmo_extents = 36.3

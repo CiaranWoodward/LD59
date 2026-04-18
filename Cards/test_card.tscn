@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bfhb54qgyqtv6"]
+
+[ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_j2ms4"]
+[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_avfsn"]
+
+[node name="TestCard" unique_id=105035990 instance=ExtResource("1_j2ms4")]
+card_name = "Test Card"
+description = "This card is a test"
+
+[node name="Sprite2D" type="Sprite2D" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="0" unique_id=1904524593]
+position = Vector2(12, -181)
+texture = ExtResource("2_avfsn")
