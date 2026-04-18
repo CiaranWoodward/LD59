@@ -6,7 +6,14 @@
 [node name="TestCard" unique_id=105035990 instance=ExtResource("1_j2ms4")]
 card_name = "Test Card"
 description = "This card is a test"
+image = ExtResource("2_avfsn")
+card_type = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="0" unique_id=1904524593]
-position = Vector2(12, -181)
+[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="0" unique_id=933147433]
+text = "Test Card"
+
+[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="1" unique_id=1774280308]
+text = "This card is a test"
+
+[node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="2" unique_id=1941202912]
 texture = ExtResource("2_avfsn")

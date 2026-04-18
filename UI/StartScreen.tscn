@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://dlcvto3andy8x"]
 
+[ext_resource type="Script" uid="uid://dragg4qxx8ki6" path="res://UI/play.gd" id="1_oq7qy"]
+[ext_resource type="PackedScene" uid="uid://bmbknhela3tf8" path="res://Global/table.tscn" id="2_4n4q3"]
+
 [node name="CenterContainer" type="CenterContainer" unique_id=15537329]
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,3 +23,7 @@ text = "Our Cool Game"
 layout_mode = 2
 text = "Play
 "
+script = ExtResource("1_oq7qy")
+base_scene = ExtResource("2_4n4q3")
+
+[connection signal="pressed" from="VBoxContainer/Play" to="VBoxContainer/Play" method="_on_pressed"]

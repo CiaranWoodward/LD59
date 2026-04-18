@@ -45,16 +45,6 @@ var discard_pile: Array[BaseCard] = []
 var hand: Array[BaseCard] = []
 var state = TableState.ShufflingDeck
 
-func _collect_base_cards(container: Node) -> Array[BaseCard]:
-	var cards: Array[BaseCard] = []
-	for child in container.get_children():
-		if child is BaseCard:
-			cards.append(child as BaseCard)
-			child.scale = Vector2.ONE * card_scale
-		else:
-			push_warning("Child '%s' is not a BaseCard and will be skipped." % child.name)
-	return cards
-
 func _ready() -> void:
 	forever_game_loop()
 
@@ -85,6 +75,17 @@ func _change_state(new_state: TableState):
 	state = new_state
 	emit_signal("state_changed", new_state)
 
+func _collect_base_cards(container: Node) -> Array[BaseCard]:
+	var cards: Array[BaseCard] = []
+	for child in container.get_children():
+		if child is BaseCard:
+			cards.append(child as BaseCard)
+			child.scale = Vector2.ONE * card_scale
+		else:
+			push_warning("Child '%s' is not a BaseCard and will be skipped." % child.name)
+	return cards
+
+# Hand positioning
 func _calculate_card_position_in_hand(index: int) -> Vector2:
 	var hand_size = hand.size()
 	if hand_size == 0:
