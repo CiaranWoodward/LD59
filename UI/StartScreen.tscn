@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dlcvto3andy8x"]
+
+[node name="CenterContainer" type="CenterContainer" unique_id=15537329]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1023115968]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=619034340]
+layout_mode = 2
+text = "Our Cool Game"
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=1792030433]
+layout_mode = 2
+text = "Play
+"
