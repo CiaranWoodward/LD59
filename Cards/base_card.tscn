@@ -21,7 +21,7 @@ offset_right = 79.0
 offset_bottom = -354.0
 theme = ExtResource("3_nry7q")
 theme_override_font_sizes/font_size = 54
-text = "Placeholder!"
+text = "Card Name"
 
 [node name="Description" type="Label" parent="CardFront" unique_id=1774280308]
 offset_left = -194.0
@@ -29,7 +29,7 @@ offset_top = 46.0
 offset_right = 45.0
 offset_bottom = 101.0
 theme = ExtResource("3_nry7q")
-text = "Placeholder!"
+text = "Card Description"
 
 [node name="Image" type="Sprite2D" parent="CardFront" unique_id=1941202912]
 position = Vector2(2, -171)

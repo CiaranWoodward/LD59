@@ -2,9 +2,12 @@
 extends Node2D
 class_name BaseCard
 
+# These signals are for communication with the Table, which manages the card until it is selected.
 signal mouse_hovered(card: BaseCard)
 signal mouse_unhovered(card: BaseCard)
-signal clicked(card: BaseCard)
+signal mouse_event(card: BaseCard, event: InputEventMouseButton)
+signal play(card: BaseCard)
+signal discard(card: BaseCard, burn: bool)
 
 enum CardType {
     Basic,
@@ -35,6 +38,26 @@ enum CardTiming {
 @export var card_type: CardType = CardType.Basic
 @export var card_timing: CardTiming = CardTiming.All
 
+
+# These are set by the Table, which manages the card until it is selected. 
+# Once a card is selected, it is down to this card to manage its own state and visuals until it is played or deselected.
+# True when we are the currently selected card, about to be played.
+var selected: bool = false:
+    set(value):
+        selected = value
+        
+# True when the mouse is hovering over this card.
+var hovered: bool = false
+
+# Card Lifecycle:
+# Idle -> Hovered
+# Hovered -> Selected 
+# Selected -> Played 
+# Selected -> Hovered/Idle (if deselected)
+# Played -> Discarded/Burned
+# In all cases, the card is responsible for its own play logic
+# The table manages top-level visuals - the card can apply additional visuals on top of that
+
 func _ready():
     _sync_front_visuals()
     if Engine.is_editor_hint():
@@ -46,11 +69,11 @@ func _ready():
         emit_signal("mouse_unhovered", self)
     )
     $CardArea.input_event.connect(func(_viewport, event, _shape_idx):
-        # Ignore if we're face down
-        if !$CardFront.visible:
+        # Ignore if we're inactive
+        if not is_face_up():
             return
-        if event is InputEventMouseButton and event.pressed:
-            emit_signal("clicked", self)
+        if event is InputEventMouseButton:
+            emit_signal("mouse_event", self, event)
     )
 
 func _sync_front_visuals():
@@ -66,7 +89,7 @@ func _sync_front_visuals():
     if image_sprite:
         image_sprite.texture = image
 
-# Action callbacks
+# Action callbacks - these are meant to be overridden by specific cards
 func on_post_draw():
     pass
 
@@ -77,9 +100,12 @@ func on_pre_discard():
     pass
 
 func is_playable():
-    return true
+    return Global.statistics[Global.Statistic.ACTION_POINTS] >= cost
 
 # Flip card visuals
+func is_face_up():
+    return $CardFront.visible
+
 func show_face():
     $CardFront.visible = true
     $CardBack.visible = false
