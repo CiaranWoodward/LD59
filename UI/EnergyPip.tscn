@@ -116,7 +116,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("HealthPip/Line/FullLine:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -164,7 +164,7 @@ tracks/5/keys = {
 }
 tracks/6/type = "value"
 tracks/6/imported = false
-tracks/6/enabled = true
+tracks/6/enabled = false
 tracks/6/path = NodePath("HealthPip/Front/FullFront:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
@@ -291,7 +291,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.2003161, 0.3, 0.4003161, 0.5),
 "transitions": PackedFloat32Array(1, 0.5358867, 0.73204285, 0.59460354, 0.6597539, 1, 1),
 "update": 0,
-"values": [0.0, 0.017453292519943295, 0.0, -0.03490658503988659, 0.0, -0.03490658503988659, 0.0]
+"values": [0.0, 0.01745329251994329, 0.0, -0.03490658503988659, 0.0, -0.03490658503988659, 0.0]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -303,7 +303,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.2, 0.3, 0.39999998, 0.5),
 "transitions": PackedFloat32Array(1, 0.5358867, 0.73204285, 0.59460354, 0.6597539, 1, 1),
 "update": 0,
-"values": [0.0, 0.017453292519943295, 0.0, -0.03490658503988659, 0.0, -0.03490658503988659, 0.0]
+"values": [0.0, 0.01745329251994329, 0.0, -0.03490658503988659, 0.0, -0.03490658503988659, 0.0]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -315,7 +315,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.15, 0.2, 0.3, 0.35, 0.5),
 "transitions": PackedFloat32Array(1, 1.624505, 1.6817931, 0.6372803, 1, 0.73204285, 1),
 "update": 0,
-"values": [0.0, 0.017453292519943295, 0.0, -0.03490658503988659, 0.0, -0.04363323129985824, 0.0]
+"values": [0.0, 0.01745329251994329, 0.0, -0.03490658503988659, 0.0, -0.04363323129985824, 0.0]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -327,7 +327,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.15, 0.2, 0.3, 0.35, 0.5),
 "transitions": PackedFloat32Array(1, 1.624505, 1.6817931, 0.6372803, 1, 0.73204285, 1),
 "update": 0,
-"values": [0.0, 0.017453292519943295, 0.0, -0.03490658503988659, 0.0, -0.04363323129985824, 0.0]
+"values": [0.0, 0.01745329251994329, 0.0, -0.03490658503988659, 0.0, -0.04363323129985824, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_v567m"]
@@ -555,7 +555,7 @@ graph_offset = Vector2(-175, -9)
 [node name="Pulse" type="AnimationPlayer" parent="." unique_id=545380722]
 libraries/ = SubResource("AnimationLibrary_m2reh")
 autoplay = &"Pulse"
-speed_scale = 0.3776706
+speed_scale = 0.34439257
 script = ExtResource("1_ipi4d")
 random_speed = true
 min_speed = 0.3

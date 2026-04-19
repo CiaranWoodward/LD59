@@ -459,7 +459,7 @@ graph_offset = Vector2(-175, -9)
 [node name="Pulse" type="AnimationPlayer" parent="." unique_id=545380722]
 libraries/ = SubResource("AnimationLibrary_m2reh")
 autoplay = &"Pulse"
-speed_scale = 0.4
+speed_scale = 0.35819378
 script = ExtResource("1_qeg3t")
 random_speed = true
 min_speed = 0.3

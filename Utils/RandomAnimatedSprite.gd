@@ -10,7 +10,9 @@ extends AnimatedSprite2D
 @export var colour_for_distance: = false
 @export var min_distance_modulation: Color = Color.WHITE
 @export var max_distance_modulation: Color = Color.GRAY
-
+@export var play_on_load: = false
+@export var min_speed: float = 0.9
+@export var max_speed: float = 1.1
 
 func _ready():
 	frame = randi_range(0, sprite_frames.get_frame_count("default") - 1)
@@ -26,3 +28,5 @@ func _ready():
 		var weight = (self.global_position.y - max_distance_y) / (min_distance_y - max_distance_y)
 		weight = clamp(weight, 0, 1)
 		modulate = lerp(max_distance_modulation, min_distance_modulation, weight)
+	if play_on_load:
+		speed_scale = randf_range(min_speed, max_speed)
