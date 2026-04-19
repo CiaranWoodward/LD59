@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cp5lvpp400hv0" path="res://Graphics/Environment/Berries/Bush.png" id="1_51tt3"]
 [ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="3_ae2ab"]
 [ext_resource type="Texture2D" uid="uid://lsmuh53p7ib2" path="res://Graphics/Environment/Berries/Berries.png" id="3_ih4i4"]
+[ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="3_j77cd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j77cd"]
 animations = [{
@@ -38,3 +39,17 @@ script = ExtResource("3_ae2ab")
 position = Vector2(20, -60)
 sprite_frames = SubResource("SpriteFrames_juang")
 script = ExtResource("3_ae2ab")
+
+[node name="Shadow" type="Sprite2D" parent="Bush/Berries" unique_id=518404562]
+modulate = Color(0.28235295, 0.23529412, 0.18431373, 1)
+show_behind_parent = true
+position = Vector2(-156, 66)
+scale = Vector2(0.22345679, 0.10185184)
+texture = ExtResource("3_j77cd")
+
+[node name="Shadow2" type="Sprite2D" parent="Bush" unique_id=1288974980]
+modulate = Color(0.21960784, 0.18039216, 0.14117648, 0.8392157)
+show_behind_parent = true
+position = Vector2(-14, 40)
+scale = Vector2(1.9876546, 0.42962965)
+texture = ExtResource("3_j77cd")

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bjpe4gij0vyyp"]
 
 [ext_resource type="Texture2D" uid="uid://bf68q06ynbuqm" path="res://Graphics/Environment/Mushrooms/Log.png" id="1_ky6gq"]
+[ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="2_a4nbm"]
 [ext_resource type="Texture2D" uid="uid://bivpvfjjc0q7y" path="res://Graphics/Environment/Mushrooms/Mush blueh.png" id="2_najnb"]
 [ext_resource type="Texture2D" uid="uid://xcdy5udgle7y" path="res://Graphics/Environment/Mushrooms/Mush grey.png" id="3_a4nbm"]
 [ext_resource type="Texture2D" uid="uid://h00qund07fya" path="res://Graphics/Environment/Mushrooms/Mush purple.png" id="4_x8pbb"]
@@ -59,22 +60,58 @@ texture = ExtResource("1_ky6gq")
 offset = Vector2(-20, -66)
 
 [node name="RedShrooms" type="AnimatedSprite2D" parent="Log" unique_id=1118855187]
-position = Vector2(-32, -20)
+position = Vector2(-53, -140.5)
 sprite_frames = SubResource("SpriteFrames_hmgsy")
 script = ExtResource("7_yv1cb")
 
+[node name="Shadow" type="Sprite2D" parent="Log/RedShrooms" unique_id=1980246691]
+modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.35686275)
+show_behind_parent = true
+position = Vector2(-7.0000057, 40.5)
+scale = Vector2(0.3469136, 0.16111113)
+texture = ExtResource("2_a4nbm")
+
 [node name="BlueShrooms" type="AnimatedSprite2D" parent="Log" unique_id=199406075]
-position = Vector2(-106, 150)
+position = Vector2(-115, 33.5)
 sprite_frames = SubResource("SpriteFrames_ky6gq")
 script = ExtResource("7_yv1cb")
 
+[node name="Shadow2" type="Sprite2D" parent="Log/BlueShrooms" unique_id=1969461582]
+modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.35686275)
+show_behind_parent = true
+position = Vector2(-4.999998, 40.5)
+scale = Vector2(0.40493828, 0.16111113)
+texture = ExtResource("2_a4nbm")
+
 [node name="PurpleShrooms" type="AnimatedSprite2D" parent="Log" unique_id=143238220]
-position = Vector2(40, -4)
+position = Vector2(10, -84)
 sprite_frames = SubResource("SpriteFrames_najnb")
 script = ExtResource("7_yv1cb")
 should_flip = false
 
+[node name="Shadow3" type="Sprite2D" parent="Log/PurpleShrooms" unique_id=1395887875]
+modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.35686275)
+show_behind_parent = true
+position = Vector2(-17.999998, 38)
+scale = Vector2(0.38085064, 0.3589796)
+texture = ExtResource("2_a4nbm")
+
 [node name="GreyShrooms" type="AnimatedSprite2D" parent="Log" unique_id=913570019]
-position = Vector2(124, 0)
+position = Vector2(115, -80.5)
 sprite_frames = SubResource("SpriteFrames_a4nbm")
 script = ExtResource("7_yv1cb")
+
+[node name="Shadow4" type="Sprite2D" parent="Log/GreyShrooms" unique_id=1939505552]
+modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.35686275)
+show_behind_parent = true
+position = Vector2(3.0000038, 44.5)
+scale = Vector2(0.27222228, 0.16111113)
+texture = ExtResource("2_a4nbm")
+
+[node name="Shadow" type="Sprite2D" parent="Log" unique_id=1218364455]
+modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.60784316)
+show_behind_parent = true
+position = Vector2(-20.252941, 4.7938347)
+rotation = -0.29891208
+scale = Vector2(1.5391864, 0.66114765)
+texture = ExtResource("2_a4nbm")
