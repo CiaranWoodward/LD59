@@ -107,6 +107,14 @@ func _sync_front_visuals():
 		$CardFront.self_modulate = Color(0.8, 0.8, 0.8)
 	else:
 		$CardFront.self_modulate = Color(1, 1, 1)
+	
+	if card_timing == CardTiming.All:
+		$CardBack.frame = 0
+	elif card_timing == CardTiming.Day:
+		$CardBack.frame = 1
+	elif card_timing == CardTiming.Night:
+		$CardBack.frame = 2
+
 
 func _do_burn():
 	var shaderMaterial = burn_material.duplicate()

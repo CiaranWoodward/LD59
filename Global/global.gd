@@ -70,7 +70,7 @@ func is_day() -> bool:
 
 func next_round():
     change_statistic(Statistic.ROUND, 1)
-    if statistics[Statistic.ROUND] == 3:
+    if statistics[Statistic.ROUND] == floor(max_statistic_values[Statistic.ROUND] / 2):
         print("Night falls...")
     elif statistics[Statistic.ROUND] == max_statistic_values[Statistic.ROUND]:
         set_statistic(Statistic.ROUND, 0)

@@ -124,6 +124,12 @@ func draw_cards():
 	
 	_change_state(TableState.Idle)
 
+func reshuffle():
+	_change_state(TableState.ShufflingDeck)
+	await _discard_hand()
+	await _shuffle_discard_pile_into_draw_pile()
+	_change_state(TableState.Idle)
+
 ## Game over
 func game_over():
 	if state == TableState.GameOver:
@@ -154,14 +160,13 @@ func initialise_card_to_discard_pile(card: BaseCard, delay: float = 0.0) -> Twee
 	if !is_instance_valid(card.get_parent()):
 		$Cards.add_child(card)
 		card.global_position = $SpawnPoint.global_position
-	var tween = _tween_card_discard(card, delay)
-	discard_pile.append(card)
 	_attach_mouse_watchers(card)
-	return tween
+	return add_card_to_discard_pile(card, delay, true)
 
 ## Discard a card that is already in the hand
-func add_card_to_discard_pile(card: BaseCard, delay: float = 0.0) -> Tween:
-	card.action_discard()
+func add_card_to_discard_pile(card: BaseCard, delay: float = 0.0, skip_action: bool = false) -> Tween:
+	if not skip_action:
+		card.action_discard()
 	var tween = _tween_card_discard(card, delay)
 	discard_pile.append(card)
 	return tween
@@ -543,3 +548,4 @@ func _discard_hand():
 		
 	await WaitAllTweens.wait_all_tweens(all_tweens)
 	hand.clear()
+

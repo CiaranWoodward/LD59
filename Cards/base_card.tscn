@@ -4,6 +4,25 @@
 [ext_resource type="Texture2D" uid="uid://bcgm0rky5ipv0" path="res://Art/Cards/CardFrontAll.png" id="2_e55ge"]
 [ext_resource type="Texture2D" uid="uid://b6y2y2s1b2mpo" path="res://Art/Cards/CardBackAll.png" id="3_nkgfl"]
 [ext_resource type="Theme" uid="uid://c5qyll2cke3nb" path="res://Cards/CardTheme.tres" id="3_nry7q"]
+[ext_resource type="Texture2D" uid="uid://bl5hbjq18gfmc" path="res://Art/Cards/CardBackDay.png" id="5_v6qug"]
+[ext_resource type="Texture2D" uid="uid://bmuv24xe5sex3" path="res://Art/Cards/CardBackNight.png" id="6_57uch"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0nfu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nkgfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v6qug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_57uch")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e55ge"]
 size = Vector2(570, 890)
@@ -40,9 +59,9 @@ text = "Card Description"
 use_parent_material = true
 position = Vector2(2, -171)
 
-[node name="CardBack" type="Sprite2D" parent="." unique_id=1663181280]
+[node name="CardBack" type="AnimatedSprite2D" parent="." unique_id=1167643910]
 visible = false
-texture = ExtResource("3_nkgfl")
+sprite_frames = SubResource("SpriteFrames_y0nfu")
 
 [node name="CardArea" type="Area2D" parent="." unique_id=503653920]
 

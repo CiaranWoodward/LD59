@@ -76,6 +76,10 @@ gizmo_extents = 36.3
 position = Vector2(777, -934)
 gizmo_extents = 36.3
 
+[node name="IdlePoint" type="Marker2D" parent="." unique_id=705901656]
+position = Vector2(71, 1017)
+gizmo_extents = 36.3
+
 [node name="HUD" type="CanvasLayer" parent="." unique_id=393164929]
 layer = 10
 
