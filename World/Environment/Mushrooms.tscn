@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bjpe4gij0vyyp"]
+
+[ext_resource type="Texture2D" uid="uid://bf68q06ynbuqm" path="res://Graphics/Environment/Mushrooms/Log.png" id="1_ky6gq"]
+[ext_resource type="Texture2D" uid="uid://bivpvfjjc0q7y" path="res://Graphics/Environment/Mushrooms/Mush blueh.png" id="2_najnb"]
+[ext_resource type="Texture2D" uid="uid://xcdy5udgle7y" path="res://Graphics/Environment/Mushrooms/Mush grey.png" id="3_a4nbm"]
+[ext_resource type="Texture2D" uid="uid://h00qund07fya" path="res://Graphics/Environment/Mushrooms/Mush purple.png" id="4_x8pbb"]
+[ext_resource type="Texture2D" uid="uid://by7y4lkce0qf4" path="res://Graphics/Environment/Mushrooms/Mush red.png" id="5_ytvoy"]
+[ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="7_yv1cb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmgsy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ytvoy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ky6gq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_najnb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_najnb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x8pbb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4nbm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a4nbm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Mushrooms" type="Node2D" unique_id=1436930502]
+
+[node name="Log" type="Sprite2D" parent="." unique_id=125375489]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ky6gq")
+offset = Vector2(-20, -66)
+
+[node name="RedShrooms" type="AnimatedSprite2D" parent="Log" unique_id=1118855187]
+position = Vector2(-32, -20)
+sprite_frames = SubResource("SpriteFrames_hmgsy")
+script = ExtResource("7_yv1cb")
+
+[node name="BlueShrooms" type="AnimatedSprite2D" parent="Log" unique_id=199406075]
+position = Vector2(-106, 150)
+sprite_frames = SubResource("SpriteFrames_ky6gq")
+script = ExtResource("7_yv1cb")
+
+[node name="PurpleShrooms" type="AnimatedSprite2D" parent="Log" unique_id=143238220]
+position = Vector2(40, -4)
+sprite_frames = SubResource("SpriteFrames_najnb")
+script = ExtResource("7_yv1cb")
+should_flip = false
+
+[node name="GreyShrooms" type="AnimatedSprite2D" parent="Log" unique_id=913570019]
+position = Vector2(124, 0)
+sprite_frames = SubResource("SpriteFrames_a4nbm")
+script = ExtResource("7_yv1cb")
