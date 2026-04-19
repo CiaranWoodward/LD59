@@ -7,18 +7,145 @@
 [ext_resource type="Texture2D" uid="uid://385vmc5hw70y" path="res://Graphics/Environment/Background/ground.png" id="3_joegy"]
 [ext_resource type="PackedScene" uid="uid://sm6uk6e3vdyu" path="res://World/Environment/Tree.tscn" id="3_k1dps"]
 [ext_resource type="PackedScene" uid="uid://bmbknhela3tf8" path="res://Global/table.tscn" id="4_7rdfg"]
+[ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="4_d45ho"]
 [ext_resource type="Texture2D" uid="uid://cp5lvpp400hv0" path="res://Graphics/Environment/Berries/Bush.png" id="5_avfc4"]
 [ext_resource type="Texture2D" uid="uid://pn8oc7nus4rb" path="res://Graphics/MV Sketch/White0000.png" id="5_xhbeg"]
 [ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="6_38me4"]
 [ext_resource type="PackedScene" uid="uid://bjpe4gij0vyyp" path="res://World/Environment/Mushrooms.tscn" id="8_xt66a"]
 [ext_resource type="PackedScene" uid="uid://f60kho1hkypj" path="res://World/Environment/Berries.tscn" id="9_avfc4"]
 
+[sub_resource type="Animation" id="Animation_7c1pb"]
+resource_name = "DayNightCycle"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SunPath/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.9, 1, 1.01, 1.1, 1.9, 2),
+"transitions": PackedFloat32Array(0.55478466, 0.6830201, 1.6817931, 1000000, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.3, 0.7, 1.0, 0.0, 0.2, 0.7, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sky:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8, 1, 2),
+"transitions": PackedFloat32Array(0.61557204, 1.5691684, 1.464086, 1, 1),
+"update": 0,
+"values": [Color(0.07843137, 0.14117646, 0.20392156, 1), Color(0.32941177, 0.54509807, 0.75686276, 1), Color(0.32941177, 0.54509807, 0.75686276, 1), Color(0.078431375, 0.14117648, 0.20392157, 1), Color(0.078431375, 0.14117648, 0.20392157, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SunPath/PathFollow2D/Sun:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.8, 0.9, 1, 1.9, 2),
+"transitions": PackedFloat32Array(0.43527535, 2.0000005, 1, 0.43527526, 2.5491211, 1, 1, 1),
+"update": 0,
+"values": [Color(0.91764706, 0.94509804, 0.7411765, 1), Color(0.88235295, 0.6666667, 0.64705884, 1), Color(0.91764706, 0.94509804, 0.7411765, 1), Color(0.91764706, 0.94509804, 0.7411765, 1), Color(0.42745098, 0.23137255, 0.5019608, 1), Color(0.92941177, 0.94509804, 0.8901961, 1), Color(0.92941177, 0.94509804, 0.8901961, 1), Color(0.91764706, 0.94509804, 0.7411765, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_24re5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SunPath/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sky:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.32156864, 0.52156866, 0.72156864, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SunPath/PathFollow2D/Sun:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.91764706, 0.94509804, 0.7411765, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r5g24"]
+_data = {
+&"DayNightCycle": SubResource("Animation_7c1pb"),
+&"RESET": SubResource("Animation_24re5")
+}
+
+[sub_resource type="Animation" id="Animation_p72nv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../SunPath/PathFollow2D/Sun:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_r5g24"]
+resource_name = "SunTwist"
+length = 2.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../SunPath/PathFollow2D/Sun:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.29999995, 0.6, 1.7, 2.2),
+"transitions": PackedFloat32Array(15.454985, 0.003644664, 14.928521, 0.019915015, 1),
+"update": 0,
+"values": [0.0, -0.03490658503988659, 0.0, 0.03490658503988659, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fmpwv"]
+_data = {
+&"RESET": SubResource("Animation_p72nv"),
+&"SunTwist": SubResource("Animation_r5g24")
+}
+
 [sub_resource type="Animation" id="Animation_wfbhs"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sun/SunGlow:self_modulate")
+tracks/0/path = NodePath("SunPath/PathFollow2D/Sun/SunGlow:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -30,17 +157,17 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_d45ho"]
 resource_name = "SunGlow"
-length = 3.0
+length = 3.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sun/SunGlow:self_modulate")
+tracks/0/path = NodePath("SunPath/PathFollow2D/Sun/SunGlow:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 3),
-"transitions": PackedFloat32Array(0.5743493, 1.7411015, 1),
+"times": PackedFloat32Array(0, 1.2333333, 3.2),
+"transitions": PackedFloat32Array(0.61557233, 0.46651664, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.60784316), Color(1, 1, 1, 1)]
 }
@@ -51,20 +178,14 @@ _data = {
 &"SunGlow": SubResource("Animation_d45ho")
 }
 
-[sub_resource type="Animation" id="Animation_7c1pb"]
-resource_name = "DayNightCycle"
-step = 0.1
-
-[sub_resource type="Animation" id="Animation_24re5"]
-length = 0.001
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_r5g24"]
-_data = {
-&"DayNightCycle": SubResource("Animation_7c1pb"),
-&"RESET": SubResource("Animation_24re5")
-}
-
 [sub_resource type="Curve2D" id="Curve2D_wfbhs"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -429, 1047, 0, 0, 0, 0, -249, 378, 0, 0, 0, 0, 140, 145, 0, 0, 0, 0, 366, 67, 0, 0, 0, 0, 723, 3, 0, 0, 0, 0, 986, -3, 0, 0, 0, 0, 1333, 20, 0, 0, 0, 0, 1636, 85, 0, 0, 0, 0, 1847, 178, 0, 0, 0, 0, 2053, 342, 0, 0, 0, 0, 2190, 590, 0, 0, 0, 0, 2378, 1058)
+}
+point_count = 12
+
+[sub_resource type="Gradient" id="Gradient_p72nv"]
+colors = PackedColorArray(1, 1, 1, 0.3137255, 1, 1, 1, 0.17254902)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aoint"]
 animations = [{
@@ -79,38 +200,63 @@ animations = [{
 
 [node name="Level" type="Node2D" unique_id=1164261592]
 
-[node name="SunGlow" type="AnimationPlayer" parent="." unique_id=70500330]
+[node name="DayNight" type="AnimationPlayer" parent="." unique_id=405920214]
+libraries/ = SubResource("AnimationLibrary_r5g24")
+autoplay = &"DayNightCycle"
+speed_scale = 0.2
+
+[node name="SunTwist" type="AnimationPlayer" parent="DayNight" unique_id=1868233216]
+root_node = NodePath("../SunGlow")
+libraries/ = SubResource("AnimationLibrary_fmpwv")
+autoplay = &"SunTwist"
+
+[node name="SunGlow" type="AnimationPlayer" parent="DayNight" unique_id=70500330]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_p72nv")
 autoplay = &"SunGlow"
 
-[node name="DayNight" type="AnimationPlayer" parent="." unique_id=405920214]
-libraries/ = SubResource("AnimationLibrary_r5g24")
-
-[node name="SunPath" type="Path2D" parent="DayNight" unique_id=1445814317]
-position = Vector2(-228.80002, 859.6)
-scale = Vector2(0.8, 0.8)
-curve = SubResource("Curve2D_wfbhs")
-
 [node name="Sky" type="Sprite2D" parent="." unique_id=725656267]
-modulate = Color(0.32941177, 0.54509807, 0.75686276, 1)
+modulate = Color(0.32156864, 0.52156866, 0.72156864, 1)
 position = Vector2(1050.5, 213.50003)
 scale = Vector2(135.35, 41.35)
 texture = ExtResource("5_xhbeg")
 
-[node name="Sun" type="Sprite2D" parent="." unique_id=141565408]
-modulate = Color(0.89453125, 0.87637746, 0.4297943, 1)
-position = Vector2(-525, 1037)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_xt66a")
+[node name="SunPath" type="Path2D" parent="." unique_id=1445814317]
+curve = SubResource("Curve2D_wfbhs")
 
-[node name="SunGlow" type="Sprite2D" parent="Sun" unique_id=1980788903]
+[node name="PathFollow2D" type="PathFollow2D" parent="SunPath" unique_id=1634102481]
+position = Vector2(-429, 1047)
+rotation = -1.3079624
+
+[node name="Sun" type="Sprite2D" parent="SunPath/PathFollow2D" unique_id=141565408]
+modulate = Color(0.91764706, 0.94509804, 0.7411765, 1)
+texture = ExtResource("1_xt66a")
+offset = Vector2(2.128357, 20.227966)
+
+[node name="SunGlow" type="Sprite2D" parent="SunPath/PathFollow2D/Sun" unique_id=1980788903]
 show_behind_parent = true
+scale = Vector2(1.237526, 1.237526)
 texture = ExtResource("3_24re5")
+
+[node name="Clouds" type="CPUParticles2D" parent="." unique_id=1816916226]
+position = Vector2(-92, 219)
+texture = ExtResource("4_d45ho")
+lifetime = 20.0
+preprocess = 30.0
+speed_scale = 0.8
+emission_shape = 3
+emission_rect_extents = Vector2(1, 150)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 100.0
+scale_amount_min = 0.25
+color_ramp = SubResource("Gradient_p72nv")
 
 [node name="Mountain" type="Sprite2D" parent="." unique_id=2103425597]
 self_modulate = Color(0.13824463, 0.14425278, 0.234375, 1)
-position = Vector2(1042, 545)
-scale = Vector2(0.67968756, 0.5833333)
+position = Vector2(888.5, 545)
+scale = Vector2(0.5997396, 0.5833333)
 texture = ExtResource("3_aoint")
 
 [node name="Ground" type="Sprite2D" parent="." unique_id=844886155]
