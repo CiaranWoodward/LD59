@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bkiwe0ndxvudw"]
+
+[ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_38486"]
+[ext_resource type="Script" uid="uid://dn8l1vjpthkra" path="res://Cards/forage_card.gd" id="2_hkgm6"]
+[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_06h2s"]
+
+[node name="DrinkCard" unique_id=105035990 instance=ExtResource("1_38486")]
+script = ExtResource("2_hkgm6")
+card_name = "Drink"
+description = "Drink from the stream
+
+[i]Removed from deck when played"
+image = ExtResource("3_06h2s")
+card_type = 3
+consumable = true
+environment = true
+
+[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="0" unique_id=933147433]
+text = "Drink"
+
+[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="1" unique_id=376343130]
+text = "Drink from the stream
+
+[i]Removed from deck when played"
+
+[node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="2" unique_id=1941202912]
+texture = ExtResource("3_06h2s")

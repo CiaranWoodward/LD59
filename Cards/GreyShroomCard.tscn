@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dm0ffbcko3vym"]
+
+[ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_0yrrs"]
+[ext_resource type="Script" uid="uid://c6t6qb2g8bdsl" path="res://Cards/morsel_card.gd" id="2_6sv3a"]
+[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_vj56x"]
+
+[node name="GreyShroomCard" unique_id=105035990 instance=ExtResource("1_0yrrs")]
+script = ExtResource("2_6sv3a")
+card_name = "Grey Shroom"
+description = "Remove one random [b]hunger[/b] card from deck
+
+Gain one status card of choice
+
+[i]Removed from deck when played"
+image = ExtResource("3_vj56x")
+card_type = 3
+consumable = true
+
+[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="0" unique_id=933147433]
+text = "Grey Shroom"
+
+[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="1" unique_id=376343130]
+text = "Remove one random [b]hunger[/b] card from deck
+
+Gain one status card of choice
+
+[i]Removed from deck when played"
+
+[node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="2" unique_id=1941202912]
+texture = ExtResource("3_vj56x")
