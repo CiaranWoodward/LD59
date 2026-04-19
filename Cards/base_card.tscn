@@ -59,6 +59,17 @@ text = "Card Description"
 use_parent_material = true
 position = Vector2(2, -171)
 
+[node name="Cost" type="Label" parent="CardFront" unique_id=1544021586]
+offset_left = 222.0
+offset_top = -434.0
+offset_right = 262.0
+offset_bottom = -265.0
+rotation = 0.12410954
+theme = ExtResource("3_nry7q")
+theme_override_font_sizes/font_size = 60
+text = "0
+"
+
 [node name="CardBack" type="AnimatedSprite2D" parent="." unique_id=1167643910]
 visible = false
 sprite_frames = SubResource("SpriteFrames_y0nfu")

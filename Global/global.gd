@@ -13,15 +13,21 @@ enum Statistic {
     ROUND,
 }
 
+enum TurnEndImpact {
+    NORMAL,
+    NIGHT_FALLS,
+    NEW_DAY,
+}
+
 var initial_statistic_values = {
-    Statistic.HEALTH: 2,
+    Statistic.HEALTH: 5,
     Statistic.INSANITY: 0,
     Statistic.ACTION_POINTS: 3,
     Statistic.HAND_SIZE: 5,
     Statistic.FIRE_SIZE: 0,
     Statistic.FIRE_LIT: 0,
     Statistic.DAY: 0,
-    Statistic.ROUND: 0, # First 3 rounds are day, next 3 rounds are night
+    Statistic.ROUND: 0, # First 50% rounds are day, next 50% rounds are night
 }
 
 var min_statistic_values = {
@@ -36,7 +42,7 @@ var min_statistic_values = {
 }
 
 var max_statistic_values = {
-    Statistic.HEALTH: 3,
+    Statistic.HEALTH: 5,
     Statistic.INSANITY: 10,
     Statistic.ACTION_POINTS: 3,
     Statistic.HAND_SIZE: 15,
@@ -65,14 +71,15 @@ func set_statistic(stat: Statistic, value: int):
 func change_statistic(stat: Statistic, delta: int):
     set_statistic(stat, statistics[stat] + delta)
 
-func is_day() -> bool:
+func is_daytime() -> bool:
     return statistics[Statistic.ROUND] < 3
 
-func next_round():
+func next_round() -> TurnEndImpact:
     change_statistic(Statistic.ROUND, 1)
     if statistics[Statistic.ROUND] == floor(max_statistic_values[Statistic.ROUND] / 2):
-        print("Night falls...")
+        return TurnEndImpact.NIGHT_FALLS
     elif statistics[Statistic.ROUND] == max_statistic_values[Statistic.ROUND]:
         set_statistic(Statistic.ROUND, 0)
         change_statistic(Statistic.DAY, 1)
-        print("A new day breaks...")
+        return TurnEndImpact.NEW_DAY
+    return TurnEndImpact.NORMAL

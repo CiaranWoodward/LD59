@@ -103,6 +103,13 @@ func _sync_front_visuals():
 	if image_sprite:
 		image_sprite.texture = image
 	
+	var cost_label := get_node_or_null("CardFront/Cost")
+	if cost_label:
+		if unplayable:
+			cost_label.text = "X"
+		else:
+			cost_label.text = str(cost)
+	
 	if unplayable:
 		$CardFront.self_modulate = Color(0.8, 0.8, 0.8)
 	else:
@@ -153,10 +160,17 @@ func action_play():
 func action_discard():
 	on_pre_discard()
 
-func is_playable():
+func is_playable() -> bool:
 	if unplayable:
 		return false
 	return Global.statistics[Global.Statistic.ACTION_POINTS] >= cost
+
+func is_valid_at_current_time() -> bool:
+	if card_timing == CardTiming.Day:
+		return Global.is_daytime()
+	elif card_timing == CardTiming.Night:
+		return !Global.is_daytime()
+	return true
 
 # Action callbacks - these are meant to be overridden by specific cards
 func on_post_draw():

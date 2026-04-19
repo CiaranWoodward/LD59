@@ -1,5 +1,7 @@
 extends Node
 
+var hungerCard: PackedScene = preload("res://Cards/HungerCard.tscn")
+
 # This is a singleton that drives everything. Nothing else refers to it, but it reaches into everything else.
 func _ready() -> void:
     Global.statistic_changed.connect(stat_watcher)
@@ -21,16 +23,24 @@ func forever_game_loop():
 
         # Wait for the player to finish their turn
         # TODO: End turn button
-        while table.state != Table.TableState.Idle || (Global.statistics[Global.Statistic.ACTION_POINTS] > 0 && table.hand.size() > 0):
+        while table.state != Table.TableState.Idle || table.any_playable_cards_in_hand():
             await table.state_changed
             if table.state == Table.TableState.GameOver:
                 return
+            table.all_cards()
         
         # End the player's turn
-        await table.end_turn() 
+        await table.end_turn()
+
+        var turn_end_impact = Global.next_round()
 
         if table.state == Table.TableState.GameOver:
             return
+        
+        table.initialise_card_to_discard_pile(hungerCard.instantiate())
+
+        if turn_end_impact != Global.TurnEndImpact.NORMAL:
+            await table.reshuffle()
 
         # Process the fire
         if Global.statistics[Global.Statistic.FIRE_LIT] > 0:
@@ -40,4 +50,3 @@ func forever_game_loop():
         
         if table.state == Table.TableState.GameOver:
             return
-

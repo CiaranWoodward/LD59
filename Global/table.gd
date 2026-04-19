@@ -64,6 +64,7 @@ enum TableState {
 }
 
 var draw_pile: Array[BaseCard] = []
+var idle_pile: Array[BaseCard] = [] # Day cards at night or night cards at day
 var discard_pile: Array[BaseCard] = []
 var hand: Array[BaseCard] = []
 var hovered_cards: Array[BaseCard] = []
@@ -127,6 +128,7 @@ func draw_cards():
 func reshuffle():
 	_change_state(TableState.ShufflingDeck)
 	await _discard_hand()
+	await _discard_draw_and_idle_pile()
 	await _shuffle_discard_pile_into_draw_pile()
 	_change_state(TableState.Idle)
 
@@ -181,7 +183,10 @@ func burn_card(card: BaseCard):
 		draw_pile.erase(card)
 	elif card in discard_pile:
 		discard_pile.erase(card)
-	
+	elif card in idle_pile:
+		idle_pile.erase(card)
+	else:
+		print("Warning: Tried to burn a card that was in no pile: " + str(card))
 	# Tween it to the center, pull it to top z-index, and burn it up
 	card.z_index = 1000
 	card.show_face()
@@ -199,7 +204,15 @@ func _change_state(new_state: TableState):
 	emit_signal("state_changed", new_state)
 
 func all_cards() -> Array[BaseCard]:
-	return hand + draw_pile + discard_pile
+	var all_cards_list = hand + draw_pile + discard_pile + idle_pile
+	assert(!all_cards_list.any(func(c): return !is_instance_valid(c)), "One of the cards in the piles is not a valid instance!")
+	return all_cards_list
+
+func any_playable_cards_in_hand() -> bool:
+	for card in hand:
+		if card.is_playable():
+			return true
+	return false
 
 func _collect_base_cards(container: Node):
 	for child in container.get_children():
@@ -416,22 +429,31 @@ func _shuffle_discard_pile_into_draw_pile():
 	discard_pile += draw_pile
 	draw_pile.clear()
 	discard_pile.shuffle()
-	draw_pile = discard_pile
+	var new_draw_pile = discard_pile.filter(func(c): return c.is_valid_at_current_time())
+	var new_idle_pile = discard_pile.filter(func(c): return not c.is_valid_at_current_time())
 	discard_pile = []
 
 	# Animate the shuffling
 	var all_tweens: Array[Tween] = []
-	for z in range(draw_pile.size()):
-		all_tweens.append(_tween_card_shuffle(draw_pile[z], z))
+	for z in range(new_draw_pile.size()):
+		all_tweens.append(_tween_card_shuffle(new_draw_pile[z], z))
+	for z in range(new_idle_pile.size()):
+		all_tweens.append(_tween_card_shuffle(new_idle_pile[z], z, true))
+	draw_pile += new_draw_pile
+	idle_pile += new_idle_pile
 	await WaitAllTweens.wait_all_tweens(all_tweens)
 
-func _tween_card_shuffle(card: BaseCard, new_z_index: int) -> Tween:
+func _tween_card_shuffle(card: BaseCard, new_z_index: int, to_idle: bool = false) -> Tween:
 	# We tween from current position to the shuffle point, then to the draw pile
 	var duration = shuffle_duration + randf_range(-shuffle_time_randomness, shuffle_time_randomness)
 	var random_offset = Vector2(randf_range(-shuffle_messiness, shuffle_messiness), randf_range(-shuffle_messiness, shuffle_messiness))
 	var random_offset_draw = Vector2(randf_range(-draw_pile_messiness, draw_pile_messiness), randf_range(-draw_pile_messiness, draw_pile_messiness))
 	var random_rotation_shuffle = randf_range(-shuffle_rotation_messiness, shuffle_rotation_messiness)
 	var random_rotation_draw = randf_range(-draw_pile_rotation_messiness, draw_pile_rotation_messiness)
+	var destination_position = $DrawPoint.global_position + random_offset_draw
+
+	if to_idle:
+		destination_position = $IdlePoint.global_position + random_offset_draw
 
 	# Yes I legitimately wrote this all by hand xD
 	var tween = create_tween()
@@ -440,7 +462,7 @@ func _tween_card_shuffle(card: BaseCard, new_z_index: int) -> Tween:
 	tween.parallel().tween_property(card, "scale", Vector2.ONE * (card_scale + randf_range(-shuffle_scale_randomness, shuffle_scale_randomness)), duration / 2).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
 	tween.tween_callback(card.hide_face.bind())
 	tween.tween_property(card, "z_index", new_z_index, 0)
-	tween.tween_property(card, "global_position", $DrawPoint.global_position + random_offset_draw, duration / 2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	tween.tween_property(card, "global_position", destination_position, duration / 2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property(card, "rotation_degrees", random_rotation_draw, duration / 2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property(card, "scale", Vector2.ONE * card_scale, duration / 2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	return tween
@@ -549,3 +571,13 @@ func _discard_hand():
 	await WaitAllTweens.wait_all_tweens(all_tweens)
 	hand.clear()
 
+func _discard_draw_and_idle_pile():
+	var all_tweens: Array[Tween] = []
+	var old_piles = draw_pile + idle_pile
+	draw_pile.clear()
+	idle_pile.clear()
+	for card in old_piles:
+		all_tweens.append(add_card_to_discard_pile(card, 0, true))
+	all_cards()
+		
+	await WaitAllTweens.wait_all_tweens(all_tweens)

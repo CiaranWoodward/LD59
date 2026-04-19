@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://djacq543arxcb"]
 
+[ext_resource type="Script" uid="uid://6ebpfdbcved2" path="res://World/day_night.gd" id="1_7c1pb"]
 [ext_resource type="Texture2D" uid="uid://wm2ukybtxvu3" path="res://Graphics/Environment/Background/Sun.png" id="1_xt66a"]
 [ext_resource type="PackedScene" uid="uid://bxcbuqukhqmbm" path="res://World/Environment/Campfire.tscn" id="2_vccdb"]
 [ext_resource type="Texture2D" uid="uid://sony8h07krbr" path="res://Graphics/Environment/Background/SunGlow.png" id="3_24re5"]
@@ -8,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bmbknhela3tf8" path="res://Global/table.tscn" id="4_7rdfg"]
 [ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="4_d45ho"]
 [ext_resource type="Texture2D" uid="uid://pn8oc7nus4rb" path="res://Graphics/MV Sketch/White0000.png" id="5_xhbeg"]
-[ext_resource type="Script" path="res://Utils/RandomAnimatedSprite.gd" id="6_38me4"]
 [ext_resource type="PackedScene" uid="uid://dvwafkf3yemgq" path="res://World/Forest.tscn" id="8_aoint"]
 [ext_resource type="PackedScene" uid="uid://bjpe4gij0vyyp" path="res://World/Environment/Mushrooms.tscn" id="8_xt66a"]
 [ext_resource type="PackedScene" uid="uid://f60kho1hkypj" path="res://World/Environment/Berries.tscn" id="9_avfc4"]
@@ -21,6 +21,23 @@ resource_name = "DayNightCycle"
 length = 2.0
 loop_mode = 1
 step = 0.1
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"DayStart",
+"time": 0.19365191
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"DayEnd",
+"time": 0.7888468
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"NightStart",
+"time": 1.1960853
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"NightEnd",
+"time": 1.7956133
+}]
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -56,6 +73,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(0.43527535, 2.0000005, 1, 0.43527526, 2.5491211, 1, 1, 1),
 "update": 0,
 "values": [Color(0.91764706, 0.94509804, 0.7411765, 1), Color(0.88235295, 0.6666667, 0.64705884, 1), Color(0.91764706, 0.94509804, 0.7411765, 1), Color(0.91764706, 0.94509804, 0.7411765, 1), Color(0.42745098, 0.23137255, 0.5019608, 1), Color(0.92941177, 0.94509804, 0.8901961, 1), Color(0.92941177, 0.94509804, 0.8901961, 1), Color(0.91764706, 0.94509804, 0.7411765, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/NightTime:material:shader_parameter/darkness")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.400000019, 0.0, 0.0, 0.400000019, 0.400000019]
 }
 
 [sub_resource type="Animation" id="Animation_24re5"]
@@ -95,6 +124,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0.91764706, 0.94509804, 0.7411765, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/NightTime:material:shader_parameter/darkness")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.118000005605]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r5g24"]
@@ -200,10 +241,10 @@ seamless = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p72nv"]
 shader = ExtResource("10_p72nv")
 shader_parameter/mask_noise_tex = SubResource("NoiseTexture2D_7c1pb")
-shader_parameter/darkness = 0.3030000143925
+shader_parameter/darkness = 0.118000005605
 shader_parameter/night_tint = Color(0.6723542, 0.88806295, 0.9999998, 1)
 shader_parameter/tint_strength = 0.174000008265
-shader_parameter/desaturation = 0.118000005605
+shader_parameter/desaturation = 0.1890000089775
 shader_parameter/focus_center = Vector2(0.5, 0.5)
 shader_parameter/inner_radius = 0.0750000035625
 shader_parameter/outer_radius = 0.37200001767
@@ -221,8 +262,8 @@ shader_parameter/vignette_strength = 0.4910000233225
 
 [node name="DayNight" type="AnimationPlayer" parent="." unique_id=405920214]
 libraries/ = SubResource("AnimationLibrary_r5g24")
-autoplay = &"DayNightCycle"
 speed_scale = 0.2
+script = ExtResource("1_7c1pb")
 
 [node name="SunTwist" type="AnimationPlayer" parent="DayNight" unique_id=1868233216]
 root_node = NodePath("../SunGlow")
@@ -293,7 +334,6 @@ position = Vector2(988, 663)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1391947505]
 
 [node name="NightTime" type="ColorRect" parent="CanvasLayer" unique_id=159570765]
-visible = false
 material = SubResource("ShaderMaterial_p72nv")
 custom_minimum_size = Vector2(59, 59)
 anchors_preset = -1
