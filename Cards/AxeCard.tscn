@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://c6b5xcocr7s1x"]
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_pei80"]
+[ext_resource type="Script" uid="uid://yyfaoa2xg5yh" path="res://Cards/axe_card.gd" id="2_m7xs0"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_x8rco"]
 
 [node name="AxeCard" unique_id=105035990 instance=ExtResource("1_pei80")]
+script = ExtResource("2_m7xs0")
 card_name = "Axe"
 description = "Gain two [b]wood[/b] cards"
 image = ExtResource("2_x8rco")

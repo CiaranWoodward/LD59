@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bmbknhela3tf8"]
 
 [ext_resource type="Script" uid="uid://du72ge3que2qk" path="res://Global/table.gd" id="1_rcskp"]
-[ext_resource type="PackedScene" uid="uid://bfhb54qgyqtv6" path="res://Cards/test_card.tscn" id="2_ar3em"]
 [ext_resource type="PackedScene" uid="uid://c6b5xcocr7s1x" path="res://Cards/AxeCard.tscn" id="3_mnq2p"]
 [ext_resource type="PackedScene" uid="uid://dmbxw0g0uyxby" path="res://Cards/BerryCard.tscn" id="4_fyblx"]
 [ext_resource type="PackedScene" uid="uid://cymvt7hb2bqu3" path="res://Cards/BowCard.tscn" id="5_ljc0k"]
@@ -17,9 +16,6 @@ script = ExtResource("1_rcskp")
 
 [node name="Cards" type="Node2D" parent="." unique_id=630168821]
 
-[node name="TestCard" parent="Cards" unique_id=105035990 instance=ExtResource("2_ar3em")]
-position = Vector2(-321, 1695)
-
 [node name="AxeCard" parent="Cards" unique_id=79543323 instance=ExtResource("3_mnq2p")]
 position = Vector2(733, 2898)
 
@@ -31,6 +27,7 @@ position = Vector2(1375, 1983)
 
 [node name="ForageCard" parent="Cards" unique_id=1328410963 instance=ExtResource("6_rhal8")]
 position = Vector2(1573, 3560)
+cost = 0
 
 [node name="HungerCard" parent="Cards" unique_id=1088402863 instance=ExtResource("7_t0t1g")]
 position = Vector2(-35, 3262)
@@ -39,6 +36,7 @@ position = Vector2(-35, 3262)
 position = Vector2(2755, 3626)
 
 [node name="PoisonCard" parent="Cards" unique_id=1445039524 instance=ExtResource("9_xcx3l")]
+self_modulate = Color(0.8, 0.8, 0.8, 1)
 position = Vector2(-919, 3333)
 
 [node name="TinderboxCard" parent="Cards" unique_id=283751447 instance=ExtResource("10_jgnfc")]
@@ -46,6 +44,12 @@ position = Vector2(2796, 2256)
 
 [node name="WoodCard" parent="Cards" unique_id=1243168928 instance=ExtResource("11_xmklv")]
 position = Vector2(-1587, 2489)
+
+[node name="HungerCard2" parent="Cards" unique_id=324443235 instance=ExtResource("7_t0t1g")]
+position = Vector2(-35, 3262)
+
+[node name="HungerCard3" parent="Cards" unique_id=714533921 instance=ExtResource("7_t0t1g")]
+position = Vector2(-35, 3262)
 
 [node name="ShufflePoint" type="Marker2D" parent="." unique_id=526775094]
 position = Vector2(954, 362)
@@ -65,4 +69,8 @@ gizmo_extents = 36.3
 
 [node name="PlayPoint" type="Marker2D" parent="." unique_id=1413321005]
 position = Vector2(962, 460)
+gizmo_extents = 36.3
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=59818483]
+position = Vector2(777, -934)
 gizmo_extents = 36.3

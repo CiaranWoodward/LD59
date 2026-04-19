@@ -2,8 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_oguja"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_v2yov"]
+[ext_resource type="Script" uid="uid://d8qv2anm8jn5" path="res://Cards/hunger_card.gd" id="2_xvk0l"]
 
 [node name="HungerCard" unique_id=105035990 instance=ExtResource("1_oguja")]
+self_modulate = Color(0.8, 0.8, 0.8, 1)
+script = ExtResource("2_xvk0l")
 card_name = "Hunger"
 description = "Lose one [b]energy[/b] on draw
 

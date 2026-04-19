@@ -2,8 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_urmyb"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_7ed8r"]
+[ext_resource type="Script" uid="uid://do8ki427q48c3" path="res://Cards/tinderbox_card.gd" id="2_gkvv8"]
 
 [node name="TinderboxCard" unique_id=105035990 instance=ExtResource("1_urmyb")]
+script = ExtResource("2_gkvv8")
 card_name = "Tinderbox"
 description = "Light the campfire
 
@@ -11,7 +13,6 @@ description = "Light the campfire
 image = ExtResource("2_7ed8r")
 card_type = 2
 card_timing = 1
-action = true
 
 [node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="0" unique_id=933147433]
 text = "Tinderbox"

@@ -2,8 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_su4mk"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_22tcm"]
+[ext_resource type="Script" uid="uid://bhnq13r5move2" path="res://Cards/poison_card.gd" id="2_h5fcr"]
 
 [node name="PoisonCard" unique_id=105035990 instance=ExtResource("1_su4mk")]
+script = ExtResource("2_h5fcr")
 card_name = "Poison"
 description = "Lose one [b]health[/b] on draw
 
@@ -12,13 +14,16 @@ image = ExtResource("2_22tcm")
 status = true
 unplayable = true
 
-[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="0" unique_id=933147433]
+[node name="CardFront" parent="." index="0" unique_id=1569601050]
+self_modulate = Color(0.8, 0.8, 0.8, 1)
+
+[node name="Name" parent="CardFront" index="0" unique_id=933147433]
 text = "Poison"
 
-[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="1" unique_id=376343130]
+[node name="Description" parent="CardFront" index="1" unique_id=376343130]
 text = "Lose one [b]health[/b] on draw
 
 [i]Unplayable[/i]"
 
-[node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="2" unique_id=1941202912]
+[node name="Image" parent="CardFront" index="2" unique_id=1941202912]
 texture = ExtResource("2_22tcm")

@@ -2,8 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_qiw6e"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_gpoas"]
+[ext_resource type="Script" uid="uid://dn8l1vjpthkra" path="res://Cards/forage_card.gd" id="2_q0gcd"]
 
 [node name="ForageCard" unique_id=105035990 instance=ExtResource("1_qiw6e")]
+script = ExtResource("2_q0gcd")
 card_name = "Forage"
 description = "Gain one available environmental resource of choice
 

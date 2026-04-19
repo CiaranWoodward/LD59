@@ -48,6 +48,8 @@ enum CardTiming {
 ## Cannot be played
 @export var unplayable: bool = false
 
+@export var play_time: float = 0.5
+
 # These are set by the Table, which manages the card until it is selected. 
 # Once a card is selected, it is down to this card to manage its own state and visuals until it is played or deselected.
 # True when we are the currently selected card, about to be played.
@@ -100,6 +102,11 @@ func _sync_front_visuals():
 	var image_sprite := get_node_or_null("CardFront/Image")
 	if image_sprite:
 		image_sprite.texture = image
+	
+	if unplayable:
+		$CardFront.self_modulate = Color(0.8, 0.8, 0.8)
+	else:
+		$CardFront.self_modulate = Color(1, 1, 1)
 
 func _do_burn():
 	var shaderMaterial = burn_material.duplicate()
@@ -126,7 +133,10 @@ func action_draw() -> void:
 
 func action_play():
 	Global.change_statistic(Global.Statistic.ACTION_POINTS, -cost)
+	var play_timer = get_tree().create_timer(play_time)
 	await on_play()
+	if play_timer.time_left > 0:
+		await play_timer.timeout
 	if consumable:
 		_do_burn()
 	else:
@@ -145,7 +155,7 @@ func on_post_draw():
 	pass
 
 func on_play():
-	await get_tree().create_timer(0.5).timeout
+	pass
 
 func on_pre_discard():
 	pass

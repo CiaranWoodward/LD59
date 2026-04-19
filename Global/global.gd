@@ -7,6 +7,8 @@ enum Statistic {
     INSANITY,
     ACTION_POINTS,
     HAND_SIZE,
+    FIRE_SIZE,
+    FIRE_LIT,
 }
 
 var statistics = {
@@ -14,6 +16,8 @@ var statistics = {
     Statistic.INSANITY: 0,
     Statistic.ACTION_POINTS: 3,
     Statistic.HAND_SIZE: 5,
+    Statistic.FIRE_SIZE: 0,
+    Statistic.FIRE_LIT: 0,
 }
 
 var min_statistic_values = {
@@ -21,6 +25,8 @@ var min_statistic_values = {
     Statistic.INSANITY: 0,
     Statistic.ACTION_POINTS: 0,
     Statistic.HAND_SIZE: 0,
+    Statistic.FIRE_SIZE: 0,
+    Statistic.FIRE_LIT: 0,
 }
 
 var max_statistic_values = {
@@ -28,6 +34,8 @@ var max_statistic_values = {
     Statistic.INSANITY: 10,
     Statistic.ACTION_POINTS: 3,
     Statistic.HAND_SIZE: 15,
+    Statistic.FIRE_SIZE: 3,
+    Statistic.FIRE_LIT: 1,
 }
 
 signal statistic_changed(stat: Statistic, new_value: int, old_value: int)

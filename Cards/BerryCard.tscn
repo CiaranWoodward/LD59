@@ -2,8 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_que82"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_4qkyj"]
+[ext_resource type="Script" uid="uid://dj68oj73x78iy" path="res://Cards/berry_card.gd" id="2_cyl7w"]
 
 [node name="BerryCard" unique_id=105035990 instance=ExtResource("1_que82")]
+script = ExtResource("2_cyl7w")
 card_name = "Berry"
 description = "Remove two random [b]hunger[/b] from deck
 

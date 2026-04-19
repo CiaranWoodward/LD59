@@ -118,22 +118,51 @@ func draw_cards():
 	_change_state(TableState.Idle)
 
 ## Add a card and hook it up
-func initialise_card_to_discard_pile(card: BaseCard):
-	_tween_card_discard(card, 0)
+func initialise_card_to_discard_pile(card: BaseCard, delay: float = 0.0) -> Tween:
+	if !is_instance_valid(card.get_parent()):
+		$Cards.add_child(card)
+		card.global_position = $SpawnPoint.global_position
+	var tween = _tween_card_discard(card, delay)
 	discard_pile.append(card)
 	_attach_mouse_watchers(card)
+	return tween
 
 ## Discard a card that is already in the hand
-func add_card_to_discard_pile(card: BaseCard, delay: float = 0.0):
+func add_card_to_discard_pile(card: BaseCard, delay: float = 0.0) -> Tween:
 	card.action_discard()
 	var tween = _tween_card_discard(card, delay)
 	discard_pile.append(card)
 	return tween
 
+## Burn a card that is anywhere
+func burn_card(card: BaseCard):
+	# Remove card from whatever pile it is in
+	if card in hand:
+		hand.erase(card)
+		_reorder_hand()
+	elif card in draw_pile:
+		draw_pile.erase(card)
+	elif card in discard_pile:
+		discard_pile.erase(card)
+	
+	# Tween it to the center, pull it to top z-index, and burn it up
+	card.z_index = 1000
+	card.show_face()
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(card, "global_position", $PlayPoint.global_position, play_card_move_duration)
+	tween.parallel().tween_property(card, "rotation_degrees", 0, play_card_move_duration)
+	tween.parallel().tween_property(card, "scale", Vector2.ONE * selected_scale, play_card_move_duration)
+	await tween.finished
+	await card._do_burn()
+
 # General helper functions
 func _change_state(new_state: TableState):
 	state = new_state
 	emit_signal("state_changed", new_state)
+
+func all_cards() -> Array[BaseCard]:
+	return hand + draw_pile + discard_pile
 
 func _collect_base_cards(container: Node):
 	for child in container.get_children():
@@ -408,6 +437,7 @@ func _tween_card_draw(card: BaseCard, hand_index: int, delay: float) -> Tween:
 	tween.tween_property(card, "global_position", target_position, duration).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property(card, "rotation_degrees", target_rotation, duration).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_callback(card.show_face.bind())
+	tween.tween_callback(card.action_draw.bind())
 	return tween
 
 func _tween_card_hand_move(card: BaseCard, hand_index: int) -> Tween:
