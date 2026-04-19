@@ -10,7 +10,7 @@ noise = SubResource("FastNoiseLite_nry7q")
 
 [resource]
 shader = ExtResource("1_4qbcr")
-shader_parameter/progress = -1.5
+shader_parameter/progress = -3.44
 shader_parameter/noiseForce = 0.2
 shader_parameter/noiseTexture = SubResource("NoiseTexture2D_v6qug")
 shader_parameter/burnColor = Color(0.39369398, 0.09304524, 4.813075e-08, 1)

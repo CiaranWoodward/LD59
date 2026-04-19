@@ -1,0 +1,502 @@
+[gd_scene format=3 uid="uid://brkaxxrpcjedy"]
+
+[ext_resource type="Texture2D" uid="uid://own21pellqn5" path="res://Graphics/UI/HeartBack0000.png" id="1_d0jfa"]
+[ext_resource type="Script" uid="uid://bpvvtw7o2iibm" path="res://Utils/RandomAnimationPlayer.gd" id="1_qeg3t"]
+[ext_resource type="Texture2D" uid="uid://cm262a0ed6sit" path="res://Graphics/UI/HeartFront0000.png" id="2_qeg3t"]
+[ext_resource type="Texture2D" uid="uid://is66n75uusd3" path="res://Graphics/UI/HeartLine0000.png" id="3_m2reh"]
+[ext_resource type="Material" uid="uid://h26opx01c13i" path="res://Shaders/HeartBurn.tres" id="4_m2reh"]
+
+[sub_resource type="Animation" id="Animation_d0jfa"]
+resource_name = "Pulse"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HealthPip/Front:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 0.5, 2),
+"transitions": PackedFloat32Array(2.8284283, 0.5547847, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.6627451), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qeg3t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HealthPip/Front:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m2reh"]
+_data = {
+&"Pulse": SubResource("Animation_d0jfa"),
+&"RESET": SubResource("Animation_qeg3t")
+}
+
+[sub_resource type="Animation" id="Animation_h01jn"]
+resource_name = "Empty"
+length = 3.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HealthPip/Line:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 3.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.6745098), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HealthPip/Line:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HealthPip/Line:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.451304, 2.5, 2.5513039, 2.6, 2.651304, 2.7, 2.75, 2.8, 2.85, 3.8),
+"transitions": PackedFloat32Array(1, 1.8660661, 0.55478483, 1.8660661, 0.55478483, 1.8660661, 0.55478483, 1.8660661, 0.55478483, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.10471975511965978, 0.0, 0.10471975511965978, 0.0, -0.03490658503988659, 0.0, 0.03490658503988659, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_k8v1d"]
+resource_name = "Emptying"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HealthPip/Front/FullFront:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 0.5),
+"transitions": PackedFloat32Array(1, 1, 2.0000007),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HealthPip/Line/FullLine:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 0.5),
+"transitions": PackedFloat32Array(1, 1, 0.5547849),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HealthPip/Line/FullLine:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.00051174767, 0.14999999, 0.49999997),
+"transitions": PackedFloat32Array(2.9281719, 2.9281719, 0.32987702),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.12827565, 0.12827565)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("HealthPip/Line/FullLine:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 0.32987702),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HealthPip/Front/FullFront:material:shader_parameter/progress")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1.4640857, 1),
+"update": 0,
+"values": [-1.3, 1.3]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HealthPip/Line/FullLine:material:shader_parameter/progress")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1.4640857, 1),
+"update": 0,
+"values": [-1.3, 1.3]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HealthPip/Front/FullFront:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.00051174767, 0.14999999, 0.49999997),
+"transitions": PackedFloat32Array(2.9281719, 2.9281719, 0.32987702),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.12827565, 0.12827565)]
+}
+
+[sub_resource type="Animation" id="Animation_m2reh"]
+resource_name = "Filling"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HealthPip/Front/FullFront:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.35, 0.5),
+"transitions": PackedFloat32Array(2.0000007, 2.0000007, 0.5176325, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(0.81640625, 0.81640625, 0.81640625, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HealthPip/Line/FullLine:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.24999999, 0.35, 0.5),
+"transitions": PackedFloat32Array(0.5547849, 0.59460354, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.5703125, 0.5703125, 0.5703125, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HealthPip/Line/FullLine:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.24999999, 0.39999998, 0.5),
+"transitions": PackedFloat32Array(0.32987702, 0.3789291, 1.5691679, 1),
+"update": 0,
+"values": [Vector2(0.12827565, 0.12827565), Vector2(1.5, 1.5), Vector2(0.95, 0.95), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HealthPip/Line/FullLine:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.24999996, 0.35, 0.5),
+"transitions": PackedFloat32Array(0.32987702, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -4), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gg2kx"]
+resource_name = "FullBeat"
+length = 2.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HealthPip/Front/FullFront:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HealthPip/Line/FullLine:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HealthPip/Line/FullLine:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.3030504, 1.45, 1.5500002, 1.95, 2),
+"transitions": PackedFloat32Array(1, 0.4829682, 0.48296833, 1, 0.5743493, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.08, 1.08), Vector2(1.02, 1.02), Vector2(1.06, 1.06), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HealthPip/Front/FullFront:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.3000002, 1.45, 1.5500002, 1.95, 2),
+"transitions": PackedFloat32Array(1, 1, 0.48296833, 1, 0.40612632, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.08, 1.08), Vector2(1.02, 1.02), Vector2(1.06, 1.06), Vector2(1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v567m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HealthPip/Front/FullFront:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HealthPip/Line/FullLine:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HealthPip/Line/FullLine:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.12827565, 0.12827565)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HealthPip/Front/FullFront:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HealthPip/Line/FullLine:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HealthPip/Front/FullFront:material:shader_parameter/progress")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.3]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HealthPip/Line/FullLine:material:shader_parameter/progress")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.3]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HealthPip/Line:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HealthPip/Line:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("HealthPip/Line:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gg2kx"]
+_data = {
+&"Empty": SubResource("Animation_h01jn"),
+&"Emptying": SubResource("Animation_k8v1d"),
+&"Filling": SubResource("Animation_m2reh"),
+&"FullBeat": SubResource("Animation_gg2kx"),
+&"RESET": SubResource("Animation_v567m")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m2reh"]
+animation = &"Empty"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v567m"]
+animation = &"Emptying"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gg2kx"]
+animation = &"Filling"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k8v1d"]
+animation = &"FullBeat"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h01jn"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_igvsb"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r24ee"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x2lk4"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eihug"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_psngd"]
+states/Empty/node = SubResource("AnimationNodeAnimation_m2reh")
+states/Empty/position = Vector2(469, 179)
+states/Emptying/node = SubResource("AnimationNodeAnimation_v567m")
+states/Emptying/position = Vector2(591, 100)
+states/End/position = Vector2(741, 100)
+states/Filling/node = SubResource("AnimationNodeAnimation_gg2kx")
+states/Filling/position = Vector2(337, 100)
+states/FullBeat/node = SubResource("AnimationNodeAnimation_k8v1d")
+states/FullBeat/position = Vector2(469, 17)
+transitions = ["Start", "Filling", SubResource("AnimationNodeStateMachineTransition_h01jn"), "Filling", "FullBeat", SubResource("AnimationNodeStateMachineTransition_igvsb"), "Emptying", "Empty", SubResource("AnimationNodeStateMachineTransition_r24ee"), "Empty", "Filling", SubResource("AnimationNodeStateMachineTransition_x2lk4"), "FullBeat", "Emptying", SubResource("AnimationNodeStateMachineTransition_eihug")]
+graph_offset = Vector2(-175, -9)
+
+[node name="HealthPip" type="Node2D" unique_id=2057596518]
+
+[node name="Pulse" type="AnimationPlayer" parent="." unique_id=545380722]
+libraries/ = SubResource("AnimationLibrary_m2reh")
+autoplay = &"Pulse"
+speed_scale = 0.4
+script = ExtResource("1_qeg3t")
+random_speed = true
+min_speed = 0.3
+max_speed = 0.4
+
+[node name="States" type="AnimationPlayer" parent="." unique_id=2132292126]
+libraries/ = SubResource("AnimationLibrary_gg2kx")
+
+[node name="AnimationTree" type="AnimationTree" parent="States" unique_id=8044150]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_psngd")
+anim_player = NodePath("..")
+
+[node name="HealthPip" type="Node2D" parent="." unique_id=696487967]
+
+[node name="Back" type="Sprite2D" parent="HealthPip" unique_id=603598270]
+self_modulate = Color(0.29803923, 0.34509805, 0.34509805, 1)
+scale = Vector2(1.0743961, 1.0743961)
+texture = ExtResource("1_d0jfa")
+
+[node name="Front" type="Sprite2D" parent="HealthPip" unique_id=2098398318]
+self_modulate = Color(0.38039216, 0.4509804, 0.49019608, 1)
+texture = ExtResource("2_qeg3t")
+
+[node name="FullFront" type="Sprite2D" parent="HealthPip/Front" unique_id=982348361]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(0.54509807, 0.21568628, 0.27450982, 1)
+material = ExtResource("4_m2reh")
+texture = ExtResource("2_qeg3t")
+
+[node name="Line" type="Sprite2D" parent="HealthPip" unique_id=883926560]
+self_modulate = Color(0.18039216, 0.23529412, 0.28627452, 1)
+texture = ExtResource("3_m2reh")
+
+[node name="FullLine" type="Sprite2D" parent="HealthPip/Line" unique_id=149978030]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(0.515625, 0.19940186, 0.25587034, 1)
+material = ExtResource("4_m2reh")
+scale = Vector2(0.12827565, 0.12827565)
+texture = ExtResource("3_m2reh")
