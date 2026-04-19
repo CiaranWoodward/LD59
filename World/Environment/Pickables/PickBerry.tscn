@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ctpjo8tf3n6le"]
+
+[ext_resource type="Texture2D" uid="uid://ducwcmta261l" path="res://Graphics/Environment/Berries/Berry1.png" id="1_gkwiu"]
+[ext_resource type="Texture2D" uid="uid://cnmm2mtqpcfh8" path="res://Graphics/Environment/Berries/Berry2.png" id="2_pm3sm"]
+[ext_resource type="Texture2D" uid="uid://dbk7ybhmhxymv" path="res://Graphics/Environment/Berries/Berry3.png" id="3_0wq4l"]
+[ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="4_mactw"]
+[ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="5_6ybhg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_juang"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gkwiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pm3sm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0wq4l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PickBerry" type="AnimatedSprite2D" unique_id=1095148992]
+sprite_frames = SubResource("SpriteFrames_juang")
+frame = 2
+script = ExtResource("4_mactw")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1157475001]
+self_modulate = Color(0.09019608, 0.07450981, 0.07058824, 0.7411765)
+show_behind_parent = true
+position = Vector2(-1, 11)
+scale = Vector2(0.22345679, 0.2025463)
+texture = ExtResource("5_6ybhg")
