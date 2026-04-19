@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://ht24sldfu5cf"]
+
+[ext_resource type="Texture2D" uid="uid://cp5lvpp400hv0" path="res://Graphics/Environment/Berries/Bush.png" id="1_5elah"]
+[ext_resource type="Texture2D" uid="uid://wm2ukybtxvu3" path="res://Graphics/Environment/Background/Sun.png" id="2_5elah"]
+[ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="2_oq2d0"]
+[ext_resource type="Texture2D" uid="uid://c1b748n7flb8a" path="res://Graphics/Environment/Trees/Tendril 1.png" id="4_50asy"]
+[ext_resource type="Texture2D" uid="uid://dtg6pmnkdqx1b" path="res://Graphics/Environment/Trees/Tendril 2.png" id="5_jws6l"]
+[ext_resource type="Texture2D" uid="uid://bbtujdgdmuoh2" path="res://Graphics/Environment/Trees/Tendril 3.png" id="6_irtgw"]
+[ext_resource type="Texture2D" uid="uid://c2a333cq2dh5r" path="res://Graphics/Environment/Trees/Treetop 1.png" id="7_lhe5x"]
+[ext_resource type="Texture2D" uid="uid://bkpkceeeqs1a6" path="res://Graphics/Environment/Trees/Treetop 2.png" id="8_8lagg"]
+[ext_resource type="Texture2D" uid="uid://bxatd6pji5xd1" path="res://Graphics/Environment/Trees/Treetop 3.png" id="9_4cjgx"]
+[ext_resource type="Texture2D" uid="uid://5hrkrn8foi8p" path="res://Graphics/MV Sketch/Empty0000.png" id="10_jws6l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oq2d0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5elah")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50asy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_50asy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jws6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_irtgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lhe5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jws6l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdhno"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_irtgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4cjgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jws6l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_irtgw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jws6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_irtgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4cjgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_irtgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4cjgx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lhe5x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_irtgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8lagg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4cjgx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bush" type="AnimatedSprite2D" unique_id=2069194352]
+sprite_frames = SubResource("SpriteFrames_oq2d0")
+offset = Vector2(28, -105)
+script = ExtResource("2_oq2d0")
+max_distance_y = 400
+colour_for_distance = true
+max_distance_modulation = Color(0, 0, 0, 0.9647059)
+
+[node name="BushBack" type="AnimatedSprite2D" parent="." unique_id=729486736]
+self_modulate = Color(0.77254903, 0.77254903, 0.34117648, 1)
+show_behind_parent = true
+position = Vector2(56, -139)
+rotation = -2.7821145
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_50asy")
+frame = 4
+script = ExtResource("2_oq2d0")
+should_flip = false
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1022148352]
+self_modulate = Color(0.16078432, 0.13333334, 0.14901961, 0.627451)
+show_behind_parent = true
+position = Vector2(17.294823, -63.858116)
+scale = Vector2(1.1226102, 0.21827844)
+texture = ExtResource("2_5elah")
+offset = Vector2(2.3701477, 268.17383)
+
+[node name="BushFront" type="AnimatedSprite2D" parent="." unique_id=1311987720]
+self_modulate = Color(0.36862746, 0.3647059, 0.21568628, 1)
+position = Vector2(30.999998, 10.999996)
+rotation = -0.0087963715
+scale = Vector2(0.1629153, 0.16450483)
+sprite_frames = SubResource("SpriteFrames_pdhno")
+frame = 1
+script = ExtResource("2_oq2d0")
+should_flip = false
+max_distance_modulation = Color(0, 0, 0, 1)
+
+[node name="BushFront2" type="AnimatedSprite2D" parent="." unique_id=1266851140]
+self_modulate = Color(0.36862746, 0.3647059, 0.21568628, 1)
+position = Vector2(45.000008, -83)
+rotation = 3.1415927
+scale = Vector2(0.20972614, 0.21743736)
+sprite_frames = SubResource("SpriteFrames_irtgw")
+frame = 2
+script = ExtResource("2_oq2d0")
+should_flip = false
+
+[node name="BushFront3" type="AnimatedSprite2D" parent="." unique_id=32256934]
+self_modulate = Color(0.36862746, 0.3647059, 0.21568628, 1)
+position = Vector2(14, -107.99999)
+rotation = 3.059996
+scale = Vector2(0.193, 0.2)
+sprite_frames = SubResource("SpriteFrames_lhe5x")
+frame = 1
+flip_h = true
+script = ExtResource("2_oq2d0")
+should_flip = false

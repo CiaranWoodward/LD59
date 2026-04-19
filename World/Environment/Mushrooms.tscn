@@ -8,6 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://by7y4lkce0qf4" path="res://Graphics/Environment/Mushrooms/Mush red.png" id="5_ytvoy"]
 [ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="7_yv1cb"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_x8pbb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ky6gq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_hmgsy"]
 animations = [{
 "frames": [{
@@ -54,9 +65,9 @@ animations = [{
 
 [node name="Mushrooms" type="Node2D" unique_id=1436930502]
 
-[node name="Log" type="Sprite2D" parent="." unique_id=125375489]
+[node name="Log" type="AnimatedSprite2D" parent="." unique_id=1610226063]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_ky6gq")
+sprite_frames = SubResource("SpriteFrames_x8pbb")
 offset = Vector2(-20, -66)
 
 [node name="RedShrooms" type="AnimatedSprite2D" parent="Log" unique_id=1118855187]
@@ -113,5 +124,5 @@ modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.60784316)
 show_behind_parent = true
 position = Vector2(-20.252941, 4.7938347)
 rotation = -0.29891208
-scale = Vector2(1.5391864, 0.66114765)
+scale = Vector2(1.5391864, 0.6611477)
 texture = ExtResource("2_a4nbm")

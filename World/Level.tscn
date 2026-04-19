@@ -5,14 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://sony8h07krbr" path="res://Graphics/Environment/Background/SunGlow.png" id="3_24re5"]
 [ext_resource type="Texture2D" uid="uid://fjx0uh4e8rxj" path="res://Graphics/Environment/Background/mountain.png" id="3_aoint"]
 [ext_resource type="Texture2D" uid="uid://385vmc5hw70y" path="res://Graphics/Environment/Background/ground.png" id="3_joegy"]
-[ext_resource type="PackedScene" uid="uid://sm6uk6e3vdyu" path="res://World/Environment/Tree.tscn" id="3_k1dps"]
 [ext_resource type="PackedScene" uid="uid://bmbknhela3tf8" path="res://Global/table.tscn" id="4_7rdfg"]
 [ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="4_d45ho"]
-[ext_resource type="Texture2D" uid="uid://cp5lvpp400hv0" path="res://Graphics/Environment/Berries/Bush.png" id="5_avfc4"]
 [ext_resource type="Texture2D" uid="uid://pn8oc7nus4rb" path="res://Graphics/MV Sketch/White0000.png" id="5_xhbeg"]
-[ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="6_38me4"]
+[ext_resource type="PackedScene" uid="uid://dvwafkf3yemgq" path="res://World/Forest.tscn" id="8_aoint"]
 [ext_resource type="PackedScene" uid="uid://bjpe4gij0vyyp" path="res://World/Environment/Mushrooms.tscn" id="8_xt66a"]
 [ext_resource type="PackedScene" uid="uid://f60kho1hkypj" path="res://World/Environment/Berries.tscn" id="9_avfc4"]
+[ext_resource type="PackedScene" uid="uid://na7qrnohprp7" path="res://World/River.tscn" id="12_wfbhs"]
 
 [sub_resource type="Animation" id="Animation_7c1pb"]
 resource_name = "DayNightCycle"
@@ -39,7 +38,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.8, 1, 2),
-"transitions": PackedFloat32Array(0.61557204, 1.5691684, 1.464086, 1, 1),
+"transitions": PackedFloat32Array(1.8660659, 1.5691684, 0.57434934, 1, 1),
 "update": 0,
 "values": [Color(0.07843137, 0.14117646, 0.20392156, 1), Color(0.32941177, 0.54509807, 0.75686276, 1), Color(0.32941177, 0.54509807, 0.75686276, 1), Color(0.078431375, 0.14117648, 0.20392157, 1), Color(0.078431375, 0.14117648, 0.20392157, 1)]
 }
@@ -187,17 +186,6 @@ point_count = 12
 [sub_resource type="Gradient" id="Gradient_p72nv"]
 colors = PackedColorArray(1, 1, 1, 0.3137255, 1, 1, 1, 0.17254902)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_aoint"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_avfc4")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="Level" type="Node2D" unique_id=1164261592]
 
 [node name="DayNight" type="AnimationPlayer" parent="." unique_id=405920214]
@@ -241,8 +229,7 @@ texture = ExtResource("3_24re5")
 [node name="Clouds" type="CPUParticles2D" parent="." unique_id=1816916226]
 position = Vector2(-92, 219)
 texture = ExtResource("4_d45ho")
-lifetime = 20.0
-preprocess = 30.0
+lifetime = 30.0
 speed_scale = 0.8
 emission_shape = 3
 emission_rect_extents = Vector2(1, 150)
@@ -260,268 +247,17 @@ scale = Vector2(0.5997396, 0.5833333)
 texture = ExtResource("3_aoint")
 
 [node name="Ground" type="Sprite2D" parent="." unique_id=844886155]
-position = Vector2(1181.0001, 394)
-scale = Vector2(0.7504341, 0.6539352)
+position = Vector2(1181.0001, 416.00003)
+scale = Vector2(0.7504341, 0.7055556)
 texture = ExtResource("3_joegy")
+
+[node name="River" parent="." unique_id=1796592686 instance=ExtResource("12_wfbhs")]
+
+[node name="Forest" parent="." unique_id=1178282790 instance=ExtResource("8_aoint")]
+visible = false
 
 [node name="Campfire" parent="." unique_id=1083176764 instance=ExtResource("2_vccdb")]
 position = Vector2(988, 663)
-
-[node name="Trees" type="Node2D" parent="." unique_id=2068597464]
-position = Vector2(0, -101)
-
-[node name="TreelineBack" type="Parallax2D" parent="Trees" unique_id=1773472124]
-modulate = Color(0.38671875, 0.38671875, 0.38671875, 1)
-y_sort_enabled = true
-scale = Vector2(0.4, 0.4)
-scroll_scale = Vector2(1.4, 1.4)
-scroll_offset = Vector2(526, 541)
-
-[node name="Bush4" type="AnimatedSprite2D" parent="Trees/TreelineBack" unique_id=571773347]
-y_sort_enabled = true
-position = Vector2(-809.99994, 107.50006)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_aoint")
-offset = Vector2(-11, -156)
-script = ExtResource("6_38me4")
-
-[node name="Bush5" type="AnimatedSprite2D" parent="Trees/TreelineBack" unique_id=1443621134]
-y_sort_enabled = true
-position = Vector2(515.0001, 212.50003)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_aoint")
-offset = Vector2(-11, -156)
-script = ExtResource("6_38me4")
-
-[node name="Bush6" type="AnimatedSprite2D" parent="Trees/TreelineBack" unique_id=1616397551]
-y_sort_enabled = true
-position = Vector2(1979.9999, 192.50003)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_aoint")
-offset = Vector2(-11, -156)
-script = ExtResource("6_38me4")
-
-[node name="Bush7" type="AnimatedSprite2D" parent="Trees/TreelineBack" unique_id=1535285588]
-y_sort_enabled = true
-position = Vector2(2980, 217.50003)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_aoint")
-offset = Vector2(-11, -156)
-script = ExtResource("6_38me4")
-
-[node name="Tree" parent="Trees/TreelineBack" unique_id=1777520435 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(-1222.5, 69.49999)
-
-[node name="Tree2" parent="Trees/TreelineBack" unique_id=808222025 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(-912.49994, 165.00002)
-
-[node name="Tree3" parent="Trees/TreelineBack" unique_id=1653633140 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(-615, 209.49998)
-frame = 2
-
-[node name="Tree5" parent="Trees/TreelineBack" unique_id=290949816 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(-65.00006, 165.00002)
-
-[node name="Tree6" parent="Trees/TreelineBack" unique_id=1429776563 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(257.49997, 165.00002)
-
-[node name="Tree7" parent="Trees/TreelineBack" unique_id=715338609 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(737.4999, 69.49999)
-
-[node name="Tree8" parent="Trees/TreelineBack" unique_id=613282853 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(1047.4999, 165.00002)
-
-[node name="Tree9" parent="Trees/TreelineBack" unique_id=206122416 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(1174.9998, 209.49998)
-frame = 2
-
-[node name="Tree10" parent="Trees/TreelineBack" unique_id=508417984 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(1487.5, 165.00002)
-
-[node name="Tree11" parent="Trees/TreelineBack" unique_id=1707065439 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(1705, 69.49999)
-
-[node name="Tree12" parent="Trees/TreelineBack" unique_id=1698522699 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(2752.4995, 209.49998)
-frame = 2
-
-[node name="Tree13" parent="Trees/TreelineBack" unique_id=1651486274 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(3064.9998, 165.00002)
-
-[node name="Tree14" parent="Trees/TreelineBack" unique_id=535816112 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(3192.4998, 165.00002)
-
-[node name="Tree15" parent="Trees/TreelineBack" unique_id=1198299917 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(3507.4995, 165.00002)
-frame = 2
-
-[node name="TreelineMid" type="Parallax2D" parent="Trees" unique_id=848182110]
-modulate = Color(0.54296875, 0.54296875, 0.54296875, 1)
-y_sort_enabled = true
-scale = Vector2(0.45, 0.45)
-scroll_scale = Vector2(1.2, 1.2)
-scroll_offset = Vector2(206, 499)
-
-[node name="Bush4" type="AnimatedSprite2D" parent="Trees/TreelineMid" unique_id=1010135634]
-y_sort_enabled = true
-position = Vector2(277.7778, 480.00003)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_aoint")
-offset = Vector2(-11, -156)
-script = ExtResource("6_38me4")
-
-[node name="Bush5" type="AnimatedSprite2D" parent="Trees/TreelineMid" unique_id=610059626]
-y_sort_enabled = true
-position = Vector2(1251.1111, 488.88885)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_aoint")
-offset = Vector2(-11, -156)
-script = ExtResource("6_38me4")
-
-[node name="Bush6" type="AnimatedSprite2D" parent="Trees/TreelineMid" unique_id=1430425581]
-y_sort_enabled = true
-position = Vector2(2080.0002, 460)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_aoint")
-offset = Vector2(-11, -156)
-script = ExtResource("6_38me4")
-
-[node name="Bush7" type="AnimatedSprite2D" parent="Trees/TreelineMid" unique_id=970330826]
-y_sort_enabled = true
-position = Vector2(3420, 524.44446)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_aoint")
-offset = Vector2(-11, -156)
-script = ExtResource("6_38me4")
-
-[node name="Tree" parent="Trees/TreelineMid" unique_id=1100836254 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(-343, 265.33325)
-
-[node name="Tree2" parent="Trees/TreelineMid" unique_id=1952421793 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(-62.222214, 305)
-
-[node name="Tree3" parent="Trees/TreelineMid" unique_id=1631006539 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(233.88892, 305)
-frame = 4
-
-[node name="Tree4" parent="Trees/TreelineMid" unique_id=679472979 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(480.00003, 265.33325)
-
-[node name="Tree5" parent="Trees/TreelineMid" unique_id=2076860276 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(782.2223, 305)
-
-[node name="Tree6" parent="Trees/TreelineMid" unique_id=2135069154 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(1242.2223, 305)
-
-[node name="Tree7" parent="Trees/TreelineMid" unique_id=1186064299 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(1487.2223, 305)
-frame = 4
-
-[node name="Tree8" parent="Trees/TreelineMid" unique_id=228277529 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(1895.5557, 265.33325)
-
-[node name="Tree9" parent="Trees/TreelineMid" unique_id=1836211637 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(2333.1113, 305)
-frame = 4
-
-[node name="Tree10" parent="Trees/TreelineMid" unique_id=73530553 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(2537.7778, 305)
-
-[node name="Tree11" parent="Trees/TreelineMid" unique_id=1977256563 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(2769.4448, 305)
-
-[node name="Tree12" parent="Trees/TreelineMid" unique_id=1856415040 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(3024.4446, 305)
-frame = 2
-
-[node name="Tree13" parent="Trees/TreelineMid" unique_id=987610134 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(3409.2224, 305)
-
-[node name="Tree14" parent="Trees/TreelineMid" unique_id=413089740 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(3617.5557, 305)
-
-[node name="TreelineFore" type="Parallax2D" parent="Trees" unique_id=2138457012]
-y_sort_enabled = true
-scale = Vector2(0.5, 0.5)
-scroll_offset = Vector2(696, 510)
-
-[node name="Tree" parent="Trees/TreelineFore" unique_id=98548712 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(-1218, 305)
-frame = 4
-
-[node name="Tree2" parent="Trees/TreelineFore" unique_id=442020495 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(-806, 276)
-
-[node name="Tree3" parent="Trees/TreelineFore" unique_id=353896079 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(-426, 306)
-rotation = -3.1415927
-scale = Vector2(1, -1)
-frame = 4
-
-[node name="Tree4" parent="Trees/TreelineFore" unique_id=1838311762 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(-18, 330)
-
-[node name="Tree5" parent="Trees/TreelineFore" unique_id=1663723665 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(256, 305)
-
-[node name="Tree6" parent="Trees/TreelineFore" unique_id=1929270966 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(710, 277)
-frame = 2
-
-[node name="Tree7" parent="Trees/TreelineFore" unique_id=1616276728 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(1204, 305)
-rotation = -3.1415927
-scale = Vector2(1, -1)
-
-[node name="Tree8" parent="Trees/TreelineFore" unique_id=1325823694 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(1578, 330)
-frame = 4
-
-[node name="Tree9" parent="Trees/TreelineFore" unique_id=418950501 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(1790, 305)
-rotation = -3.1415927
-scale = Vector2(1, -1)
-
-[node name="Tree10" parent="Trees/TreelineFore" unique_id=2092635581 instance=ExtResource("3_k1dps")]
-y_sort_enabled = true
-position = Vector2(2332, 330)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=456730453]
 
@@ -530,7 +266,7 @@ position = Vector2(2332, 330)
 [node name="TestEnvironmental" type="Node2D" parent="." unique_id=1297313975]
 
 [node name="Mushrooms" parent="TestEnvironmental" unique_id=1436930502 instance=ExtResource("8_xt66a")]
-position = Vector2(1509, 695)
+position = Vector2(1552, 782)
 
 [node name="Berries" parent="TestEnvironmental" unique_id=529111993 instance=ExtResource("9_avfc4")]
-position = Vector2(501, 691)
+position = Vector2(316, 820)
