@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dtg6pmnkdqx1b" path="res://Graphics/Environment/Trees/Tendril 2.png" id="11_k1k8q"]
 [ext_resource type="Texture2D" uid="uid://bbtujdgdmuoh2" path="res://Graphics/Environment/Trees/Tendril 3.png" id="12_ulcll"]
 [ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="13_k1k8q"]
-[ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="14_ulcll"]
+[ext_resource type="Texture2D" uid="uid://wm2ukybtxvu3" path="res://Graphics/Environment/Background/Sun.png" id="14_ulcll"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ho1db"]
 animations = [{
@@ -76,32 +76,35 @@ animations = [{
 }]
 
 [node name="Tree" type="AnimatedSprite2D" unique_id=1977256563]
+self_modulate = Color(0.18431373, 0.15294118, 0.17254902, 1)
 sprite_frames = SubResource("SpriteFrames_ho1db")
-frame = 1
-offset = Vector2(42, -474)
+offset = Vector2(-8, -758)
 script = ExtResource("13_k1k8q")
-self_modulations = Array[Color]([Color(1, 1, 1, 1), Color(0.8359375, 0.8359375, 0.8359375, 1), Color(0.69140625, 0.69140625, 0.69140625, 1)])
+self_modulations = Array[Color]([Color(0.28235295, 0.23529412, 0.18039216, 1), Color(0.18431373, 0.15294118, 0.17254902, 1), Color(0.24313726, 0.16862746, 0.15294118, 1)])
+max_distance_y = 350
+colour_for_distance = true
+max_distance_modulation = Color(0, 0, 0, 1)
 
 [node name="Tops" type="AnimatedSprite2D" parent="." unique_id=703988048]
+self_modulate = Color(0.65882355, 0.6627451, 0.32156864, 0.9882353)
 position = Vector2(259, 199)
 sprite_frames = SubResource("SpriteFrames_lnjkl")
-frame = 2
 offset = Vector2(-259, -1311.5)
 script = ExtResource("13_k1k8q")
-self_modulations = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 0.9764706), Color(1, 1, 1, 0.9490196)])
+self_modulations = Array[Color]([Color(0.78039217, 0.78039217, 0.34117648, 0.9607843), Color(0.65882355, 0.6627451, 0.32156864, 0.9882353), Color(0.5137255, 0.53333336, 0.2509804, 0.98039216)])
 
 [node name="Tendrils" type="AnimatedSprite2D" parent="." unique_id=1294402216]
+self_modulate = Color(0.5137255, 0.53333336, 0.2509804, 0.92156863)
 position = Vector2(259, 251)
 sprite_frames = SubResource("SpriteFrames_k1k8q")
-frame = 1
 offset = Vector2(428, -1324.5)
 script = ExtResource("13_k1k8q")
-self_modulations = Array[Color]([Color(1, 1, 1, 0.9411765), Color(1, 1, 1, 0.80784315), Color(1, 1, 1, 0.7176471)])
+self_modulations = Array[Color]([Color(0.78039217, 0.78039217, 0.34117648, 0.9137255), Color(0.65882355, 0.6627451, 0.32156864, 0.92156863), Color(0.5137255, 0.53333336, 0.2509804, 0.92156863)])
 
 [node name="Shadow4" type="Sprite2D" parent="." unique_id=931000742]
-modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.35686275)
+modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.36078432)
 show_behind_parent = true
-position = Vector2(142.00002, -12.000001)
-scale = Vector2(1.3506172, 0.72222227)
+position = Vector2(130, -19.000004)
+scale = Vector2(1.1826197, 0.25170535)
 texture = ExtResource("14_ulcll")
 offset = Vector2(-105.507324, 89.30767)
