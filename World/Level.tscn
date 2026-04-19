@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bmbknhela3tf8" path="res://Global/table.tscn" id="4_7rdfg"]
 [ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="4_d45ho"]
 [ext_resource type="Texture2D" uid="uid://pn8oc7nus4rb" path="res://Graphics/MV Sketch/White0000.png" id="5_xhbeg"]
-[ext_resource type="Script" path="res://Utils/RandomAnimatedSprite.gd" id="6_38me4"]
 [ext_resource type="PackedScene" uid="uid://dvwafkf3yemgq" path="res://World/Forest.tscn" id="8_aoint"]
 [ext_resource type="PackedScene" uid="uid://bjpe4gij0vyyp" path="res://World/Environment/Mushrooms.tscn" id="8_xt66a"]
 [ext_resource type="PackedScene" uid="uid://f60kho1hkypj" path="res://World/Environment/Berries.tscn" id="9_avfc4"]

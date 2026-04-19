@@ -548,4 +548,3 @@ func _discard_hand():
 		
 	await WaitAllTweens.wait_all_tweens(all_tweens)
 	hand.clear()
-

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://df01dweb14t5a"]
+
+[ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_qxypt"]
+[ext_resource type="Script" uid="uid://dn8l1vjpthkra" path="res://Cards/forage_card.gd" id="2_m32ph"]
+[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_biuhv"]
+
+[node name="SearchCard" unique_id=105035990 instance=ExtResource("1_qxypt")]
+script = ExtResource("2_m32ph")
+card_name = "Search"
+description = "Search the pile to see what goodies may be hidden
+
+[i]Removed from deck when played"
+image = ExtResource("3_biuhv")
+card_type = 3
+consumable = true
+environment = true
+
+[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="0" unique_id=933147433]
+text = "Search"
+
+[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="1" unique_id=376343130]
+text = "Search the pile to see what goodies may be hidden
+
+[i]Removed from deck when played"
+
+[node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="2" unique_id=1941202912]
+texture = ExtResource("3_biuhv")
