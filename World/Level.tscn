@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Utils/RandomAnimatedSprite.gd" id="6_38me4"]
 [ext_resource type="PackedScene" uid="uid://bjpe4gij0vyyp" path="res://World/Environment/Mushrooms.tscn" id="8_xt66a"]
 [ext_resource type="PackedScene" uid="uid://f60kho1hkypj" path="res://World/Environment/Berries.tscn" id="9_avfc4"]
+[ext_resource type="Shader" uid="uid://buwa5eioqtumq" path="res://Shaders/NightTime.gdshader" id="10_p72nv"]
 [ext_resource type="PackedScene" uid="uid://dnht8t3ak52a4" path="res://Music/Music.tscn" id="11_d45ho"]
 
 [sub_resource type="Animation" id="Animation_wfbhs"]
@@ -77,6 +78,34 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_p72nv"]
+seed = 12
+frequency = 0.0121
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7c1pb"]
+noise = SubResource("FastNoiseLite_p72nv")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p72nv"]
+shader = ExtResource("10_p72nv")
+shader_parameter/mask_noise_tex = SubResource("NoiseTexture2D_7c1pb")
+shader_parameter/darkness = 0.3030000143925
+shader_parameter/night_tint = Color(0.6723542, 0.88806295, 0.9999998, 1)
+shader_parameter/tint_strength = 0.174000008265
+shader_parameter/desaturation = 0.118000005605
+shader_parameter/focus_center = Vector2(0.5, 0.5)
+shader_parameter/inner_radius = 0.0750000035625
+shader_parameter/outer_radius = 0.37200001767
+shader_parameter/center_relief = 0.9370000445075
+shader_parameter/noise_scale = 0.88
+shader_parameter/noise_scroll = Vector2(0.1, -0.01)
+shader_parameter/noise_rotation_speed = 0.05
+shader_parameter/ring_noise_strength = 1.0
+shader_parameter/ring_band_width = 0.1890000089775
+shader_parameter/lit_preservation = 0.30400001444
+shader_parameter/lit_threshold = 1.0
+shader_parameter/vignette_strength = 0.4910000233225
 
 [node name="Level" type="Node2D" unique_id=1164261592]
 
@@ -378,7 +407,24 @@ scale = Vector2(1, -1)
 y_sort_enabled = true
 position = Vector2(2332, 330)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1391947505]
+
+[node name="NightTime" type="ColorRect" parent="CanvasLayer" unique_id=159570765]
+visible = false
+material = SubResource("ShaderMaterial_p72nv")
+custom_minimum_size = Vector2(59, 59)
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 59.0
+offset_bottom = 59.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="Hud" type="CanvasLayer" parent="." unique_id=456730453]
+layer = 2
 
 [node name="Table" parent="Hud" unique_id=1954673422 instance=ExtResource("4_7rdfg")]
 
