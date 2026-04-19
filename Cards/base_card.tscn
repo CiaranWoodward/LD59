@@ -12,9 +12,11 @@ size = Vector2(570, 890)
 script = ExtResource("1_ydy5p")
 
 [node name="CardFront" type="Sprite2D" parent="." unique_id=1569601050]
+use_parent_material = true
 texture = ExtResource("2_e55ge")
 
 [node name="Name" type="Label" parent="CardFront" unique_id=933147433]
+use_parent_material = true
 offset_left = -244.0
 offset_top = -428.0
 offset_right = 79.0
@@ -24,6 +26,7 @@ theme_override_font_sizes/font_size = 54
 text = "Card Name"
 
 [node name="Description" type="RichTextLabel" parent="CardFront" unique_id=376343130]
+use_parent_material = true
 offset_left = -194.0
 offset_top = 46.0
 offset_right = 214.0
@@ -34,6 +37,7 @@ bbcode_enabled = true
 text = "Card Description"
 
 [node name="Image" type="Sprite2D" parent="CardFront" unique_id=1941202912]
+use_parent_material = true
 position = Vector2(2, -171)
 
 [node name="CardBack" type="Sprite2D" parent="." unique_id=1663181280]
@@ -43,4 +47,5 @@ texture = ExtResource("3_nkgfl")
 [node name="CardArea" type="Area2D" parent="." unique_id=503653920]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardArea" unique_id=1189758737]
+visible = false
 shape = SubResource("RectangleShape2D_e55ge")

@@ -8,7 +8,6 @@ card_name = "Axe"
 description = "Gain two [b]wood[/b] cards"
 image = ExtResource("2_x8rco")
 card_type = 2
-action = true
 
 [node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="0" unique_id=933147433]
 text = "Axe"

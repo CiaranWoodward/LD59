@@ -1,5 +1,7 @@
 extends Node
 
+var table: Table
+
 enum Statistic {
     HEALTH,
     INSANITY,
@@ -32,8 +34,10 @@ signal statistic_changed(stat: Statistic, new_value: int, old_value: int)
 
 func set_statistic(stat: Statistic, value: int):
     var old_value = statistics[stat]
-    statistics[stat] = clamp(value, min_statistic_values[stat], max_statistic_values[stat])
-    emit_signal("statistic_changed", stat, statistics[stat], old_value)
+    var new_value = clamp(value, min_statistic_values[stat], max_statistic_values[stat])
+    statistics[stat] = new_value
+    emit_signal("statistic_changed", stat, new_value, old_value)
+    print("Statistic ", Statistic.find_key(stat), " changed from ", old_value, " to ", new_value)
 
 func change_statistic(stat: Statistic, delta: int):
     set_statistic(stat, statistics[stat] + delta)

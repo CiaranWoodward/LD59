@@ -1,4 +1,5 @@
 extends Node2D
+class_name Table
 
 signal state_changed(new_state: TableState)
 
@@ -70,9 +71,12 @@ signal _turn_ended()
 
 # In this file we deal with the overall management of cards on the table, and the order of the turn.
 # The cards themselves are responsible for taking over once they are selected.
+# See GameDriver for the overall game loop, and BaseCard for the card lifecycle and actions.
 
 func _ready() -> void:
-	forever_game_loop()
+	Global.table = self
+	# Initalize the deck
+	_collect_base_cards($Cards)
 
 func _process(delta: float) -> void:
 	_poll_selected_card_movement(delta)
@@ -93,60 +97,53 @@ func _input(event: InputEvent) -> void:
 	elif mouse_event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 		_play_selected_card()
 
-func forever_game_loop():
-	# Initalize the deck
-	_collect_base_cards($Cards)
-
-	# Loop until the end of the universe
-	while true:
-		_change_state(TableState.DrawingHand)
-		await _draw_cards_into_hand()
-
-		if hand.size() < Global.statistics[Global.Statistic.HAND_SIZE] && !discard_pile.is_empty():
-			_change_state(TableState.ShufflingDeck)
-			await _shuffle_discard_pile_into_draw_pile()
-			_change_state(TableState.DrawingHand)
-			await _draw_cards_into_hand()
-		
-		_change_state(TableState.Idle)
-
-		# Wait for the player to do their thing
-		await _turn_ended
-
-		_change_state(TableState.DiscardingHand)
-		await _discard_hand()
-
+## End the turn and discard the hand.
 func end_turn():
 	emit_signal("_turn_ended")
+	_change_state(TableState.DiscardingHand)
+	await _discard_hand()
+	_change_state(TableState.NotPlayerTurn)
 
-# Add a card and hook it up
-func add_card_to_discard_pile(card: BaseCard):
+## Draw cards, reshuffling discard into draw if we run out.
+func draw_cards():
+	_change_state(TableState.DrawingHand)
+	await _draw_cards_into_hand()
+
+	if hand.size() < Global.statistics[Global.Statistic.HAND_SIZE] && !discard_pile.is_empty():
+		_change_state(TableState.ShufflingDeck)
+		await _shuffle_discard_pile_into_draw_pile()
+		_change_state(TableState.DrawingHand)
+		await _draw_cards_into_hand()
+	
+	_change_state(TableState.Idle)
+
+## Add a card and hook it up
+func initialise_card_to_discard_pile(card: BaseCard):
 	_tween_card_discard(card, 0)
 	discard_pile.append(card)
 	_attach_mouse_watchers(card)
 
+## Discard a card that is already in the hand
+func add_card_to_discard_pile(card: BaseCard, delay: float = 0.0):
+	card.action_discard()
+	var tween = _tween_card_discard(card, delay)
+	discard_pile.append(card)
+	return tween
+
 # General helper functions
 func _change_state(new_state: TableState):
 	state = new_state
-
-	if state == TableState.Idle:
-		# Check for automatic end of turn
-		if hand.size() == 0 || Global.statistics[Global.Statistic.ACTION_POINTS] <= 0:
-			end_turn()
-
 	emit_signal("state_changed", new_state)
 
 func _collect_base_cards(container: Node):
 	for child in container.get_children():
 		if child is BaseCard:
 			child.scale = Vector2.ONE * card_scale
-			add_card_to_discard_pile(child)
+			initialise_card_to_discard_pile(child)
 		else:
 			push_warning("Child '%s' is not a BaseCard and will be skipped." % child.name)
 
 func _attach_mouse_watchers(card: BaseCard):
-	if card.mouse_hovered.has_connections():
-		return
 	card.mouse_hovered.connect(func(c):
 		if c not in hand:
 			return
@@ -254,7 +251,7 @@ func _play_selected_card():
 	_set_currently_selected_card(null)
 	_reorder_hand()
 
-	await card.play()
+	await card.action_play()
 	if state == TableState.PlayingCard:
 		_change_state(TableState.Idle)
 
@@ -450,8 +447,7 @@ func _discard_hand():
 	hand.clear()
 	for i in range(old_hand.size()):
 		var card = old_hand[i]
-		all_tweens.append(_tween_card_discard(card, discard_time_stagger * i))
-		discard_pile.append(card)
+		all_tweens.append(add_card_to_discard_pile(card, discard_time_stagger * i))
 		
 	await WaitAllTweens.wait_all_tweens(all_tweens)
 	hand.clear()

@@ -2,6 +2,8 @@
 extends Node2D
 class_name BaseCard
 
+const burn_material: ShaderMaterial = preload("res://Shaders/BurnMaterial.tres")
+
 # These signals are for communication with the Table, which manages the card until it is selected.
 signal mouse_hovered(card: BaseCard)
 signal mouse_unhovered(card: BaseCard)
@@ -37,15 +39,13 @@ enum CardTiming {
 @export var card_type: CardType = CardType.Basic
 @export var card_timing: CardTiming = CardTiming.All
 
-##Stays in deck through environment change.
-@export var action: bool = false
-##Stays in deck through environment change. Burned on use.
+## Burned on use.
 @export var consumable: bool = false
-##Only in deck for current environment.
+## Only in deck for current environment.
 @export var environment: bool = false
-##Stays in deck through environment change. Burned via actions.
+## Burned via actions.
 @export var status: bool = false
-##Cannot be played
+## Cannot be played
 @export var unplayable: bool = false
 
 # These are set by the Table, which manages the card until it is selected. 
@@ -101,8 +101,44 @@ func _sync_front_visuals():
 	if image_sprite:
 		image_sprite.texture = image
 
-func play():
+func _do_burn():
+	var shaderMaterial = burn_material.duplicate()
+	shaderMaterial.set_shader_parameter("progress", -1.5)
+	shaderMaterial.set_shader_parameter("direction", randf_range(0, 360))
+	self.material = shaderMaterial
+
+	var update_progress = func(value):
+		shaderMaterial.set_shader_parameter("progress", value)
+	
+	var tween := create_tween()
+	tween.tween_method(update_progress, -1.5, 1.5, 0.5).set_trans(Tween.TRANS_SINE)
+	await tween.finished
+	emit_signal("discard", self, true)
+
+	self.queue_free()
+
+func _do_discard():
+	emit_signal("discard", self, false)
+
+# Action functions called from the table
+func action_draw() -> void:
+	await on_post_draw()
+
+func action_play():
+	Global.change_statistic(Global.Statistic.ACTION_POINTS, -cost)
 	await on_play()
+	if consumable:
+		_do_burn()
+	else:
+		_do_discard()
+
+func action_discard():
+	on_pre_discard()
+
+func is_playable():
+	if unplayable:
+		return false
+	return Global.statistics[Global.Statistic.ACTION_POINTS] >= cost
 
 # Action callbacks - these are meant to be overridden by specific cards
 func on_post_draw():
@@ -110,13 +146,9 @@ func on_post_draw():
 
 func on_play():
 	await get_tree().create_timer(0.5).timeout
-	emit_signal("discard", self, false)
 
 func on_pre_discard():
 	pass
-
-func is_playable():
-	return Global.statistics[Global.Statistic.ACTION_POINTS] >= cost
 
 # Flip card visuals
 func is_face_up():
