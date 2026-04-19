@@ -1,20 +1,73 @@
 [gd_scene format=3 uid="uid://sm6uk6e3vdyu"]
 
-[ext_resource type="Texture2D" uid="uid://d0p5hackq7trp" path="res://Graphics/MV Sketch/tree0000.png" id="1_xl2i4"]
-[ext_resource type="Texture2D" uid="uid://dvcn1rtcew0ym" path="res://Graphics/MV Sketch/tree0001.png" id="2_stjno"]
-[ext_resource type="Texture2D" uid="uid://cx731qkgsyngw" path="res://Graphics/MV Sketch/tree0002.png" id="3_eeevh"]
+[ext_resource type="Texture2D" uid="uid://t7y5yx65q4u" path="res://Graphics/Environment/Trees/LD59-1.png" id="1_p3tr8"]
+[ext_resource type="Texture2D" uid="uid://cyqlkqu5cj0mu" path="res://Graphics/Environment/Trees/LD59-2.png" id="2_l68yb"]
+[ext_resource type="Texture2D" uid="uid://b5ym82ljrbmxt" path="res://Graphics/Environment/Trees/LD59-3.png" id="3_gl3vt"]
+[ext_resource type="Texture2D" uid="uid://b4mg73xqe28ak" path="res://Graphics/Environment/Trees/LD59-4.png" id="4_17rki"]
+[ext_resource type="Texture2D" uid="uid://bg8140hyefbjk" path="res://Graphics/Environment/Trees/LD59-5.png" id="5_ebqis"]
+[ext_resource type="Texture2D" uid="uid://6n6xnyc1ws5g" path="res://Graphics/Environment/Trees/LD59-6.png" id="6_ljsnl"]
+[ext_resource type="Texture2D" uid="uid://c2a333cq2dh5r" path="res://Graphics/Environment/Trees/Treetop 1.png" id="7_17rki"]
+[ext_resource type="Texture2D" uid="uid://bkpkceeeqs1a6" path="res://Graphics/Environment/Trees/Treetop 2.png" id="8_ebqis"]
+[ext_resource type="Texture2D" uid="uid://bxatd6pji5xd1" path="res://Graphics/Environment/Trees/Treetop 3.png" id="9_ljsnl"]
+[ext_resource type="Texture2D" uid="uid://c1b748n7flb8a" path="res://Graphics/Environment/Trees/Tendril 1.png" id="10_lnjkl"]
+[ext_resource type="Texture2D" uid="uid://dtg6pmnkdqx1b" path="res://Graphics/Environment/Trees/Tendril 2.png" id="11_k1k8q"]
+[ext_resource type="Texture2D" uid="uid://bbtujdgdmuoh2" path="res://Graphics/Environment/Trees/Tendril 3.png" id="12_ulcll"]
+[ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="13_k1k8q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ho1db"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_xl2i4")
+"texture": ExtResource("1_p3tr8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_stjno")
+"texture": ExtResource("2_l68yb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_eeevh")
+"texture": ExtResource("3_gl3vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_17rki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ebqis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ljsnl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lnjkl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_17rki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ebqis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ljsnl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k1k8q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_lnjkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k1k8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ulcll")
 }],
 "loop": true,
 "name": &"default",
@@ -22,10 +75,23 @@ animations = [{
 }]
 
 [node name="Tree" type="AnimatedSprite2D" unique_id=1977256563]
-scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ho1db")
-frame = 1
-frame_progress = 0.084480256
-offset = Vector2(-2, -620)
+offset = Vector2(42, -474)
+script = ExtResource("13_k1k8q")
+self_modulations = Array[Color]([Color(1, 1, 1, 1), Color(0.8359375, 0.8359375, 0.8359375, 1), Color(0.69140625, 0.69140625, 0.69140625, 1)])
 
-[node name="Tree" type="Node2D" parent="." unique_id=496009198]
+[node name="Tops" type="AnimatedSprite2D" parent="." unique_id=703988048]
+position = Vector2(0, 77)
+sprite_frames = SubResource("SpriteFrames_lnjkl")
+frame = 2
+offset = Vector2(0, -1389)
+script = ExtResource("13_k1k8q")
+self_modulations = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 0.95686275), Color(1, 1, 1, 0.9411765)])
+
+[node name="Additional" type="AnimatedSprite2D" parent="." unique_id=1294402216]
+position = Vector2(710, 21)
+sprite_frames = SubResource("SpriteFrames_k1k8q")
+frame = 2
+offset = Vector2(-23, -1346)
+script = ExtResource("13_k1k8q")
+self_modulations = Array[Color]([Color(1, 1, 1, 0.8745098), Color(1, 1, 1, 0.6392157), Color(1, 1, 1, 0.5058824)])

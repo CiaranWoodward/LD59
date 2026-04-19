@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://f60kho1hkypj"]
+
+[ext_resource type="Texture2D" uid="uid://cp5lvpp400hv0" path="res://Graphics/Environment/Berries/Bush.png" id="1_51tt3"]
+[ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="3_ae2ab"]
+[ext_resource type="Texture2D" uid="uid://lsmuh53p7ib2" path="res://Graphics/Environment/Berries/Berries.png" id="3_ih4i4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j77cd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_51tt3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_juang"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ih4i4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Berries" type="Node2D" unique_id=1436930502]
+
+[node name="Bush" type="AnimatedSprite2D" parent="." unique_id=1944162344]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_j77cd")
+offset = Vector2(2, -68)
+script = ExtResource("3_ae2ab")
+
+[node name="Berries" type="AnimatedSprite2D" parent="Bush" unique_id=723933226]
+position = Vector2(20, -60)
+sprite_frames = SubResource("SpriteFrames_juang")
+script = ExtResource("3_ae2ab")
