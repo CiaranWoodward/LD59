@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://du0wsm5kles7k"]
+
+[ext_resource type="Script" uid="uid://dragg4qxx8ki6" path="res://UI/play.gd" id="1_vjbsa"]
+
+[node name="Game Over" type="Control" unique_id=1234357728]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=8606669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.15294118)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1870166455]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1641315755]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=779602721]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=767463149]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Your time is over, the forest has claimed you"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1449204598]
+layout_mode = 2
+text = "Start a New Journey"
+script = ExtResource("1_vjbsa")
+target_scene_path = "uid://dlcvto3andy8x"

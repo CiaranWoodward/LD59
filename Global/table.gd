@@ -47,6 +47,11 @@ signal state_changed(new_state: TableState)
 @export_group("Card Play Settings")
 @export var play_card_move_duration: float = 0.3
 
+@export_group("Game Over Settings")
+@export var game_over_throw_duration: float = 1.5
+@export var game_over_throw_area_size: Vector2 = Vector2(1400.0, 700.0)
+@export var game_over_throw_rotation: float = 360.0
+
 
 enum TableState {
 	Idle,
@@ -55,6 +60,7 @@ enum TableState {
 	DrawingHand,
 	ShufflingDeck,
 	NotPlayerTurn,
+	GameOver,
 }
 
 var draw_pile: Array[BaseCard] = []
@@ -77,6 +83,7 @@ func _ready() -> void:
 	Global.table = self
 	# Initalize the deck
 	_collect_base_cards($Cards)
+	Global.start_game()
 
 func _process(delta: float) -> void:
 	_poll_selected_card_movement(delta)
@@ -116,6 +123,31 @@ func draw_cards():
 		await _draw_cards_into_hand()
 	
 	_change_state(TableState.Idle)
+
+## Game over
+func game_over():
+	if state == TableState.GameOver:
+		return
+
+	hovered_cards.clear()
+	_set_currently_hovered_card(null)
+	_set_currently_selected_card(null)
+	selected_follow_velocity = Vector2.ZERO
+	_change_state(TableState.GameOver)
+	$"HUD/Game Over".visible = true
+
+	var cards := all_cards()
+	var all_tweens: Array[Tween] = []
+
+	for i in range(cards.size()):
+		var card := cards[i]
+		_disable_card_interaction(card)
+		card.selected = false
+		card.hovered = false
+		all_tweens.append(_tween_card_game_over(card))
+
+	await WaitAllTweens.wait_all_tweens(all_tweens)
+	
 
 ## Add a card and hook it up
 func initialise_card_to_discard_pile(card: BaseCard, delay: float = 0.0) -> Tween:
@@ -221,6 +253,15 @@ func _attach_mouse_watchers(card: BaseCard):
 			add_card_to_discard_pile(c)
 		_change_state(TableState.Idle)
 	)
+
+func _disable_card_interaction(card: BaseCard):
+	var card_area := card.get_node_or_null("CardArea") as Area2D
+	if card_area == null:
+		return
+
+	card_area.input_pickable = false
+	card_area.monitoring = false
+	card_area.monitorable = false
 
 # Selection
 func _set_currently_selected_card(card: BaseCard):
@@ -467,6 +508,27 @@ func _tween_card_discard(card: BaseCard, delay: float = 0.0) -> Tween:
 	tween.parallel().tween_property(card, "rotation_degrees", target_rotation, duration).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property(card, "scale", Vector2.ONE * card_scale, duration).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property(card, "z_index", new_z_index, duration / 2) 
+	return tween
+
+func _tween_card_game_over(card: BaseCard) -> Tween:
+	var half_area := game_over_throw_area_size / 2.0
+	var target_position = $PlayPoint.global_position + Vector2(
+		randf_range(-half_area.x, half_area.x),
+		randf_range(-half_area.y, half_area.y)
+	)
+	var midpoint_position := card.global_position.lerp(target_position, 0.6)
+	var half_duration := game_over_throw_duration / 2.0
+	var target_rotation := card.rotation_degrees + randf_range(-game_over_throw_rotation, game_over_throw_rotation)
+	var target_scale := selected_scale
+
+	var movement_tween = create_tween()
+	movement_tween.tween_property(card, "global_position", midpoint_position, half_duration).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	movement_tween.tween_property(card, "global_position", target_position, half_duration).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+
+	var tween := create_tween()
+	tween.tween_interval(half_duration)
+	tween.tween_property(card, "rotation_degrees", target_rotation, game_over_throw_duration).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	tween.parallel().tween_property(card, "scale", Vector2.ONE * target_scale, game_over_throw_duration).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	return tween
 
 func _discard_hand():

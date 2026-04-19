@@ -1,7 +1,10 @@
 extends Button
 
-@export var base_scene: PackedScene
+@export_file("*.tscn") var target_scene_path: String
+
+func _ready():
+    connect("pressed", _on_pressed.bind())
 
 func _on_pressed():
-    if base_scene:
-        get_tree().change_scene_to_packed(base_scene)
+    if not target_scene_path.is_empty():
+        get_tree().change_scene_to_file(target_scene_path)

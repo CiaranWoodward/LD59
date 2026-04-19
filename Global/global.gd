@@ -9,15 +9,19 @@ enum Statistic {
     HAND_SIZE,
     FIRE_SIZE,
     FIRE_LIT,
+    DAY,
+    ROUND,
 }
 
-var statistics = {
-    Statistic.HEALTH: 10,
+var initial_statistic_values = {
+    Statistic.HEALTH: 2,
     Statistic.INSANITY: 0,
     Statistic.ACTION_POINTS: 3,
     Statistic.HAND_SIZE: 5,
     Statistic.FIRE_SIZE: 0,
     Statistic.FIRE_LIT: 0,
+    Statistic.DAY: 0,
+    Statistic.ROUND: 0, # First 3 rounds are day, next 3 rounds are night
 }
 
 var min_statistic_values = {
@@ -27,18 +31,29 @@ var min_statistic_values = {
     Statistic.HAND_SIZE: 0,
     Statistic.FIRE_SIZE: 0,
     Statistic.FIRE_LIT: 0,
+    Statistic.DAY: 0,
+    Statistic.ROUND: 0,
 }
 
 var max_statistic_values = {
-    Statistic.HEALTH: 10,
+    Statistic.HEALTH: 3,
     Statistic.INSANITY: 10,
     Statistic.ACTION_POINTS: 3,
     Statistic.HAND_SIZE: 15,
     Statistic.FIRE_SIZE: 3,
     Statistic.FIRE_LIT: 1,
+    Statistic.DAY: 10,
+    Statistic.ROUND: 6,
 }
 
+var statistics = initial_statistic_values.duplicate()
+
+signal game_started()
 signal statistic_changed(stat: Statistic, new_value: int, old_value: int)
+
+func start_game():
+    statistics = initial_statistic_values.duplicate()
+    emit_signal("game_started")
 
 func set_statistic(stat: Statistic, value: int):
     var old_value = statistics[stat]
@@ -49,3 +64,15 @@ func set_statistic(stat: Statistic, value: int):
 
 func change_statistic(stat: Statistic, delta: int):
     set_statistic(stat, statistics[stat] + delta)
+
+func is_day() -> bool:
+    return statistics[Statistic.ROUND] < 3
+
+func next_round():
+    change_statistic(Statistic.ROUND, 1)
+    if statistics[Statistic.ROUND] == 3:
+        print("Night falls...")
+    elif statistics[Statistic.ROUND] == max_statistic_values[Statistic.ROUND]:
+        set_statistic(Statistic.ROUND, 0)
+        change_statistic(Statistic.DAY, 1)
+        print("A new day breaks...")

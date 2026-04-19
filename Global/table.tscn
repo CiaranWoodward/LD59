@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bwn2y8s7hx6fo" path="res://Cards/MorselCard.tscn" id="8_m6m0j"]
 [ext_resource type="PackedScene" uid="uid://7x34pkhbtms3" path="res://Cards/PoisonCard.tscn" id="9_xcx3l"]
 [ext_resource type="PackedScene" uid="uid://brd1msi1vo5u" path="res://Cards/TinderboxCard.tscn" id="10_jgnfc"]
+[ext_resource type="PackedScene" uid="uid://du0wsm5kles7k" path="res://UI/GameOver.tscn" id="11_mnq2p"]
 [ext_resource type="PackedScene" uid="uid://dj03uo7wdtqaa" path="res://Cards/WoodCard.tscn" id="11_xmklv"]
 
 [node name="Table" type="Node2D" unique_id=1954673422]
@@ -74,3 +75,11 @@ gizmo_extents = 36.3
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=59818483]
 position = Vector2(777, -934)
 gizmo_extents = 36.3
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=393164929]
+layer = 10
+
+[node name="Game Over" parent="HUD" unique_id=1234357728 instance=ExtResource("11_mnq2p")]
+visible = false
+size_flags_horizontal = 3
+size_flags_vertical = 3
