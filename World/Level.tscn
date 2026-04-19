@@ -9,9 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://bmbknhela3tf8" path="res://Global/table.tscn" id="4_7rdfg"]
 [ext_resource type="Texture2D" uid="uid://cp5lvpp400hv0" path="res://Graphics/Environment/Berries/Bush.png" id="5_avfc4"]
 [ext_resource type="Texture2D" uid="uid://pn8oc7nus4rb" path="res://Graphics/MV Sketch/White0000.png" id="5_xhbeg"]
-[ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="6_38me4"]
+[ext_resource type="Script" path="res://Utils/RandomAnimatedSprite.gd" id="6_38me4"]
 [ext_resource type="PackedScene" uid="uid://bjpe4gij0vyyp" path="res://World/Environment/Mushrooms.tscn" id="8_xt66a"]
 [ext_resource type="PackedScene" uid="uid://f60kho1hkypj" path="res://World/Environment/Berries.tscn" id="9_avfc4"]
+[ext_resource type="PackedScene" uid="uid://dnht8t3ak52a4" path="res://Music/Music.tscn" id="11_d45ho"]
 
 [sub_resource type="Animation" id="Animation_wfbhs"]
 length = 0.001
@@ -377,9 +378,12 @@ scale = Vector2(1, -1)
 y_sort_enabled = true
 position = Vector2(2332, 330)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=456730453]
+[node name="Hud" type="CanvasLayer" parent="." unique_id=456730453]
 
-[node name="Table" parent="CanvasLayer" unique_id=1954673422 instance=ExtResource("4_7rdfg")]
+[node name="Table" parent="Hud" unique_id=1954673422 instance=ExtResource("4_7rdfg")]
+
+[node name="Music" parent="Hud" unique_id=466025059 instance=ExtResource("11_d45ho")]
+position = Vector2(-367, -351)
 
 [node name="TestEnvironmental" type="Node2D" parent="." unique_id=1297313975]
 

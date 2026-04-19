@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dnht8t3ak52a4"]
+
+[ext_resource type="AudioStream" uid="uid://0ib5t0eht1wg" path="res://Music/level theme _pushing through the forest_.ogg" id="1_w1h2o"]
+[ext_resource type="Script" uid="uid://dwkrhgeyo38gj" path="res://addons/meta_player/meta_player.gd" id="1_y04ot"]
+
+[node name="Music" type="Node2D" unique_id=466025059]
+
+[node name="MetaPlayer" type="AudioStreamPlayer" parent="." unique_id=389833829]
+stream = ExtResource("1_w1h2o")
+script = ExtResource("1_y04ot")
+auto_play = true
+metadata/_custom_type_script = "uid://dwkrhgeyo38gj"

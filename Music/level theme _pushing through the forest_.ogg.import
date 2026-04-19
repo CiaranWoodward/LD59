@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://0ib5t0eht1wg"
+path="res://.godot/imported/level theme _pushing through the forest_.ogg-05b7fab4e4c132b06a39b1ac29b92877.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/level theme _pushing through the forest_.ogg"
+dest_files=["res://.godot/imported/level theme _pushing through the forest_.ogg-05b7fab4e4c132b06a39b1ac29b92877.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
