@@ -67,8 +67,7 @@ offset_bottom = -265.0
 rotation = 0.12410954
 theme = ExtResource("3_nry7q")
 theme_override_font_sizes/font_size = 60
-text = "0
-"
+text = "1"
 
 [node name="CardBack" type="AnimatedSprite2D" parent="." unique_id=1167643910]
 visible = false

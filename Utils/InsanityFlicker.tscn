@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://1cd50b03me1x"]
+
+[ext_resource type="Script" uid="uid://d4t1avgetnuc" path="res://Utils/insanity_flicker.gd" id="1_qofpx"]
+
+[node name="InsanityFlicker" type="Node2D" unique_id=1741190488]
+script = ExtResource("1_qofpx")
+sane_node = NodePath("")
+insane_node = NodePath("")

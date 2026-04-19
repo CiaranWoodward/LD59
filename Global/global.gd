@@ -21,7 +21,7 @@ enum TurnEndImpact {
 
 var initial_statistic_values = {
     Statistic.HEALTH: 5,
-    Statistic.INSANITY: 0,
+    Statistic.INSANITY: 5,
     Statistic.ACTION_POINTS: 3,
     Statistic.HAND_SIZE: 5,
     Statistic.FIRE_SIZE: 0,
@@ -43,7 +43,7 @@ var min_statistic_values = {
 
 var max_statistic_values = {
     Statistic.HEALTH: 5,
-    Statistic.INSANITY: 10,
+    Statistic.INSANITY: 5,
     Statistic.ACTION_POINTS: 3,
     Statistic.HAND_SIZE: 15,
     Statistic.FIRE_SIZE: 3,
@@ -58,6 +58,7 @@ signal game_started()
 signal statistic_changed(stat: Statistic, new_value: int, old_value: int)
 
 func start_game():
+    randomize()
     statistics = initial_statistic_values.duplicate()
     emit_signal("game_started")
 
