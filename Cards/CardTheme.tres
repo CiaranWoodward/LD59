@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://c5qyll2cke3nb"]
 
-[ext_resource type="FontFile" uid="uid://d31p3i06tu3y7" path="res://Graphics/UI/Font/Winky/WinkyRough-Bold.ttf" id="1_151ya"]
+[ext_resource type="FontFile" uid="uid://hclqa34m777k" path="res://Graphics/UI/Font/Winky/WinkyRough-Medium.ttf" id="1_5seav"]
 [ext_resource type="FontFile" uid="uid://msr5em14ixj8" path="res://Graphics/UI/Font/Winky/WinkyRough-SemiBold.ttf" id="2_5seav"]
 [ext_resource type="FontFile" uid="uid://nt3aiwengiwr" path="res://Graphics/UI/Font/Winky/WinkyRough-SemiBoldItalic.ttf" id="3_5seav"]
 [ext_resource type="FontFile" uid="uid://bbl7fsuhii552" path="res://Graphics/UI/Font/Winky/WinkyRough-LightItalic.ttf" id="3_la2tu"]
@@ -10,7 +10,7 @@
 default_font_size = 40
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
-Label/fonts/font = ExtResource("1_151ya")
+Label/fonts/font = ExtResource("1_5seav")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/constants/line_separation = -3
 RichTextLabel/constants/paragraph_separation = -11

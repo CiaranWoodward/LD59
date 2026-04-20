@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://hp0be5mnf8ee" path="res://Graphics/Cards/NightFrame.png" id="4_6s8qy"]
 [ext_resource type="Texture2D" uid="uid://h7ix5c8han3h" path="res://Graphics/Cards/SaneFrame.png" id="5_g4pjt"]
 [ext_resource type="Texture2D" uid="uid://tdacvwrfw4fa" path="res://Graphics/Cards/BasicFront.png" id="6_437bp"]
+[ext_resource type="Texture2D" uid="uid://buj670ps2wrdr" path="res://Graphics/Cards/NightFront.png" id="9_tygsg"]
 [ext_resource type="Texture2D" uid="uid://cld4uxi1cnoca" path="res://Graphics/Cards/NightBack.png" id="12_50ino"]
 [ext_resource type="Texture2D" uid="uid://bke0grn62pj5l" path="res://Graphics/Cards/SaneFront.png" id="12_tygsg"]
 [ext_resource type="Texture2D" uid="uid://cvd1dfn6t5065" path="res://Graphics/Cards/DayBack.png" id="13_5q4vu"]
@@ -44,7 +45,7 @@ animations = [{
 "texture": ExtResource("4_5q4vu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_50ino")
+"texture": ExtResource("9_tygsg")
 }, {
 "duration": 1.0,
 "texture": ExtResource("12_tygsg")
@@ -111,19 +112,19 @@ position = Vector2(2, -139.00005)
 [node name="Name" type="Label" parent="CardFront" unique_id=933147433]
 use_parent_material = true
 offset_left = -198.0
-offset_top = -374.0
+offset_top = -367.0
 offset_right = 155.0
-offset_bottom = -300.0
+offset_bottom = -293.0
 theme = ExtResource("3_nry7q")
-theme_override_font_sizes/font_size = 54
+theme_override_font_sizes/font_size = 45
 text = "Card Name"
 
 [node name="Description" type="RichTextLabel" parent="CardFront" unique_id=376343130]
 use_parent_material = true
-offset_left = -201.0
-offset_top = 3.0
-offset_right = 209.0
-offset_bottom = 347.0
+offset_left = -196.0
+offset_top = 16.0
+offset_right = 214.0
+offset_bottom = 360.0
 mouse_filter = 2
 theme = ExtResource("3_nry7q")
 bbcode_enabled = true

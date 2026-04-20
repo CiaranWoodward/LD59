@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://8j4celb3dluf"]
+
+[ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_4534s"]
+[ext_resource type="Script" uid="uid://bbf84s622mjol" path="res://Cards/strange_shroom_card.gd" id="2_gee08"]
+[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_yldaw"]
+
+[node name="OozingShroomCard" unique_id=105035990 instance=ExtResource("1_4534s")]
+script = ExtResource("2_gee08")
+card_name = "Strange Shroom"
+description = "Lick the shroom
+
+[i]The shroom glitters with the promise of a beautiful world"
+image = ExtResource("3_yldaw")
+cost = 2
+card_type = 3
+consumable = true
+sanity_effect_description = "Lick the shroom
+
+[i]The oozes  with the promise of a beautiful lie"
+
+[node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
+texture = ExtResource("3_yldaw")
+
+[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="3" unique_id=933147433]
+text = "Strange Shroom"
+
+[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="4" unique_id=376343130]
+text = "Lick the shroom
+
+[i]The shroom glitters with the promise of a beautiful world"
+
+[node name="Cost" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="5" unique_id=1544021586]
+text = "2"

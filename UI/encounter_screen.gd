@@ -259,4 +259,3 @@ func _choose(choice: Choice) -> void:
 		await get_tree().create_timer(0.5).timeout
 
 	encounter_finished.emit()
-
