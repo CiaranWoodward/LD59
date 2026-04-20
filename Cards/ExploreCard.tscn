@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b4v58etacv1dc"]
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_ipy1y"]
-[ext_resource type="Script" uid="uid://dj68oj73x78iy" path="res://Cards/berry_card.gd" id="2_400st"]
+[ext_resource type="Script" uid="uid://cmr54xhacniq3" path="res://Cards/explore_card.gd" id="2_ipy1y"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_qqg0v"]
 [ext_resource type="Shader" uid="uid://cy8urs6dbu03i" path="res://Shaders/Burn.gdshader" id="4_fgbvv"]
 
@@ -25,19 +25,21 @@ shader_parameter/borderWidth = 0.2
 shader_parameter/direction = 270.0
 
 [node name="ExploreCard" unique_id=105035990 instance=ExtResource("1_ipy1y")]
-script = ExtResource("2_400st")
-card_name = "Explore Ahead"
+script = ExtResource("2_ipy1y")
 description = "Gain one [b]pathfinding[/b]
 
-Lose one [b]health[/b].
+What you can't see can't hurt you...
 
 [i]Gain a [b]travel[/b] card when [b]pathfinding[/b] complete"
-image = ExtResource("3_qqg0v")
-card_type = 2
-card_timing = 0
+sanity_effect = 1
+sanity_effect_description = "Gain one [b]pathfinding[/b]
+
+You have nothing to protect you from the horrors, lose 1 health.
+
+[i]Gain a [b]travel[/b] card when [b]pathfinding[/b] complete"
 
 [node name="CardFront" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="0" unique_id=1390792272]
-frame = 1
+frame = 0
 
 [node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
 texture = ExtResource("3_qqg0v")

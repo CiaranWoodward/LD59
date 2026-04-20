@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ciejvoikntgvy"]
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_n402x"]
-[ext_resource type="Script" uid="uid://dj68oj73x78iy" path="res://Cards/berry_card.gd" id="2_0bcjc"]
+[ext_resource type="Script" uid="uid://cr0lf7u71hlty" path="res://Cards/map_card.gd" id="2_n402x"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_5murk"]
 [ext_resource type="Shader" uid="uid://cy8urs6dbu03i" path="res://Shaders/Burn.gdshader" id="4_c20ui"]
 
@@ -25,13 +25,16 @@ shader_parameter/borderWidth = 0.2
 shader_parameter/direction = 270.0
 
 [node name="MapCard" unique_id=105035990 instance=ExtResource("1_n402x")]
-script = ExtResource("2_0bcjc")
+script = ExtResource("2_n402x")
 card_name = "Map"
 description = "Gain two [b]pathfinding[/b]
 
 [i]Gain a [b]travel[/b] card when [b]pathfinding[/b] complete"
 image = ExtResource("3_5murk")
 card_type = 2
+
+[node name="CardFront" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="0" unique_id=1390792272]
+frame = 2
 
 [node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
 texture = ExtResource("3_5murk")

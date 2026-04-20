@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bx3o860qx0vg7"]
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_a555y"]
-[ext_resource type="Script" uid="uid://dj68oj73x78iy" path="res://Cards/berry_card.gd" id="2_23oil"]
+[ext_resource type="Script" uid="uid://e1e7crgvlgsc" path="res://Cards/signal_card.gd" id="2_a555y"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_nsh0b"]
 [ext_resource type="Shader" uid="uid://cy8urs6dbu03i" path="res://Shaders/Burn.gdshader" id="4_x1exo"]
 
@@ -25,15 +25,20 @@ shader_parameter/borderWidth = 0.2
 shader_parameter/direction = 270.0
 
 [node name="SignalCard" unique_id=105035990 instance=ExtResource("1_a555y")]
-script = ExtResource("2_23oil")
-cost = 2
-card_name = "Signal"
-description = "Maybe someone (or something...) will see it
+script = ExtResource("2_a555y")
+card_name = "Smoke Signal"
+description = "Use your campfire to signal
+
+Maybe someone (or something...) will see it
 
 [i]Not all attention is good..."
 image = ExtResource("3_nsh0b")
+cost = 2
 card_type = 2
 card_timing = 1
+
+[node name="CardFront" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="0" unique_id=1390792272]
+frame = 0
 
 [node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
 texture = ExtResource("3_nsh0b")
@@ -45,9 +50,17 @@ material = SubResource("ShaderMaterial_a555y")
 material = SubResource("ShaderMaterial_a555y")
 
 [node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="4" unique_id=933147433]
-text = "Signal"
+text = "Smoke Signal"
 
 [node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="5" unique_id=376343130]
-text = "Maybe someone (or something...) will see it
+text = "Use your campfire to signal
 
-[i]Does nothing if campfire is not producing smoke"
+Maybe someone (or something...) will see it
+
+[i]Not all attention is good..."
+
+[node name="Cost" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="6" unique_id=1544021586]
+text = "2"
+
+[node name="CardBack" parent="." index="1" unique_id=1167643910]
+frame = 2

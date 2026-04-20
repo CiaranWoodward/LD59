@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dmbxw0g0uyxby" path="res://Cards/BerryCard.tscn" id="4_fyblx"]
 [ext_resource type="PackedScene" uid="uid://cir0lyihy714m" path="res://UI/PathPip.tscn" id="4_t0t1g"]
 [ext_resource type="PackedScene" uid="uid://cymvt7hb2bqu3" path="res://Cards/BowCard.tscn" id="5_ljc0k"]
-[ext_resource type="PackedScene" uid="uid://je7fljscgukr" path="res://Cards/ForageCard.tscn" id="6_rhal8"]
 [ext_resource type="PackedScene" uid="uid://5bprgo2jfbyb" path="res://Cards/HungerCard.tscn" id="7_t0t1g"]
 [ext_resource type="PackedScene" uid="uid://bwn2y8s7hx6fo" path="res://Cards/MorselCard.tscn" id="8_m6m0j"]
 [ext_resource type="Material" uid="uid://618td7xfqke6" path="res://Shaders/UnplayableCard.tres" id="9_rhal8"]
@@ -106,10 +105,6 @@ position = Vector2(2103, 2736)
 
 [node name="BowCard" parent="Cards" unique_id=2095908211 instance=ExtResource("5_ljc0k")]
 position = Vector2(1375, 1983)
-
-[node name="ForageCard" parent="Cards" unique_id=1328410963 instance=ExtResource("6_rhal8")]
-position = Vector2(1573, 3560)
-cost = 0
 
 [node name="HungerCard" parent="Cards" unique_id=1088402863 instance=ExtResource("7_t0t1g")]
 material = ExtResource("9_rhal8")

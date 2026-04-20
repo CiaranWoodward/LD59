@@ -14,7 +14,7 @@ height = 800
 noise = SubResource("FastNoiseLite_nry7q")
 normalize = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bp11o"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cyl7w"]
 resource_local_to_scene = true
 shader = ExtResource("4_cyl7w")
 shader_parameter/progress = -1.3
@@ -36,17 +36,14 @@ image = ExtResource("2_4qkyj")
 card_type = 3
 consumable = true
 
-[node name="CardFront" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="0" unique_id=1390792272]
-frame = 1
-
 [node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
 texture = ExtResource("2_4qkyj")
 
 [node name="FullFront" parent="CardFront/EnergyPip/Front" parent_id_path=PackedInt32Array(768727205) index="0" unique_id=1808957655]
-material = SubResource("ShaderMaterial_bp11o")
+material = SubResource("ShaderMaterial_cyl7w")
 
 [node name="FullLine" parent="CardFront/EnergyPip/Line" parent_id_path=PackedInt32Array(1125568214) index="0" unique_id=836807859]
-material = SubResource("ShaderMaterial_bp11o")
+material = SubResource("ShaderMaterial_cyl7w")
 
 [node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="4" unique_id=933147433]
 text = "Berry"

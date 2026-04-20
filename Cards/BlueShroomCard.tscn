@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://blq6wsj11p8y3"]
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_4in5w"]
-[ext_resource type="Script" uid="uid://c6t6qb2g8bdsl" path="res://Cards/morsel_card.gd" id="2_nxptd"]
+[ext_resource type="Script" uid="uid://bxb48u6v2qsbq" path="res://Cards/blue_shroom_card.gd" id="2_nxptd"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_s5r68"]
 [ext_resource type="Shader" uid="uid://cy8urs6dbu03i" path="res://Shaders/Burn.gdshader" id="4_nxptd"]
 
@@ -14,7 +14,7 @@ height = 800
 noise = SubResource("FastNoiseLite_nry7q")
 normalize = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxptd"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s5r68"]
 resource_local_to_scene = true
 shader = ExtResource("4_nxptd")
 shader_parameter/progress = -1.3
@@ -26,27 +26,18 @@ shader_parameter/direction = 270.0
 
 [node name="BlueShroomCard" unique_id=105035990 instance=ExtResource("1_4in5w")]
 script = ExtResource("2_nxptd")
-card_name = "Blue Shroom"
-description = "Remove one random [b]hunger[/b] card from deck
-
-Increase insanity level
-
-[i]Removed from deck when played"
-image = ExtResource("3_s5r68")
-card_type = 3
-consumable = true
 
 [node name="CardFront" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="0" unique_id=1390792272]
-frame = 1
+frame = 0
 
 [node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
 texture = ExtResource("3_s5r68")
 
 [node name="FullFront" parent="CardFront/EnergyPip/Front" parent_id_path=PackedInt32Array(768727205) index="0" unique_id=1808957655]
-material = SubResource("ShaderMaterial_nxptd")
+material = SubResource("ShaderMaterial_s5r68")
 
 [node name="FullLine" parent="CardFront/EnergyPip/Line" parent_id_path=PackedInt32Array(1125568214) index="0" unique_id=836807859]
-material = SubResource("ShaderMaterial_nxptd")
+material = SubResource("ShaderMaterial_s5r68")
 
 [node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="4" unique_id=933147433]
 text = "Blue Shroom"

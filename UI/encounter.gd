@@ -33,6 +33,7 @@ enum SanityRequirement {
 @export var skip_stat_delta: int = 0
 
 @export_group("Restrictions")
+@export var repeatable: bool = false
 @export var requires_fire: bool = false
 @export var requires_no_fire: bool = false
 @export var requires_day: bool = false
@@ -44,7 +45,7 @@ enum SanityRequirement {
 var played: bool = false
 
 func can_encounter() -> bool:
-	if played:
+	if played and not repeatable:
 		return false
 	if requires_fire and Global.statistics[Global.Statistic.FIRE_LIT] <= 0:
 		return false

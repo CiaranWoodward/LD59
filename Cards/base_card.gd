@@ -11,6 +11,9 @@ signal mouse_unhovered(card: BaseCard)
 signal mouse_event(card: BaseCard, event: InputEventMouseButton)
 signal discard(card: BaseCard, burn: bool)
 
+# These are for general use
+signal played(card: BaseCard)
+
 enum CardType {
 	Basic,
 	Environment,
@@ -227,6 +230,7 @@ func action_play():
 	Global.change_statistic(Global.Statistic.INSANITY, -1) #TODO remove
 	var play_timer = get_tree().create_timer(play_time)
 	await on_play()
+	emit_signal("played", self)
 	if play_timer.time_left > 0:
 		await play_timer.timeout
 	if consumable:

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://debjq2hfbif7"]
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_jd5v7"]
-[ext_resource type="Script" uid="uid://dj68oj73x78iy" path="res://Cards/berry_card.gd" id="2_grx5e"]
+[ext_resource type="Script" uid="uid://dj711mts11ok7" path="res://Cards/travel_card.gd" id="2_grx5e"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_g725k"]
 [ext_resource type="Shader" uid="uid://cy8urs6dbu03i" path="res://Shaders/Burn.gdshader" id="4_grx5e"]
 
@@ -14,7 +14,7 @@ height = 800
 noise = SubResource("FastNoiseLite_nry7q")
 normalize = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_grx5e"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g725k"]
 resource_local_to_scene = true
 shader = ExtResource("4_grx5e")
 shader_parameter/progress = -1.3
@@ -26,12 +26,12 @@ shader_parameter/direction = 270.0
 
 [node name="TravelCard" unique_id=105035990 instance=ExtResource("1_jd5v7")]
 script = ExtResource("2_grx5e")
-cost = 2
 card_name = "Travel"
 description = "Travel to the next environment
 
 [i]Another step closer..."
 image = ExtResource("3_g725k")
+cost = 2
 card_type = 2
 card_timing = 0
 
@@ -39,10 +39,10 @@ card_timing = 0
 texture = ExtResource("3_g725k")
 
 [node name="FullFront" parent="CardFront/EnergyPip/Front" parent_id_path=PackedInt32Array(768727205) index="0" unique_id=1808957655]
-material = SubResource("ShaderMaterial_grx5e")
+material = SubResource("ShaderMaterial_g725k")
 
 [node name="FullLine" parent="CardFront/EnergyPip/Line" parent_id_path=PackedInt32Array(1125568214) index="0" unique_id=836807859]
-material = SubResource("ShaderMaterial_grx5e")
+material = SubResource("ShaderMaterial_g725k")
 
 [node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="4" unique_id=933147433]
 text = "Travel"
