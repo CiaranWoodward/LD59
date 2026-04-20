@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bmbknhela3tf8"]
 
 [ext_resource type="Script" uid="uid://du72ge3que2qk" path="res://Global/table.gd" id="1_rcskp"]
+[ext_resource type="PackedScene" uid="uid://brkaxxrpcjedy" path="res://UI/HealthPip.tscn" id="2_mnq2p"]
+[ext_resource type="PackedScene" uid="uid://bsk5v3tv7ard1" path="res://UI/EnergyPip.tscn" id="3_fyblx"]
 [ext_resource type="PackedScene" uid="uid://c6b5xcocr7s1x" path="res://Cards/AxeCard.tscn" id="3_mnq2p"]
 [ext_resource type="PackedScene" uid="uid://dmbxw0g0uyxby" path="res://Cards/BerryCard.tscn" id="4_fyblx"]
 [ext_resource type="PackedScene" uid="uid://cymvt7hb2bqu3" path="res://Cards/BowCard.tscn" id="5_ljc0k"]
@@ -13,6 +15,49 @@
 
 [node name="Table" type="Node2D" unique_id=1954673422]
 script = ExtResource("1_rcskp")
+
+[node name="Pips" type="Node2D" parent="." unique_id=589499252]
+
+[node name="HealthPip" parent="Pips" unique_id=2057596518 instance=ExtResource("2_mnq2p")]
+position = Vector2(51, 46)
+rotation = 0.30806023
+
+[node name="HealthPip2" parent="Pips" unique_id=1355773261 instance=ExtResource("2_mnq2p")]
+position = Vector2(143, 41)
+rotation = -0.09394486
+scale = Vector2(0.71542907, 0.71542907)
+pip_threshold = 2
+
+[node name="HealthPip3" parent="Pips" unique_id=718555693 instance=ExtResource("2_mnq2p")]
+position = Vector2(53, 146)
+rotation = 0.47548354
+scale = Vector2(0.76100504, 0.76100504)
+pip_threshold = 3
+
+[node name="HealthPip4" parent="Pips" unique_id=218072832 instance=ExtResource("2_mnq2p")]
+position = Vector2(157, 118)
+rotation = -0.4440097
+scale = Vector2(1.3189925, 1.3189925)
+pip_threshold = 4
+
+[node name="HealthPip5" parent="Pips" unique_id=1776858530 instance=ExtResource("2_mnq2p")]
+position = Vector2(249, 49)
+rotation = 0.3385997
+scale = Vector2(1.2407901, 1.2407901)
+pip_threshold = 5
+
+[node name="EnergyPip" parent="Pips" unique_id=1187635481 instance=ExtResource("3_fyblx")]
+position = Vector2(65, 690)
+
+[node name="EnergyPip2" parent="Pips" unique_id=1839112666 instance=ExtResource("3_fyblx")]
+position = Vector2(164, 698.00006)
+scale = Vector2(0.8582375, 0.8582375)
+pip_threshold = 2
+
+[node name="EnergyPip3" parent="Pips" unique_id=358638727 instance=ExtResource("3_fyblx")]
+position = Vector2(265, 673)
+scale = Vector2(1.1425544, 1.1425544)
+pip_threshold = 3
 
 [node name="Cards" type="Node2D" parent="." unique_id=630168821]
 

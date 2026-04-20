@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://own21pellqn5" path="res://Graphics/UI/HeartBack0000.png" id="1_d0jfa"]
 [ext_resource type="Script" uid="uid://bpvvtw7o2iibm" path="res://Utils/RandomAnimationPlayer.gd" id="1_qeg3t"]
+[ext_resource type="Script" uid="uid://xlssgsji6a4j" path="res://UI/health_pip.gd" id="1_v567m"]
 [ext_resource type="Texture2D" uid="uid://cm262a0ed6sit" path="res://Graphics/UI/HeartFront0000.png" id="2_qeg3t"]
 [ext_resource type="Texture2D" uid="uid://is66n75uusd3" path="res://Graphics/UI/HeartLine0000.png" id="3_m2reh"]
 [ext_resource type="Material" uid="uid://h26opx01c13i" path="res://Shaders/HeartBurn.tres" id="4_m2reh"]
@@ -427,7 +428,6 @@ animation = &"Filling"
 animation = &"FullBeat"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h01jn"]
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_igvsb"]
 switch_mode = 2
@@ -455,11 +455,12 @@ transitions = ["Start", "Filling", SubResource("AnimationNodeStateMachineTransit
 graph_offset = Vector2(-175, -9)
 
 [node name="HealthPip" type="Node2D" unique_id=2057596518]
+script = ExtResource("1_v567m")
 
 [node name="Pulse" type="AnimationPlayer" parent="." unique_id=545380722]
 libraries/ = SubResource("AnimationLibrary_m2reh")
 autoplay = &"Pulse"
-speed_scale = 0.35819378
+speed_scale = 0.33072966
 script = ExtResource("1_qeg3t")
 random_speed = true
 min_speed = 0.3

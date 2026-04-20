@@ -15,7 +15,7 @@ func stat_watcher(stat, new_value, _old_value):
 func forever_game_loop():
     var table = Global.table
     while table.state != Table.TableState.GameOver:
-        Global.statistics[Global.Statistic.ACTION_POINTS] = Global.max_statistic_values[Global.Statistic.ACTION_POINTS]
+        Global.set_statistic(Global.Statistic.ACTION_POINTS, Global.max_statistic_values[Global.Statistic.ACTION_POINTS])
         await table.draw_cards()
 
         if table.state == Table.TableState.GameOver:

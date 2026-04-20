@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bsk5v3tv7ard1"]
 
+[ext_resource type="Script" uid="uid://xlssgsji6a4j" path="res://UI/health_pip.gd" id="1_1x4mh"]
 [ext_resource type="Script" uid="uid://bpvvtw7o2iibm" path="res://Utils/RandomAnimationPlayer.gd" id="1_ipi4d"]
 [ext_resource type="Texture2D" uid="uid://w5k0sqlxk3g7" path="res://Graphics/UI/EnergyBack0000.png" id="2_ipi4d"]
 [ext_resource type="Texture2D" uid="uid://ctqlu2gdpbgrj" path="res://Graphics/UI/EnergyFront0000.png" id="3_1x4mh"]
@@ -523,7 +524,6 @@ animation = &"Filling"
 animation = &"FullBeat"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h01jn"]
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_igvsb"]
 switch_mode = 2
@@ -550,12 +550,15 @@ states/FullBeat/position = Vector2(469, 17)
 transitions = ["Start", "Filling", SubResource("AnimationNodeStateMachineTransition_h01jn"), "Filling", "FullBeat", SubResource("AnimationNodeStateMachineTransition_igvsb"), "Emptying", "Empty", SubResource("AnimationNodeStateMachineTransition_r24ee"), "Empty", "Filling", SubResource("AnimationNodeStateMachineTransition_x2lk4"), "FullBeat", "Emptying", SubResource("AnimationNodeStateMachineTransition_eihug")]
 graph_offset = Vector2(-175, -9)
 
-[node name="HealthPip" type="Node2D" unique_id=2057596518]
+[node name="EnergyPip" type="Node2D" unique_id=2057596518]
+script = ExtResource("1_1x4mh")
+pip_type = 2
+pip_inital_delay_multiplier = 0.3
 
 [node name="Pulse" type="AnimationPlayer" parent="." unique_id=545380722]
 libraries/ = SubResource("AnimationLibrary_m2reh")
 autoplay = &"Pulse"
-speed_scale = 0.34439257
+speed_scale = 0.33861777
 script = ExtResource("1_ipi4d")
 random_speed = true
 min_speed = 0.3
