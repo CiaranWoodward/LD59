@@ -148,6 +148,7 @@ func action_draw() -> void:
 
 func action_play():
 	Global.change_statistic(Global.Statistic.ACTION_POINTS, -cost)
+	Global.change_statistic(Global.Statistic.INSANITY, -cost) #TODO remove
 	var play_timer = get_tree().create_timer(play_time)
 	await on_play()
 	if play_timer.time_left > 0:

@@ -81,34 +81,35 @@ show_behind_parent = true
 use_parent_material = true
 position = Vector2(2, -139.00005)
 
-[node name="HealthPip" type="Node2D" parent="CardFront" unique_id=1990692794]
+[node name="EnergyPip" type="Node2D" parent="CardFront" unique_id=1990692794]
 use_parent_material = true
-position = Vector2(194, -367)
+position = Vector2(189.00002, -367)
+scale = Vector2(1.3098845, 1.3098845)
 
-[node name="Back" type="Sprite2D" parent="CardFront/HealthPip" unique_id=1815013340]
+[node name="Back" type="Sprite2D" parent="CardFront/EnergyPip" unique_id=1815013340]
 self_modulate = Color(0.29803923, 0.34509805, 0.34509805, 1)
 use_parent_material = true
 scale = Vector2(1.0043019, 1.0043019)
 texture = ExtResource("7_tygsg")
 
-[node name="Front" type="Sprite2D" parent="CardFront/HealthPip" unique_id=768727205]
+[node name="Front" type="Sprite2D" parent="CardFront/EnergyPip" unique_id=768727205]
 self_modulate = Color(0.38039216, 0.4509804, 0.49019608, 1)
 use_parent_material = true
 texture = ExtResource("8_bmyxb")
 
-[node name="FullFront" type="Sprite2D" parent="CardFront/HealthPip/Front" unique_id=1808957655]
+[node name="FullFront" type="Sprite2D" parent="CardFront/EnergyPip/Front" unique_id=1808957655]
 self_modulate = Color(0.78039217, 0.78039217, 0.34117648, 1)
 material = ExtResource("9_ws7lp")
 use_parent_material = true
 texture = ExtResource("8_bmyxb")
 
-[node name="Line" type="Sprite2D" parent="CardFront/HealthPip" unique_id=1125568214]
+[node name="Line" type="Sprite2D" parent="CardFront/EnergyPip" unique_id=1125568214]
 modulate = Color(1, 1, 1, 0.7455259)
 self_modulate = Color(0.18039216, 0.23529412, 0.28627452, 1)
 use_parent_material = true
 texture = ExtResource("10_6s8qy")
 
-[node name="FullLine" type="Sprite2D" parent="CardFront/HealthPip/Line" unique_id=836807859]
+[node name="FullLine" type="Sprite2D" parent="CardFront/EnergyPip/Line" unique_id=836807859]
 self_modulate = Color(0.78039217, 0.78039217, 0.34117648, 1)
 material = ExtResource("9_ws7lp")
 use_parent_material = true
@@ -116,9 +117,9 @@ texture = ExtResource("10_6s8qy")
 
 [node name="Name" type="Label" parent="CardFront" unique_id=933147433]
 use_parent_material = true
-offset_left = -232.0
+offset_left = -215.0
 offset_top = -400.0
-offset_right = 91.0
+offset_right = 138.0
 offset_bottom = -326.0
 theme = ExtResource("3_nry7q")
 theme_override_font_sizes/font_size = 54
@@ -126,9 +127,9 @@ text = "Card Name"
 
 [node name="Description" type="RichTextLabel" parent="CardFront" unique_id=376343130]
 use_parent_material = true
-offset_left = -226.0
-offset_top = 46.0
-offset_right = 233.0
+offset_left = -213.0
+offset_top = 48.0
+offset_right = 210.0
 offset_bottom = 392.0
 mouse_filter = 2
 theme = ExtResource("3_nry7q")
