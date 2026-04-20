@@ -1,6 +1,7 @@
 extends Node
 
 var table: Table
+var level: Level
 
 enum Statistic {
 	HEALTH,
@@ -12,6 +13,7 @@ enum Statistic {
 	DAY,
 	ROUND,
 	PATHFINDING,
+	LEVEL
 }
 
 enum TurnEndImpact {
@@ -36,6 +38,7 @@ var initial_statistic_values = {
 	Statistic.DAY: 0,
 	Statistic.ROUND: 0, # First 50% rounds are day, next 50% rounds are night
 	Statistic.PATHFINDING: 0,
+	Statistic.LEVEL: 0,
 }
 
 var min_statistic_values = {
@@ -48,6 +51,7 @@ var min_statistic_values = {
 	Statistic.DAY: 0,
 	Statistic.ROUND: 0,
 	Statistic.PATHFINDING: 0,
+	Statistic.LEVEL: 0,
 }
 
 var max_statistic_values = {
@@ -60,6 +64,7 @@ var max_statistic_values = {
 	Statistic.DAY: 10,
 	Statistic.ROUND: 6,
 	Statistic.PATHFINDING: 6,
+	Statistic.LEVEL: 5,
 }
 
 var statistics = initial_statistic_values.duplicate()

@@ -18,7 +18,8 @@ var _suspend_parallax: bool = false
 
 
 func _ready():
-	transition_scene_in(scenes[0], true)
+	transition_scene_in(0, true)
+	Global.level = self
 
 # Apply a parallax effect to all props based on a spring-damped point following the mouse
 func _process(delta: float) -> void:
@@ -53,7 +54,8 @@ func resume_parallax():
 	_parallax_point = Vector2.ZERO
 	_suspend_parallax = false
 
-func transition_scene_in(scene: PackedScene, skip_animation: bool = false) -> void:
+func transition_scene_in(sceneNo: int, skip_animation: bool = false) -> void:
+	var scene: PackedScene = scenes[sceneNo]
 	assert(_current_scene == null, "Can't transition in a new scene while another is active")
 	var scene_instance = scene.instantiate()
 	$Scene.add_child(scene_instance)

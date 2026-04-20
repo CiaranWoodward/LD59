@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://du0wsm5kles7k" path="res://UI/GameOver.tscn" id="11_mnq2p"]
 [ext_resource type="PackedScene" uid="uid://dj03uo7wdtqaa" path="res://Cards/WoodCard.tscn" id="11_xmklv"]
 [ext_resource type="PackedScene" uid="uid://doyb4lch3sljq" path="res://UI/EncounterScreen.tscn" id="12_ljc0k"]
+[ext_resource type="PackedScene" uid="uid://debjq2hfbif7" path="res://Cards/TravelCard.tscn" id="12_rhal8"]
 
 [node name="Table" type="Node2D" unique_id=1954673422]
 script = ExtResource("1_rcskp")
@@ -48,8 +49,8 @@ scale = Vector2(1.2407901, 1.2407901)
 pip_threshold = 5
 
 [node name="HealthPip6" parent="Pips" unique_id=833038583 instance=ExtResource("2_mnq2p")]
-position = Vector2(314, 202.99998)
-rotation = 0.3385997
+position = Vector2(274, 151)
+rotation = -0.030368328
 scale = Vector2(1.2407901, 1.2407901)
 pip_threshold = 6
 
@@ -65,6 +66,11 @@ pip_threshold = 2
 position = Vector2(265, 673)
 scale = Vector2(1.1425544, 1.1425544)
 pip_threshold = 3
+
+[node name="EnergyPip4" parent="Pips" unique_id=262138397 instance=ExtResource("3_fyblx")]
+position = Vector2(364.99997, 707)
+scale = Vector2(0.9460392, 0.9020539)
+pip_threshold = 4
 
 [node name="PathPip" parent="Pips" unique_id=553718804 instance=ExtResource("4_t0t1g")]
 position = Vector2(1839, 726)
@@ -122,6 +128,9 @@ position = Vector2(2796, 2256)
 
 [node name="WoodCard" parent="Cards" unique_id=1243168928 instance=ExtResource("11_xmklv")]
 position = Vector2(-1587, 2489)
+
+[node name="TravelCard" parent="Cards" unique_id=105035990 instance=ExtResource("12_rhal8")]
+position = Vector2(822, 908)
 
 [node name="ShufflePoint" type="Marker2D" parent="." unique_id=526775094]
 position = Vector2(954, 362)

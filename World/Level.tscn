@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bmbknhela3tf8" path="res://Global/table.tscn" id="4_7rdfg"]
 [ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="4_d45ho"]
 [ext_resource type="Texture2D" uid="uid://pn8oc7nus4rb" path="res://Graphics/MV Sketch/White0000.png" id="5_xhbeg"]
+[ext_resource type="PackedScene" uid="uid://dvwafkf3yemgq" path="res://World/Forest.tscn" id="8_aoint"]
 [ext_resource type="Shader" uid="uid://buwa5eioqtumq" path="res://Shaders/NightTime.gdshader" id="10_p72nv"]
 [ext_resource type="PackedScene" uid="uid://dnht8t3ak52a4" path="res://Music/Music.tscn" id="11_d45ho"]
 [ext_resource type="PackedScene" uid="uid://na7qrnohprp7" path="res://World/River.tscn" id="12_wfbhs"]
@@ -258,7 +259,7 @@ shader_parameter/vignette_strength = 0.1610000076475
 
 [node name="Level" type="Node2D" unique_id=1164261592]
 script = ExtResource("1_24re5")
-scenes = Array[PackedScene]([ExtResource("12_wfbhs"), null])
+scenes = Array[PackedScene]([ExtResource("8_aoint"), ExtResource("12_wfbhs"), ExtResource("8_aoint"), ExtResource("12_wfbhs")])
 
 [node name="DayNight" type="AnimationPlayer" parent="." unique_id=405920214]
 libraries/ = SubResource("AnimationLibrary_r5g24")

@@ -84,8 +84,9 @@ metadata/_edit_vertical_guides_ = [-204.0]
 [node name="Shadow" type="Sprite2D" parent="." unique_id=748206317]
 self_modulate = Color(1, 1, 1, 0.38039216)
 show_behind_parent = true
+use_parent_material = true
 position = Vector2(-7.3379827, -6.6655073)
-scale = Vector2(2.035548, -1.9952877)
+scale = Vector2(2.036, 1.995)
 texture = ExtResource("12_50ino")
 
 [node name="CardFront" type="Node2D" parent="." unique_id=519823740]
@@ -129,6 +130,7 @@ bbcode_enabled = true
 text = "Card Description"
 
 [node name="Cost" type="Label" parent="CardFront" unique_id=1544021586]
+use_parent_material = true
 offset_left = 113.0
 offset_top = -387.00003
 offset_right = 234.72514
