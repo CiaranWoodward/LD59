@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wjuqiqw3qg4o"
-path="res://.godot/imported/BasicBack.png-09fe7ecf29c088741ee0d591a80e2aa8.ctex"
+uid="uid://d1f1ao754iif6"
+path="res://.godot/imported/Stick3.png-be948df409f3d520cfa041aa274e4455.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Cards/BasicBack.png"
-dest_files=["res://.godot/imported/BasicBack.png-09fe7ecf29c088741ee0d591a80e2aa8.ctex"]
+source_file="res://Graphics/Environment/Pile/Stick3.png"
+dest_files=["res://.godot/imported/Stick3.png-be948df409f3d520cfa041aa274e4455.ctex"]
 
 [params]
 

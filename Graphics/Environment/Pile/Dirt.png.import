@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wjuqiqw3qg4o"
-path="res://.godot/imported/BasicBack.png-09fe7ecf29c088741ee0d591a80e2aa8.ctex"
+uid="uid://nwrh7p3fqsx"
+path="res://.godot/imported/Dirt.png-0666a160a3a043968189dd9f6446331f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Cards/BasicBack.png"
-dest_files=["res://.godot/imported/BasicBack.png-09fe7ecf29c088741ee0d591a80e2aa8.ctex"]
+source_file="res://Graphics/Environment/Pile/Dirt.png"
+dest_files=["res://.godot/imported/Dirt.png-0666a160a3a043968189dd9f6446331f.ctex"]
 
 [params]
 

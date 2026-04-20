@@ -1,23 +1,33 @@
 [gd_scene format=3 uid="uid://dqtidrexl63xw"]
 
 [ext_resource type="Script" uid="uid://by8tq0l3hkcbs" path="res://Cards/base_card.gd" id="1_ydy5p"]
+[ext_resource type="Texture2D" uid="uid://bc2gx8stn8y7h" path="res://Graphics/Cards/BasicFrame.png" id="2_5q4vu"]
 [ext_resource type="Texture2D" uid="uid://bub7xu5gel4x4" path="res://Graphics/Cards/DayFrame.png" id="2_50ino"]
 [ext_resource type="Theme" uid="uid://c5qyll2cke3nb" path="res://Cards/CardTheme.tres" id="3_nry7q"]
 [ext_resource type="Texture2D" uid="uid://5u2ohgdne5ei" path="res://Graphics/Cards/DayFront.png" id="4_5q4vu"]
-[ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="5_bmyxb"]
-[ext_resource type="Texture2D" uid="uid://w5k0sqlxk3g7" path="res://Graphics/UI/EnergyBack0000.png" id="7_tygsg"]
-[ext_resource type="Texture2D" uid="uid://ctqlu2gdpbgrj" path="res://Graphics/UI/EnergyFront0000.png" id="8_bmyxb"]
-[ext_resource type="Material" uid="uid://cv62tvfmnej4b" path="res://Shaders/EnergyBurn.tres" id="9_ws7lp"]
-[ext_resource type="Texture2D" uid="uid://bf854183hsvqu" path="res://Graphics/UI/EnergyLine0000.png" id="10_6s8qy"]
+[ext_resource type="Texture2D" uid="uid://hp0be5mnf8ee" path="res://Graphics/Cards/NightFrame.png" id="4_6s8qy"]
+[ext_resource type="Texture2D" uid="uid://h7ix5c8han3h" path="res://Graphics/Cards/SaneFrame.png" id="5_g4pjt"]
+[ext_resource type="Texture2D" uid="uid://tdacvwrfw4fa" path="res://Graphics/Cards/BasicFront.png" id="6_437bp"]
 [ext_resource type="Texture2D" uid="uid://cld4uxi1cnoca" path="res://Graphics/Cards/NightBack.png" id="12_50ino"]
-[ext_resource type="Texture2D" uid="uid://bke0grn62pj5l" path="res://Graphics/Cards/BasicBack.png" id="12_tygsg"]
+[ext_resource type="Texture2D" uid="uid://bke0grn62pj5l" path="res://Graphics/Cards/SaneFront.png" id="12_tygsg"]
 [ext_resource type="Texture2D" uid="uid://cvd1dfn6t5065" path="res://Graphics/Cards/DayBack.png" id="13_5q4vu"]
+[ext_resource type="Texture2D" uid="uid://wjuqiqw3qg4o" path="res://Graphics/Cards/BasicBack.png" id="15_gbc7y"]
+[ext_resource type="Texture2D" uid="uid://e0mgn6ydwpeb" path="res://Graphics/Cards/SaneBack.png" id="17_fjvuj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bmyxb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_5q4vu")
+}, {
+"duration": 1.0,
 "texture": ExtResource("2_50ino")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6s8qy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g4pjt")
 }],
 "loop": true,
 "name": &"default",
@@ -28,7 +38,16 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("6_437bp")
+}, {
+"duration": 1.0,
 "texture": ExtResource("4_5q4vu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_50ino")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tygsg")
 }],
 "loop": true,
 "name": &"default",
@@ -39,13 +58,16 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_tygsg")
+"texture": ExtResource("15_gbc7y")
 }, {
 "duration": 1.0,
 "texture": ExtResource("13_5q4vu")
 }, {
 "duration": 1.0,
 "texture": ExtResource("12_50ino")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fjvuj")
 }],
 "loop": false,
 "name": &"default",
@@ -57,6 +79,14 @@ size = Vector2(570, 890)
 
 [node name="BaseCard" type="Node2D" unique_id=105035990]
 script = ExtResource("1_ydy5p")
+metadata/_edit_vertical_guides_ = [-204.0]
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=748206317]
+self_modulate = Color(1, 1, 1, 0.38039216)
+show_behind_parent = true
+position = Vector2(-7.3379827, -6.6655073)
+scale = Vector2(2.035548, -1.9952877)
+texture = ExtResource("12_50ino")
 
 [node name="CardFront" type="Node2D" parent="." unique_id=519823740]
 use_parent_material = true
@@ -65,8 +95,6 @@ use_parent_material = true
 use_parent_material = true
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bmyxb")
-script = ExtResource("5_bmyxb")
-should_flip = false
 
 [node name="CardFill" type="AnimatedSprite2D" parent="CardFront" unique_id=127767426]
 show_behind_parent = true
@@ -79,77 +107,42 @@ show_behind_parent = true
 use_parent_material = true
 position = Vector2(2, -139.00005)
 
-[node name="EnergyPip" type="Node2D" parent="CardFront" unique_id=1990692794]
-use_parent_material = true
-position = Vector2(189.00002, -367)
-scale = Vector2(1.3098845, 1.3098845)
-
-[node name="Back" type="Sprite2D" parent="CardFront/EnergyPip" unique_id=1815013340]
-self_modulate = Color(0.29803923, 0.34509805, 0.34509805, 1)
-use_parent_material = true
-scale = Vector2(1.0043019, 1.0043019)
-texture = ExtResource("7_tygsg")
-
-[node name="Front" type="Sprite2D" parent="CardFront/EnergyPip" unique_id=768727205]
-self_modulate = Color(0.38039216, 0.4509804, 0.49019608, 1)
-use_parent_material = true
-texture = ExtResource("8_bmyxb")
-
-[node name="FullFront" type="Sprite2D" parent="CardFront/EnergyPip/Front" unique_id=1808957655]
-self_modulate = Color(0.78039217, 0.78039217, 0.34117648, 1)
-material = ExtResource("9_ws7lp")
-use_parent_material = true
-texture = ExtResource("8_bmyxb")
-
-[node name="Line" type="Sprite2D" parent="CardFront/EnergyPip" unique_id=1125568214]
-modulate = Color(1, 1, 1, 0.7455259)
-self_modulate = Color(0.18039216, 0.23529412, 0.28627452, 1)
-use_parent_material = true
-texture = ExtResource("10_6s8qy")
-
-[node name="FullLine" type="Sprite2D" parent="CardFront/EnergyPip/Line" unique_id=836807859]
-self_modulate = Color(0.78039217, 0.78039217, 0.34117648, 1)
-material = ExtResource("9_ws7lp")
-use_parent_material = true
-texture = ExtResource("10_6s8qy")
-
 [node name="Name" type="Label" parent="CardFront" unique_id=933147433]
 use_parent_material = true
-offset_left = -215.0
-offset_top = -400.0
-offset_right = 138.0
-offset_bottom = -326.0
+offset_left = -198.0
+offset_top = -374.0
+offset_right = 155.0
+offset_bottom = -300.0
 theme = ExtResource("3_nry7q")
 theme_override_font_sizes/font_size = 54
 text = "Card Name"
 
 [node name="Description" type="RichTextLabel" parent="CardFront" unique_id=376343130]
 use_parent_material = true
-offset_left = -213.0
-offset_top = 48.0
-offset_right = 210.0
-offset_bottom = 392.0
+offset_left = -201.0
+offset_top = 3.0
+offset_right = 209.0
+offset_bottom = 347.0
 mouse_filter = 2
 theme = ExtResource("3_nry7q")
 bbcode_enabled = true
 text = "Card Description"
 
 [node name="Cost" type="Label" parent="CardFront" unique_id=1544021586]
-offset_left = 182.00002
-offset_top = -413.0
-offset_right = 222.00002
-offset_bottom = -244.0
+offset_left = 113.0
+offset_top = -387.00003
+offset_right = 234.72514
+offset_bottom = -240.26717
 rotation = 0.12410954
 theme = ExtResource("3_nry7q")
 theme_override_font_sizes/font_size = 60
 text = "1"
+horizontal_alignment = 1
 
 [node name="CardBack" type="AnimatedSprite2D" parent="." unique_id=1167643910]
 visible = false
 scale = Vector2(2.04, 2.04)
 sprite_frames = SubResource("SpriteFrames_y0nfu")
-script = ExtResource("5_bmyxb")
-should_flip = false
 
 [node name="CardArea" type="Area2D" parent="." unique_id=503653920]
 

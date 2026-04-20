@@ -207,7 +207,7 @@ scale = Vector2(0.4, 0.4)
 
 [node name="Bush9" parent="Bushes" unique_id=1829145911 instance=ExtResource("2_gkbg8")]
 modulate = Color(0.21666667, 0.21666667, 0.21666667, 0.9723529)
-position = Vector2(1693, 465)
+position = Vector2(1684, 481)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush8" parent="Bushes" unique_id=452281857 instance=ExtResource("2_gkbg8")]

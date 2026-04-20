@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dolwoqa17fiq1"]
+
+[ext_resource type="Texture2D" uid="uid://ceeinr6d8p16b" path="res://Graphics/Environment/Pile/Stick1.png" id="1_geq53"]
+[ext_resource type="Texture2D" uid="uid://dcn2w0fqeqbj4" path="res://Graphics/Environment/Pile/Stick2.png" id="2_bfjpg"]
+[ext_resource type="Texture2D" uid="uid://d1f1ao754iif6" path="res://Graphics/Environment/Pile/Stick3.png" id="3_sl7ah"]
+[ext_resource type="PackedScene" uid="uid://1cd50b03me1x" path="res://Utils/InsanityFlicker.tscn" id="5_bfjpg"]
+[ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="5_e6f4i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmgsy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_geq53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bfjpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sl7ah")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PickStick" type="Node2D" unique_id=2040168837]
+
+[node name="Sane" type="AnimatedSprite2D" parent="." unique_id=1457348044]
+position = Vector2(2.5, -28.5)
+sprite_frames = SubResource("SpriteFrames_hmgsy")
+offset = Vector2(1, 26)
+script = ExtResource("5_e6f4i")
+self_modulations = Array[Color]([Color(0.5176471, 0.18431373, 0.16470589, 1), Color(0.08235294, 0.0627451, 0.07058824, 1), Color(0.24313726, 0.16862746, 0.15294118, 1)])
+
+[node name="Sane2" type="AnimatedSprite2D" parent="Sane" unique_id=1004002887]
+self_modulate = Color(0.5176471, 0.18431373, 0.16470589, 1)
+position = Vector2(-107, 14)
+sprite_frames = SubResource("SpriteFrames_hmgsy")
+frame = 1
+offset = Vector2(1, 26)
+script = ExtResource("5_e6f4i")
+self_modulations = Array[Color]([Color(0.5176471, 0.18431373, 0.16470589, 1), Color(0.08235294, 0.0627451, 0.07058824, 1), Color(0.24313726, 0.16862746, 0.15294118, 1)])
+
+[node name="Sane3" type="AnimatedSprite2D" parent="Sane" unique_id=507887865]
+self_modulate = Color(0.5176471, 0.18431373, 0.16470589, 1)
+position = Vector2(89, 18)
+sprite_frames = SubResource("SpriteFrames_hmgsy")
+offset = Vector2(1, 26)
+script = ExtResource("5_e6f4i")
+self_modulations = Array[Color]([Color(0.5176471, 0.18431373, 0.16470589, 1), Color(0.08235294, 0.0627451, 0.07058824, 1), Color(0.24313726, 0.16862746, 0.15294118, 1)])
+
+[node name="Insane" type="AnimatedSprite2D" parent="." unique_id=1561422173]
+self_modulate = Color(0.28235295, 0.23529412, 0.18431373, 1)
+position = Vector2(2.5, -28.5)
+sprite_frames = SubResource("SpriteFrames_hmgsy")
+frame = 2
+offset = Vector2(1, 26)
+script = ExtResource("5_e6f4i")
+self_modulations = Array[Color]([Color(0.234375, 0.19500732, 0.21961212, 1), Color(0.24313726, 0.16862746, 0.15294118, 1), Color(0.18039216, 0.15294118, 0.16862746, 1)])
+
+[node name="Insane2" type="AnimatedSprite2D" parent="Insane" unique_id=1025976472]
+self_modulate = Color(0.08235294, 0.0627451, 0.07058824, 1)
+position = Vector2(-107, 14)
+sprite_frames = SubResource("SpriteFrames_hmgsy")
+offset = Vector2(1, 26)
+script = ExtResource("5_e6f4i")
+self_modulations = Array[Color]([Color(0.234375, 0.19500732, 0.21961212, 1), Color(0.24313726, 0.16862746, 0.15294118, 1), Color(0.18039216, 0.15294118, 0.16862746, 1)])
+
+[node name="Insane3" type="AnimatedSprite2D" parent="Insane" unique_id=963345984]
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(89, 18)
+sprite_frames = SubResource("SpriteFrames_hmgsy")
+offset = Vector2(1, 26)
+script = ExtResource("5_e6f4i")
+self_modulations = Array[Color]([Color(0.234375, 0.19500732, 0.21961212, 1), Color(0.24313726, 0.16862746, 0.15294118, 1), Color(0.18039216, 0.15294118, 0.16862746, 1)])
+
+[node name="InsanityFlicker" parent="." unique_id=1741190488 instance=ExtResource("5_bfjpg")]
+sane_node = NodePath("../Sane")
+insane_node = NodePath("../Insane")
+chance_to_flicker = 0.4
+chance_to_stick_early = 0.6
