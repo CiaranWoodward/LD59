@@ -2,40 +2,59 @@
 
 [ext_resource type="PackedScene" uid="uid://sm6uk6e3vdyu" path="res://World/Environment/Tree.tscn" id="1_bt8yb"]
 [ext_resource type="PackedScene" uid="uid://ht24sldfu5cf" path="res://World/Environment/Bush.tscn" id="2_5oflu"]
+[ext_resource type="PackedScene" uid="uid://cfhexshl20e7w" path="res://World/EnvironmentObject.tscn" id="3_avmcu"]
 
 [node name="Forest" type="Node2D" unique_id=1178282790]
 y_sort_enabled = true
 
-[node name="Tree5" parent="." unique_id=1977256563 instance=ExtResource("1_bt8yb")]
+[node name="Foreground" type="Node2D" parent="." unique_id=278810515]
+y_sort_enabled = true
+
+[node name="Tree5" parent="Foreground" unique_id=1977256563 instance=ExtResource("1_bt8yb")]
 modulate = Color(0.22265625, 0.22265625, 0.22265625, 0.74509805)
 self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
 position = Vector2(6, 1091)
 scale = Vector2(1.1454545, 1.1454545)
 
-[node name="Tree6" parent="." unique_id=583967734 instance=ExtResource("1_bt8yb")]
+[node name="Tree6" parent="Foreground" unique_id=583967734 instance=ExtResource("1_bt8yb")]
 modulate = Color(0.296875, 0.296875, 0.296875, 0.74509805)
 self_modulate = Color(0.19046193, 0.17445573, 0.1424433, 1)
 position = Vector2(1776.9999, 1142)
 scale = Vector2(1.1454545, 1.1454545)
 
-[node name="Bush11" parent="." unique_id=2069194352 instance=ExtResource("2_5oflu")]
+[node name="Bush11" parent="Foreground" unique_id=2069194352 instance=ExtResource("2_5oflu")]
 modulate = Color(0.19921875, 0.19921875, 0.19921875, 0.83137256)
 position = Vector2(39, 1150)
 scale = Vector2(1.5, 1.5)
 
-[node name="Bush12" parent="." unique_id=1114909443 instance=ExtResource("2_5oflu")]
+[node name="Bush12" parent="Foreground" unique_id=1114909443 instance=ExtResource("2_5oflu")]
 modulate = Color(0.20703125, 0.20703125, 0.20703125, 0.8901961)
 position = Vector2(1962.9999, 1164.9999)
 scale = Vector2(1.2063168, 1.2063168)
 
-[node name="Bush14" parent="." unique_id=1140921408 instance=ExtResource("2_5oflu")]
+[node name="Bush14" parent="Foreground" unique_id=1140921408 instance=ExtResource("2_5oflu")]
 modulate = Color(0.2627451, 0.2627451, 0.2627451, 0.8901961)
 position = Vector2(1760, 1262)
 scale = Vector2(1.2063168, 1.2063168)
 
-[node name="Bush13" parent="." unique_id=1533145271 instance=ExtResource("2_5oflu")]
+[node name="Bush13" parent="Foreground" unique_id=1533145271 instance=ExtResource("2_5oflu")]
 modulate = Color(0.24609375, 0.24609375, 0.24609375, 0.83137256)
 position = Vector2(167.00003, 1162)
+scale = Vector2(1.3, 1.3)
+
+[node name="Bush15" parent="Foreground" unique_id=1047087959 instance=ExtResource("2_5oflu")]
+modulate = Color(0.24609375, 0.24609375, 0.24609375, 0.83137256)
+position = Vector2(565, 1266)
+scale = Vector2(1.3, 1.3)
+
+[node name="Bush16" parent="Foreground" unique_id=1485763622 instance=ExtResource("2_5oflu")]
+modulate = Color(0.24609375, 0.24609375, 0.24609375, 0.83137256)
+position = Vector2(890, 1267)
+scale = Vector2(1.3, 1.3)
+
+[node name="Bush17" parent="Foreground" unique_id=607349482 instance=ExtResource("2_5oflu")]
+modulate = Color(0.24609375, 0.24609375, 0.24609375, 0.83137256)
+position = Vector2(1366, 1276.0001)
 scale = Vector2(1.3, 1.3)
 
 [node name="Trees" type="Node2D" parent="." unique_id=775338074]
@@ -235,3 +254,28 @@ scale = Vector2(0.8, 0.8)
 modulate = Color(0.88, 0.88, 0.88, 0.99576473)
 position = Vector2(1840.9999, 638)
 scale = Vector2(0.8, 0.8)
+
+[node name="Environment" type="Node2D" parent="." unique_id=416192603]
+y_sort_enabled = true
+
+[node name="EnvironmentObject" parent="Environment" unique_id=869142138 instance=ExtResource("3_avmcu")]
+position = Vector2(225, 641)
+
+[node name="EnvironmentObject2" parent="Environment" unique_id=83911705 instance=ExtResource("3_avmcu")]
+position = Vector2(429.00003, 798.00006)
+scale = Vector2(1.3, 1.3)
+
+[node name="EnvironmentObject3" parent="Environment" unique_id=1014556098 instance=ExtResource("3_avmcu")]
+position = Vector2(1301, 695)
+scale = Vector2(1.1, 1.1)
+
+[node name="EnvironmentObject4" parent="Environment" unique_id=845154175 instance=ExtResource("3_avmcu")]
+position = Vector2(1552, 651)
+
+[node name="EnvironmentObject5" parent="Environment" unique_id=1624921098 instance=ExtResource("3_avmcu")]
+position = Vector2(1505, 816)
+scale = Vector2(1.3, 1.3)
+
+[node name="EnvironmentObject6" parent="Environment" unique_id=1302243189 instance=ExtResource("3_avmcu")]
+position = Vector2(657, 716)
+scale = Vector2(1.2, 1.2)

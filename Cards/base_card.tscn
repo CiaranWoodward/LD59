@@ -5,7 +5,6 @@
 [ext_resource type="Theme" uid="uid://c5qyll2cke3nb" path="res://Cards/CardTheme.tres" id="3_nry7q"]
 [ext_resource type="Texture2D" path="res://Graphics/Cards/Front20000.png" id="4_kqvxo"]
 [ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="5_bmyxb"]
-[ext_resource type="Texture2D" uid="uid://pn8oc7nus4rb" path="res://Graphics/MV Sketch/White0000.png" id="5_eg4dm"]
 [ext_resource type="Texture2D" path="res://Graphics/Cards/Front30000.png" id="5_wmdxx"]
 [ext_resource type="Texture2D" uid="uid://w5k0sqlxk3g7" path="res://Graphics/UI/EnergyBack0000.png" id="7_tygsg"]
 [ext_resource type="Texture2D" uid="uid://ctqlu2gdpbgrj" path="res://Graphics/UI/EnergyFront0000.png" id="8_bmyxb"]
@@ -71,8 +70,8 @@ show_behind_parent = true
 use_parent_material = true
 position = Vector2(0, -4.287217)
 rotation = 3.1415927
-scale = Vector2(26.462793, 42.32535)
-texture = ExtResource("5_eg4dm")
+scale = Vector2(2.0778358, 1.9292583)
+texture = ExtResource("12_tygsg")
 
 [node name="Image" type="Sprite2D" parent="CardFront" unique_id=1941202912]
 show_behind_parent = true

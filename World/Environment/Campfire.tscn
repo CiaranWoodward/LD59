@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://7kte61h2xdj7" path="res://Graphics/Environment/Fire/FireSmall.png" id="7_sx45w"]
 [ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="7_ysad7"]
 [ext_resource type="Texture2D" uid="uid://dxmkj3cohv7r6" path="res://Graphics/Particles/FirePart.png" id="9_7xama"]
+[ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="10_ayd0l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sx45w"]
 animations = [{
@@ -420,10 +421,11 @@ texture = ExtResource("1_7bne2")
 
 [node name="Logs" type="AnimatedSprite2D" parent="." unique_id=1588026201]
 sprite_frames = SubResource("SpriteFrames_sx45w")
+frame = 2
 offset = Vector2(6, 3)
 
 [node name="Smoke" type="CPUParticles2D" parent="." unique_id=1814070281]
-position = Vector2(0, -48)
+position = Vector2(0, -66)
 rotation = 0.013004067
 scale = Vector2(1.0067589, 0.871385)
 skew = 0.0040010214
@@ -449,7 +451,7 @@ color_initial_ramp = SubResource("Gradient_7xama")
 [node name="BigFire" type="AnimatedSprite2D" parent="." unique_id=1249455685]
 sprite_frames = SubResource("SpriteFrames_6b84x")
 autoplay = "default"
-speed_scale = 0.986778
+speed_scale = 0.9451351
 offset = Vector2(-0.19172853, -38.91566)
 script = ExtResource("7_ysad7")
 should_flip = false
@@ -458,7 +460,7 @@ play_on_load = true
 [node name="MidFire" type="AnimatedSprite2D" parent="." unique_id=2086808910]
 sprite_frames = SubResource("SpriteFrames_74pnr")
 autoplay = "default"
-speed_scale = 0.91156334
+speed_scale = 1.0416019
 offset = Vector2(0, -44)
 script = ExtResource("7_ysad7")
 should_flip = false
@@ -491,7 +493,7 @@ color_initial_ramp = SubResource("Gradient_xbxvm")
 [node name="SmallFire" type="AnimatedSprite2D" parent="." unique_id=1756562007]
 sprite_frames = SubResource("SpriteFrames_y7nvl")
 autoplay = "default"
-speed_scale = 0.9941181
+speed_scale = 1.0752431
 offset = Vector2(7, -40)
 script = ExtResource("7_ysad7")
 should_flip = false
@@ -508,3 +510,10 @@ autoplay = &"Mid"
 [node name="Big" type="AnimationPlayer" parent="." unique_id=886979865]
 libraries/ = SubResource("AnimationLibrary_74pnr")
 autoplay = &"Big"
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1392212599]
+modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.60784316)
+show_behind_parent = true
+position = Vector2(-1, 4.7938347)
+scale = Vector2(1.2988234, 0.5579013)
+texture = ExtResource("10_ayd0l")
