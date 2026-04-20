@@ -96,7 +96,7 @@ func is_insane() -> bool:
 	return statistics[Statistic.INSANITY] >= 3
 
 func is_warm() -> bool:
-	return is_daytime() or statistics[Statistic.FIRE_LIT] > 0
+	return is_daytime() or (statistics[Statistic.FIRE_LIT] > 0)
 
 func next_round() -> TurnEndImpact:
 	var next_day_coming = statistics[Statistic.ROUND] == max_statistic_values[Statistic.ROUND]

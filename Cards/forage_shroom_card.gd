@@ -29,5 +29,5 @@ func on_play():
 			card_to_add = purple_shroom_card.instantiate()
 		ShroomType.Red:
 			card_to_add = red_shroom_card.instantiate()
-	await table.initialise_card_to_discard_pile(card_to_add).finished
+	await table.initialise_card_to_discard_pile(card_to_add)
 	

@@ -162,3 +162,12 @@ debug_visible = false
 visible = false
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="End Turn" type="Button" parent="HUD" unique_id=503962822]
+offset_left = 1826.0
+offset_top = 1033.0
+offset_right = 1904.0
+offset_bottom = 1064.0
+text = "End Turn"
+
+[connection signal="pressed" from="HUD/End Turn" to="." method="_on_end_turn_pressed"]

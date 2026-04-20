@@ -15,7 +15,7 @@ func stat_watcher(stat, new_value, _old_value):
 		
 func turn_ticker():
 	if !Global.is_warm():
-		Global.table.initialise_card_to_discard_pile(chillCard.instantiate())
+		await Global.table.initialise_card_to_discard_pile(chillCard.instantiate())
 	# Process the fire
 	if Global.statistics[Global.Statistic.FIRE_LIT] > 0:
 		Global.change_statistic(Global.Statistic.FIRE_SIZE, -1)
@@ -35,28 +35,30 @@ func forever_game_loop():
 			return
 
 		# Wait for the player to finish their turn
-		# TODO: End turn button
 		while table.state != Table.TableState.Idle || table.any_playable_cards_in_hand():
 			await table.state_changed
 			if table.state == Table.TableState.GameOver:
 				return
+			if table.state == Table.TableState.NotPlayerTurn:
+				break
 			table.all_cards()
 		
-		# End the player's turn
-		await table.end_turn()
+		# End the player's turn if it isn't already over
+		if table.state != Table.TableState.NotPlayerTurn:
+			await table.end_turn()
 
 		var turn_end_impact = Global.next_round()
 
 		if table.state == Table.TableState.GameOver:
 			return
 		
-		table.initialise_card_to_discard_pile(hungerCard.instantiate())
+		await table.initialise_card_to_discard_pile(hungerCard.instantiate())
 
 		if turn_end_impact != Global.TurnEndImpact.NORMAL:
 			await table.reshuffle()
 		
 		# Process end of turn effects
-		turn_ticker()
+		await turn_ticker()
 		
 		if table.state == Table.TableState.GameOver:
 			return

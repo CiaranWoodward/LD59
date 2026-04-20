@@ -10,7 +10,7 @@ func on_play():
 	for card in cards_to_burn:
 		await Global.table.burn_card(card)
 	
-	await Global.table.initialise_card_to_discard_pile(poison_card.instantiate()).finished
+	await Global.table.initialise_card_to_discard_pile(poison_card.instantiate())
 	
 
 	

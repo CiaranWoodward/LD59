@@ -13,8 +13,9 @@ description = "You feel a chill seeping through your bones that you can't shut o
 
 [i]Effect on discard[/i]
 
-[i]Unplayable[/i]"
+[i]Unplayable, Consumable[/i]"
 image = ExtResource("3_4td38")
+consumable = true
 status = true
 unplayable = true
 

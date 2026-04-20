@@ -161,21 +161,22 @@ func game_over():
 	
 
 ## Add a card and hook it up
-func initialise_card_to_discard_pile(card: BaseCard, delay: float = 0.0, spawn_position = $SpawnPoint.global_position) -> Tween:
+func initialise_card_to_discard_pile(card: BaseCard, delay: float = 0.0, spawn_position = $SpawnPoint.global_position):
 	if !is_instance_valid(card.get_parent()):
 		$Cards.add_child(card)
 		#card.scale = Vector2.ONE
 		card.global_position = spawn_position
 	_attach_mouse_watchers(card)
-	return add_card_to_discard_pile(card, delay, true)
+	await add_card_to_discard_pile(card, delay, true)
 
 ## Discard a card that is already in the hand
-func add_card_to_discard_pile(card: BaseCard, delay: float = 0.0, skip_action: bool = false) -> Tween:
+func add_card_to_discard_pile(card: BaseCard, delay: float = 0.0, skip_action: bool = false):
 	if not skip_action:
-		card.action_discard()
+		if await card.action_discard() == false:
+			return
 	var tween = _tween_card_discard(card, delay)
 	discard_pile.append(card)
-	return tween
+	await tween.finished
 
 ## Burn a card that is anywhere
 func burn_card(card: BaseCard):
@@ -272,7 +273,7 @@ func _attach_mouse_watchers(card: BaseCard):
 		hovered_cards.erase(c)
 		hand.erase(c)
 		if !burn:
-			add_card_to_discard_pile(c)
+			await add_card_to_discard_pile(c)
 		_change_state(TableState.Idle)
 	)
 
@@ -563,25 +564,27 @@ func _tween_card_game_over(card: BaseCard) -> Tween:
 	return tween
 
 func _discard_hand():
-	var all_tweens: Array[Tween] = []
 	var old_hand = hand.duplicate()
 	hovered_cards.clear()
 	currently_hovered_card = null
 	hand.clear()
 	for i in range(old_hand.size()):
 		var card = old_hand[i]
-		all_tweens.append(add_card_to_discard_pile(card, discard_time_stagger * i))
-		
-	await WaitAllTweens.wait_all_tweens(all_tweens)
+		await add_card_to_discard_pile(card)
 	hand.clear()
 
 func _discard_draw_and_idle_pile():
-	var all_tweens: Array[Tween] = []
 	var old_piles = draw_pile + idle_pile
 	draw_pile.clear()
 	idle_pile.clear()
-	for card in old_piles:
-		all_tweens.append(add_card_to_discard_pile(card, 0, true))
+	var callables = old_piles.map(func(card): 
+		return func():
+			await add_card_to_discard_pile(card, 0, true))
+	await WaitAllCoroutines.fire_all(callables)
 	all_cards()
-		
-	await WaitAllTweens.wait_all_tweens(all_tweens)
+
+
+func _on_end_turn_pressed() -> void:
+	if state != TableState.Idle:
+		return
+	end_turn()

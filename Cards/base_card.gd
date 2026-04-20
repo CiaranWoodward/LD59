@@ -87,6 +87,7 @@ var hovered: bool = false:
 		hovered = value
 
 var _in_hand: bool = false
+var _burned: bool = false
 
 # Card Lifecycle:
 # Idle -> Hovered
@@ -195,6 +196,9 @@ func _sync_front_visuals():
 
 
 func _do_burn():
+	await on_pre_burn()
+	_burned = true
+
 	var shaderMaterial = burn_material.duplicate()
 	shaderMaterial.set_shader_parameter("progress", -1.5)
 	shaderMaterial.set_shader_parameter("direction", randf_range(0, 360))
@@ -244,13 +248,15 @@ func action_play():
 	if play_timer.time_left > 0:
 		await play_timer.timeout
 	if consumable:
-		_do_burn()
+		await _do_burn()
 	else:
-		_do_discard()
+		await _do_discard()
 
-func action_discard():
+# Returns true if the card should be discarded, false if the card has been burned
+func action_discard() -> bool:
 	_in_hand = false
-	on_pre_discard()
+	await on_pre_discard()
+	return _burned == false
 
 func is_playable() -> bool:
 	if Engine.is_editor_hint():
@@ -280,6 +286,9 @@ func on_play():
 	pass
 
 func on_pre_discard():
+	pass
+
+func on_pre_burn():
 	pass
 
 # Flip card visuals

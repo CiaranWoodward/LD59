@@ -238,14 +238,14 @@ func _choose(choice: Choice) -> void:
 		await card._do_burn()
 
 	# Take the chosen card (if any) and add it to the discard pile
-	var tween: Tween = null
+	var initialiseCallable: Callable = Callable()
 	if choice != Choice.SKIP:
 		var chosen_node: Node2D = $ChoiceA if choice == Choice.A else $ChoiceB
 		if chosen_node.get_child_count() > 0:
 			var chosen_card: BaseCard = chosen_node.get_child(0)
 			var gp = chosen_card.global_position
 			chosen_node.remove_child(chosen_card)
-			tween = Global.table.initialise_card_to_discard_pile(chosen_card, 0.3, gp)
+			initialiseCallable = Global.table.initialise_card_to_discard_pile.bind(chosen_card, 0.3, gp)
 			choice_made.emit(chosen_card)
 
 	if delta != 0:
@@ -254,9 +254,9 @@ func _choose(choice: Choice) -> void:
 	_active_encounter.played = true
 	deactivate_encounter()
 
-	if tween:
-		tween.tween_interval(0.5)
-		await tween.finished
+	if initialiseCallable:
+		await initialiseCallable.call()
+		await get_tree().create_timer(0.5).timeout
 
 	encounter_finished.emit()
 
