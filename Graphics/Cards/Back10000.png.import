@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cviaalyscjace"
-path="res://.godot/imported/Smoke0000.png-0f36081e3b8232445add4a41dc26779b.ctex"
+uid="uid://cyhaymhg6vgql"
+path="res://.godot/imported/Back10000.png-a13dfd6fa4f1aacf1f260161ae31385a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/MV Sketch/Smoke0000.png"
-dest_files=["res://.godot/imported/Smoke0000.png-0f36081e3b8232445add4a41dc26779b.ctex"]
+source_file="res://Graphics/Cards/Back10000.png"
+dest_files=["res://.godot/imported/Back10000.png-a13dfd6fa4f1aacf1f260161ae31385a.ctex"]
 
 [params]
 
