@@ -4,6 +4,6 @@
 
 [resource]
 shader = ExtResource("1_l7svb")
-shader_parameter/amount = 0.566000026885
-shader_parameter/dimming = 0.262000012445
-shader_parameter/contrast = 0.6610000076475
+shader_parameter/amount = 0.8800000418
+shader_parameter/dimming = 0.5250000249375
+shader_parameter/contrast = 0.87600001786

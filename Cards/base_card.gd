@@ -176,11 +176,22 @@ func _sync_front_visuals():
 		_set_unplayable_visuals(!is_playable())
 	
 	if card_timing == CardTiming.All:
-		$CardBack.frame = 0
+		if Global.is_insane():
+			$CardBack.frame = 3
+			$CardFront/CardFront.frame = 3
+			$CardFront/CardFill.frame = 3
+		else:
+			$CardBack.frame = 0
+			$CardFront/CardFront.frame = 0
+			$CardFront/CardFill.frame = 0
 	elif card_timing == CardTiming.Day:
 		$CardBack.frame = 1
+		$CardFront/CardFront.frame = 1
+		$CardFront/CardFill.frame = 1
 	elif card_timing == CardTiming.Night:
 		$CardBack.frame = 2
+		$CardFront/CardFront.frame = 2
+		$CardFront/CardFill.frame = 2
 
 
 func _do_burn():

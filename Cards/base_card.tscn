@@ -68,7 +68,7 @@ sprite_frames = SubResource("SpriteFrames_bmyxb")
 script = ExtResource("5_bmyxb")
 should_flip = false
 
-[node name="White" type="AnimatedSprite2D" parent="CardFront" unique_id=127767426]
+[node name="CardFill" type="AnimatedSprite2D" parent="CardFront" unique_id=127767426]
 show_behind_parent = true
 use_parent_material = true
 scale = Vector2(2, 2)
