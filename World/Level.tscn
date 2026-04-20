@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://djacq543arxcb"]
 
 [ext_resource type="Script" uid="uid://6ebpfdbcved2" path="res://World/day_night.gd" id="1_7c1pb"]
+[ext_resource type="Script" uid="uid://buykv60dvd6jq" path="res://World/level.gd" id="1_24re5"]
 [ext_resource type="Texture2D" uid="uid://wm2ukybtxvu3" path="res://Graphics/Environment/Background/Sun.png" id="1_xt66a"]
 [ext_resource type="PackedScene" uid="uid://bxcbuqukhqmbm" path="res://World/Environment/Campfire.tscn" id="2_vccdb"]
 [ext_resource type="Texture2D" uid="uid://sony8h07krbr" path="res://Graphics/Environment/Background/SunGlow.png" id="3_24re5"]
@@ -259,6 +260,7 @@ shader_parameter/lit_threshold = 1.0
 shader_parameter/vignette_strength = 0.1610000076475
 
 [node name="Level" type="Node2D" unique_id=1164261592]
+script = ExtResource("1_24re5")
 
 [node name="DayNight" type="AnimationPlayer" parent="." unique_id=405920214]
 libraries/ = SubResource("AnimationLibrary_r5g24")
