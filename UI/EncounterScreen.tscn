@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddiqd0ytqcmd5" path="res://UI/encounter_screen.gd" id="1_5xpqn"]
 [ext_resource type="PackedScene" uid="uid://vsdfgedtjxmu" path="res://UI/Encounter.tscn" id="2_dfmul"]
+[ext_resource type="PackedScene" uid="uid://dr655u2lnolwc" path="res://Cards/Blindfold.tscn" id="3_f6xpe"]
 [ext_resource type="PackedScene" uid="uid://c6b5xcocr7s1x" path="res://Cards/AxeCard.tscn" id="3_nqibp"]
 [ext_resource type="PackedScene" uid="uid://cymvt7hb2bqu3" path="res://Cards/BowCard.tscn" id="4_f6xpe"]
 
@@ -55,21 +56,21 @@ theme_override_constants/separation = 10
 [node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=159997744]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
-text = "Hope"
+text = "A Sight not Seen"
 
 [node name="MainText" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=767463149]
 custom_minimum_size = Vector2(600, 400)
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "You see the unmistakable smoke signal from the Bazaar in the distance.
+text = "A strange creature, wearing a blindfold and a massive grin.
 
-After so much time, is it really open for business once more?
+[i]\"Hello friend, do you find yourself getting distracted by the inane?\"[i]
 
-Its a long journey - what do you take with you?"
+He presents you with a spare blindfold"
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 182
+visible_characters = 170
 visible_characters_behavior = 1
 
 [node name="SanityDependentText" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=195280547]
@@ -88,16 +89,16 @@ theme_override_constants/separation = 10
 [node name="ChoiceA" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ChoiceButtons" unique_id=1449204598]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "My Bow"
+text = "Put the Blindfold On"
 
 [node name="ChoiceB" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ChoiceButtons" unique_id=1123002852]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "My Axe"
 
 [node name="SkipButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1052698962]
 layout_mode = 2
 size_flags_horizontal = 3
+text = "Refuse"
 
 [node name="ChoiceA" type="Node2D" parent="." unique_id=1467480916]
 position = Vector2(340, 507)
@@ -115,6 +116,7 @@ encounter_text = "A strange creature, wearing a blindfold and a massive grin.
 
 He presents you with a spare blindfold"
 choicea_text = "Put the Blindfold On"
+choicea_card = ExtResource("3_f6xpe")
 skip_text = "Refuse"
 
 [node name="SpecificEncounters" type="Node" parent="." unique_id=999975657]
