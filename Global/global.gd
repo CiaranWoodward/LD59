@@ -95,11 +95,17 @@ func is_daytime() -> bool:
 func is_insane() -> bool:
 	return statistics[Statistic.INSANITY] >= 3
 
+func is_warm() -> bool:
+	return is_daytime() or statistics[Statistic.FIRE_LIT] > 0
+
 func next_round() -> TurnEndImpact:
-	change_statistic(Statistic.ROUND, 1)
+	var next_day_coming = statistics[Statistic.ROUND] == max_statistic_values[Statistic.ROUND]
+	if !next_day_coming:
+		change_statistic(Statistic.ROUND, 1)
+
 	if statistics[Statistic.ROUND] == floor(max_statistic_values[Statistic.ROUND] / 2):
 		return TurnEndImpact.NIGHT_FALLS
-	elif statistics[Statistic.ROUND] == max_statistic_values[Statistic.ROUND]:
+	elif next_day_coming:
 		set_statistic(Statistic.ROUND, 0)
 		change_statistic(Statistic.DAY, 1)
 		return TurnEndImpact.NEW_DAY
