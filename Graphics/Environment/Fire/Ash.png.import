@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqt4gscq3g16"
-path="res://.godot/imported/Front30000.png-092ffacff957dbdde6728a76fa63e4a2.ctex"
+uid="uid://qc4gtbxmwf0m"
+path="res://.godot/imported/Ash.png-82bd428a8685a6ba85d522a49530c331.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Cards/Front30000.png"
-dest_files=["res://.godot/imported/Front30000.png-092ffacff957dbdde6728a76fa63e4a2.ctex"]
+source_file="res://Graphics/Environment/Fire/Ash.png"
+dest_files=["res://.godot/imported/Ash.png-82bd428a8685a6ba85d522a49530c331.ctex"]
 
 [params]
 

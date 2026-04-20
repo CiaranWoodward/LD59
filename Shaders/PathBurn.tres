@@ -14,7 +14,7 @@ normalize = false
 [resource]
 resource_local_to_scene = true
 shader = ExtResource("1_k6j6y")
-shader_parameter/progress = -2.0
+shader_parameter/progress = 0.75
 shader_parameter/noiseForce = 0.2
 shader_parameter/noiseTexture = SubResource("NoiseTexture2D_v6qug")
 shader_parameter/burnColor = Color(0.2, 0.4117647, 0.9098039, 1)

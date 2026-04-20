@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d17j73hkhrvwn"
-path="res://.godot/imported/Back30000.png-0f97cdbf95871a7a511d59eb68b6c43b.ctex"
+uid="uid://cvd1dfn6t5065"
+path="res://.godot/imported/DayBack.png-4f5db4088a35679fb83008f3a236d3fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Cards/Back30000.png"
-dest_files=["res://.godot/imported/Back30000.png-0f97cdbf95871a7a511d59eb68b6c43b.ctex"]
+source_file="res://Graphics/Cards/DayBack.png"
+dest_files=["res://.godot/imported/DayBack.png-4f5db4088a35679fb83008f3a236d3fa.ctex"]
 
 [params]
 
