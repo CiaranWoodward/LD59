@@ -28,22 +28,27 @@ script = ExtResource("3_ae2ab")
 
 [node name="PickBerry" parent="Bush" unique_id=1095148992 instance=ExtResource("3_ih4i4")]
 position = Vector2(-139.99998, -15.999998)
+scale = Vector2(-1, 1)
+frame = 0
 flip_h = true
 
 [node name="PickBerry2" parent="Bush" unique_id=1739799098 instance=ExtResource("3_ih4i4")]
 position = Vector2(-66, -88)
 scale = Vector2(-1, 1)
+frame = 1
 
 [node name="PickBerry3" parent="Bush" unique_id=1769653424 instance=ExtResource("3_ih4i4")]
 position = Vector2(16, -28)
-frame = 0
+frame = 1
 
 [node name="PickBerry4" parent="Bush" unique_id=1157682313 instance=ExtResource("3_ih4i4")]
 position = Vector2(100, -56)
+frame = 0
 flip_h = true
 
 [node name="PickBerry5" parent="Bush" unique_id=955807707 instance=ExtResource("3_ih4i4")]
 position = Vector2(146, 12)
+scale = Vector2(-1, 1)
 flip_h = true
 
 [node name="Shadow2" type="Sprite2D" parent="Bush" unique_id=1288974980]
@@ -56,38 +61,34 @@ texture = ExtResource("3_j77cd")
 [node name="InsanityFlicker" parent="." unique_id=1741190488 instance=ExtResource("5_j77cd")]
 modulate_node = NodePath("../Bush/PickBerry")
 sane_color = Color(1, 0.6813965, 0.6484375, 1)
-chance_to_flicker = 0.5
 chance_to_stick_early = 0.5
-flicker_time = 1.5
+flicker_time = 0.5
 
 [node name="InsanityFlicker2" parent="." unique_id=159543205 instance=ExtResource("5_j77cd")]
 modulate_node = NodePath("../Bush/PickBerry2")
 sane_color = Color(0.5625, 0.73339844, 1, 1)
-chance_to_flicker = 0.5
 chance_to_stick_early = 0.5
-flicker_time = 1.5
+flicker_time = 0.8
 
 [node name="InsanityFlicker3" parent="." unique_id=565691558 instance=ExtResource("5_j77cd")]
 modulate_node = NodePath("../Bush/PickBerry3")
 sane_color = Color(0.98657227, 0.5703125, 1, 1)
-chance_to_flicker = 0.5
 chance_to_stick_early = 0.5
-flicker_time = 1.5
+flicker_time = 0.5
 
 [node name="InsanityFlicker4" parent="." unique_id=1670651859 instance=ExtResource("5_j77cd")]
 modulate_node = NodePath("../Bush/PickBerry4")
 sane_color = Color(0.96484375, 0.7575531, 0.9518881, 1)
-chance_to_flicker = 0.5
 chance_to_stick_early = 0.5
-flicker_time = 1.5
+flicker_time = 0.8
 
 [node name="InsanityFlicker5" parent="." unique_id=33334346 instance=ExtResource("5_j77cd")]
 modulate_node = NodePath("../Bush/PickBerry5")
 sane_color = Color(1, 0.79663086, 0.6171875, 1)
-chance_to_flicker = 0.5
 chance_to_stick_early = 0.5
-flicker_time = 1.5
+flicker_time = 0.5
 
 [node name="InsanityFlickerBush" parent="." unique_id=121949825 instance=ExtResource("5_j77cd")]
 modulate_node = NodePath("../Bush")
 sane_color = Color(0.796875, 0.796875, 0.796875, 1)
+flicker_time = 0.8

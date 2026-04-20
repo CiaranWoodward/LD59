@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://dqtidrexl63xw"]
 
 [ext_resource type="Script" uid="uid://by8tq0l3hkcbs" path="res://Cards/base_card.gd" id="1_ydy5p"]
-[ext_resource type="Texture2D" path="res://Graphics/Cards/Front10000.png" id="3_eg4dm"]
+[ext_resource type="Texture2D" uid="uid://bub7xu5gel4x4" path="res://Graphics/Cards/DayFrame.png" id="2_50ino"]
 [ext_resource type="Theme" uid="uid://c5qyll2cke3nb" path="res://Cards/CardTheme.tres" id="3_nry7q"]
-[ext_resource type="Texture2D" path="res://Graphics/Cards/Front20000.png" id="4_kqvxo"]
+[ext_resource type="Texture2D" uid="uid://5u2ohgdne5ei" path="res://Graphics/Cards/DayFront.png" id="4_5q4vu"]
 [ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="5_bmyxb"]
-[ext_resource type="Texture2D" path="res://Graphics/Cards/Front30000.png" id="5_wmdxx"]
 [ext_resource type="Texture2D" uid="uid://w5k0sqlxk3g7" path="res://Graphics/UI/EnergyBack0000.png" id="7_tygsg"]
 [ext_resource type="Texture2D" uid="uid://ctqlu2gdpbgrj" path="res://Graphics/UI/EnergyFront0000.png" id="8_bmyxb"]
 [ext_resource type="Material" uid="uid://cv62tvfmnej4b" path="res://Shaders/EnergyBurn.tres" id="9_ws7lp"]
@@ -18,13 +17,18 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_eg4dm")
-}, {
+"texture": ExtResource("2_50ino")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tygsg"]
+animations = [{
+"frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_kqvxo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_wmdxx")
+"texture": ExtResource("4_5q4vu")
 }],
 "loop": true,
 "name": &"default",
@@ -59,19 +63,16 @@ use_parent_material = true
 
 [node name="CardFront" type="AnimatedSprite2D" parent="CardFront" unique_id=1390792272]
 use_parent_material = true
-scale = Vector2(2.04, 2.04)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bmyxb")
-frame = 2
 script = ExtResource("5_bmyxb")
 should_flip = false
 
-[node name="White" type="Sprite2D" parent="CardFront" unique_id=278676297]
+[node name="White" type="AnimatedSprite2D" parent="CardFront" unique_id=127767426]
 show_behind_parent = true
 use_parent_material = true
-position = Vector2(0, -4.287217)
-rotation = 3.1415927
-scale = Vector2(2.0778358, 1.9292583)
-texture = ExtResource("12_tygsg")
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_tygsg")
 
 [node name="Image" type="Sprite2D" parent="CardFront" unique_id=1941202912]
 show_behind_parent = true

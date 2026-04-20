@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://cujgnpcdgilj8"]
+
+[ext_resource type="PackedScene" uid="uid://1cd50b03me1x" path="res://Utils/InsanityFlicker.tscn" id="1_ysk7m"]
+[ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="2_3ylcj"]
+[ext_resource type="Texture2D" uid="uid://bpr4wiwll737y" path="res://Graphics/Environment/Pile/InsanePile.png" id="2_xf4bg"]
+[ext_resource type="Texture2D" uid="uid://bc4m8moje4vqk" path="res://Graphics/Environment/Pile/InsanePileUsed.png" id="3_3fola"]
+[ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="3_rd8g4"]
+[ext_resource type="Texture2D" uid="uid://bnsqbvswihq55" path="res://Graphics/Environment/Pile/SanePile.png" id="5_gk0f1"]
+[ext_resource type="Texture2D" uid="uid://b71tfx08aoa4l" path="res://Graphics/Environment/Pile/SanePileUsed.png" id="6_cg6o8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j3n1y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xf4bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3fola")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_saqm3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_gk0f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cg6o8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Pile" type="Node2D" unique_id=1047087959]
+
+[node name="InsanityFlicker" parent="." unique_id=1741190488 instance=ExtResource("1_ysk7m")]
+sane_node = NodePath("../Sane")
+insane_node = NodePath("../Insane")
+always_sane_threshold = 3
+always_insane_threshold = 4
+chance_to_flicker = 0.0
+chance_to_stick_early = 1.0
+
+[node name="Insane" type="Node2D" parent="." unique_id=1744868567]
+visible = false
+
+[node name="Shadow" type="Sprite2D" parent="Insane" unique_id=102016576]
+modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.60784316)
+show_behind_parent = true
+position = Vector2(-1, 10)
+scale = Vector2(1.484425, 0.6376253)
+texture = ExtResource("2_3ylcj")
+
+[node name="Leaf" type="AnimatedSprite2D" parent="Insane" unique_id=1052079598]
+sprite_frames = SubResource("SpriteFrames_j3n1y")
+frame_progress = 0.5065372
+offset = Vector2(5, -43)
+script = ExtResource("3_rd8g4")
+
+[node name="Sane" type="Node2D" parent="." unique_id=559201287]
+
+[node name="Shadow" type="Sprite2D" parent="Sane" unique_id=93586213]
+modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.60784316)
+show_behind_parent = true
+position = Vector2(-1, 10)
+scale = Vector2(0.85864556, 0.3603051)
+texture = ExtResource("2_3ylcj")
+
+[node name="Limbs" type="AnimatedSprite2D" parent="Sane" unique_id=179772821]
+position = Vector2(0, 56)
+sprite_frames = SubResource("SpriteFrames_saqm3")
+offset = Vector2(5, -43)
+script = ExtResource("3_rd8g4")

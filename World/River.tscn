@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://sm6uk6e3vdyu" path="res://World/Environment/Tree.tscn" id="1_7f2jf"]
 [ext_resource type="PackedScene" uid="uid://ht24sldfu5cf" path="res://World/Environment/Bush.tscn" id="2_gkbg8"]
-[ext_resource type="Texture2D" uid="uid://dc8enmitrndvq" path="res://Graphics/Environment/Setting/NICE water.png" id="3_gkbg8"]
+[ext_resource type="Texture2D" uid="uid://dyrgl4mkv2a37" path="res://Graphics/Environment/Setting/River.png" id="3_o3ukc"]
 [ext_resource type="Texture2D" uid="uid://bleturivl63fr" path="res://Graphics/Environment/Setting/blue water sparkle 2.png" id="4_3xjdw"]
 [ext_resource type="Texture2D" uid="uid://rdu755lf3siu" path="res://Graphics/Environment/Setting/blue water sparkle 3.png" id="5_okmdk"]
 [ext_resource type="Texture2D" uid="uid://b5qbbkmb3q27j" path="res://Graphics/Environment/Setting/blue water sparkle.png" id="6_o3ukc"]
@@ -233,37 +233,46 @@ scale = Vector2(0.7, 0.7)
 [node name="River" type="Node2D" parent="." unique_id=1480444586]
 
 [node name="Right Bank" type="Sprite2D" parent="River" unique_id=469000122]
-self_modulate = Color(0.41960785, 0.41960785, 0.41960785, 0.25490198)
-position = Vector2(1045, 356)
-texture = ExtResource("3_gkbg8")
+self_modulate = Color(0.33984375, 0.3385992, 0.33187866, 0.25490198)
+position = Vector2(1258, 935)
+texture = ExtResource("3_o3ukc")
 
 [node name="LeftBank" type="Sprite2D" parent="River" unique_id=2143112932]
-self_modulate = Color(0.41960785, 0.41960785, 0.41960785, 0.25490198)
-position = Vector2(955, 356)
-texture = ExtResource("3_gkbg8")
+self_modulate = Color(0.33984375, 0.3385992, 0.33187866, 0.25490198)
+position = Vector2(1168, 935)
+texture = ExtResource("3_o3ukc")
 
-[node name="NiceWater" type="Sprite2D" parent="River" unique_id=894612649]
-position = Vector2(1007, 356)
-texture = ExtResource("3_gkbg8")
+[node name="River" type="Sprite2D" parent="River" unique_id=894612649]
+position = Vector2(1220, 935)
+texture = ExtResource("3_o3ukc")
 
-[node name="BlueWaterSparkle2" type="Sprite2D" parent="River/NiceWater" unique_id=351592908]
-scale = Vector2(0.91046816, 1)
+[node name="BlueWaterSparkle2" type="Sprite2D" parent="River/River" unique_id=351592908]
+self_modulate = Color(1, 1, 1, 0.25490198)
+position = Vector2(-230.64417, -515.5393)
+scale = Vector2(0.8434145, 0.9263525)
 texture = ExtResource("4_3xjdw")
 
-[node name="BlueWaterSparkle3" type="Sprite2D" parent="River/NiceWater" unique_id=923778006]
-scale = Vector2(0.91046816, 1)
+[node name="BlueWaterSparkle3" type="Sprite2D" parent="River/River" unique_id=923778006]
+self_modulate = Color(1, 1, 1, 0.25490198)
+position = Vector2(-230.64417, -515.5393)
+scale = Vector2(0.8434145, 0.9263525)
 texture = ExtResource("5_okmdk")
 
-[node name="BlueWaterSparkle" type="Sprite2D" parent="River/NiceWater" unique_id=1520569290]
-scale = Vector2(0.91046816, 1)
+[node name="BlueWaterSparkle" type="Sprite2D" parent="River/River" unique_id=1520569290]
+self_modulate = Color(1, 1, 1, 0.25490198)
+position = Vector2(-230.64417, -515.5393)
+scale = Vector2(0.8434145, 0.9263525)
 texture = ExtResource("6_o3ukc")
 
 [node name="InsanityFlicker" parent="." unique_id=1741190488 instance=ExtResource("7_okmdk")]
-modulate_node = NodePath("../River/NiceWater")
+modulate_node = NodePath("../River/River")
 sane_color = Color(0.54901963, 0.21568628, 0.27058825, 1)
+insane_color = Color(0.32941177, 0.54901963, 0.75686276, 1)
 always_sane_threshold = 3
 always_insane_threshold = 4
-chance_to_flicker = 1.0
+chance_to_flicker = 0.0
+chance_to_stick_early = 1.0
+flicker_time = 1.5
 
 [node name="Environment" type="Node2D" parent="." unique_id=444884449]
 y_sort_enabled = true
