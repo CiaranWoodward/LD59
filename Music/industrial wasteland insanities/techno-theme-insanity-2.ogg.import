@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bih26jjtjn1qx"
+path="res://.godot/imported/techno-theme-insanity-2.ogg-4fa4b08f2548be303acfe0a2ee3069ee.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/industrial wasteland insanities/techno-theme-insanity-2.ogg"
+dest_files=["res://.godot/imported/techno-theme-insanity-2.ogg-4fa4b08f2548be303acfe0a2ee3069ee.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=120.0
+beat_count=0
+bar_beats=4

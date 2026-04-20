@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d34kswyxs4sd8"
+path="res://.godot/imported/Night-time.ogg-362a24450796f55a6b17c69bb798b038.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/piano night songs (new set)/Night-time.ogg"
+dest_files=["res://.godot/imported/Night-time.ogg-362a24450796f55a6b17c69bb798b038.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=120.0
+beat_count=0
+bar_beats=4

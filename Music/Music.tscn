@@ -1,9 +1,62 @@
 [gd_scene format=3 uid="uid://dnht8t3ak52a4"]
 
-[ext_resource type="AudioStream" uid="uid://dtprbqdr0asvi" path="res://Music/forest song loop.ogg" id="1_y04ot"]
+[ext_resource type="Script" uid="uid://bcnr0be21aji8" path="res://Music/music.gd" id="1_l6egb"]
+[ext_resource type="AudioStream" uid="uid://cgl7gw3fdeegh" path="res://Music/forest song insanities/forest-song-loop.ogg" id="2_yljg6"]
+[ext_resource type="AudioStream" uid="uid://en8u25x1ijsb" path="res://Music/forest song insanities/forest-song-insanity-1.ogg" id="3_7ar1m"]
+[ext_resource type="AudioStream" uid="uid://dv1khlw10ix0b" path="res://Music/forest song insanities/forest-song-insanity-2.ogg" id="4_fk62i"]
+[ext_resource type="AudioStream" uid="uid://d34kswyxs4sd8" path="res://Music/piano night songs (new set)/Night-time.ogg" id="5_yx4rj"]
+[ext_resource type="AudioStream" uid="uid://bj8q5787evr10" path="res://Music/piano night songs (new set)/Night time insanity 1.ogg" id="6_qanq1"]
+[ext_resource type="AudioStream" uid="uid://cjgxnjmvrdwxj" path="res://Music/piano night songs (new set)/Night time insanity 2.ogg" id="7_rlr25"]
+[ext_resource type="AudioStream" uid="uid://cq1ldhnl5wt18" path="res://Music/lobby piano loops (new insanities)/lobby piano loop.ogg" id="8_m8vwd"]
+[ext_resource type="AudioStream" uid="uid://cak0kd3g3abew" path="res://Music/lobby piano loops (new insanities)/piano lobby insanity 1.ogg" id="9_u6bpq"]
+[ext_resource type="AudioStream" uid="uid://ckkjduwt4j74i" path="res://Music/lobby piano loops (new insanities)/piano lobby insanity 2.ogg" id="10_t82b0"]
+[ext_resource type="AudioStream" uid="uid://d2ckxufn5ojsf" path="res://Music/industrial wasteland insanities/industrial wasteland.ogg" id="11_k1gob"]
+[ext_resource type="AudioStream" uid="uid://diddypaila621" path="res://Music/industrial wasteland insanities/techno-theme-insanity-1_1.ogg" id="12_o40cd"]
+[ext_resource type="AudioStream" uid="uid://bih26jjtjn1qx" path="res://Music/industrial wasteland insanities/techno-theme-insanity-2.ogg" id="13_5u4x0"]
 
 [node name="Music" type="Node2D" unique_id=466025059]
+script = ExtResource("1_l6egb")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1467193697]
-stream = ExtResource("1_y04ot")
-autoplay = true
+[node name="Forest" type="Node" parent="." unique_id=2062420100]
+
+[node name="Level0" type="AudioStreamPlayer" parent="Forest" unique_id=1605797576]
+stream = ExtResource("2_yljg6")
+
+[node name="Level1" type="AudioStreamPlayer" parent="Forest" unique_id=47094947]
+stream = ExtResource("3_7ar1m")
+
+[node name="Level2" type="AudioStreamPlayer" parent="Forest" unique_id=705029496]
+stream = ExtResource("4_fk62i")
+
+[node name="Night" type="Node" parent="." unique_id=929919729]
+
+[node name="Level0" type="AudioStreamPlayer" parent="Night" unique_id=338722341]
+stream = ExtResource("5_yx4rj")
+
+[node name="Level1" type="AudioStreamPlayer" parent="Night" unique_id=1824358803]
+stream = ExtResource("6_qanq1")
+
+[node name="Level2" type="AudioStreamPlayer" parent="Night" unique_id=1630423779]
+stream = ExtResource("7_rlr25")
+
+[node name="Lobby" type="Node" parent="." unique_id=1971903165]
+
+[node name="Level0" type="AudioStreamPlayer" parent="Lobby" unique_id=906179501]
+stream = ExtResource("8_m8vwd")
+
+[node name="Level1" type="AudioStreamPlayer" parent="Lobby" unique_id=21831160]
+stream = ExtResource("9_u6bpq")
+
+[node name="Level2" type="AudioStreamPlayer" parent="Lobby" unique_id=1417106967]
+stream = ExtResource("10_t82b0")
+
+[node name="Industrial" type="Node" parent="." unique_id=1538947905]
+
+[node name="Level0" type="AudioStreamPlayer" parent="Industrial" unique_id=1367567903]
+stream = ExtResource("11_k1gob")
+
+[node name="Level1" type="AudioStreamPlayer" parent="Industrial" unique_id=646413558]
+stream = ExtResource("12_o40cd")
+
+[node name="Level2" type="AudioStreamPlayer" parent="Industrial" unique_id=1281164697]
+stream = ExtResource("13_5u4x0")

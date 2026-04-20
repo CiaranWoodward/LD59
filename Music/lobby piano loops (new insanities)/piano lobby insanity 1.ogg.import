@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cak0kd3g3abew"
+path="res://.godot/imported/piano lobby insanity 1.ogg-d4a4f69bba2c39042001a9c113761ab8.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/lobby piano loops (new insanities)/piano lobby insanity 1.ogg"
+dest_files=["res://.godot/imported/piano lobby insanity 1.ogg-d4a4f69bba2c39042001a9c113761ab8.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=120.0
+beat_count=0
+bar_beats=4
