@@ -80,6 +80,12 @@ func set_statistic(stat: Statistic, value: int):
 	emit_signal("statistic_changed", stat, new_value, old_value)
 	print("Statistic ", Statistic.find_key(stat), " changed from ", old_value, " to ", new_value)
 
+func set_statistic_max(stat: Statistic, value: int):
+	var old_value = max_statistic_values[stat]
+	max_statistic_values[stat] = value
+	emit_signal("statistic_changed", stat, statistics[stat], statistics[stat])
+	print("Statistic max ", Statistic.find_key(stat), " changed from ", old_value, " to ", value)
+
 func change_statistic(stat: Statistic, delta: int):
 	set_statistic(stat, statistics[stat] + delta)
 

@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cymvt7hb2bqu3" path="res://Cards/BowCard.tscn" id="5_ljc0k"]
 [ext_resource type="PackedScene" uid="uid://5bprgo2jfbyb" path="res://Cards/HungerCard.tscn" id="7_t0t1g"]
 [ext_resource type="PackedScene" uid="uid://bwn2y8s7hx6fo" path="res://Cards/MorselCard.tscn" id="8_m6m0j"]
-[ext_resource type="Material" uid="uid://618td7xfqke6" path="res://Shaders/UnplayableCard.tres" id="9_rhal8"]
 [ext_resource type="PackedScene" uid="uid://brd1msi1vo5u" path="res://Cards/TinderboxCard.tscn" id="10_jgnfc"]
 [ext_resource type="PackedScene" uid="uid://du0wsm5kles7k" path="res://UI/GameOver.tscn" id="11_mnq2p"]
 [ext_resource type="PackedScene" uid="uid://dj03uo7wdtqaa" path="res://Cards/WoodCard.tscn" id="11_xmklv"]
@@ -47,6 +46,12 @@ position = Vector2(249, 49)
 rotation = 0.3385997
 scale = Vector2(1.2407901, 1.2407901)
 pip_threshold = 5
+
+[node name="HealthPip6" parent="Pips" unique_id=833038583 instance=ExtResource("2_mnq2p")]
+position = Vector2(314, 202.99998)
+rotation = 0.3385997
+scale = Vector2(1.2407901, 1.2407901)
+pip_threshold = 6
 
 [node name="EnergyPip" parent="Pips" unique_id=1187635481 instance=ExtResource("3_fyblx")]
 position = Vector2(65, 690)
@@ -107,7 +112,6 @@ position = Vector2(2103, 2736)
 position = Vector2(1375, 1983)
 
 [node name="HungerCard" parent="Cards" unique_id=1088402863 instance=ExtResource("7_t0t1g")]
-material = ExtResource("9_rhal8")
 position = Vector2(-35, 3262)
 
 [node name="MorselCard" parent="Cards" unique_id=682037086 instance=ExtResource("8_m6m0j")]
@@ -120,11 +124,9 @@ position = Vector2(2796, 2256)
 position = Vector2(-1587, 2489)
 
 [node name="HungerCard2" parent="Cards" unique_id=324443235 instance=ExtResource("7_t0t1g")]
-material = ExtResource("9_rhal8")
 position = Vector2(-35, 3262)
 
 [node name="HungerCard3" parent="Cards" unique_id=714533921 instance=ExtResource("7_t0t1g")]
-material = ExtResource("9_rhal8")
 position = Vector2(-35, 3262)
 
 [node name="ShufflePoint" type="Marker2D" parent="." unique_id=526775094]
