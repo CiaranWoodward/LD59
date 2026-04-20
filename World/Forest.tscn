@@ -6,161 +6,223 @@
 [node name="Forest" type="Node2D" unique_id=1178282790]
 y_sort_enabled = true
 
+[node name="Tree5" parent="." unique_id=1977256563 instance=ExtResource("1_bt8yb")]
+modulate = Color(0.22265625, 0.22265625, 0.22265625, 0.74509805)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(6, 1091)
+scale = Vector2(1.1454545, 1.1454545)
+flip_h = true
+colour_for_distance = false
+
+[node name="Tree6" parent="." unique_id=583967734 instance=ExtResource("1_bt8yb")]
+modulate = Color(0.296875, 0.296875, 0.296875, 0.74509805)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(1776.9999, 1142)
+scale = Vector2(1.1454545, 1.1454545)
+frame = 1
+colour_for_distance = false
+
+[node name="Bush11" parent="." unique_id=2069194352 instance=ExtResource("2_5oflu")]
+modulate = Color(0.19921875, 0.19921875, 0.19921875, 0.83137256)
+position = Vector2(39, 1150)
+scale = Vector2(1.5, 1.5)
+colour_for_distance = false
+
+[node name="Bush12" parent="." unique_id=1114909443 instance=ExtResource("2_5oflu")]
+modulate = Color(0.20703125, 0.20703125, 0.20703125, 0.8901961)
+position = Vector2(1962.9999, 1164.9999)
+scale = Vector2(1.2063168, 1.2063168)
+offset = Vector2(13.078613, -202.81836)
+colour_for_distance = false
+
+[node name="Bush14" parent="." unique_id=1140921408 instance=ExtResource("2_5oflu")]
+modulate = Color(0.2627451, 0.2627451, 0.2627451, 0.8901961)
+position = Vector2(1760, 1262)
+scale = Vector2(1.2063168, 1.2063168)
+offset = Vector2(13.078613, -202.81836)
+flip_h = true
+colour_for_distance = false
+
+[node name="Bush13" parent="." unique_id=1533145271 instance=ExtResource("2_5oflu")]
+modulate = Color(0.24609375, 0.24609375, 0.24609375, 0.83137256)
+position = Vector2(167.00003, 1162)
+scale = Vector2(1.3, 1.3)
+colour_for_distance = false
+
 [node name="Trees" type="Node2D" parent="." unique_id=775338074]
 y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
 
-[node name="Tree" parent="Trees" unique_id=1977256563 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+[node name="Tree" parent="Trees" unique_id=1806524434 instance=ExtResource("1_bt8yb")]
+modulate = Color(0.41428572, 0.41428572, 0.41428572, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
 position = Vector2(74, 990)
-flip_h = true
+frame = 5
 
 [node name="Tree2" parent="Trees" unique_id=525372403 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.4457143, 0.4457143, 0.4457143, 1)
 position = Vector2(3716, 1012)
-frame = 3
+frame = 2
 
 [node name="Tree3" parent="Trees" unique_id=436894978 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.5657143, 0.5657143, 0.5657143, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
 position = Vector2(1686, 1096)
 frame = 3
 
 [node name="Tree4" parent="Trees" unique_id=1567525326 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.57714283, 0.57714283, 0.57714283, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
 position = Vector2(160, 1104)
+
+[node name="Tree5" parent="Trees" unique_id=306476225 instance=ExtResource("1_bt8yb")]
+modulate = Color(0.71428573, 0.71428573, 0.71428573, 1)
+position = Vector2(3504, 1200)
+frame = 1
+
+[node name="Tree6" parent="Trees" unique_id=2129474002 instance=ExtResource("1_bt8yb")]
+modulate = Color(0.5914286, 0.5914286, 0.5914286, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
+position = Vector2(482, 1114)
 frame = 3
 flip_h = true
 
-[node name="Tree5" parent="Trees" unique_id=306476225 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
-position = Vector2(3504, 1200)
-flip_h = true
-
-[node name="Tree6" parent="Trees" unique_id=2129474002 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
-position = Vector2(482, 1114)
-frame = 2
-flip_h = true
-
 [node name="Tree7" parent="Trees" unique_id=285404921 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.62285715, 0.62285715, 0.62285715, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
 position = Vector2(774, 1136)
 frame = 4
 
 [node name="Tree8" parent="Trees" unique_id=122897391 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.70285714, 0.70285714, 0.70285714, 1)
 position = Vector2(950, 1192)
 frame = 4
 
 [node name="Tree9" parent="Trees" unique_id=1905018371 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.64285713, 0.64285713, 0.64285713, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
 position = Vector2(1182, 1150)
-flip_h = true
+frame = 3
 
 [node name="Tree10" parent="Trees" unique_id=776041508 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.74, 0.74, 0.74, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
 position = Vector2(1396, 1218)
-frame = 4
+frame = 1
 
 [node name="Tree11" parent="Trees" unique_id=787431147 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.6542857, 0.6542857, 0.6542857, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
 position = Vector2(1548, 1158)
-frame = 1
+frame = 2
 
 [node name="Tree12" parent="Trees" unique_id=1618425376 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.7885714, 0.7885714, 0.7885714, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
 position = Vector2(1968, 1252)
-frame = 1
+frame = 4
 flip_h = true
 
 [node name="Tree13" parent="Trees" unique_id=248482200 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.70285714, 0.70285714, 0.70285714, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
 position = Vector2(2298, 1192)
-frame = 4
-flip_h = true
+frame = 2
 
 [node name="Tree14" parent="Trees" unique_id=290678425 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.72, 0.72, 0.72, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
 position = Vector2(2636, 1204)
-frame = 1
-flip_h = true
+frame = 4
 
 [node name="Tree15" parent="Trees" unique_id=1492576766 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.82285714, 0.82285714, 0.82285714, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
 position = Vector2(2842, 1276)
-frame = 4
-flip_h = true
+frame = 5
 
 [node name="Tree16" parent="Trees" unique_id=699826933 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.7542857, 0.7542857, 0.7542857, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
 position = Vector2(3134, 1228)
 frame = 5
-flip_h = true
 
 [node name="Tree17" parent="Trees" unique_id=1535487367 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.7114286, 0.7114286, 0.7114286, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
 position = Vector2(2496, 1198)
-
-[node name="Tree18" parent="Trees" unique_id=206555690 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
-position = Vector2(3250, 1070)
+frame = 2
 flip_h = true
 
+[node name="Tree18" parent="Trees" unique_id=206555690 instance=ExtResource("1_bt8yb")]
+modulate = Color(0.5285714, 0.5285714, 0.5285714, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(3250, 1070)
+frame = 5
+
 [node name="Tree19" parent="Trees" unique_id=131065390 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.46857142, 0.46857142, 0.46857142, 1)
 position = Vector2(2182, 1028)
-frame = 1
 flip_h = true
 
 [node name="Tree20" parent="Trees" unique_id=2129116519 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.32857144, 0.32857144, 0.32857144, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
 position = Vector2(532, 930)
+frame = 4
 
 [node name="Tree21" parent="Trees" unique_id=705868768 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.25428572, 0.25428572, 0.25428572, 1)
+position = Vector2(412, 878)
+frame = 5
+
+[node name="Tree22" parent="Trees" unique_id=631046192 instance=ExtResource("1_bt8yb")]
+modulate = Color(0.25428572, 0.25428572, 0.25428572, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
 position = Vector2(412, 878)
 frame = 4
 
-[node name="Tree22" parent="Trees" unique_id=631046192 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
-position = Vector2(412, 878)
+[node name="Tree23" parent="Trees" unique_id=159923279 instance=ExtResource("1_bt8yb")]
+modulate = Color(0.5542857, 0.5542857, 0.5542857, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(2946, 1088)
+frame = 5
 flip_h = true
 
-[node name="Tree23" parent="Trees" unique_id=159923279 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
-position = Vector2(2946, 1088)
-frame = 1
-
 [node name="Tree24" parent="Trees" unique_id=1196566857 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.34, 0.34, 0.34, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
 position = Vector2(910, 938)
 frame = 3
 flip_h = true
 
 [node name="Tree25" parent="Trees" unique_id=2112146443 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.6942857, 0.6942857, 0.6942857, 1)
 position = Vector2(1798, 1186)
-frame = 2
+frame = 1
+flip_h = true
 
 [node name="Tree26" parent="Trees" unique_id=1583733156 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.8142857, 0.8142857, 0.8142857, 1)
 position = Vector2(3668, 1270)
-frame = 5
+frame = 1
 
 [node name="Tree27" parent="Trees" unique_id=380661963 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.36857143, 0.36857143, 0.36857143, 1)
 position = Vector2(312, 958)
-frame = 4
+frame = 3
 
 [node name="Tree28" parent="Trees" unique_id=1241868752 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.6685714, 0.6685714, 0.6685714, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
 position = Vector2(3772, 1168)
+frame = 3
 flip_h = true
 
 [node name="Tree29" parent="Trees" unique_id=200547320 instance=ExtResource("1_bt8yb")]
-self_modulate = Color(1, 1, 1, 1)
+modulate = Color(0.64285713, 0.64285713, 0.64285713, 1)
 position = Vector2(2714, 1150)
-frame = 4
+frame = 1
 
 [node name="Bushes" type="Node2D" parent="." unique_id=1469703439]
 y_sort_enabled = true
@@ -169,9 +231,8 @@ y_sort_enabled = true
 modulate = Color(0.72, 0.72, 0.72, 0.99011767)
 position = Vector2(216, 616)
 scale = Vector2(0.8, 0.8)
-flip_h = true
 
-[node name="Bush5" parent="Bushes" unique_id=2069194352 instance=ExtResource("2_5oflu")]
+[node name="Bush5" parent="Bushes" unique_id=489289000 instance=ExtResource("2_5oflu")]
 modulate = Color(0.69666666, 0.69666666, 0.69666666, 0.9892941)
 position = Vector2(-16.999998, 609)
 scale = Vector2(0.8, 0.8)
@@ -180,12 +241,10 @@ scale = Vector2(0.8, 0.8)
 modulate = Color(0.88, 0.88, 0.88, 0.99576473)
 position = Vector2(1870.9999, 664)
 scale = Vector2(0.8, 0.8)
-flip_h = true
 
 [node name="Bush2" parent="Bushes" unique_id=1271602196 instance=ExtResource("2_5oflu")]
 modulate = Color(0.6, 0.6, 0.6, 0.98588234)
 position = Vector2(438, 580)
-flip_h = true
 
 [node name="Bush3" parent="Bushes" unique_id=1210021390 instance=ExtResource("2_5oflu")]
 modulate = Color(0.43, 0.43, 0.43, 0.97988236)
@@ -199,7 +258,6 @@ position = Vector2(682, 601)
 modulate = Color(0.7866667, 0.7866667, 0.7866667, 0.99247056)
 position = Vector2(1244, 636)
 scale = Vector2(0.8, 0.8)
-flip_h = true
 
 [node name="Bush7" parent="Bushes" unique_id=953403962 instance=ExtResource("2_5oflu")]
 modulate = Color(0.69, 0.69, 0.69, 0.98905885)
@@ -209,7 +267,6 @@ flip_h = true
 [node name="Bush8" parent="Bushes" unique_id=452281857 instance=ExtResource("2_5oflu")]
 modulate = Color(0.6933333, 0.6933333, 0.6933333, 0.98917645)
 position = Vector2(1703, 608)
-flip_h = true
 
 [node name="Bush9" parent="Bushes" unique_id=1358819080 instance=ExtResource("2_5oflu")]
 modulate = Color(0.88666666, 0.88666666, 0.88666666, 0.996)
@@ -226,7 +283,9 @@ flip_h = true
 modulate = Color(0.8566667, 0.8566667, 0.8566667, 0.9949412)
 position = Vector2(712, 657)
 scale = Vector2(0.7, 0.7)
+flip_h = true
 
 [node name="Bush12" parent="Bushes" unique_id=1498209703 instance=ExtResource("2_5oflu")]
 modulate = Color(0.51, 0.51, 0.51, 0.9827059)
 position = Vector2(448, 553)
+flip_h = true
