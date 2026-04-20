@@ -6,3 +6,4 @@
 script = ExtResource("1_qofpx")
 sane_node = NodePath("")
 insane_node = NodePath("")
+chance_to_stick_early = 0.4

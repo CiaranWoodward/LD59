@@ -2,19 +2,19 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bbkicbshqnxag"
-path="res://.godot/imported/BarlowCondensed-Black.ttf-c470e9d6b8527abd76c07c5e2929e848.fontdata"
+uid="uid://orinmrjfm06q"
+path="res://.godot/imported/WinkyRough-Italic.ttf-3d27da96ba6d0dd2380bb2546f4acf23.fontdata"
 
 [deps]
 
-source_file="res://Graphics/UI/Font/BarlowCondensed-Black.ttf"
-dest_files=["res://.godot/imported/BarlowCondensed-Black.ttf-c470e9d6b8527abd76c07c5e2929e848.fontdata"]
+source_file="res://Graphics/UI/Font/Winky/WinkyRough-Italic.ttf"
+dest_files=["res://.godot/imported/WinkyRough-Italic.ttf-3d27da96ba6d0dd2380bb2546f4acf23.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
-generate_mipmaps=false
+generate_mipmaps=true
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8

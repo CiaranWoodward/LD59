@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bjpe4gij0vyyp"]
 
 [ext_resource type="Texture2D" uid="uid://bf68q06ynbuqm" path="res://Graphics/Environment/Mushrooms/Log.png" id="1_ky6gq"]
+[ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="2_2ilhp"]
 [ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="2_a4nbm"]
 [ext_resource type="PackedScene" uid="uid://kf7hs3v2oxp" path="res://World/Environment/Pickables/PickShroom.tscn" id="3_rdysf"]
+[ext_resource type="PackedScene" uid="uid://1cd50b03me1x" path="res://Utils/InsanityFlicker.tscn" id="4_x0tm1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x8pbb"]
 animations = [{
@@ -17,12 +19,13 @@ animations = [{
 
 [node name="PickShroom" type="Node2D" unique_id=1436930502]
 
-[node name="Log" type="AnimatedSprite2D" parent="." unique_id=1610226063]
+[node name="Log" type="AnimatedSprite2D" parent="." unique_id=2076625567]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_x8pbb")
 offset = Vector2(-20, -66)
+script = ExtResource("2_2ilhp")
 
-[node name="Shadow" type="Sprite2D" parent="Log" unique_id=1218364455]
+[node name="Shadow" type="Sprite2D" parent="Log" unique_id=406329712]
 modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.60784316)
 show_behind_parent = true
 position = Vector2(-20.252941, 4.7938347)
@@ -30,19 +33,44 @@ rotation = -0.29891208
 scale = Vector2(1.5391864, 0.6611477)
 texture = ExtResource("2_a4nbm")
 
-[node name="PickShroom" parent="Log" unique_id=1457348044 instance=ExtResource("3_rdysf")]
+[node name="PickShroom" parent="Log" unique_id=1683275558 instance=ExtResource("3_rdysf")]
 position = Vector2(-120, 28)
-frame = 2
-
-[node name="PickShroom2" parent="Log" unique_id=308064222 instance=ExtResource("3_rdysf")]
-position = Vector2(-56, -134)
 frame = 3
 flip_h = true
 
-[node name="PickShroom3" parent="Log" unique_id=2040169152 instance=ExtResource("3_rdysf")]
-position = Vector2(12, 10)
-frame = 2
+[node name="PickShroom2" parent="Log" unique_id=651460899 instance=ExtResource("3_rdysf")]
+position = Vector2(-56, -134)
+frame = 1
+flip_h = true
 
-[node name="PickShroom4" parent="Log" unique_id=1558268086 instance=ExtResource("3_rdysf")]
-position = Vector2(84, -98)
+[node name="PickShroom3" parent="Log" unique_id=1417777110 instance=ExtResource("3_rdysf")]
+position = Vector2(12, 10)
 frame = 3
+
+[node name="PickShroom4" parent="Log" unique_id=420388101 instance=ExtResource("3_rdysf")]
+position = Vector2(84, -98)
+frame = 1
+
+[node name="InsanityFlicker" parent="." unique_id=1741190488 instance=ExtResource("4_x0tm1")]
+modulate_node = NodePath("../Log/PickShroom")
+sane_color = Color(1, 0.6813965, 0.6484375, 1)
+chance_to_flicker = 0.6
+
+[node name="InsanityFlicker2" parent="." unique_id=2016301151 instance=ExtResource("4_x0tm1")]
+modulate_node = NodePath("../Log/PickShroom2")
+sane_color = Color(0.5625, 0.73339844, 1, 1)
+chance_to_flicker = 0.6
+
+[node name="InsanityFlicker3" parent="." unique_id=825278287 instance=ExtResource("4_x0tm1")]
+modulate_node = NodePath("../Log/PickShroom3")
+sane_color = Color(0.98657227, 0.5703125, 1, 1)
+chance_to_flicker = 0.6
+
+[node name="InsanityFlicker4" parent="." unique_id=407401332 instance=ExtResource("4_x0tm1")]
+modulate_node = NodePath("../Log/PickShroom4")
+sane_color = Color(0.96484375, 0.7575531, 0.9518881, 1)
+chance_to_flicker = 0.6
+
+[node name="InsanityFlickerLog" parent="." unique_id=1736695225 instance=ExtResource("4_x0tm1")]
+modulate_node = NodePath("../Log")
+sane_color = Color(0.796875, 0.796875, 0.796875, 1)

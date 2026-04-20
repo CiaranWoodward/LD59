@@ -62,7 +62,6 @@ use_parent_material = true
 self_modulate = Color(0.65625, 0.5357666, 0.5357666, 1)
 scale = Vector2(2.04, 2.04)
 sprite_frames = SubResource("SpriteFrames_bmyxb")
-frame = 1
 script = ExtResource("5_bmyxb")
 should_flip = false
 

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://ciae0ilu8dx7l"
-path="res://.godot/imported/BarlowCondensed-Regular.ttf-eac5437d9fcea38b3e49c21378f96a70.fontdata"
+uid="uid://bbkicbshqnxag"
+path="res://.godot/imported/BarlowCondensed-Black.ttf-8c068009400b0bff6b0537d927bba4d2.fontdata"
 
 [deps]
 
-source_file="res://Graphics/UI/Font/BarlowCondensed-Regular.ttf"
-dest_files=["res://.godot/imported/BarlowCondensed-Regular.ttf-eac5437d9fcea38b3e49c21378f96a70.fontdata"]
+source_file="res://Graphics/UI/Font/Barlow/BarlowCondensed-Black.ttf"
+dest_files=["res://.godot/imported/BarlowCondensed-Black.ttf-8c068009400b0bff6b0537d927bba4d2.fontdata"]
 
 [params]
 

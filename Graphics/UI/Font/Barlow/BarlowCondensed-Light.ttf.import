@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cc52ovufy42ou"
-path="res://.godot/imported/BarlowCondensed-ExtraLightItalic.ttf-c3fc3a8f011e24a070ff4b2b5f61c5a0.fontdata"
+uid="uid://62f7y1mbksou"
+path="res://.godot/imported/BarlowCondensed-Light.ttf-8b9e67ac5987b45b279bfac392431cd1.fontdata"
 
 [deps]
 
-source_file="res://Graphics/UI/Font/BarlowCondensed-ExtraLightItalic.ttf"
-dest_files=["res://.godot/imported/BarlowCondensed-ExtraLightItalic.ttf-c3fc3a8f011e24a070ff4b2b5f61c5a0.fontdata"]
+source_file="res://Graphics/UI/Font/Barlow/BarlowCondensed-Light.ttf"
+dest_files=["res://.godot/imported/BarlowCondensed-Light.ttf-8b9e67ac5987b45b279bfac392431cd1.fontdata"]
 
 [params]
 

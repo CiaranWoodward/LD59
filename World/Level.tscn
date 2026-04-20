@@ -246,17 +246,17 @@ shader_parameter/night_tint = Color(0.6723542, 0.88806295, 0.9999998, 1)
 shader_parameter/tint_strength = 0.174000008265
 shader_parameter/desaturation = 0.1890000089775
 shader_parameter/focus_center = Vector2(0.5, 0.5)
-shader_parameter/inner_radius = 0.0750000035625
+shader_parameter/inner_radius = 0.28400001349
 shader_parameter/outer_radius = 0.37200001767
 shader_parameter/center_relief = 0.9370000445075
 shader_parameter/noise_scale = 0.88
 shader_parameter/noise_scroll = Vector2(0.1, -0.01)
 shader_parameter/noise_rotation_speed = 0.05
-shader_parameter/ring_noise_strength = 1.0
+shader_parameter/ring_noise_strength = 0.0
 shader_parameter/ring_band_width = 0.1890000089775
 shader_parameter/lit_preservation = 0.30400001444
 shader_parameter/lit_threshold = 1.0
-shader_parameter/vignette_strength = 0.4910000233225
+shader_parameter/vignette_strength = 0.1610000076475
 
 [node name="Level" type="Node2D" unique_id=1164261592]
 
@@ -359,5 +359,23 @@ position = Vector2(-367, -351)
 [node name="Mushrooms" parent="TestEnvironmental" unique_id=1436930502 instance=ExtResource("8_xt66a")]
 position = Vector2(1552, 782)
 
+[node name="Mushrooms2" parent="TestEnvironmental" unique_id=1160318793 instance=ExtResource("8_xt66a")]
+position = Vector2(621, 708)
+
+[node name="Mushrooms3" parent="TestEnvironmental" unique_id=989194505 instance=ExtResource("8_xt66a")]
+position = Vector2(220, 626)
+
+[node name="Mushrooms4" parent="TestEnvironmental" unique_id=794980287 instance=ExtResource("8_xt66a")]
+position = Vector2(1315, 649)
+
 [node name="Berries" parent="TestEnvironmental" unique_id=529111993 instance=ExtResource("9_avfc4")]
 position = Vector2(316, 820)
+
+[node name="Berries2" parent="TestEnvironmental" unique_id=694934847 instance=ExtResource("9_avfc4")]
+position = Vector2(435, 635)
+
+[node name="Berries3" parent="TestEnvironmental" unique_id=695931867 instance=ExtResource("9_avfc4")]
+position = Vector2(1271, 797)
+
+[node name="Berries4" parent="TestEnvironmental" unique_id=1540658527 instance=ExtResource("9_avfc4")]
+position = Vector2(1530, 1022)

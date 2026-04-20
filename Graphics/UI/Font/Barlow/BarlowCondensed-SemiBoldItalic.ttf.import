@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://62f7y1mbksou"
-path="res://.godot/imported/BarlowCondensed-Light.ttf-47533fd4fb575127b807f48f25d8ba36.fontdata"
+uid="uid://cwig7mlcdojym"
+path="res://.godot/imported/BarlowCondensed-SemiBoldItalic.ttf-0de7da4eb2c36dd0ddf3b6739a752a76.fontdata"
 
 [deps]
 
-source_file="res://Graphics/UI/Font/BarlowCondensed-Light.ttf"
-dest_files=["res://.godot/imported/BarlowCondensed-Light.ttf-47533fd4fb575127b807f48f25d8ba36.fontdata"]
+source_file="res://Graphics/UI/Font/Barlow/BarlowCondensed-SemiBoldItalic.ttf"
+dest_files=["res://.godot/imported/BarlowCondensed-SemiBoldItalic.ttf-0de7da4eb2c36dd0ddf3b6739a752a76.fontdata"]
 
 [params]
 

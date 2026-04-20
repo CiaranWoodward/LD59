@@ -19,7 +19,8 @@ func _ready():
 	if self_modulations.size() > 0:
 		self_modulate = self_modulations[randi_range(0,self_modulations.size() - 1)]
 	if should_flip:
-		flip_h = (randi() % 2) == 1
+		if (randi() % 2) == 1:
+			scale.x = -scale.x
 	if scale_for_distance:
 		var weight = (self.global_position.y - max_distance_y) / (min_distance_y - max_distance_y)
 		weight = clamp(weight, 0, 1)

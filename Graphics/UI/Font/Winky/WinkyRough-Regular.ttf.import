@@ -2,19 +2,19 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cwig7mlcdojym"
-path="res://.godot/imported/BarlowCondensed-SemiBoldItalic.ttf-982ced98fff35e2e4195018f33a28963.fontdata"
+uid="uid://bykiyax522sxo"
+path="res://.godot/imported/WinkyRough-Regular.ttf-e5e3944a44dcd77273dd911e214d2f1b.fontdata"
 
 [deps]
 
-source_file="res://Graphics/UI/Font/BarlowCondensed-SemiBoldItalic.ttf"
-dest_files=["res://.godot/imported/BarlowCondensed-SemiBoldItalic.ttf-982ced98fff35e2e4195018f33a28963.fontdata"]
+source_file="res://Graphics/UI/Font/Winky/WinkyRough-Regular.ttf"
+dest_files=["res://.godot/imported/WinkyRough-Regular.ttf-e5e3944a44dcd77273dd911e214d2f1b.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
-generate_mipmaps=false
+generate_mipmaps=true
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
