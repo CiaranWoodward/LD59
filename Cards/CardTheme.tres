@@ -1,13 +1,21 @@
 [gd_resource type="Theme" format=3 uid="uid://c5qyll2cke3nb"]
 
+[ext_resource type="FontFile" uid="uid://dtfmbjxvdqhlq" path="res://Graphics/UI/Font/BarlowCondensed-Bold.ttf" id="1_151ya"]
+[ext_resource type="FontFile" uid="uid://d3bxmuyu8mcaw" path="res://Graphics/UI/Font/BarlowCondensed-SemiBold.ttf" id="2_151ya"]
+[ext_resource type="FontFile" uid="uid://dklnvo72m7w4a" path="res://Graphics/UI/Font/BarlowCondensed-LightItalic.ttf" id="3_5seav"]
+[ext_resource type="FontFile" uid="uid://62f7y1mbksou" path="res://Graphics/UI/Font/BarlowCondensed-Light.ttf" id="4_la2tu"]
+
 [resource]
 default_font_size = 40
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/fonts/font = ExtResource("1_151ya")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
-RichTextLabel/constants/paragraph_separation = -16
-RichTextLabel/font_sizes/bold_font_size = 36
-RichTextLabel/font_sizes/bold_italics_font_size = 36
-RichTextLabel/font_sizes/italics_font_size = 36
-RichTextLabel/font_sizes/mono_font_size = 36
-RichTextLabel/font_sizes/normal_font_size = 36
+RichTextLabel/font_sizes/bold_font_size = 40
+RichTextLabel/font_sizes/bold_italics_font_size = 40
+RichTextLabel/font_sizes/italics_font_size = 40
+RichTextLabel/font_sizes/mono_font_size = 40
+RichTextLabel/font_sizes/normal_font_size = 40
+RichTextLabel/fonts/bold_font = ExtResource("2_151ya")
+RichTextLabel/fonts/italics_font = ExtResource("3_5seav")
+RichTextLabel/fonts/normal_font = ExtResource("4_la2tu")
