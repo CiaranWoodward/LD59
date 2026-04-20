@@ -1,39 +1,58 @@
 [gd_scene format=3 uid="uid://bxcbuqukhqmbm"]
 
-[ext_resource type="Texture2D" uid="uid://bf854183hsvqu" path="res://Graphics/UI/EnergyLine0000.png" id="1_0s282"]
-[ext_resource type="Texture2D" uid="uid://ctqlu2gdpbgrj" path="res://Graphics/UI/EnergyFront0000.png" id="2_ysad7"]
-[ext_resource type="Texture2D" uid="uid://w5k0sqlxk3g7" path="res://Graphics/UI/EnergyBack0000.png" id="3_7bne2"]
-[ext_resource type="Texture2D" uid="uid://is66n75uusd3" path="res://Graphics/UI/HeartLine0000.png" id="4_7xama"]
-[ext_resource type="Texture2D" uid="uid://cm262a0ed6sit" path="res://Graphics/UI/HeartFront0000.png" id="5_ayd0l"]
-[ext_resource type="Texture2D" uid="uid://own21pellqn5" path="res://Graphics/UI/HeartBack0000.png" id="6_xbxvm"]
+[ext_resource type="Texture2D" uid="uid://qc4gtbxmwf0m" path="res://Graphics/Environment/Fire/Ash.png" id="1_7bne2"]
+[ext_resource type="Texture2D" uid="uid://cyh4noakepx3s" path="res://Graphics/Environment/Fire/PileSmall.png" id="1_ysad7"]
+[ext_resource type="Texture2D" uid="uid://bl6dbwmyl3ger" path="res://Graphics/Environment/Fire/PileMid.png" id="2_7bne2"]
+[ext_resource type="Texture2D" uid="uid://doqinoas33bhv" path="res://Graphics/Environment/Fire/PileBig.png" id="3_7xama"]
+[ext_resource type="Texture2D" uid="uid://wb8y2ugm3t1q" path="res://Graphics/Environment/Fire/FireBig.png" id="4_ayd0l"]
+[ext_resource type="Texture2D" uid="uid://c1eu24xm3s5c" path="res://Graphics/Environment/Fire/FireMid.png" id="6_xbxvm"]
+[ext_resource type="Texture2D" uid="uid://7kte61h2xdj7" path="res://Graphics/Environment/Fire/FireSmall.png" id="7_sx45w"]
 [ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="7_ysad7"]
+[ext_resource type="Texture2D" uid="uid://dxmkj3cohv7r6" path="res://Graphics/Particles/FirePart.png" id="9_7xama"]
+[ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="10_ayd0l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sx45w"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0s282")
+"texture": ExtResource("1_ysad7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_ysad7")
+"texture": ExtResource("2_7bne2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_7bne2")
+"texture": ExtResource("3_7xama")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="Curve" id="Curve_ayd0l"]
+_data = [Vector2(0, 1), -0.046941053, -0.046941053, 0, 0, Vector2(1, 0), -2.9573045, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ysad7"]
+offsets = PackedFloat32Array(0, 0.12962963, 0.5185185, 0.9197531)
+colors = PackedColorArray(0.9298401, 0.92578125, 1, 0, 0.63513184, 0.6391506, 0.671875, 1, 0.9019608, 0.9137255, 1, 0.5019608, 0.87890625, 0.875, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_7xama"]
+colors = PackedColorArray(0.5050354, 0.51300967, 0.5234375, 1, 0.76293945, 0.770874, 0.78125, 1)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_6b84x"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_7xama")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_ayd0l")
-}, {
+"texture": ExtResource("4_ayd0l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_74pnr"]
+animations = [{
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_xbxvm")
 }],
@@ -42,51 +61,459 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_ysad7"]
-offsets = PackedFloat32Array(0, 0.25308642, 0.80246913, 1)
-colors = PackedColorArray(0.93333334, 0.8039216, 0.42352942, 1, 0.8627451, 0.39215687, 0.30588236, 1, 0.8627451, 0.29411766, 0.1882353, 1, 0.93333334, 0.8039216, 0.42352942, 1)
+[sub_resource type="Gradient" id="Gradient_ayd0l"]
+offsets = PackedFloat32Array(0, 0.14814815, 0.5555556, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0.87890625, 0.875, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_xbxvm"]
+offsets = PackedFloat32Array(0.17901234, 0.37037036, 0.6851852, 0.72839504)
+colors = PackedColorArray(0.85490197, 0.39607844, 0.30980393, 1, 0.8627451, 0.3019608, 0.19607843, 1, 0.8666667, 0.3019608, 0.1882353, 1, 0.9372549, 0.80784315, 0.42745098, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y7nvl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_sx45w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="Animation_7bne2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SmallFire:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SmallFire:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SmallFire:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SmallFire:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7xama"]
+resource_name = "Small"
+length = 3.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SmallFire:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 1, 1.7, 2.1, 2.9, 3.3),
+"transitions": PackedFloat32Array(0.5358867, 1.2745608, 1.1892081, 1.2745608, 1.1892081, 1.1892081, 1),
+"update": 0,
+"values": [0.0, 0.10471975511965978, -0.10471975511965978, 0.10471975511965978, -0.10471975511965978, -0.10471975511965978, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SmallFire:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8, 1.1999999, 1.3, 1.6, 1.7999998, 2.3, 2.3999999, 2.5, 2.7, 3.1, 3.3),
+"transitions": PackedFloat32Array(1, 1.7411014, 1, 1, 0.6830202, 1.7411014, 1, 1, 0.6830202, 1.7411014, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.2), Vector2(1, 1.3), Vector2(1, 1.1145601), Vector2(1, 1.1621473), Vector2(1, 1.2), Vector2(1, 1.3), Vector2(1, 1.1145601), Vector2(1, 1.1621473), Vector2(1, 1.2), Vector2(1, 1.3), Vector2(1, 1.1145601), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SmallFire:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.50000006, 1.0999999, 1.5, 2.1999998, 2.4, 3, 3.3),
+"transitions": PackedFloat32Array(0.6597533, 1.5691681, 1.5691686, 1.5691681, 1.5691686, 1.5691681, 1.5691686, 1),
+"update": 0,
+"values": [0.0, -0.17453292519943295, 0.10471975511965978, -0.17453292519943295, 0.10471975511965978, -0.17453292519943295, 0.10471975511965978, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SmallFire:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8, 1.0999999, 1.3, 1.6, 1.7999998, 2.1999998, 2.3999999, 2.5, 2.7, 3, 3.3),
+"transitions": PackedFloat32Array(0.7578583, 1.5157168, 0.45062512, 1.7411013, 0.6597539, 1.5691684, 0.45062512, 1.7411013, 0.6597539, 1.5691684, 0.45062512, 1.7411013, 0.6597539, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.9019608), Color(1, 1, 1, 1), Color(1, 1, 1, 0.77254903), Color(1, 1, 1, 0.92941177), Color(1, 1, 1, 0.9137255), Color(1, 1, 1, 1), Color(1, 1, 1, 0.77254903), Color(1, 1, 1, 0.92941177), Color(1, 1, 1, 0.9137255), Color(1, 1, 1, 1), Color(1, 1, 1, 0.77254903), Color(1, 1, 1, 0.92941177), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ayd0l"]
+_data = {
+&"RESET": SubResource("Animation_7bne2"),
+&"Small": SubResource("Animation_7xama")
+}
+
+[sub_resource type="Animation" id="Animation_ayd0l"]
+resource_name = "Mid"
+length = 3.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MidFire:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8333333, 1.2333335, 1.7333335, 2.0666668, 2.466667, 2.9666667, 3.5000002, 3.7),
+"transitions": PackedFloat32Array(1, 1.2745608, 1.1892081, 1.1892081, 1.1892081, 1.1892081, 1.1892081, 1.1892081, 1.1892081, 1),
+"update": 0,
+"values": [0.0, 0.10471975511965978, -0.10471975511965978, -0.03490658503988659, -0.10471975511965978, -0.10471975511965978, -0.03490658503988659, -0.10471975511965978, -0.03490658503988659, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MidFire:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7, 1, 1.1, 1.2333333, 1.4333334, 1.6000001, 1.9000001, 2.0000002, 2.2333333, 2.3333335, 2.466667, 2.666667, 2.9, 3.1333334, 3.2333333, 3.266667, 3.3666668, 3.5000002, 3.7),
+"transitions": PackedFloat32Array(1, 1.7411014, 1, 1, 0.6830202, 1, 1, 1, 1, 0.6830202, 1, 0.6830202, 1, 1, 0.6830202, 1, 0.6830202, 1, 0.6830202, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 1.2), Vector2(0.8, 1.3), Vector2(0.8, 1.2), Vector2(0.9, 1.162), Vector2(1, 1.1), Vector2(0.9, 1.2), Vector2(0.8, 1.3), Vector2(0.8, 1.2), Vector2(0.9, 1.162), Vector2(0.9, 1.2), Vector2(0.9, 1.162), Vector2(1, 1.1), Vector2(0.9, 1.2), Vector2(0.9, 1.162), Vector2(0.8, 1.2), Vector2(0.9, 1.162), Vector2(0.8, 1.2), Vector2(0.9, 1.162), Vector2(1, 1.1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MidFire:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.9, 1.8000002, 2.1333334, 3.0333333, 3.7),
+"transitions": PackedFloat32Array(1, 1.5691681, 1.5691686, 1.5691686, 1.5691686, 1.5691686, 1),
+"update": 0,
+"values": [0.0, -0.17453292519943295, 0.10471975511965978, 0.10471975511965978, -0.17453292519943295, 0.10471975511965978, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MidFire:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.7, 0.9, 1.1333334, 1.3333335, 1.6000001, 1.8000002, 2.1333334, 2.366667, 2.566667, 3.0333333, 3.266667, 3.4000003, 3.7),
+"transitions": PackedFloat32Array(1, 1.5157168, 0.45062512, 1.7411013, 0.6597539, 1.7411013, 0.6597539, 1.7411013, 0.6597539, 0.6597539, 1.7411013, 0.6597539, 0.6597539, 1.7411013, 1.7411013, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.9019608), Color(1, 1, 1, 1), Color(1, 1, 1, 0.77254903), Color(1, 1, 1, 0.92941177), Color(1, 1, 1, 0.77254903), Color(1, 1, 1, 0.92941177), Color(1, 1, 1, 0.77254903), Color(1, 1, 1, 0.92941177), Color(1, 1, 1, 0.92941177), Color(1, 1, 1, 0.77254903), Color(1, 1, 1, 0.92941177), Color(1, 1, 1, 0.92941177), Color(1, 1, 1, 0.77254903), Color(1, 1, 1, 0.77254903), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xbxvm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MidFire:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MidFire:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MidFire:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MidFire:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sx45w"]
+_data = {
+&"Mid": SubResource("Animation_ayd0l"),
+&"RESET": SubResource("Animation_xbxvm")
+}
+
+[sub_resource type="Animation" id="Animation_sx45w"]
+resource_name = "Big"
+length = 5.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BigFire:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8333333, 1.4000001, 1.9000001, 2.3000002, 3.0333333, 3.5666666, 4.3, 4.9333334, 5.7),
+"transitions": PackedFloat32Array(1, 1.2745608, 1.1892081, 1.1892081, 1.1892081, 1.1892081, 1.1892081, 1.1892081, 1.1892081, 1.1892081, 1),
+"update": 0,
+"values": [0.0, 0.10471975511965978, -0.10471975511965978, -0.03490658503988659, -0.10471975511965978, -0.03490658503988659, 0.05235987755982989, -0.03490658503988659, -0.10471975511965978, -0.03490658503988659, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BigFire:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7, 1.1666666, 1.2666667, 1.5666667, 2.0666666, 2.1666667, 2.4333334, 2.8666668, 3.0666666, 3.4333332, 3.7333333, 4.166667, 4.4666667, 5.0666666, 5.7),
+"transitions": PackedFloat32Array(0.48296815, 1.7411014, 0.5547847, 1.5691684, 0.6830202, 0.5176324, 1.3660405, 0.6830202, 1.2745608, 1.7411014, 1.4142138, 0.6830202, 0.5176324, 0.6830202, 1.3660405, 1.2745608, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 1.2), Vector2(0.95, 1.2), Vector2(0.9, 1.115), Vector2(1, 1.1621473), Vector2(0.9, 1.2), Vector2(1, 1.1145601), Vector2(1, 1.1621473), Vector2(0.85, 1.2), Vector2(1, 1.2), Vector2(1, 1.3), Vector2(1, 1.1621473), Vector2(0.9, 1.2), Vector2(1, 1.1621473), Vector2(1, 1.1145601), Vector2(0.85, 1.2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BigFire:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.9, 1.6333333, 2.3666666, 3.8, 5, 5.7),
+"transitions": PackedFloat32Array(1, 1.5691681, 1.5691686, 1, 1.5691686, 1, 1.5691686, 1),
+"update": 0,
+"values": [0.0, -0.17453292519943295, 0.10471975511965978, -0.03490658503988659, 0.10471975511965978, -0.03490658503988659, 0.10471975511965978, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BigFire:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.8666667, 1.2333333, 1.6666666, 2, 2.3, 2.8333333, 3.3333335, 3.833333, 4.4, 4.9333334, 5.7),
+"transitions": PackedFloat32Array(1, 1.5157168, 0.45062512, 1.7411013, 0.6597539, 0.6597539, 1.7411013, 0.6597539, 1.7411013, 0.6597539, 0.6597539, 1.7411013, 0.6597539, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.9019608), Color(1, 1, 1, 1), Color(1, 1, 1, 0.77254903), Color(1, 1, 1, 0.92941177), Color(1, 1, 1, 0.92941177), Color(1, 1, 1, 0.77254903), Color(1, 1, 1, 0.92941177), Color(1, 1, 1, 0.77254903), Color(1, 1, 1, 0.92941177), Color(1, 1, 1, 0.92941177), Color(1, 1, 1, 0.77254903), Color(1, 1, 1, 0.92941177), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6b84x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BigFire:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BigFire:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BigFire:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BigFire:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_74pnr"]
+_data = {
+&"Big": SubResource("Animation_sx45w"),
+&"RESET": SubResource("Animation_6b84x")
+}
 
 [node name="Campfire" type="Node2D" unique_id=1083176764]
 
+[node name="Ash" type="Sprite2D" parent="." unique_id=794573064]
+visible = false
+position = Vector2(1, 10)
+texture = ExtResource("1_7bne2")
+
 [node name="Logs" type="AnimatedSprite2D" parent="." unique_id=1588026201]
-scale = Vector2(1, 0.33)
 sprite_frames = SubResource("SpriteFrames_sx45w")
+frame = 2
+offset = Vector2(6, 3)
+
+[node name="Smoke" type="CPUParticles2D" parent="." unique_id=1814070281]
+position = Vector2(0, -66)
+rotation = 0.013004067
+scale = Vector2(1.0067589, 0.871385)
+skew = 0.0040010214
+amount = 30
+texture = ExtResource("9_7xama")
+lifetime = 10.0
+emission_shape = 1
+emission_sphere_radius = 68.16
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, -20)
+initial_velocity_min = 10.0
+initial_velocity_max = 50.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_ayd0l")
+color = Color(1, 1, 1, 0.72156864)
+color_ramp = SubResource("Gradient_ysad7")
+color_initial_ramp = SubResource("Gradient_7xama")
 
 [node name="BigFire" type="AnimatedSprite2D" parent="." unique_id=1249455685]
-scale = Vector2(0.9963343, 1.0168021)
 sprite_frames = SubResource("SpriteFrames_6b84x")
 autoplay = "default"
-speed_scale = 0.98384166
-offset = Vector2(0, -44)
+speed_scale = 0.9451351
+offset = Vector2(-0.19172853, -38.91566)
 script = ExtResource("7_ysad7")
 should_flip = false
 play_on_load = true
 
 [node name="MidFire" type="AnimatedSprite2D" parent="." unique_id=2086808910]
-scale = Vector2(0.7632657, 0.77894557)
-sprite_frames = SubResource("SpriteFrames_6b84x")
+sprite_frames = SubResource("SpriteFrames_74pnr")
 autoplay = "default"
-frame = 2
-speed_scale = 0.92986417
+speed_scale = 1.0416019
 offset = Vector2(0, -44)
 script = ExtResource("7_ysad7")
 should_flip = false
 play_on_load = true
+
+[node name="Sparks" type="CPUParticles2D" parent="." unique_id=1047359738]
+position = Vector2(1, -36)
+amount = 5
+texture = ExtResource("9_7xama")
+lifetime = 2.0
+explosiveness = 0.1
+lifetime_randomness = 0.4
+emission_shape = 1
+emission_sphere_radius = 45.35
+direction = Vector2(0, -1)
+spread = 20.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.0
+scale_amount_max = 0.6
+scale_amount_curve = SubResource("Curve_ayd0l")
+color_ramp = SubResource("Gradient_ayd0l")
+color_initial_ramp = SubResource("Gradient_xbxvm")
 
 [node name="SmallFire" type="AnimatedSprite2D" parent="." unique_id=1756562007]
-scale = Vector2(0.5311487, 0.5420601)
-sprite_frames = SubResource("SpriteFrames_6b84x")
+sprite_frames = SubResource("SpriteFrames_y7nvl")
 autoplay = "default"
-frame = 2
-speed_scale = 1.004232
-offset = Vector2(0, -44)
+speed_scale = 1.0752431
+offset = Vector2(7, -40)
 script = ExtResource("7_ysad7")
 should_flip = false
 play_on_load = true
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1047359738]
-lifetime = 10.0
-gravity = Vector2(0, -10)
-scale_amount_min = 5.0
-scale_amount_max = 5.0
-color_ramp = SubResource("Gradient_ysad7")
+[node name="Small" type="AnimationPlayer" parent="." unique_id=150238842]
+libraries/ = SubResource("AnimationLibrary_ayd0l")
+autoplay = &"Small"
+
+[node name="Mid" type="AnimationPlayer" parent="." unique_id=89582967]
+libraries/ = SubResource("AnimationLibrary_sx45w")
+autoplay = &"Mid"
+
+[node name="Big" type="AnimationPlayer" parent="." unique_id=886979865]
+libraries/ = SubResource("AnimationLibrary_74pnr")
+autoplay = &"Big"
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1392212599]
+modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.60784316)
+show_behind_parent = true
+position = Vector2(-1, 4.7938347)
+scale = Vector2(1.2988234, 0.5579013)
+texture = ExtResource("10_ayd0l")

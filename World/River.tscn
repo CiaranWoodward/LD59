@@ -2,43 +2,47 @@
 
 [ext_resource type="PackedScene" uid="uid://sm6uk6e3vdyu" path="res://World/Environment/Tree.tscn" id="1_7f2jf"]
 [ext_resource type="PackedScene" uid="uid://ht24sldfu5cf" path="res://World/Environment/Bush.tscn" id="2_gkbg8"]
-[ext_resource type="Texture2D" uid="uid://dc8enmitrndvq" path="res://Graphics/Environment/Setting/NICE water.png" id="3_gkbg8"]
+[ext_resource type="Texture2D" uid="uid://dyrgl4mkv2a37" path="res://Graphics/Environment/Setting/River.png" id="3_o3ukc"]
 [ext_resource type="Texture2D" uid="uid://bleturivl63fr" path="res://Graphics/Environment/Setting/blue water sparkle 2.png" id="4_3xjdw"]
 [ext_resource type="Texture2D" uid="uid://rdu755lf3siu" path="res://Graphics/Environment/Setting/blue water sparkle 3.png" id="5_okmdk"]
 [ext_resource type="Texture2D" uid="uid://b5qbbkmb3q27j" path="res://Graphics/Environment/Setting/blue water sparkle.png" id="6_o3ukc"]
 [ext_resource type="PackedScene" uid="uid://1cd50b03me1x" path="res://Utils/InsanityFlicker.tscn" id="7_okmdk"]
+[ext_resource type="PackedScene" uid="uid://cfhexshl20e7w" path="res://World/EnvironmentObject.tscn" id="8_o3ukc"]
 
 [node name="Forest" type="Node2D" unique_id=1178282790]
 y_sort_enabled = true
 
-[node name="Tree5" parent="." unique_id=1977256563 instance=ExtResource("1_7f2jf")]
+[node name="Foreground" type="Node2D" parent="." unique_id=1519588160]
+y_sort_enabled = true
+
+[node name="Tree5" parent="Foreground" unique_id=1977256563 instance=ExtResource("1_7f2jf")]
 modulate = Color(0.3046875, 0.3046875, 0.3046875, 0.74509805)
 self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
 position = Vector2(57.999992, 1166)
 scale = Vector2(1.1454545, 1.1454545)
 
-[node name="Tree6" parent="." unique_id=731780362 instance=ExtResource("1_7f2jf")]
+[node name="Tree6" parent="Foreground" unique_id=731780362 instance=ExtResource("1_7f2jf")]
 modulate = Color(0.40234375, 0.40234375, 0.40234375, 0.74509805)
 self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
 position = Vector2(1802.9999, 1182)
 scale = Vector2(1.1454545, 1.1454545)
 
-[node name="Bush11" parent="." unique_id=2069194352 instance=ExtResource("2_gkbg8")]
+[node name="Bush11" parent="Foreground" unique_id=2069194352 instance=ExtResource("2_gkbg8")]
 modulate = Color(0.37109375, 0.37109375, 0.37109375, 0.7294118)
 position = Vector2(131, 1195)
 scale = Vector2(1.5, 1.5)
 
-[node name="Bush12" parent="." unique_id=942764151 instance=ExtResource("2_gkbg8")]
+[node name="Bush12" parent="Foreground" unique_id=942764151 instance=ExtResource("2_gkbg8")]
 modulate = Color(0.4140625, 0.4140625, 0.4140625, 0.7294118)
 position = Vector2(1798, 1291.9999)
 scale = Vector2(1.2063168, 1.2063168)
 
-[node name="Bush14" parent="." unique_id=2002649776 instance=ExtResource("2_gkbg8")]
+[node name="Bush14" parent="Foreground" unique_id=2002649776 instance=ExtResource("2_gkbg8")]
 modulate = Color(0.4140625, 0.4140625, 0.4140625, 0.7294118)
 position = Vector2(1640, 1274)
 scale = Vector2(1.2063168, 1.2063168)
 
-[node name="Bush13" parent="." unique_id=1393094999 instance=ExtResource("2_gkbg8")]
+[node name="Bush13" parent="Foreground" unique_id=1393094999 instance=ExtResource("2_gkbg8")]
 modulate = Color(0.37109375, 0.37109375, 0.37109375, 0.7294118)
 position = Vector2(396, 1199.9999)
 scale = Vector2(1.3, 1.3)
@@ -229,34 +233,64 @@ scale = Vector2(0.7, 0.7)
 [node name="River" type="Node2D" parent="." unique_id=1480444586]
 
 [node name="Right Bank" type="Sprite2D" parent="River" unique_id=469000122]
-self_modulate = Color(0.41960785, 0.41960785, 0.41960785, 0.25490198)
-position = Vector2(1045, 356)
-texture = ExtResource("3_gkbg8")
+self_modulate = Color(0.33984375, 0.3385992, 0.33187866, 0.25490198)
+position = Vector2(1258, 935)
+texture = ExtResource("3_o3ukc")
 
 [node name="LeftBank" type="Sprite2D" parent="River" unique_id=2143112932]
-self_modulate = Color(0.41960785, 0.41960785, 0.41960785, 0.25490198)
-position = Vector2(955, 356)
-texture = ExtResource("3_gkbg8")
+self_modulate = Color(0.33984375, 0.3385992, 0.33187866, 0.25490198)
+position = Vector2(1168, 935)
+texture = ExtResource("3_o3ukc")
 
-[node name="NiceWater" type="Sprite2D" parent="River" unique_id=894612649]
-position = Vector2(1007, 356)
-texture = ExtResource("3_gkbg8")
+[node name="River" type="Sprite2D" parent="River" unique_id=894612649]
+position = Vector2(1220, 935)
+texture = ExtResource("3_o3ukc")
 
-[node name="BlueWaterSparkle2" type="Sprite2D" parent="River/NiceWater" unique_id=351592908]
-scale = Vector2(0.91046816, 1)
+[node name="BlueWaterSparkle2" type="Sprite2D" parent="River/River" unique_id=351592908]
+self_modulate = Color(1, 1, 1, 0.25490198)
+position = Vector2(-230.64417, -515.5393)
+scale = Vector2(0.8434145, 0.9263525)
 texture = ExtResource("4_3xjdw")
 
-[node name="BlueWaterSparkle3" type="Sprite2D" parent="River/NiceWater" unique_id=923778006]
-scale = Vector2(0.91046816, 1)
+[node name="BlueWaterSparkle3" type="Sprite2D" parent="River/River" unique_id=923778006]
+self_modulate = Color(1, 1, 1, 0.25490198)
+position = Vector2(-230.64417, -515.5393)
+scale = Vector2(0.8434145, 0.9263525)
 texture = ExtResource("5_okmdk")
 
-[node name="BlueWaterSparkle" type="Sprite2D" parent="River/NiceWater" unique_id=1520569290]
-scale = Vector2(0.91046816, 1)
+[node name="BlueWaterSparkle" type="Sprite2D" parent="River/River" unique_id=1520569290]
+self_modulate = Color(1, 1, 1, 0.25490198)
+position = Vector2(-230.64417, -515.5393)
+scale = Vector2(0.8434145, 0.9263525)
 texture = ExtResource("6_o3ukc")
 
 [node name="InsanityFlicker" parent="." unique_id=1741190488 instance=ExtResource("7_okmdk")]
-modulate_node = NodePath("../River/NiceWater")
+modulate_node = NodePath("../River/River")
 sane_color = Color(0.54901963, 0.21568628, 0.27058825, 1)
+insane_color = Color(0.32941177, 0.54901963, 0.75686276, 1)
 always_sane_threshold = 3
 always_insane_threshold = 4
-chance_to_flicker = 1.0
+chance_to_flicker = 0.0
+chance_to_stick_early = 1.0
+flicker_time = 1.5
+
+[node name="Environment" type="Node2D" parent="." unique_id=444884449]
+y_sort_enabled = true
+
+[node name="EnvironmentObject" parent="Environment" unique_id=869142138 instance=ExtResource("8_o3ukc")]
+position = Vector2(388, 632)
+
+[node name="EnvironmentObject2" parent="Environment" unique_id=2128413792 instance=ExtResource("8_o3ukc")]
+position = Vector2(629, 694)
+scale = Vector2(1.1, 1.1)
+
+[node name="EnvironmentObject3" parent="Environment" unique_id=424365201 instance=ExtResource("8_o3ukc")]
+position = Vector2(452.00003, 827.00006)
+scale = Vector2(1.3, 1.3)
+
+[node name="EnvironmentObject4" parent="Environment" unique_id=931064335 instance=ExtResource("8_o3ukc")]
+position = Vector2(1223, 669)
+
+[node name="EnvironmentObject5" parent="Environment" unique_id=154228026 instance=ExtResource("8_o3ukc")]
+position = Vector2(1517, 732)
+scale = Vector2(1.2, 1.2)

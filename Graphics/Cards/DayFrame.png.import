@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jbh6ra0o5cis"
-path="res://.godot/imported/Back20000.png-9ecae82290e97646db89d3066df461a6.ctex"
+uid="uid://bub7xu5gel4x4"
+path="res://.godot/imported/DayFrame.png-6dab693b8ae275839863fc5fed78c5b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Cards/Back20000.png"
-dest_files=["res://.godot/imported/Back20000.png-9ecae82290e97646db89d3066df461a6.ctex"]
+source_file="res://Graphics/Cards/DayFrame.png"
+dest_files=["res://.godot/imported/DayFrame.png-6dab693b8ae275839863fc5fed78c5b3.ctex"]
 
 [params]
 

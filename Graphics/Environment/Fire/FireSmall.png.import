@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8wto56uggf8r"
-path="res://.godot/imported/Front10000.png-73edff8f7d4dbc24c5a0544eb73649a7.ctex"
+uid="uid://7kte61h2xdj7"
+path="res://.godot/imported/FireSmall.png-cf71b6509d20813c458d1c950015f261.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Cards/Front10000.png"
-dest_files=["res://.godot/imported/Front10000.png-73edff8f7d4dbc24c5a0544eb73649a7.ctex"]
+source_file="res://Graphics/Environment/Fire/FireSmall.png"
+dest_files=["res://.godot/imported/FireSmall.png-cf71b6509d20813c458d1c950015f261.ctex"]
 
 [params]
 

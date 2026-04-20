@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dghpnt64bkvrb"
-path="res://.godot/imported/Front20000.png-e09e1044beeb3f0b562ab127d9b7b27f.ctex"
+uid="uid://5u2ohgdne5ei"
+path="res://.godot/imported/DayFront.png-45461231ca357a4921de40d2c7a0c38b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Cards/Front20000.png"
-dest_files=["res://.godot/imported/Front20000.png-e09e1044beeb3f0b562ab127d9b7b27f.ctex"]
+source_file="res://Graphics/Cards/DayFront.png"
+dest_files=["res://.godot/imported/DayFront.png-45461231ca357a4921de40d2c7a0c38b.ctex"]
 
 [params]
 

@@ -1,31 +1,34 @@
 [gd_scene format=3 uid="uid://dqtidrexl63xw"]
 
 [ext_resource type="Script" uid="uid://by8tq0l3hkcbs" path="res://Cards/base_card.gd" id="1_ydy5p"]
-[ext_resource type="Texture2D" uid="uid://8wto56uggf8r" path="res://Graphics/Cards/Front10000.png" id="3_eg4dm"]
+[ext_resource type="Texture2D" uid="uid://bub7xu5gel4x4" path="res://Graphics/Cards/DayFrame.png" id="2_50ino"]
 [ext_resource type="Theme" uid="uid://c5qyll2cke3nb" path="res://Cards/CardTheme.tres" id="3_nry7q"]
-[ext_resource type="Texture2D" uid="uid://dghpnt64bkvrb" path="res://Graphics/Cards/Front20000.png" id="4_kqvxo"]
+[ext_resource type="Texture2D" uid="uid://5u2ohgdne5ei" path="res://Graphics/Cards/DayFront.png" id="4_5q4vu"]
 [ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="5_bmyxb"]
-[ext_resource type="Texture2D" uid="uid://pn8oc7nus4rb" path="res://Graphics/MV Sketch/White0000.png" id="5_eg4dm"]
-[ext_resource type="Texture2D" uid="uid://cqt4gscq3g16" path="res://Graphics/Cards/Front30000.png" id="5_wmdxx"]
-[ext_resource type="Texture2D" uid="uid://cyhaymhg6vgql" path="res://Graphics/Cards/Back10000.png" id="7_50ino"]
 [ext_resource type="Texture2D" uid="uid://w5k0sqlxk3g7" path="res://Graphics/UI/EnergyBack0000.png" id="7_tygsg"]
-[ext_resource type="Texture2D" uid="uid://jbh6ra0o5cis" path="res://Graphics/Cards/Back20000.png" id="8_5q4vu"]
 [ext_resource type="Texture2D" uid="uid://ctqlu2gdpbgrj" path="res://Graphics/UI/EnergyFront0000.png" id="8_bmyxb"]
-[ext_resource type="Texture2D" uid="uid://d17j73hkhrvwn" path="res://Graphics/Cards/Back30000.png" id="9_tygsg"]
 [ext_resource type="Material" uid="uid://cv62tvfmnej4b" path="res://Shaders/EnergyBurn.tres" id="9_ws7lp"]
 [ext_resource type="Texture2D" uid="uid://bf854183hsvqu" path="res://Graphics/UI/EnergyLine0000.png" id="10_6s8qy"]
+[ext_resource type="Texture2D" uid="uid://cld4uxi1cnoca" path="res://Graphics/Cards/NightBack.png" id="12_50ino"]
+[ext_resource type="Texture2D" uid="uid://bke0grn62pj5l" path="res://Graphics/Cards/BasicBack.png" id="12_tygsg"]
+[ext_resource type="Texture2D" uid="uid://cvd1dfn6t5065" path="res://Graphics/Cards/DayBack.png" id="13_5q4vu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bmyxb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_eg4dm")
-}, {
+"texture": ExtResource("2_50ino")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tygsg"]
+animations = [{
+"frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_kqvxo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_wmdxx")
+"texture": ExtResource("4_5q4vu")
 }],
 "loop": true,
 "name": &"default",
@@ -36,13 +39,13 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_50ino")
+"texture": ExtResource("12_tygsg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_5q4vu")
+"texture": ExtResource("13_5q4vu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_tygsg")
+"texture": ExtResource("12_50ino")
 }],
 "loop": false,
 "name": &"default",
@@ -59,22 +62,17 @@ script = ExtResource("1_ydy5p")
 use_parent_material = true
 
 [node name="CardFront" type="AnimatedSprite2D" parent="CardFront" unique_id=1390792272]
-self_modulate = Color(0.65625, 0.5357666, 0.5357666, 1)
 use_parent_material = true
-scale = Vector2(2.04, 2.04)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bmyxb")
-frame = 1
 script = ExtResource("5_bmyxb")
 should_flip = false
 
-[node name="White" type="Sprite2D" parent="CardFront" unique_id=278676297]
-self_modulate = Color(0.84765625, 0.7092602, 0.6820984, 1)
+[node name="White" type="AnimatedSprite2D" parent="CardFront" unique_id=127767426]
 show_behind_parent = true
 use_parent_material = true
-position = Vector2(0, -4.287217)
-rotation = 3.1415927
-scale = Vector2(26.462793, 42.32535)
-texture = ExtResource("5_eg4dm")
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_tygsg")
 
 [node name="Image" type="Sprite2D" parent="CardFront" unique_id=1941202912]
 show_behind_parent = true
@@ -148,7 +146,6 @@ text = "1"
 
 [node name="CardBack" type="AnimatedSprite2D" parent="." unique_id=1167643910]
 visible = false
-self_modulate = Color(0.65625, 0.5357666, 0.5357666, 1)
 scale = Vector2(2.04, 2.04)
 sprite_frames = SubResource("SpriteFrames_y0nfu")
 script = ExtResource("5_bmyxb")

@@ -11,8 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="4_d45ho"]
 [ext_resource type="Texture2D" uid="uid://pn8oc7nus4rb" path="res://Graphics/MV Sketch/White0000.png" id="5_xhbeg"]
 [ext_resource type="PackedScene" uid="uid://dvwafkf3yemgq" path="res://World/Forest.tscn" id="8_aoint"]
-[ext_resource type="PackedScene" uid="uid://bjpe4gij0vyyp" path="res://World/Environment/Mushrooms.tscn" id="8_xt66a"]
-[ext_resource type="PackedScene" uid="uid://f60kho1hkypj" path="res://World/Environment/Berries.tscn" id="9_avfc4"]
 [ext_resource type="Shader" uid="uid://buwa5eioqtumq" path="res://Shaders/NightTime.gdshader" id="10_p72nv"]
 [ext_resource type="PackedScene" uid="uid://dnht8t3ak52a4" path="res://Music/Music.tscn" id="11_d45ho"]
 [ext_resource type="PackedScene" uid="uid://na7qrnohprp7" path="res://World/River.tscn" id="12_wfbhs"]
@@ -331,7 +329,7 @@ texture = ExtResource("3_joegy")
 visible = false
 
 [node name="Campfire" parent="." unique_id=1083176764 instance=ExtResource("2_vccdb")]
-position = Vector2(988, 663)
+position = Vector2(960, 650)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1391947505]
 
@@ -355,29 +353,3 @@ layer = 2
 
 [node name="Music" parent="Hud" unique_id=466025059 instance=ExtResource("11_d45ho")]
 position = Vector2(-367, -351)
-
-[node name="TestEnvironmental" type="Node2D" parent="." unique_id=1297313975]
-
-[node name="Mushrooms" parent="TestEnvironmental" unique_id=1436930502 instance=ExtResource("8_xt66a")]
-position = Vector2(1552, 782)
-
-[node name="Mushrooms2" parent="TestEnvironmental" unique_id=1160318793 instance=ExtResource("8_xt66a")]
-position = Vector2(621, 708)
-
-[node name="Mushrooms3" parent="TestEnvironmental" unique_id=989194505 instance=ExtResource("8_xt66a")]
-position = Vector2(220, 626)
-
-[node name="Mushrooms4" parent="TestEnvironmental" unique_id=794980287 instance=ExtResource("8_xt66a")]
-position = Vector2(1315, 649)
-
-[node name="Berries" parent="TestEnvironmental" unique_id=529111993 instance=ExtResource("9_avfc4")]
-position = Vector2(316, 820)
-
-[node name="Berries2" parent="TestEnvironmental" unique_id=694934847 instance=ExtResource("9_avfc4")]
-position = Vector2(435, 635)
-
-[node name="Berries3" parent="TestEnvironmental" unique_id=695931867 instance=ExtResource("9_avfc4")]
-position = Vector2(1271, 797)
-
-[node name="Berries4" parent="TestEnvironmental" unique_id=1540658527 instance=ExtResource("9_avfc4")]
-position = Vector2(1530, 1022)
