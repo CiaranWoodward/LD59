@@ -35,21 +35,21 @@ texture = ExtResource("2_a4nbm")
 
 [node name="PickShroom" parent="Log" unique_id=1683275558 instance=ExtResource("3_rdysf")]
 position = Vector2(-120, 28)
+scale = Vector2(-1, 1)
 frame = 3
 flip_h = true
 
 [node name="PickShroom2" parent="Log" unique_id=651460899 instance=ExtResource("3_rdysf")]
 position = Vector2(-56, -134)
-frame = 1
 flip_h = true
 
 [node name="PickShroom3" parent="Log" unique_id=1417777110 instance=ExtResource("3_rdysf")]
 position = Vector2(12, 10)
-frame = 3
 
 [node name="PickShroom4" parent="Log" unique_id=420388101 instance=ExtResource("3_rdysf")]
 position = Vector2(84, -98)
-frame = 1
+scale = Vector2(-1, 1)
+frame = 3
 
 [node name="InsanityFlicker" parent="." unique_id=1741190488 instance=ExtResource("4_x0tm1")]
 modulate_node = NodePath("../Log/PickShroom")

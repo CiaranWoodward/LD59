@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://d31p3i06tu3y7" path="res://Graphics/UI/Font/Winky/WinkyRough-Bold.ttf" id="1_151ya"]
 [ext_resource type="FontFile" uid="uid://msr5em14ixj8" path="res://Graphics/UI/Font/Winky/WinkyRough-SemiBold.ttf" id="2_5seav"]
+[ext_resource type="FontFile" uid="uid://nt3aiwengiwr" path="res://Graphics/UI/Font/Winky/WinkyRough-SemiBoldItalic.ttf" id="3_5seav"]
 [ext_resource type="FontFile" uid="uid://bbl7fsuhii552" path="res://Graphics/UI/Font/Winky/WinkyRough-LightItalic.ttf" id="3_la2tu"]
 [ext_resource type="FontFile" uid="uid://bo0hys4cq4b62" path="res://Graphics/UI/Font/Winky/WinkyRough-Light.ttf" id="4_040jk"]
 
@@ -14,5 +15,6 @@ RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/constants/line_separation = -3
 RichTextLabel/constants/paragraph_separation = -11
 RichTextLabel/fonts/bold_font = ExtResource("2_5seav")
+RichTextLabel/fonts/bold_italics_font = ExtResource("3_5seav")
 RichTextLabel/fonts/italics_font = ExtResource("3_la2tu")
 RichTextLabel/fonts/normal_font = ExtResource("4_040jk")
