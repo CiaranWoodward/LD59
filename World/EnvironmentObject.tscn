@@ -2,9 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://bjpe4gij0vyyp" path="res://World/Environment/Mushrooms.tscn" id="1_o7f4a"]
 [ext_resource type="PackedScene" uid="uid://f60kho1hkypj" path="res://World/Environment/Berries.tscn" id="2_bjco3"]
+[ext_resource type="PackedScene" uid="uid://cujgnpcdgilj8" path="res://World/Environment/Pile.tscn" id="3_bjco3"]
+[ext_resource type="PackedScene" uid="uid://c7did83af6yu2" path="res://World/Environment/Sticks.tscn" id="4_1q1hq"]
 
 [node name="EnvironmentObject" type="Node2D" unique_id=869142138]
 
 [node name="PickShroom" parent="." unique_id=1436930502 instance=ExtResource("1_o7f4a")]
 
 [node name="Berries" parent="." unique_id=520496158 instance=ExtResource("2_bjco3")]
+
+[node name="Pile" parent="." unique_id=1047087959 instance=ExtResource("3_bjco3")]
+
+[node name="Sticks" parent="." unique_id=262906575 instance=ExtResource("4_1q1hq")]
+position = Vector2(0, 15)

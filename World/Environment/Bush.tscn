@@ -117,8 +117,9 @@ insane_node = NodePath("../Insane")
 chance_to_stick_early = 0.5
 
 [node name="Sane" type="AnimatedSprite2D" parent="." unique_id=710451041]
-visible = false
-modulate = Color(0.78515625, 0.5074733, 0.45698547, 0.98039216)
+modulate = Color(0, 0, 0, 0.9647059)
+self_modulate = Color(0.3882353, 0.45490196, 0.9098039, 1)
+scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_oq2d0")
 offset = Vector2(-4, -92)
 flip_h = true
@@ -126,7 +127,7 @@ script = ExtResource("2_oq2d0")
 self_modulations = Array[Color]([Color(0.6666667, 0.3372549, 0.39215687, 0.9764706), Color(0.78431374, 0.5058824, 0.45882353, 0.98039216), Color(0.3882353, 0.45490196, 0.9098039, 1)])
 max_distance_y = 400
 colour_for_distance = true
-max_distance_modulation = Color(0, 0, 0, 0.9647059)
+max_distance_modulation = Color(0.16796875, 0.16796875, 0.16796875, 0.9647059)
 
 [node name="Shadow" type="Sprite2D" parent="Sane" unique_id=289538522]
 self_modulate = Color(0.16078432, 0.13333334, 0.14901961, 0.627451)
@@ -137,6 +138,9 @@ texture = ExtResource("2_5elah")
 offset = Vector2(2.3701477, 268.17383)
 
 [node name="Insane" type="AnimatedSprite2D" parent="." unique_id=2069194352]
+modulate = Color(0, 0, 0, 0.9647059)
+self_modulate = Color(1, 1, 1, 0.98039216)
+scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_oq2d0")
 offset = Vector2(0, -123)
 flip_h = true
@@ -144,7 +148,7 @@ script = ExtResource("2_oq2d0")
 self_modulations = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 0.98039216), Color(1, 1, 1, 0.95686275)])
 max_distance_y = 400
 colour_for_distance = true
-max_distance_modulation = Color(0, 0, 0, 0.9647059)
+max_distance_modulation = Color(0.16862746, 0.16862746, 0.16862746, 0.9647059)
 
 [node name="BushBack" type="AnimatedSprite2D" parent="Insane" unique_id=729486736]
 self_modulate = Color(0.77254903, 0.77254903, 0.34117648, 1)
@@ -153,7 +157,7 @@ position = Vector2(56, -139)
 rotation = -2.7821145
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_50asy")
-frame = 4
+frame = 1
 script = ExtResource("2_oq2d0")
 should_flip = false
 
@@ -182,6 +186,7 @@ position = Vector2(6.9999948, 2.9999993)
 rotation = -0.0087963715
 scale = Vector2(0.1629153, 0.16450483)
 sprite_frames = SubResource("SpriteFrames_pdhno")
+frame = 4
 script = ExtResource("2_oq2d0")
 should_flip = false
 max_distance_modulation = Color(0, 0, 0, 1)

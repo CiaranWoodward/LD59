@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://c7did83af6yu2"]
+
+[ext_resource type="Texture2D" uid="uid://nwrh7p3fqsx" path="res://Graphics/Environment/Pile/Dirt.png" id="1_p6663"]
+[ext_resource type="Script" uid="uid://drx4qea7ykdrp" path="res://Utils/RandomAnimatedSprite.gd" id="2_qvxro"]
+[ext_resource type="PackedScene" uid="uid://dolwoqa17fiq1" path="res://World/Environment/Pickables/PickStick.tscn" id="4_2t3db"]
+[ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="4_xchtv"]
+[ext_resource type="PackedScene" uid="uid://1cd50b03me1x" path="res://Utils/InsanityFlicker.tscn" id="5_jbby0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j77cd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_p6663")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Sticks" type="Node2D" unique_id=1436930502]
+
+[node name="Dirt" type="AnimatedSprite2D" parent="." unique_id=1944162344]
+rotation = 3.1415927
+scale = Vector2(0.5, -0.5)
+sprite_frames = SubResource("SpriteFrames_j77cd")
+offset = Vector2(-4.8685913, 4.2203064)
+flip_h = true
+script = ExtResource("2_qvxro")
+
+[node name="PickStick" parent="." unique_id=1457348044 instance=ExtResource("4_2t3db")]
+self_modulate = Color(0.18039216, 0.15294118, 0.16862746, 1)
+position = Vector2(-23, -3)
+rotation = 3.1415927
+scale = Vector2(0.25, -0.25)
+
+[node name="PickStick2" parent="." unique_id=998070385 instance=ExtResource("4_2t3db")]
+self_modulate = Color(0.28235295, 0.23529412, 0.18431373, 1)
+position = Vector2(33, 0)
+rotation = 3.1415927
+scale = Vector2(0.25, -0.25)
+
+[node name="PickStick3" parent="." unique_id=1794078808 instance=ExtResource("4_2t3db")]
+self_modulate = Color(0.28235295, 0.23529412, 0.18431373, 1)
+position = Vector2(0, -9)
+rotation = 3.1415927
+scale = Vector2(0.25, -0.25)
+
+[node name="Shadow2" type="Sprite2D" parent="." unique_id=1288974980]
+modulate = Color(0.21960784, 0.18039216, 0.14117648, 0.5058824)
+show_behind_parent = true
+rotation = 3.1415927
+scale = Vector2(0.84632397, -0.20630176)
+texture = ExtResource("4_xchtv")
+
+[node name="InsanityFlickerDirt" parent="." unique_id=121949825 instance=ExtResource("5_jbby0")]
+modulate_node = NodePath("../Dirt")
+sane_color = Color(0.796875, 0.796875, 0.796875, 1)
+flicker_time = 0.8
