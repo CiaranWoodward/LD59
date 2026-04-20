@@ -412,7 +412,7 @@ _data = {
 &"RESET": SubResource("Animation_6b84x")
 }
 
-[node name="Campfire" type="Node2D" unique_id=1083176764]
+[node name="Campfire" type="Node2D" unique_id=1083176764 groups=["Prop"]]
 
 [node name="Ash" type="Sprite2D" parent="." unique_id=794573064]
 visible = false
@@ -451,7 +451,7 @@ color_initial_ramp = SubResource("Gradient_7xama")
 [node name="BigFire" type="AnimatedSprite2D" parent="." unique_id=1249455685]
 sprite_frames = SubResource("SpriteFrames_6b84x")
 autoplay = "default"
-speed_scale = 0.9451351
+speed_scale = 0.95777714
 offset = Vector2(-0.19172853, -38.91566)
 script = ExtResource("7_ysad7")
 should_flip = false
@@ -460,7 +460,7 @@ play_on_load = true
 [node name="MidFire" type="AnimatedSprite2D" parent="." unique_id=2086808910]
 sprite_frames = SubResource("SpriteFrames_74pnr")
 autoplay = "default"
-speed_scale = 1.0416019
+speed_scale = 1.0878714
 offset = Vector2(0, -44)
 script = ExtResource("7_ysad7")
 should_flip = false
@@ -493,7 +493,7 @@ color_initial_ramp = SubResource("Gradient_xbxvm")
 [node name="SmallFire" type="AnimatedSprite2D" parent="." unique_id=1756562007]
 sprite_frames = SubResource("SpriteFrames_y7nvl")
 autoplay = "default"
-speed_scale = 1.0752431
+speed_scale = 0.9734635
 offset = Vector2(7, -40)
 script = ExtResource("7_ysad7")
 should_flip = false

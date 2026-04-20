@@ -76,7 +76,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Tree" type="Node2D" unique_id=38779123]
+[node name="Tree" type="Node2D" unique_id=38779123 groups=["Prop"]]
 
 [node name="InsanityFlicker" parent="." unique_id=1741190488 instance=ExtResource("1_t2qsq")]
 sane_node = NodePath("../Sane")
@@ -90,7 +90,7 @@ modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0.19140625, 0.07606462, 0.047851563, 1)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_ho1db")
-frame = 2
+frame = 3
 offset = Vector2(-8, -758)
 script = ExtResource("13_k1k8q")
 self_modulations = Array[Color]([Color(0.1796875, 0.11423149, 0.03579712, 1), Color(0.19140625, 0.07606462, 0.047851563, 1), Color(0.25, 0.09000459, 0.056640625, 1), Color(0.23828125, 0.15294679, 0.0605011, 1), Color(0.26953125, 0.19501773, 0.087387085, 1)])
@@ -99,18 +99,20 @@ colour_for_distance = true
 max_distance_modulation = Color(0, 0, 0, 1)
 
 [node name="Tops" type="AnimatedSprite2D" parent="Sane" unique_id=703988048]
-self_modulate = Color(0.18039216, 0.21960784, 0.4862745, 0.96862745)
+self_modulate = Color(0.54901963, 0.21568628, 0.27058825, 0.98039216)
 position = Vector2(259, 199)
-scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_lnjkl")
+frame = 2
 offset = Vector2(-259, -1311.5)
 script = ExtResource("13_k1k8q")
 self_modulations = Array[Color]([Color(0.87058824, 0.39607844, 0.30980393, 0.9764706), Color(0.18039216, 0.21960784, 0.4862745, 0.96862745), Color(0.54901963, 0.21568628, 0.27058825, 0.98039216)])
 
 [node name="Tendrils" type="AnimatedSprite2D" parent="Sane" unique_id=1294402216]
-self_modulate = Color(0.87058824, 0.39607844, 0.30980393, 0.9882353)
+self_modulate = Color(0.18039216, 0.21960784, 0.4862745, 0.9882353)
 position = Vector2(259, 251)
+scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_k1k8q")
+frame = 1
 offset = Vector2(428, -1324.5)
 flip_h = true
 script = ExtResource("13_k1k8q")
@@ -130,7 +132,7 @@ modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0.2731916, 0.19711676, 0.17809808, 1)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_ho1db")
-frame = 3
+frame = 1
 offset = Vector2(-8, -758)
 script = ExtResource("13_k1k8q")
 self_modulations = Array[Color]([Color(0.28235295, 0.23529412, 0.18039216, 1), Color(0.2731916, 0.19711676, 0.17809808, 1), Color(0.24313726, 0.16862746, 0.15294118, 1), Color(0.28235295, 0.23529412, 0.18039216, 1), Color(0.19046193, 0.17445573, 0.1424433, 1)])
@@ -142,16 +144,16 @@ max_distance_modulation = Color(0, 0, 0, 1)
 self_modulate = Color(0.78039217, 0.78039217, 0.34117648, 0.9607843)
 position = Vector2(259, 199)
 sprite_frames = SubResource("SpriteFrames_lnjkl")
-frame = 1
+frame = 2
 offset = Vector2(-259, -1311.5)
 script = ExtResource("13_k1k8q")
 self_modulations = Array[Color]([Color(0.78039217, 0.78039217, 0.34117648, 0.9607843), Color(0.65882355, 0.6627451, 0.32156864, 0.9882353), Color(0.5137255, 0.53333336, 0.2509804, 0.98039216)])
 
 [node name="Tendrils" type="AnimatedSprite2D" parent="Insane" unique_id=129951834]
-self_modulate = Color(0.78039217, 0.78039217, 0.34117648, 0.9137255)
+self_modulate = Color(0.65882355, 0.6627451, 0.32156864, 0.92156863)
 position = Vector2(259, 251)
+scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_k1k8q")
-frame = 1
 offset = Vector2(428, -1324.5)
 flip_h = true
 script = ExtResource("13_k1k8q")

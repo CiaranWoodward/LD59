@@ -259,6 +259,7 @@ shader_parameter/vignette_strength = 0.1610000076475
 
 [node name="Level" type="Node2D" unique_id=1164261592]
 script = ExtResource("1_24re5")
+scenes = Array[PackedScene]([ExtResource("12_wfbhs"), null])
 
 [node name="DayNight" type="AnimationPlayer" parent="." unique_id=405920214]
 libraries/ = SubResource("AnimationLibrary_r5g24")
@@ -324,9 +325,12 @@ scale = Vector2(0.7504341, 0.7055556)
 texture = ExtResource("3_joegy")
 
 [node name="River" parent="." unique_id=1796592686 instance=ExtResource("12_wfbhs")]
+visible = false
 
 [node name="Forest" parent="." unique_id=1178282790 instance=ExtResource("8_aoint")]
 visible = false
+
+[node name="Scene" type="Node2D" parent="." unique_id=1502524707]
 
 [node name="Campfire" parent="." unique_id=1083176764 instance=ExtResource("2_vccdb")]
 position = Vector2(960, 650)

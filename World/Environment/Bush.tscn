@@ -109,7 +109,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Bush" type="Node2D" unique_id=1047087959]
+[node name="Bush" type="Node2D" unique_id=1047087959 groups=["Prop"]]
 
 [node name="InsanityFlicker" parent="." unique_id=1741190488 instance=ExtResource("1_irtgw")]
 sane_node = NodePath("../Sane")
@@ -118,7 +118,9 @@ chance_to_stick_early = 0.5
 
 [node name="Sane" type="AnimatedSprite2D" parent="." unique_id=710451041]
 visible = false
-modulate = Color(0.78515625, 0.5074733, 0.45698547, 0.98039216)
+modulate = Color(0, 0, 0, 0.9647059)
+self_modulate = Color(0.78431374, 0.5058824, 0.45882353, 0.98039216)
+scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_oq2d0")
 offset = Vector2(-4, -92)
 flip_h = true
@@ -137,6 +139,7 @@ texture = ExtResource("2_5elah")
 offset = Vector2(2.3701477, 268.17383)
 
 [node name="Insane" type="AnimatedSprite2D" parent="." unique_id=2069194352]
+modulate = Color(0, 0, 0, 0.9647059)
 sprite_frames = SubResource("SpriteFrames_oq2d0")
 offset = Vector2(0, -123)
 flip_h = true
@@ -153,7 +156,6 @@ position = Vector2(56, -139)
 rotation = -2.7821145
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_50asy")
-frame = 4
 script = ExtResource("2_oq2d0")
 should_flip = false
 
@@ -164,7 +166,7 @@ position = Vector2(75.000015, -179)
 rotation = -2.7936378
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_50asy")
-frame = 4
+frame = 3
 script = ExtResource("2_oq2d0")
 should_flip = false
 
@@ -182,6 +184,7 @@ position = Vector2(6.9999948, 2.9999993)
 rotation = -0.0087963715
 scale = Vector2(0.1629153, 0.16450483)
 sprite_frames = SubResource("SpriteFrames_pdhno")
+frame = 2
 script = ExtResource("2_oq2d0")
 should_flip = false
 max_distance_modulation = Color(0, 0, 0, 1)
@@ -192,6 +195,7 @@ position = Vector2(18.000004, -102)
 rotation = 3.1415927
 scale = Vector2(0.20972614, 0.21743736)
 sprite_frames = SubResource("SpriteFrames_irtgw")
+frame = 1
 script = ExtResource("2_oq2d0")
 should_flip = false
 
@@ -201,6 +205,7 @@ position = Vector2(14, -107.99999)
 rotation = 3.059996
 scale = Vector2(0.193, 0.2)
 sprite_frames = SubResource("SpriteFrames_lhe5x")
+frame = 1
 flip_h = true
 script = ExtResource("2_oq2d0")
 should_flip = false
