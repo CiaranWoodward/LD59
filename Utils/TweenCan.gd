@@ -54,7 +54,7 @@ static func flicker_fn_tween(flicker_on_fn: Callable, flicker_off_fn: Callable, 
 
 
 
-static func flicker_tween(target: Node2D, flicker_time: float) -> Tween:
+static func flicker_tween(target: CanvasItem, flicker_time: float) -> Tween:
     return flicker_fn_tween(
         func ():
             target.visible = true,

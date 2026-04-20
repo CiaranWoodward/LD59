@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://brd1msi1vo5u" path="res://Cards/TinderboxCard.tscn" id="10_jgnfc"]
 [ext_resource type="PackedScene" uid="uid://du0wsm5kles7k" path="res://UI/GameOver.tscn" id="11_mnq2p"]
 [ext_resource type="PackedScene" uid="uid://dj03uo7wdtqaa" path="res://Cards/WoodCard.tscn" id="11_xmklv"]
+[ext_resource type="PackedScene" uid="uid://doyb4lch3sljq" path="res://UI/EncounterScreen.tscn" id="12_ljc0k"]
 
 [node name="Table" type="Node2D" unique_id=1954673422]
 script = ExtResource("1_rcskp")
@@ -123,7 +124,11 @@ gizmo_extents = 36.3
 [node name="HUD" type="CanvasLayer" parent="." unique_id=393164929]
 layer = 10
 
-[node name="Game Over" parent="HUD" unique_id=1234357728 instance=ExtResource("11_mnq2p")]
+[node name="EncounterScreen" parent="HUD" unique_id=1234357728 instance=ExtResource("12_ljc0k")]
+visible = false
+debug_visible = false
+
+[node name="Game Over" parent="HUD" unique_id=498905838 instance=ExtResource("11_mnq2p")]
 visible = false
 size_flags_horizontal = 3
 size_flags_vertical = 3

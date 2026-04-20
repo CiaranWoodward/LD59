@@ -19,6 +19,12 @@ enum TurnEndImpact {
     NEW_DAY,
 }
 
+enum SceneType {
+    ANY,
+    FOREST,
+    RIVER,
+}
+
 var initial_statistic_values = {
     Statistic.HEALTH: 5,
     Statistic.INSANITY: 5,
@@ -74,6 +80,9 @@ func change_statistic(stat: Statistic, delta: int):
 
 func is_daytime() -> bool:
     return statistics[Statistic.ROUND] < 3
+
+func is_insane() -> bool:
+    return statistics[Statistic.INSANITY] >= 3
 
 func next_round() -> TurnEndImpact:
     change_statistic(Statistic.ROUND, 1)

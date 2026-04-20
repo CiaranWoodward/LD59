@@ -105,6 +105,9 @@ func _input(event: InputEvent) -> void:
 	elif mouse_event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 		_play_selected_card()
 
+func get_encounter_screen() -> EncounterScreen:
+	return $"HUD/EncounterScreen"
+
 ## End the turn and discard the hand.
 func end_turn():
 	emit_signal("_turn_ended")
@@ -158,10 +161,11 @@ func game_over():
 	
 
 ## Add a card and hook it up
-func initialise_card_to_discard_pile(card: BaseCard, delay: float = 0.0) -> Tween:
+func initialise_card_to_discard_pile(card: BaseCard, delay: float = 0.0, spawn_position = $SpawnPoint.global_position) -> Tween:
 	if !is_instance_valid(card.get_parent()):
 		$Cards.add_child(card)
-		card.global_position = $SpawnPoint.global_position
+		#card.scale = Vector2.ONE
+		card.global_position = spawn_position
 	_attach_mouse_watchers(card)
 	return add_card_to_discard_pile(card, delay, true)
 
