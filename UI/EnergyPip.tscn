@@ -558,7 +558,7 @@ pip_inital_delay_multiplier = 0.3
 [node name="Pulse" type="AnimationPlayer" parent="." unique_id=545380722]
 libraries/ = SubResource("AnimationLibrary_m2reh")
 autoplay = &"Pulse"
-speed_scale = 0.33861777
+speed_scale = 0.35232404
 script = ExtResource("1_ipi4d")
 random_speed = true
 min_speed = 0.3

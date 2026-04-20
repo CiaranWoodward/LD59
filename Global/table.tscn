@@ -63,34 +63,44 @@ pip_threshold = 3
 [node name="Cards" type="Node2D" parent="." unique_id=630168821]
 
 [node name="AxeCard" parent="Cards" unique_id=79543323 instance=ExtResource("3_mnq2p")]
+material = null
 position = Vector2(733, 2898)
 
 [node name="BerryCard" parent="Cards" unique_id=676234521 instance=ExtResource("4_fyblx")]
+material = null
 position = Vector2(2103, 2736)
 
 [node name="BowCard" parent="Cards" unique_id=2095908211 instance=ExtResource("5_ljc0k")]
+material = null
 position = Vector2(1375, 1983)
 
 [node name="ForageCard" parent="Cards" unique_id=1328410963 instance=ExtResource("6_rhal8")]
+material = null
 position = Vector2(1573, 3560)
 cost = 0
 
 [node name="HungerCard" parent="Cards" unique_id=1088402863 instance=ExtResource("7_t0t1g")]
+material = null
 position = Vector2(-35, 3262)
 
 [node name="MorselCard" parent="Cards" unique_id=682037086 instance=ExtResource("8_m6m0j")]
+material = null
 position = Vector2(2755, 3626)
 
 [node name="TinderboxCard" parent="Cards" unique_id=283751447 instance=ExtResource("10_jgnfc")]
+material = null
 position = Vector2(2796, 2256)
 
 [node name="WoodCard" parent="Cards" unique_id=1243168928 instance=ExtResource("11_xmklv")]
+material = null
 position = Vector2(-1587, 2489)
 
 [node name="HungerCard2" parent="Cards" unique_id=324443235 instance=ExtResource("7_t0t1g")]
+material = null
 position = Vector2(-35, 3262)
 
 [node name="HungerCard3" parent="Cards" unique_id=714533921 instance=ExtResource("7_t0t1g")]
+material = null
 position = Vector2(-35, 3262)
 
 [node name="ShufflePoint" type="Marker2D" parent="." unique_id=526775094]

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://618td7xfqke6"]
+
+[ext_resource type="Shader" uid="uid://h0uxln8ygv5y" path="res://Shaders/UnplayableCard.gdshader" id="1_l7svb"]
+
+[resource]
+shader = ExtResource("1_l7svb")
+shader_parameter/amount = 0.566000026885
+shader_parameter/dimming = 0.262000012445
+shader_parameter/contrast = 0.6610000076475

@@ -8,6 +8,7 @@ static func pulse_tween(target: Node2D, pulse_time: float) -> Tween:
     tween.tween_property(target, "scale", Vector2(1, 1), pulse_time / 2).set_ease(Tween.EASE_IN)
     return tween
 
+## Flicker, will end 'on'
 static func flicker_fn_tween(flicker_on_fn: Callable, flicker_off_fn: Callable, flicker_time: float) -> Tween:
     var flicker_interval_target := 0.06
     var min_flickers := 3

@@ -2,18 +2,52 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_j2ms4"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_avfsn"]
+[ext_resource type="Texture2D" uid="uid://h00qund07fya" path="res://Graphics/Environment/Mushrooms/Mush purple.png" id="3_1g71f"]
+[ext_resource type="Shader" uid="uid://cy8urs6dbu03i" path="res://Shaders/Burn.gdshader" id="3_avfsn"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nry7q"]
+frequency = 0.0181
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_v6qug"]
+width = 100
+height = 800
+noise = SubResource("FastNoiseLite_nry7q")
+normalize = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1g71f"]
+resource_local_to_scene = true
+shader = ExtResource("3_avfsn")
+shader_parameter/progress = -1.3
+shader_parameter/noiseForce = 0.2
+shader_parameter/noiseTexture = SubResource("NoiseTexture2D_v6qug")
+shader_parameter/burnColor = Color(0.91764706, 0.94509804, 0.73333335, 1)
+shader_parameter/borderWidth = 0.2
+shader_parameter/direction = 270.0
 
 [node name="TestCard" unique_id=105035990 instance=ExtResource("1_j2ms4")]
 card_name = "Test Card"
 description = "This card is a test"
 image = ExtResource("2_avfsn")
 card_type = 1
+sanity_effect = 1
+sanity_effect_cost_delta = 2
+sanity_effect_description = "YOU'VE GOT TOO SOBER"
+sanity_effect_image = ExtResource("3_1g71f")
 
-[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="0" unique_id=933147433]
+[node name="CardFront" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="0" unique_id=1390792272]
+frame = 2
+
+[node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
+texture = ExtResource("2_avfsn")
+
+[node name="FullFront" parent="CardFront/EnergyPip/Front" parent_id_path=PackedInt32Array(768727205) index="0" unique_id=1808957655]
+material = SubResource("ShaderMaterial_1g71f")
+
+[node name="FullLine" parent="CardFront/EnergyPip/Line" parent_id_path=PackedInt32Array(1125568214) index="0" unique_id=836807859]
+material = SubResource("ShaderMaterial_1g71f")
+
+[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="4" unique_id=933147433]
 text = "Test Card"
 
-[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="1" unique_id=1774280308]
+[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="5" unique_id=376343130]
 text = "This card is a test"
-
-[node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="2" unique_id=1941202912]
-texture = ExtResource("2_avfsn")
