@@ -3,6 +3,7 @@ extends Node2D
 @export var pip_type: Global.Statistic = Global.Statistic.HEALTH
 @export var pip_threshold: int = 1
 @export var pip_inital_delay_multiplier: float = 0.4
+@export var pip_turn_off_delay_multiplier: float = 0
 
 @onready var animationTree = $States/AnimationTree["parameters/playback"] as AnimationNodeStateMachinePlayback
 
@@ -18,6 +19,8 @@ func _ready() -> void:
 			if new_value >= pip_threshold and _old_value < pip_threshold:
 				_turn_on()
 			elif new_value < pip_threshold and _old_value >= pip_threshold:
+				if pip_turn_off_delay_multiplier > 0:
+					await get_tree().create_timer(pip_turn_off_delay_multiplier * pip_threshold).timeout
 				_turn_off()
 	)
 

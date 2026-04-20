@@ -360,13 +360,14 @@ graph_offset = Vector2(-175, -9)
 
 [node name="PathPip" type="Node2D" unique_id=2057596518]
 script = ExtResource("1_qfoam")
-pip_type = 2
+pip_type = 8
 pip_inital_delay_multiplier = 0.3
+pip_turn_off_delay_multiplier = 0.4
 
 [node name="Pulse" type="AnimationPlayer" parent="." unique_id=545380722]
 libraries/ = SubResource("AnimationLibrary_m2reh")
 autoplay = &"Pulse"
-speed_scale = 0.39675844
+speed_scale = 0.3546705
 script = ExtResource("2_k084n")
 random_speed = true
 min_speed = 0.3

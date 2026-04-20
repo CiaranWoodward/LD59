@@ -11,6 +11,7 @@ enum Statistic {
     FIRE_LIT,
     DAY,
     ROUND,
+	PATHFINDING,
 }
 
 enum TurnEndImpact {
@@ -34,6 +35,7 @@ var initial_statistic_values = {
     Statistic.FIRE_LIT: 0,
     Statistic.DAY: 0,
     Statistic.ROUND: 0, # First 50% rounds are day, next 50% rounds are night
+    Statistic.PATHFINDING: 0,
 }
 
 var min_statistic_values = {
@@ -45,6 +47,7 @@ var min_statistic_values = {
     Statistic.FIRE_LIT: 0,
     Statistic.DAY: 0,
     Statistic.ROUND: 0,
+	Statistic.PATHFINDING: 0,
 }
 
 var max_statistic_values = {
@@ -56,6 +59,7 @@ var max_statistic_values = {
     Statistic.FIRE_LIT: 1,
     Statistic.DAY: 10,
     Statistic.ROUND: 6,
+	Statistic.PATHFINDING: 6,
 }
 
 var statistics = initial_statistic_values.duplicate()
