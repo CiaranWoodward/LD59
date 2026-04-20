@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ccbqcm4wh4ke0"]
+
+[ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_gssqy"]
+[ext_resource type="Script" uid="uid://d2xr7wqeuf5cq" path="res://Cards/maybe_morsel_card.gd" id="2_dfpi5"]
+[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_luev7"]
+
+[node name="MorselCard" unique_id=105035990 instance=ExtResource("1_gssqy")]
+script = ExtResource("2_dfpi5")
+card_name = "Morsel?"
+description = "Remove two random [b]hunger[/b] from deck
+
+If you can ignore the mould...
+
+[i]Removed from deck when played"
+image = ExtResource("3_luev7")
+card_type = 3
+consumable = true
+
+[node name="CardFront" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="0" unique_id=1390792272]
+frame = 2
+
+[node name="CardFill" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="1" unique_id=127767426]
+frame = 1
+
+[node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
+texture = ExtResource("3_luev7")
+
+[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="3" unique_id=933147433]
+text = "Morsel?"
+
+[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="4" unique_id=376343130]
+text = "Remove two random [b]hunger[/b] from deck
+
+If you can ignore the mould...
+
+[i]Removed from deck when played"
+
+[node name="CardBack" parent="." index="2" unique_id=1167643910]
+frame = 1

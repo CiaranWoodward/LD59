@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://bmbknhela3tf8" path="res://Global/table.tscn" id="4_7rdfg"]
 [ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="4_d45ho"]
 [ext_resource type="Texture2D" uid="uid://pn8oc7nus4rb" path="res://Graphics/MV Sketch/White0000.png" id="5_xhbeg"]
-[ext_resource type="PackedScene" uid="uid://dvwafkf3yemgq" path="res://World/Forest.tscn" id="8_aoint"]
 [ext_resource type="Shader" uid="uid://buwa5eioqtumq" path="res://Shaders/NightTime.gdshader" id="10_p72nv"]
 [ext_resource type="PackedScene" uid="uid://dnht8t3ak52a4" path="res://Music/Music.tscn" id="11_d45ho"]
 [ext_resource type="PackedScene" uid="uid://na7qrnohprp7" path="res://World/River.tscn" id="12_wfbhs"]
@@ -323,12 +322,6 @@ texture = ExtResource("3_aoint")
 position = Vector2(1181.0001, 416.00003)
 scale = Vector2(0.7504341, 0.7055556)
 texture = ExtResource("3_joegy")
-
-[node name="River" parent="." unique_id=1796592686 instance=ExtResource("12_wfbhs")]
-visible = false
-
-[node name="Forest" parent="." unique_id=1178282790 instance=ExtResource("8_aoint")]
-visible = false
 
 [node name="Scene" type="Node2D" parent="." unique_id=1502524707]
 

@@ -1,5 +1,6 @@
 @tool
 extends BaseCard
+class_name ForageShroomCard
 
 enum ShroomType {
 	Blue,

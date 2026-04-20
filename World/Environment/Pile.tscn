@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cujgnpcdgilj8"]
 
+[ext_resource type="Script" uid="uid://b7f6ekp0o8k30" path="res://World/Environment/pile.gd" id="1_cg6o8"]
 [ext_resource type="PackedScene" uid="uid://1cd50b03me1x" path="res://Utils/InsanityFlicker.tscn" id="1_ysk7m"]
 [ext_resource type="Texture2D" uid="uid://ciuj8cgmeect7" path="res://Graphics/MV Sketch/sun0000.png" id="2_3ylcj"]
 [ext_resource type="Texture2D" uid="uid://bpr4wiwll737y" path="res://Graphics/Environment/Pile/InsanePile.png" id="2_xf4bg"]
@@ -37,6 +38,7 @@ animations = [{
 }]
 
 [node name="Pile" type="Node2D" unique_id=1047087959]
+script = ExtResource("1_cg6o8")
 
 [node name="InsanityFlicker" parent="." unique_id=1741190488 instance=ExtResource("1_ysk7m")]
 sane_node = NodePath("../Sane")
@@ -75,5 +77,6 @@ texture = ExtResource("2_3ylcj")
 position = Vector2(0, 56)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_saqm3")
+frame = 1
 offset = Vector2(5, -43)
 script = ExtResource("3_rd8g4")

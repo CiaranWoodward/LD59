@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cfhexshl20e7w"]
 
 [ext_resource type="PackedScene" uid="uid://bjpe4gij0vyyp" path="res://World/Environment/Mushrooms.tscn" id="1_o7f4a"]
+[ext_resource type="Script" uid="uid://ur8w1ua2p2bt" path="res://World/environment_object.gd" id="1_qh7vf"]
 [ext_resource type="PackedScene" uid="uid://f60kho1hkypj" path="res://World/Environment/Berries.tscn" id="2_bjco3"]
 [ext_resource type="PackedScene" uid="uid://cujgnpcdgilj8" path="res://World/Environment/Pile.tscn" id="3_bjco3"]
 [ext_resource type="PackedScene" uid="uid://c7did83af6yu2" path="res://World/Environment/Sticks.tscn" id="4_1q1hq"]
 
 [node name="EnvironmentObject" type="Node2D" unique_id=869142138 groups=["Prop"]]
+script = ExtResource("1_qh7vf")
 
 [node name="PickShroom" parent="." unique_id=1436930502 instance=ExtResource("1_o7f4a")]
 
