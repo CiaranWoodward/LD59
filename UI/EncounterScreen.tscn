@@ -2,8 +2,18 @@
 
 [ext_resource type="Script" uid="uid://ddiqd0ytqcmd5" path="res://UI/encounter_screen.gd" id="1_5xpqn"]
 [ext_resource type="PackedScene" uid="uid://vsdfgedtjxmu" path="res://UI/Encounter.tscn" id="2_dfmul"]
+[ext_resource type="Texture2D" uid="uid://bke0grn62pj5l" path="res://Graphics/Cards/SaneFront.png" id="2_f6xpe"]
 [ext_resource type="PackedScene" uid="uid://c6b5xcocr7s1x" path="res://Cards/AxeCard.tscn" id="3_nqibp"]
+[ext_resource type="PackedScene" uid="uid://dm0ffbcko3vym" path="res://Cards/GreyShroomCard.tscn" id="4_bn0te"]
 [ext_resource type="PackedScene" uid="uid://cymvt7hb2bqu3" path="res://Cards/BowCard.tscn" id="4_f6xpe"]
+[ext_resource type="PackedScene" uid="uid://blq6wsj11p8y3" path="res://Cards/BlueShroomCard.tscn" id="5_ak22r"]
+[ext_resource type="PackedScene" uid="uid://bwn2y8s7hx6fo" path="res://Cards/MorselCard.tscn" id="6_evykb"]
+[ext_resource type="PackedScene" uid="uid://ciejvoikntgvy" path="res://Cards/MapCard.tscn" id="7_ak22r"]
+[ext_resource type="PackedScene" uid="uid://gcf07sq4ejht" path="res://Cards/SharpAxeCard.tscn" id="10_mq3g3"]
+[ext_resource type="PackedScene" uid="uid://c2datgy20s53o" path="res://Cards/StrongBowCard.tscn" id="11_p876l"]
+[ext_resource type="PackedScene" uid="uid://ds3bko8i1s0x7" path="res://Cards/FishingRodCard.tscn" id="12_etrvt"]
+[ext_resource type="PackedScene" uid="uid://1g05vmmrrig6" path="res://Cards/EnergyStoneCard.tscn" id="13_1u4xi"]
+[ext_resource type="PackedScene" uid="uid://ciiepjw8a3it5" path="res://Cards/BeatingHeartCard.tscn" id="14_1jpto"]
 
 [node name="EncounterScreen" type="Control" unique_id=1234357728]
 layout_mode = 3
@@ -39,6 +49,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer" unique_id=1257243019]
+layout_mode = 2
+texture = ExtResource("2_f6xpe")
+region_rect = Rect2(19.399994, 17.7, 248.98001, 412.16)
+
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1641315755]
 layout_mode = 2
 mouse_filter = 2
@@ -55,21 +70,17 @@ theme_override_constants/separation = 10
 [node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=159997744]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
-text = "Hope"
+text = "The Heart that Beats"
 
 [node name="MainText" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=767463149]
 custom_minimum_size = Vector2(600, 400)
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "You see the unmistakable smoke signal from the Bazaar in the distance.
-
-After so much time, is it really open for business once more?
-
-Its a long journey - what do you take with you?"
+text = "From the shadows, an exhausted creature approaches and collapses by your fire."
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 182
+visible_characters = 78
 visible_characters_behavior = 1
 
 [node name="SanityDependentText" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=195280547]
@@ -77,6 +88,7 @@ custom_minimum_size = Vector2(400, 200)
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
+text = "Its chest gapes revealing a beating heart under toxic purple ooze."
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters_behavior = 1
@@ -88,16 +100,17 @@ theme_override_constants/separation = 10
 [node name="ChoiceA" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ChoiceButtons" unique_id=1449204598]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "My Bow"
+text = "Grab the heart"
 
 [node name="ChoiceB" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ChoiceButtons" unique_id=1123002852]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "My Axe"
+text = "Grab the heart"
 
 [node name="SkipButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1052698962]
 layout_mode = 2
 size_flags_horizontal = 3
+text = "Let the creature rest"
 
 [node name="ChoiceA" type="Node2D" parent="." unique_id=1467480916]
 position = Vector2(340, 507)
@@ -105,17 +118,206 @@ position = Vector2(340, 507)
 [node name="ChoiceB" type="Node2D" parent="." unique_id=2062458482]
 position = Vector2(1622, 490)
 
+[node name="TravelEncounters" type="Node" parent="." unique_id=590883524]
+
+[node name="LickyShroom" parent="TravelEncounters" unique_id=1808362662 instance=ExtResource("2_dfmul")]
+title = "A Fungal Temptation"
+encounter_text = "As you travel along, strange mushroom catches your eye."
+encounter_text_sane = "It oozes with the promise of a beatiful lie."
+encounter_text_insane = "It glimmers with the promise of a beautiful world."
+choicea_text = "Put the Blindfold On"
+skip_text = "Refuse"
+
+[node name="MushroomChoice1" parent="TravelEncounters" unique_id=257550182 instance=ExtResource("2_dfmul")]
+title = "Allure of Shroom"
+encounter_text = "You come across a mushroom patch."
+choicea_text = "Pick a grey shroom"
+choicea_card = ExtResource("4_bn0te")
+choiceb_text = "Pick a blue shroom"
+choiceb_card = ExtResource("5_ak22r")
+
+[node name="MushroomChoice2" parent="TravelEncounters" unique_id=375414069 instance=ExtResource("2_dfmul")]
+title = "Allure of Shroom"
+encounter_text = "You come across a mushroom patch."
+choicea_text = "Pick a purple shroom"
+choicea_card = ExtResource("4_bn0te")
+
 [node name="RandomEncounters" type="Node" parent="." unique_id=1771354991]
 
-[node name="BlindfoldMan" parent="RandomEncounters" unique_id=257550182 instance=ExtResource("2_dfmul")]
+[node name="BirdAttack" parent="RandomEncounters" unique_id=1302497093 instance=ExtResource("2_dfmul")]
+title = "Fowl Play"
+encounter_text = "A winged creature circles overhead."
+encounter_text_sane = "Grotesque as it is, the creature seems to have some good meat on its bones."
+encounter_text_insane = "A creature so cute could not possibly be harmed!"
+choicea_text = "Shoot it down"
+choicea_sanity = 1
+choicea_card_required = "Bow"
+choicea_lose_required_card = false
+choiceb_text = "Toss it a berry"
+choiceb_card_required = "Berry"
+skip_text = "Attempt to run..."
+skip_stat_delta = -1
+repeatable = true
+
+[node name="Swim" parent="RandomEncounters" unique_id=838724570 instance=ExtResource("2_dfmul")]
+title = "A Refreshing Swim"
+encounter_text = "A creature drifts downstream.
+
+[i]\"Join me my friend, for the waters are warm and tell of secrets paths to secret places\"[/i]"
+encounter_text_sane = "The water rushes past as red as blood."
+encounter_text_insane = "The water shimmers invitingly."
+choicea_text = "Go for a swim"
+choicea_sanity = 1
+choicea_stat = 8
+choicea_stat_delta = 2
+choiceb_text = "Go for a swim"
+choiceb_sanity = 2
+choiceb_stat_delta = -1
+repeatable = true
+must_be_scene_type = 2
+
+[node name="Rustling" parent="RandomEncounters" unique_id=1555876502 instance=ExtResource("2_dfmul")]
+title = "Something in the Woods"
+encounter_text = "You hear rustling in the woods.
+
+You call out with no response."
+encounter_text_sane = "Purple mist seeps out from the woods as the rustling fades away."
+encounter_text_insane = "The blowing wind makes you feel refreshed."
+choicea_text = "Coughing fit"
+choicea_sanity = 1
+choicea_stat_delta = -1
+choiceb_text = "Take a deep breath"
+choiceb_sanity = 2
+choiceb_stat = 2
+choiceb_stat_delta = 1
+skip_text = ""
+skip_sanity = 2
+
+[node name="BurdenedBeast" parent="RandomEncounters" unique_id=1821356814 instance=ExtResource("2_dfmul")]
+title = "Burdened Beast"
+encounter_text = "A wild beast hobbles out of the woods, its hind leg appears troubled."
+encounter_text_sane = "It froths at the mouth, afflicted."
+encounter_text_insane = "It stands meekly, swishing its tail."
+choicea_text = "Tend to its wounds"
+choicea_card = ExtResource("2_dfmul")
+choiceb_text = "Put it out of its misery"
+choiceb_card = ExtResource("6_evykb")
+choiceb_card_required = "Bow"
+choiceb_lose_required_card = false
+skip_text = "The beast charges in panic"
+skip_stat_delta = -1
+repeatable = true
+
+[node name="BlindfoldMan" parent="RandomEncounters" unique_id=1113694585 instance=ExtResource("2_dfmul")]
 title = "A Sight not Seen"
 encounter_text = "A strange creature, wearing a blindfold and a massive grin.
 
-[i]\"Hello friend, do you find yourself getting distracted by the inane?\"[i]
+[i]\"Hello friend, do you find yourself getting distracted by the inane?\"[/i]
 
-He presents you with a spare blindfold"
+It presents you with a spare blindfold."
 choicea_text = "Put the Blindfold On"
 skip_text = "Refuse"
+
+[node name="MapMan" parent="RandomEncounters" unique_id=358179260 instance=ExtResource("2_dfmul")]
+title = "The Way Ahead"
+encounter_text = "A hooded being emerges from the trees.
+
+[i]\"Child looks lost. Creature knows what lies ahead.\"[/i]
+
+It holds out a map and a knife. It seems that knowledge requires sacrifice."
+choicea_text = "Offer a blood sacrifice"
+choicea_card = ExtResource("7_ak22r")
+choicea_stat_delta = -2
+
+[node name="AxeMan" parent="RandomEncounters" unique_id=1948968966 instance=ExtResource("2_dfmul")]
+title = "The Woodcutter"
+encounter_text = "A creature passes by struggling to carry the wood on its back.
+
+It trips scattering wood logs the ground. You see the glint of an axe amongst the wood."
+encounter_text_sane = "You reckon you're quicker than this clumsy oaf. You could take the axe and dispose of this creature."
+encounter_text_insane = "Such a nice woodcutter surely needs this axe."
+choicea_text = "Steal the axe"
+choicea_card = ExtResource("10_mq3g3")
+choicea_sanity = 1
+skip_text = "Watch from a distance"
+
+[node name="BowMan" parent="RandomEncounters" unique_id=87727534 instance=ExtResource("2_dfmul")]
+title = "The Hunter"
+encounter_text = "A small creature passes by struggling to carry the meat on its back.
+
+It trips dropping the meat on the ground. You see a bow trapped under the meat."
+encounter_text_sane = "The creature looks small but vicious. It looks like it bites..."
+encounter_text_insane = "The creature looks flustered."
+choicea_text = "Steal the bow"
+choicea_card = ExtResource("11_p876l")
+choicea_sanity = 1
+choicea_stat_delta = -1
+choiceb_text = "Steal the bow"
+choiceb_card = ExtResource("11_p876l")
+choiceb_sanity = 2
+skip_text = "Watch from a distance"
+
+[node name="DrugMan" parent="RandomEncounters" unique_id=1340358284 instance=ExtResource("2_dfmul")]
+title = "The World We Live In"
+encounter_text = "A creature rushes at you in a crazed state.
+
+[i]\"GIVE THEM TO ME. I KNOW YOU HAVE THEM.\"[/i]"
+encounter_text_sane = "You've seen this before. You've [i]been[/i] this before."
+encounter_text_insane = "You don't know what it wants."
+choicea_text = "Give it a blue shroom"
+choicea_card_required = "Blue Shroom"
+choiceb_text = "It snatches a blue shroom"
+choiceb_stat_delta = -1
+choiceb_card_required = "Blue Shroom"
+skip_text = "It grapples at you trying to find something"
+skip_stat_delta = -1
+
+[node name="RodMan" parent="RandomEncounters" unique_id=1129937894 instance=ExtResource("2_dfmul")]
+title = "The Fisherman"
+encounter_text = "A creatures searches the riverbank. It stops to look at you.
+
+[i]\"You wish for fish? For else I wish.
+For cures, you fish. For hearts, I fish\"[/i]
+
+Cryptic..."
+choicea_text = "Offer a grey shroom"
+choicea_card = ExtResource("12_etrvt")
+choicea_card_required = "Grey Shroom"
+choiceb_text = "Offer a red shrrom"
+choiceb_card = ExtResource("12_etrvt")
+choiceb_card_required = "Red Shroom"
+skip_text = "You wish for no fish"
+must_be_scene_type = 2
+
+[node name="MaxEnergy" parent="RandomEncounters" unique_id=232125684 instance=ExtResource("2_dfmul")]
+title = "Under the Surface"
+encounter_text = "The water starts to crackle."
+encounter_text_sane = "Sharp toothed creatures swarm protectively round a glowing yellow stone."
+encounter_text_insane = "A school of fish circle a glowing yellow stone. They don't [i]look[/i] like they'd bite..."
+choicea_text = "Fish for the stone"
+choicea_card = ExtResource("13_1u4xi")
+choicea_card_required = "Fishing Rod"
+choicea_lose_required_card = false
+choiceb_text = "Reach in and grab the stone"
+choiceb_card = ExtResource("13_1u4xi")
+choiceb_stat_delta = -1
+
+[node name="MaxHealth" parent="RandomEncounters" unique_id=1530974567 instance=ExtResource("2_dfmul")]
+title = "The Heart that Beats"
+encounter_text = "From the shadows, an exhausted creature approaches and collapses by your fire."
+encounter_text_sane = "Its chest gapes revealing a beating heart under toxic purple ooze."
+encounter_text_insane = "It carries a small cage that looks like it can be pried open with an axe."
+choicea_text = "Grab the heart"
+choicea_card = ExtResource("14_1jpto")
+choicea_stat_delta = -1
+choicea_card_required = "Fishing Rod"
+choicea_lose_required_card = false
+choiceb_text = "Grab the heart"
+choiceb_card = ExtResource("14_1jpto")
+choiceb_card_required = "Sharp Axe"
+skip_text = "Let the creature rest"
+requires_fire = true
+must_be_after_encounter = NodePath("../AxeMan")
 
 [node name="SpecificEncounters" type="Node" parent="." unique_id=999975657]
 

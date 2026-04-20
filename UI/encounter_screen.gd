@@ -259,4 +259,3 @@ func _choose(choice: Choice) -> void:
 		await tween.finished
 
 	encounter_finished.emit()
-

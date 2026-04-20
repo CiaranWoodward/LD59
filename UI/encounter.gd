@@ -18,6 +18,8 @@ enum SanityRequirement {
 @export var choicea_sanity: SanityRequirement = SanityRequirement.ANY
 @export var choicea_stat: Global.Statistic = Global.Statistic.HEALTH
 @export var choicea_stat_delta: int = 0
+@export var choicea_card_required: String = ""
+@export var choicea_lose_required_card: bool = true
 
 @export_group("Choice B")
 @export var choiceb_text: String = ""
@@ -25,6 +27,8 @@ enum SanityRequirement {
 @export var choiceb_sanity: SanityRequirement = SanityRequirement.ANY
 @export var choiceb_stat: Global.Statistic = Global.Statistic.HEALTH
 @export var choiceb_stat_delta: int = 0
+@export var choiceb_card_required: String = ""
+@export var choiceb_lose_required_card: bool = true
 
 @export_group("Skip")
 @export var skip_text: String = "Ignore"

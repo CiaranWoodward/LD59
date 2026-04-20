@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b5qbbkmb3q27j" path="res://Graphics/Environment/Setting/blue water sparkle.png" id="6_o3ukc"]
 [ext_resource type="PackedScene" uid="uid://1cd50b03me1x" path="res://Utils/InsanityFlicker.tscn" id="7_okmdk"]
 [ext_resource type="PackedScene" uid="uid://cfhexshl20e7w" path="res://World/EnvironmentObject.tscn" id="8_o3ukc"]
+[ext_resource type="Texture2D" uid="uid://bc2gx8stn8y7h" path="res://Graphics/Cards/BasicFrame.png" id="9_cfrr8"]
 
 [node name="Forest" type="Node2D" unique_id=1178282790]
 y_sort_enabled = true
@@ -294,3 +295,8 @@ position = Vector2(1223, 669)
 [node name="EnvironmentObject5" parent="Environment" unique_id=154228026 instance=ExtResource("8_o3ukc")]
 position = Vector2(1517, 732)
 scale = Vector2(1.2, 1.2)
+
+[node name="BasicFrame" type="Sprite2D" parent="." unique_id=339059715]
+position = Vector2(-946.75, 429.25)
+scale = Vector2(2.27193, 0.8438202)
+texture = ExtResource("9_cfrr8")
