@@ -123,12 +123,6 @@ position = Vector2(2796, 2256)
 [node name="WoodCard" parent="Cards" unique_id=1243168928 instance=ExtResource("11_xmklv")]
 position = Vector2(-1587, 2489)
 
-[node name="HungerCard2" parent="Cards" unique_id=324443235 instance=ExtResource("7_t0t1g")]
-position = Vector2(-35, 3262)
-
-[node name="HungerCard3" parent="Cards" unique_id=714533921 instance=ExtResource("7_t0t1g")]
-position = Vector2(-35, 3262)
-
 [node name="ShufflePoint" type="Marker2D" parent="." unique_id=526775094]
 position = Vector2(954, 362)
 gizmo_extents = 36.3

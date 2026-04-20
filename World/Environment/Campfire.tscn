@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bxcbuqukhqmbm"]
 
 [ext_resource type="Texture2D" uid="uid://qc4gtbxmwf0m" path="res://Graphics/Environment/Fire/Ash.png" id="1_7bne2"]
+[ext_resource type="Script" uid="uid://dlmsdb0pg1fvy" path="res://World/Environment/campfire.gd" id="1_xbxvm"]
 [ext_resource type="Texture2D" uid="uid://cyh4noakepx3s" path="res://Graphics/Environment/Fire/PileSmall.png" id="1_ysad7"]
 [ext_resource type="Texture2D" uid="uid://bl6dbwmyl3ger" path="res://Graphics/Environment/Fire/PileMid.png" id="2_7bne2"]
 [ext_resource type="Texture2D" uid="uid://doqinoas33bhv" path="res://Graphics/Environment/Fire/PileBig.png" id="3_7xama"]
@@ -413,6 +414,7 @@ _data = {
 }
 
 [node name="Campfire" type="Node2D" unique_id=1083176764 groups=["Prop"]]
+script = ExtResource("1_xbxvm")
 
 [node name="Ash" type="Sprite2D" parent="." unique_id=794573064]
 visible = false
@@ -421,8 +423,14 @@ texture = ExtResource("1_7bne2")
 
 [node name="Logs" type="AnimatedSprite2D" parent="." unique_id=1588026201]
 sprite_frames = SubResource("SpriteFrames_sx45w")
-frame = 2
 offset = Vector2(6, 3)
+
+[node name="Shadow" type="Sprite2D" parent="Logs" unique_id=1392212599]
+modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.60784316)
+show_behind_parent = true
+position = Vector2(-1, 4.7938347)
+scale = Vector2(1.2988234, 0.5579013)
+texture = ExtResource("10_ayd0l")
 
 [node name="Smoke" type="CPUParticles2D" parent="." unique_id=1814070281]
 position = Vector2(0, -66)
@@ -449,18 +457,20 @@ color_ramp = SubResource("Gradient_ysad7")
 color_initial_ramp = SubResource("Gradient_7xama")
 
 [node name="BigFire" type="AnimatedSprite2D" parent="." unique_id=1249455685]
+visible = false
 sprite_frames = SubResource("SpriteFrames_6b84x")
 autoplay = "default"
-speed_scale = 0.95777714
+speed_scale = 0.9447008
 offset = Vector2(-0.19172853, -38.91566)
 script = ExtResource("7_ysad7")
 should_flip = false
 play_on_load = true
 
 [node name="MidFire" type="AnimatedSprite2D" parent="." unique_id=2086808910]
+visible = false
 sprite_frames = SubResource("SpriteFrames_74pnr")
 autoplay = "default"
-speed_scale = 1.0878714
+speed_scale = 1.0512456
 offset = Vector2(0, -44)
 script = ExtResource("7_ysad7")
 should_flip = false
@@ -491,9 +501,10 @@ color_ramp = SubResource("Gradient_ayd0l")
 color_initial_ramp = SubResource("Gradient_xbxvm")
 
 [node name="SmallFire" type="AnimatedSprite2D" parent="." unique_id=1756562007]
+visible = false
 sprite_frames = SubResource("SpriteFrames_y7nvl")
 autoplay = "default"
-speed_scale = 0.9734635
+speed_scale = 0.9976778
 offset = Vector2(7, -40)
 script = ExtResource("7_ysad7")
 should_flip = false
@@ -510,10 +521,3 @@ autoplay = &"Mid"
 [node name="Big" type="AnimationPlayer" parent="." unique_id=886979865]
 libraries/ = SubResource("AnimationLibrary_74pnr")
 autoplay = &"Big"
-
-[node name="Shadow" type="Sprite2D" parent="." unique_id=1392212599]
-modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.60784316)
-show_behind_parent = true
-position = Vector2(-1, 4.7938347)
-scale = Vector2(1.2988234, 0.5579013)
-texture = ExtResource("10_ayd0l")

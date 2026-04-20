@@ -177,13 +177,13 @@ func _sync_front_visuals():
 	
 	if card_timing == CardTiming.All:
 		if Global.is_insane():
-			$CardBack.frame = 3
-			$CardFront/CardFront.frame = 3
-			$CardFront/CardFill.frame = 3
-		else:
 			$CardBack.frame = 0
 			$CardFront/CardFront.frame = 0
 			$CardFront/CardFill.frame = 0
+		else:
+			$CardBack.frame = 3
+			$CardFront/CardFront.frame = 3
+			$CardFront/CardFill.frame = 3
 	elif card_timing == CardTiming.Day:
 		$CardBack.frame = 1
 		$CardFront/CardFront.frame = 1
