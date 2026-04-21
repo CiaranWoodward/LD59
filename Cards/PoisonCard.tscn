@@ -11,8 +11,11 @@ script = ExtResource("2_h5fcr")
 card_name = "Poison"
 description = "Lose one [b]energy[/b] on draw
 
-[i]Unplayable[/i]"
+[i]Get this out of your system[/i]
+
+Consumable"
 image = ExtResource("4_h5fcr")
+consumable = true
 status = true
 unplayable = true
 
@@ -28,7 +31,9 @@ text = "Poison"
 [node name="Description" parent="CardFront" index="4" unique_id=376343130]
 text = "Lose one [b]energy[/b] on draw
 
-[i]Unplayable[/i]"
+[i]Get this out of your system[/i]
+
+Consumable"
 
 [node name="Cost" parent="CardFront" index="5" unique_id=1544021586]
 text = "X"

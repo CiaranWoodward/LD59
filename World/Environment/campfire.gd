@@ -5,9 +5,8 @@ func _ready():
 	Global.statistic_changed.connect(func(stat, _new_value, _old_value):
 		if stat == Global.Statistic.FIRE_SIZE or stat == Global.Statistic.FIRE_LIT:
 			_update_visuals()
-	)
-	Global.travel_requested.connect(func():
-		$Ash.visible = false
+		if stat == Global.Statistic.LEVEL && _new_value != _old_value:
+			$Ash.visible = false
 	)
 
 func _update_visuals():

@@ -157,7 +157,7 @@ script = ExtResource("1_5xpqn")
 root_node = NodePath("../ChoiceA")
 libraries/ = SubResource("AnimationLibrary_qrg2f")
 autoplay = &"Wiggle"
-speed_scale = 1.0105131
+speed_scale = 0.89910364
 script = ExtResource("5_cag06")
 random_speed = true
 min_speed = 0.8
@@ -167,7 +167,7 @@ max_speed = 1.2
 root_node = NodePath("../ChoiceA")
 libraries/ = SubResource("AnimationLibrary_eo1pc")
 autoplay = &"Wiggle"
-speed_scale = 1.1634866
+speed_scale = 1.1313133
 script = ExtResource("5_cag06")
 random_speed = true
 min_speed = 0.8
@@ -381,7 +381,7 @@ encounter_text = "A wild beast hobbles out of the woods, its hind leg appears tr
 encounter_text_sane = "It froths at the mouth, afflicted."
 encounter_text_insane = "It stands meekly, swishing its tail."
 choicea_text = "Tend to its wounds"
-choicea_card = ExtResource("2_dfmul")
+choicea_sanity = 2
 choiceb_text = "Put it out of its misery"
 choiceb_card = ExtResource("6_evykb")
 choiceb_card_required = "Bow"
@@ -485,6 +485,23 @@ choiceb_text = "Reach in and grab the stone"
 choiceb_card = ExtResource("13_1u4xi")
 choiceb_stat_delta = -1
 
+[node name="MaxHealth" parent="RandomEncounters" unique_id=1530974567 instance=ExtResource("2_dfmul")]
+title = "The Heart that Beats"
+encounter_text = "From the shadows, an exhausted creature approaches and collapses by your fire."
+encounter_text_sane = "Its chest gapes revealing a beating heart under toxic purple ooze."
+encounter_text_insane = "It carries a small cage that looks like it can be pried open with an axe."
+choicea_text = "Grab the heart"
+choicea_card = ExtResource("14_1jpto")
+choicea_stat_delta = -1
+choicea_card_required = "Fishing Rod"
+choicea_lose_required_card = false
+choiceb_text = "Grab the heart"
+choiceb_card = ExtResource("14_1jpto")
+choiceb_card_required = "Sharp Axe"
+skip_text = "Let the creature rest"
+requires_fire = true
+must_be_after_encounter = NodePath("../AxeMan")
+
 [node name="SpecificEncounters" type="Node" parent="." unique_id=999975657]
 
 [node name="JourneyStart" parent="SpecificEncounters" unique_id=1367821565 instance=ExtResource("2_dfmul")]
@@ -537,20 +554,3 @@ skip_text = "Restart"
 game_complete_screen = true
 
 [node name="ActiveEncounter" type="Node" parent="." unique_id=200731604]
-
-[node name="MaxHealth" parent="ActiveEncounter" unique_id=1530974567 instance=ExtResource("2_dfmul")]
-title = "The Heart that Beats"
-encounter_text = "From the shadows, an exhausted creature approaches and collapses by your fire."
-encounter_text_sane = "Its chest gapes revealing a beating heart under toxic purple ooze."
-encounter_text_insane = "It carries a small cage that looks like it can be pried open with an axe."
-choicea_text = "Grab the heart"
-choicea_card = ExtResource("14_1jpto")
-choicea_stat_delta = -1
-choicea_card_required = "Fishing Rod"
-choicea_lose_required_card = false
-choiceb_text = "Grab the heart"
-choiceb_card = ExtResource("14_1jpto")
-choiceb_card_required = "Sharp Axe"
-skip_text = "Let the creature rest"
-requires_fire = true
-must_be_after_encounter = NodePath("../../RandomEncounters/AxeMan")

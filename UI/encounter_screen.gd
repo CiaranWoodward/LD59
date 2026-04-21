@@ -108,12 +108,17 @@ func _clear_choice_cards() -> void:
 	for child in $ChoiceB.get_children():
 		child.queue_free()
 
-func _stat_delta_tooltip(stat: Global.Statistic, delta: int) -> String:
-	if delta == 0:
-		return ""
-	var stat_name: String = Global.StatisticNames.get(stat, "")
-	var stat_sign := "+" if delta > 0 else ""
-	return stat_name + " " + stat_sign + str(delta)
+func _build_tooltip(stat: Global.Statistic, delta: int, sanity_req: Encounter.SanityRequirement, card_required: String) -> String:
+	var parts: PackedStringArray = []
+	if delta != 0:
+		var stat_name: String = Global.StatisticNames.get(stat, "")
+		var stat_sign := "+" if delta > 0 else ""
+		parts.append(stat_name + " " + stat_sign + str(delta))
+	if not _meets_sanity_requirement(sanity_req):
+		parts.append("Requires a different disposition")
+	if not _has_required_card(card_required):
+		parts.append("Requires: " + card_required)
+	return "\n".join(parts)
 
 func _update_display() -> void:
 	if _text_tween and _text_tween.is_valid():
@@ -168,17 +173,17 @@ func _update_display() -> void:
 	choice_a_btn.visible = _active_encounter.choicea_text != ""
 	choice_a_btn.text = _active_encounter.choicea_text
 	choice_a_btn.disabled = not _meets_sanity_requirement(_active_encounter.choicea_sanity) or not _has_required_card(_active_encounter.choicea_card_required)
-	choice_a_btn.tooltip_text = _stat_delta_tooltip(_active_encounter.choicea_stat, _active_encounter.choicea_stat_delta)
+	choice_a_btn.tooltip_text = _build_tooltip(_active_encounter.choicea_stat, _active_encounter.choicea_stat_delta, _active_encounter.choicea_sanity, _active_encounter.choicea_card_required)
 	choice_b_btn.visible = _active_encounter.choiceb_text != ""
 	choice_b_btn.text = _active_encounter.choiceb_text
 	choice_b_btn.disabled = not _meets_sanity_requirement(_active_encounter.choiceb_sanity) or not _has_required_card(_active_encounter.choiceb_card_required)
-	choice_b_btn.tooltip_text = _stat_delta_tooltip(_active_encounter.choiceb_stat, _active_encounter.choiceb_stat_delta)
+	choice_b_btn.tooltip_text = _build_tooltip(_active_encounter.choiceb_stat, _active_encounter.choiceb_stat_delta, _active_encounter.choiceb_sanity, _active_encounter.choiceb_card_required)
 
 	# Skip button
 	skip_btn.visible = _active_encounter.skip_text != ""
 	skip_btn.text = _active_encounter.skip_text
 	skip_btn.disabled = not _meets_sanity_requirement(_active_encounter.skip_sanity)
-	skip_btn.tooltip_text = _stat_delta_tooltip(_active_encounter.skip_stat, _active_encounter.skip_stat_delta)
+	skip_btn.tooltip_text = _build_tooltip(_active_encounter.skip_stat, _active_encounter.skip_stat_delta, _active_encounter.skip_sanity, "")
 
 	# Choice cards
 	_clear_choice_cards()

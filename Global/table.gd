@@ -161,11 +161,21 @@ func game_over():
 	
 
 ## Add a card and hook it up
-func initialise_card_to_discard_pile(card: BaseCard, delay: float = 0.0, spawn_position = $SpawnPoint.global_position):
+func initialise_card_to_discard_pile(card: BaseCard, delay: float = 0.0, spawn_position = null, present: bool = false):
+	if spawn_position == null:
+		spawn_position = $SpawnPoint.global_position
 	if !is_instance_valid(card.get_parent()):
 		$Cards.add_child(card)
-		#card.scale = Vector2.ONE
 		card.global_position = spawn_position
+	if present:
+		# Tween to the play area then wait a second
+		var tween = create_tween()
+		tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+		var time = draw_duration + randf_range(-draw_time_randomness, draw_time_randomness)
+		tween.tween_property(card, "global_position", $PlayPoint.global_position, time)
+		tween.parallel().tween_property(card, "scale", Vector2.ONE * hover_scale, time)
+		tween.tween_interval(1.0)
+		await tween.finished
 	_attach_mouse_watchers(card)
 	await add_card_to_discard_pile(card, delay, true)
 

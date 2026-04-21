@@ -19,7 +19,7 @@ enum Statistic {
 
 var StatisticNames = {
 	Statistic.HEALTH: "Health",
-	Statistic.INSANITY: "Insanity",
+	Statistic.INSANITY: "???",
 	Statistic.ACTION_POINTS: "Energy",
 	Statistic.HAND_SIZE: "Hand Size",
 	Statistic.FIRE_SIZE: "Fire Size",
@@ -57,7 +57,7 @@ var initial_statistic_values = {
 	Statistic.HANDS_PLAYED: 0,
 }
 
-var min_statistic_values = {
+var initial_min_statistic_values = {
 	Statistic.HEALTH: 0,
 	Statistic.INSANITY: 0,
 	Statistic.ACTION_POINTS: 0,
@@ -71,7 +71,7 @@ var min_statistic_values = {
 	Statistic.HANDS_PLAYED: 0,
 }
 
-var max_statistic_values = {
+var initial_max_statistic_values = {
 	Statistic.HEALTH: 5,
 	Statistic.INSANITY: 5,
 	Statistic.ACTION_POINTS: 3,
@@ -85,7 +85,10 @@ var max_statistic_values = {
 	Statistic.HANDS_PLAYED: 99999,
 }
 
+var min_statistic_values = initial_min_statistic_values.duplicate()
+var max_statistic_values = initial_max_statistic_values.duplicate()
 var statistics = initial_statistic_values.duplicate()
+
 var current_scene_type: SceneType = SceneType.ANY
 
 signal game_started()
@@ -93,8 +96,10 @@ signal statistic_changed(stat: Statistic, new_value: int, old_value: int)
 signal travel_requested()
 
 func start_game():
-	randomize()
+	min_statistic_values = initial_min_statistic_values.duplicate()
+	max_statistic_values = initial_max_statistic_values.duplicate()
 	statistics = initial_statistic_values.duplicate()
+	randomize()
 	emit_signal("game_started")
 
 func set_statistic(stat: Statistic, value: int):

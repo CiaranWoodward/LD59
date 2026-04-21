@@ -19,11 +19,11 @@ func stat_watcher(stat, new_value, old_value):
 		Global.table.game_over()
 	if stat == Global.Statistic.PATHFINDING and old_value != new_value && new_value == Global.max_statistic_values[Global.Statistic.PATHFINDING]:
 		var travel_card = travelCard.instantiate()
-		await Global.table.initialise_card_to_discard_pile(travel_card)
+		await Global.table.initialise_card_to_discard_pile(travel_card, 0, null, true)
 		
 func turn_ticker(was_cold: bool):
 	if was_cold:
-		await Global.table.initialise_card_to_discard_pile(chillCard.instantiate())
+		await Global.table.initialise_card_to_discard_pile(chillCard.instantiate(), 0, null, true)
 	# Process the fire
 	if Global.statistics[Global.Statistic.FIRE_LIT] > 0:
 		Global.change_statistic(Global.Statistic.FIRE_SIZE, -1)
@@ -61,7 +61,7 @@ func handle_travel():
 		await Global.table.get_encounter_screen().activate_random_travel_encounter()
 
 	# Load the new scene in
-	await Global.level.transition_scene_in(Global.statistics[Global.Statistic.LEVEL] - 1)
+	await Global.level.transition_scene_in(Global.statistics[Global.Statistic.LEVEL])
 
 func forever_game_loop():
 	var table = Global.table
@@ -114,7 +114,7 @@ func forever_game_loop():
 		if table.state == Table.TableState.GameOver:
 			return
 		
-		await table.initialise_card_to_discard_pile(hungerCard.instantiate())
+		await table.initialise_card_to_discard_pile(hungerCard.instantiate(), 0, null, true)
 
 		if turn_end_impact != Global.TurnEndImpact.NORMAL:
 			if turn_end_impact == Global.TurnEndImpact.NEW_DAY:

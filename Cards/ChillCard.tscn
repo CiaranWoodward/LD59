@@ -9,7 +9,9 @@
 material = ExtResource("2_4td38")
 script = ExtResource("3_jn5iw")
 card_name = "Chill"
-description = "You feel a chill seeping through your bones that you can't shut out
+description = "[i]A dark chill...[/i]
+
+Will burn from hand next to a smoking fire
 
 [i]Effect on discard[/i]
 
@@ -22,9 +24,6 @@ unplayable = true
 [node name="CardFront" parent="." index="1" unique_id=519823740]
 self_modulate = Color(0.8, 0.8, 0.8, 1)
 
-[node name="CardFront" parent="CardFront" index="0" unique_id=1390792272]
-frame = 2
-
 [node name="Image" parent="CardFront" index="2" unique_id=1941202912]
 position = Vector2(-18, -3)
 texture = ExtResource("4_jn5iw")
@@ -33,11 +32,17 @@ texture = ExtResource("4_jn5iw")
 text = "Chill"
 
 [node name="Description" parent="CardFront" index="4" unique_id=376343130]
-text = "You feel a chill seeping through your bones that you can't shut out
+offset_left = -194.0
+offset_top = 4.0
+offset_right = 216.0
+offset_bottom = 348.0
+text = "[i]A dark chill...[/i]
+
+Will burn from hand next to a smoking fire
 
 [i]Effect on discard[/i]
 
-[i]Unplayable[/i]"
+[i]Unplayable, Consumable[/i]"
 
 [node name="Cost" parent="CardFront" index="5" unique_id=1544021586]
 text = "X"

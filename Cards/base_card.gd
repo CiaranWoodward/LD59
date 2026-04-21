@@ -240,6 +240,7 @@ func _is_sanity_effect_active() -> bool:
 # Action functions called from the table
 func action_draw() -> void:
 	_in_hand = true
+	_sync_front_visuals()
 	await on_post_draw()
 
 func action_play():

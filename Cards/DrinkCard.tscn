@@ -1,19 +1,34 @@
 [gd_scene format=3 uid="uid://bkiwe0ndxvudw"]
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_38486"]
-[ext_resource type="Script" uid="uid://dn8l1vjpthkra" path="res://Cards/forage_card.gd" id="2_hkgm6"]
+[ext_resource type="Script" uid="uid://co5uoenhnw12n" path="res://Cards/drink_card.gd" id="2_hkgm6"]
 [ext_resource type="Texture2D" uid="uid://c64oc0nynjnfm" path="res://Graphics/Cards/Icons/drink.png" id="3_38486"]
+[ext_resource type="PackedScene" uid="uid://1cd50b03me1x" path="res://Utils/InsanityFlicker.tscn" id="4_hkgm6"]
 
 [node name="DrinkCard" unique_id=105035990 instance=ExtResource("1_38486")]
 script = ExtResource("2_hkgm6")
 card_name = "Drink"
 description = "Drink from the stream
 
-[i]Removed from deck when played"
+Heal one health,
+
+Gain one sanity"
 image = ExtResource("3_38486")
 card_type = 3
-consumable = true
 environment = true
+sanity_effect = 1
+sanity_effect_description = "Drink from the stream
+
+[i]That's not water![/i]
+
+Lose one health, draw cards to fill hand"
+
+[node name="InsanityFlicker" parent="." index="0" unique_id=1741190488 instance=ExtResource("4_hkgm6")]
+modulate_node = NodePath("../CardFront/Image")
+sane_color = Color(1, 0.0627451, 0.1882353, 1)
+always_sane_threshold = 2
+always_insane_threshold = 3
+chance_to_flicker = 0.0
 
 [node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
 position = Vector2(2, -33)
@@ -25,4 +40,6 @@ text = "Drink"
 [node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="4" unique_id=376343130]
 text = "Drink from the stream
 
-[i]Removed from deck when played"
+Heal one health,
+
+Gain one sanity"

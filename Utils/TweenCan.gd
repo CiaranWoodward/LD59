@@ -8,6 +8,14 @@ static func pulse_tween(target: Node2D, pulse_time: float) -> Tween:
 	tween.tween_property(target, "scale", Vector2(1, 1), pulse_time / 2).set_ease(Tween.EASE_IN)
 	return tween
 
+static func modulate_pulse_tween(target: CanvasItem, target_color: Color, pulse_time: float) -> Tween:
+	var tween = target.create_tween()
+	var original_color = target.modulate
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.tween_property(target, "modulate", target_color, pulse_time / 2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
+	tween.tween_property(target, "modulate", original_color, pulse_time / 2).set_ease(Tween.EASE_IN)
+	return tween
+
 ## Flicker, will end 'on'
 static func flicker_fn_tween(flicker_on_fn: Callable, flicker_off_fn: Callable, flicker_time: float) -> Tween:
 	var flicker_interval_target := 0.06

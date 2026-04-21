@@ -20,6 +20,12 @@ var _suspend_parallax: bool = false
 func _ready():
 	transition_scene_in(0, true)
 	Global.level = self
+	Global.statistic_changed.connect(func(stat, new_value, old_value):
+		if stat == Global.Statistic.HEALTH:
+			if new_value < old_value:
+				var tween = TweenCan.modulate_pulse_tween(self, Color(1, 0.4, 0.4), 0.4)
+				await tween.finished
+	)
 
 # Apply a parallax effect to all props based on a spring-damped point following the mouse
 func _process(delta: float) -> void:
@@ -79,6 +85,7 @@ func transition_scene_out() -> void:
 	_suspend_parallax = true
 	for prop in props:
 		TweenCan.fly_off_tween(prop, 1.0, randf_range(0.0, 3.0))
+	$CharPosi/Travel.play("Travel")
 	await get_tree().create_timer(4.0).timeout
 	_current_scene.queue_free()
 	_current_scene = null

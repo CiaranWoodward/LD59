@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://du0wsm5kles7k"]
 
 [ext_resource type="Script" uid="uid://dragg4qxx8ki6" path="res://UI/play.gd" id="1_vjbsa"]
+[ext_resource type="Theme" uid="uid://mb5qq4bujc1o" path="res://UI/EncounterTheme.tres" id="1_vohf5"]
+[ext_resource type="Texture2D" uid="uid://tdacvwrfw4fa" path="res://Graphics/Cards/BasicFront.png" id="3_vohf5"]
 
 [node name="Game Over" type="Control" unique_id=1234357728]
 layout_mode = 3
@@ -10,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_vohf5")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=8606669]
 layout_mode = 1
@@ -62,3 +65,15 @@ layout_mode = 2
 text = "Start a New Journey"
 script = ExtResource("1_vjbsa")
 target_scene_path = "uid://dlcvto3andy8x"
+
+[node name="Backing" type="NinePatchRect" parent="PanelContainer" unique_id=1290178026]
+self_modulate = Color(1, 1, 1, 0.72156864)
+show_behind_parent = true
+layout_mode = 2
+theme = ExtResource("1_vohf5")
+texture = ExtResource("3_vohf5")
+region_rect = Rect2(18, 18, 249, 410)
+patch_margin_left = 16
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 18

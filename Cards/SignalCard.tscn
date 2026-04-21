@@ -9,16 +9,10 @@ script = ExtResource("2_a555y")
 card_name = "Smoke Signal"
 description = "Use your campfire to attract attention
 
-[i]Does nothing is campfire is not smoking[/i]"
+[i]Does nothing if campfire is not smoking[/i]"
 image = ExtResource("3_gdkwr")
 cost = 2
 card_type = 2
-
-[node name="CardFront" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="0" unique_id=1390792272]
-frame = 2
-
-[node name="CardFill" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="1" unique_id=127767426]
-frame = 2
 
 [node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
 position = Vector2(4, -29.999998)
@@ -31,10 +25,7 @@ text = "Smoke Signal"
 [node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="4" unique_id=376343130]
 text = "Use your campfire to attract attention
 
-[i]Does nothing is campfire is not smoking[/i]"
+[i]Does nothing if campfire is not smoking[/i]"
 
 [node name="Cost" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="5" unique_id=1544021586]
 text = "2"
-
-[node name="CardBack" parent="." index="2" unique_id=1167643910]
-frame = 2
