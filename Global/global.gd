@@ -50,7 +50,7 @@ var min_statistic_values = {
 	Statistic.FIRE_LIT: 0,
 	Statistic.DAY: 0,
 	Statistic.ROUND: 0,
-	Statistic.PATHFINDING: 2,
+	Statistic.PATHFINDING: 0,
 	Statistic.LEVEL: 0,
 }
 
