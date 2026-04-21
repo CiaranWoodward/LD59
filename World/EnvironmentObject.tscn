@@ -17,3 +17,5 @@ script = ExtResource("1_qh7vf")
 
 [node name="Sticks" parent="." unique_id=262906575 instance=ExtResource("4_1q1hq")]
 position = Vector2(0, 15)
+
+[node name="PickShroom2" parent="." unique_id=1969216484 instance=ExtResource("1_o7f4a")]

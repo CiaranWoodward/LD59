@@ -17,7 +17,6 @@ Consumable"
 image = ExtResource("4_h5fcr")
 consumable = true
 status = true
-unplayable = true
 
 [node name="CardFront" parent="." index="1" unique_id=519823740]
 self_modulate = Color(0.8, 0.8, 0.8, 1)

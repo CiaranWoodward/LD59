@@ -171,7 +171,6 @@ modulate = Color(0.4, 0.4, 0.4, 1)
 position = Vector2(3206, 980)
 
 [node name="Bushes" type="Node2D" parent="." unique_id=1469703439]
-visible = false
 y_sort_enabled = true
 
 [node name="Bush" parent="Bushes" unique_id=336067113 instance=ExtResource("2_gkbg8")]

@@ -231,7 +231,7 @@ func activate_random_encounter() -> bool:
 		return false
 	var unplayed := candidates.filter(func(e): return not e.played)
 	var pool := unplayed if not unplayed.is_empty() else candidates
-	var chosen := pool[randi() % pool.size()]
+	var chosen = pool[randi() % pool.size()]
 	chosen.set_meta("_source_parent", $RandomEncounters)
 	await _activate_encounter(chosen)
 	return true
@@ -245,7 +245,7 @@ func activate_random_travel_encounter() -> bool:
 		return false
 	var unplayed := candidates.filter(func(e): return not e.played)
 	var pool := unplayed if not unplayed.is_empty() else candidates
-	var chosen := pool[randi() % pool.size()]
+	var chosen = pool[randi() % pool.size()]
 	chosen.set_meta("_source_parent", $TravelEncounters)
 	await _activate_encounter(chosen)
 	return true
