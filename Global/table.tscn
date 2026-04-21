@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://du0wsm5kles7k" path="res://UI/GameOver.tscn" id="11_mnq2p"]
 [ext_resource type="PackedScene" uid="uid://dj03uo7wdtqaa" path="res://Cards/WoodCard.tscn" id="11_xmklv"]
 [ext_resource type="PackedScene" uid="uid://doyb4lch3sljq" path="res://UI/EncounterScreen.tscn" id="12_ljc0k"]
+[ext_resource type="Theme" uid="uid://mb5qq4bujc1o" path="res://UI/EncounterTheme.tres" id="12_xcx3l"]
 [ext_resource type="PackedScene" uid="uid://cdoqtn57klkfl" path="res://Sound/RandomAudio.tscn" id="15_t0t1g"]
 [ext_resource type="AudioStream" uid="uid://cnefip7x2coqw" path="res://Sound/DrawCard.wav" id="17_bdv7a"]
 [ext_resource type="AudioStream" uid="uid://ba3214dau4gf4" path="res://Sound/hover.wav" id="18_3kxa6"]
@@ -168,10 +169,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="End Turn" type="Button" parent="HUD" unique_id=503962822]
-offset_left = 1826.0
-offset_top = 1033.0
-offset_right = 1904.0
-offset_bottom = 1064.0
+visible = false
+offset_left = 928.0
+offset_top = 1012.0
+offset_right = 1039.0
+offset_bottom = 1053.0
+theme = ExtResource("12_xcx3l")
 text = "End Turn"
 
 [node name="Sounds" type="Node2D" parent="." unique_id=581794569]

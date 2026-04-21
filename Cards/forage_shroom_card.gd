@@ -16,8 +16,6 @@ const red_shroom_card = preload("res://Cards/RedShroomCard.tscn")
 
 var shroom_type = ShroomType.Blue
 
-# TODO remove resource from environment
-
 func on_play():
 	var table = Global.table
 	var card_to_add: BaseCard

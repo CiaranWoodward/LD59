@@ -208,6 +208,7 @@ func burn_card(card: BaseCard):
 func _change_state(new_state: TableState):
 	state = new_state
 	emit_signal("state_changed", new_state)
+	$"HUD/End Turn".visible = (state == TableState.Idle)
 
 func all_cards() -> Array[BaseCard]:
 	var all_cards_list = hand + draw_pile + discard_pile + idle_pile
@@ -384,7 +385,6 @@ func _pick_next_hovered_card() -> BaseCard:
 	return null
 
 func _apply_hover_visual(card: BaseCard):
-	# TODO: Might want to lead these tweens with an animation state machine
 	var hover_tween = create_tween()
 	hover_tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT).set_parallel()
 	hover_tween.tween_property(card, "scale", Vector2.ONE * hover_scale, hover_time)

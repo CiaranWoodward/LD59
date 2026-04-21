@@ -22,8 +22,8 @@ func stat_watcher(stat, new_value, _old_value):
 		Global.set_statistic(Global.Statistic.PATHFINDING, 0)
 		await Global.table.initialise_card_to_discard_pile(travel_card)
 		
-func turn_ticker():
-	if !Global.is_warm():
+func turn_ticker(was_cold: bool):
+	if was_cold:
 		await Global.table.initialise_card_to_discard_pile(chillCard.instantiate())
 	# Process the fire
 	if Global.statistics[Global.Statistic.FIRE_LIT] > 0:
@@ -93,6 +93,7 @@ func forever_game_loop():
 			await handle_travel()
 			continue
 
+		var was_cold = !Global.is_warm()
 		var turn_end_impact = Global.next_round()
 
 		if table.state == Table.TableState.GameOver:
@@ -106,7 +107,7 @@ func forever_game_loop():
 			await table.reshuffle()
 		
 		# Process end of turn effects
-		await turn_ticker()
+		await turn_ticker(was_cold)
 		
 		if table.state == Table.TableState.GameOver:
 			return
