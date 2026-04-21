@@ -2,27 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_eci7c"]
 [ext_resource type="Script" uid="uid://dl6lefo52jbyx" path="res://Cards/purple_shroom_card.gd" id="2_lgo6r"]
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_464rh"]
-[ext_resource type="Shader" uid="uid://cy8urs6dbu03i" path="res://Shaders/Burn.gdshader" id="4_464rh"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_nry7q"]
-frequency = 0.0181
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_v6qug"]
-width = 100
-height = 2000
-noise = SubResource("FastNoiseLite_nry7q")
-normalize = false
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q0wpf"]
-resource_local_to_scene = true
-shader = ExtResource("4_464rh")
-shader_parameter/progress = -1.3
-shader_parameter/noiseForce = 0.2
-shader_parameter/noiseTexture = SubResource("NoiseTexture2D_v6qug")
-shader_parameter/burnColor = Color(0.91764706, 0.94509804, 0.73333335, 1)
-shader_parameter/borderWidth = 0.2
-shader_parameter/direction = 270.0
+[ext_resource type="Texture2D" uid="uid://b16rhrbyavbpd" path="res://Graphics/Cards/Icons/purple shroom.png" id="3_eci7c"]
 
 [node name="PurpleShroomCard" unique_id=105035990 instance=ExtResource("1_eci7c")]
 script = ExtResource("2_lgo6r")
@@ -32,26 +12,17 @@ description = "Remove one random [b]hunger[/b] card from deck
 Gain one [b]poison[/b] card
 
 [i]Removed from deck when played"
-image = ExtResource("3_464rh")
+image = ExtResource("3_eci7c")
 card_type = 3
 consumable = true
 
-[node name="CardFront" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="0" unique_id=1390792272]
-frame = 0
-
 [node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
-texture = ExtResource("3_464rh")
+texture = ExtResource("3_eci7c")
 
-[node name="FullFront" parent="CardFront/EnergyPip/Front" parent_id_path=PackedInt32Array(768727205) index="0" unique_id=1808957655]
-material = SubResource("ShaderMaterial_q0wpf")
-
-[node name="FullLine" parent="CardFront/EnergyPip/Line" parent_id_path=PackedInt32Array(1125568214) index="0" unique_id=836807859]
-material = SubResource("ShaderMaterial_q0wpf")
-
-[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="4" unique_id=933147433]
+[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="3" unique_id=933147433]
 text = "Purple Shroom"
 
-[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="5" unique_id=376343130]
+[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="4" unique_id=376343130]
 text = "Remove one random [b]hunger[/b] card from deck
 
 Gain one [b]poison[/b] card

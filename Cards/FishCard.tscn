@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_hsb06"]
 [ext_resource type="Script" uid="uid://bowp3243txbg" path="res://Cards/fish_card.gd" id="2_xxiq4"]
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_ymhkl"]
+[ext_resource type="Texture2D" uid="uid://bneu5f7rcd6gg" path="res://Graphics/Cards/Icons/fish.png" id="3_xxiq4"]
 
 [node name="FishCard" unique_id=105035990 instance=ExtResource("1_hsb06")]
 script = ExtResource("2_xxiq4")
@@ -12,15 +12,13 @@ description = "Remove two random [b]hunger[/b] from deck
 Draw cards up to hand limit
 
 [i]Removed from deck when played"
-image = ExtResource("3_ymhkl")
+image = ExtResource("3_xxiq4")
 card_type = 3
 consumable = true
 
-[node name="CardFront" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="0" unique_id=1390792272]
-frame = 2
-
 [node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
-texture = ExtResource("3_ymhkl")
+position = Vector2(-3, -4)
+texture = ExtResource("3_xxiq4")
 
 [node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="3" unique_id=933147433]
 text = "Fish"
@@ -28,6 +26,6 @@ text = "Fish"
 [node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="4" unique_id=376343130]
 text = "Remove two random [b]hunger[/b] from deck
 
-Draw one card
+Draw cards up to hand limit
 
 [i]Removed from deck when played"

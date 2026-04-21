@@ -15,4 +15,3 @@ func activate():
 				tween.tween_property(sticks[stick], "modulate:a", 0, 0.5)
 			)
 			Global.table.initialise_card_to_discard_pile(card)
-

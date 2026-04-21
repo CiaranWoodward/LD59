@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_a7xpl"]
 [ext_resource type="Material" uid="uid://618td7xfqke6" path="res://Shaders/UnplayableCard.tres" id="2_4td38"]
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_4td38"]
 [ext_resource type="Script" uid="uid://blrip2ewab6rv" path="res://Cards/chill_card.gd" id="3_jn5iw"]
+[ext_resource type="Texture2D" uid="uid://cobvx74pnjf3w" path="res://Graphics/Cards/Icons/chill.png" id="4_jn5iw"]
 
 [node name="ChillCard" unique_id=105035990 instance=ExtResource("1_a7xpl")]
 material = ExtResource("2_4td38")
@@ -14,7 +14,7 @@ description = "You feel a chill seeping through your bones that you can't shut o
 [i]Effect on discard[/i]
 
 [i]Unplayable, Consumable[/i]"
-image = ExtResource("3_4td38")
+image = ExtResource("4_jn5iw")
 consumable = true
 status = true
 unplayable = true
@@ -26,7 +26,8 @@ self_modulate = Color(0.8, 0.8, 0.8, 1)
 frame = 2
 
 [node name="Image" parent="CardFront" index="2" unique_id=1941202912]
-texture = ExtResource("3_4td38")
+position = Vector2(-18, -3)
+texture = ExtResource("4_jn5iw")
 
 [node name="Name" parent="CardFront" index="3" unique_id=933147433]
 text = "Chill"

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dwd7u36cmknci"]
+
+[ext_resource type="Texture2D" uid="uid://cmsjr8s7fqvud" path="res://Graphics/CrayChar.png" id="1_52hjd"]
+[ext_resource type="Texture2D" uid="uid://bvtkwh3duaocm" path="res://Graphics/NiceChar.png" id="2_jk3mw"]
+[ext_resource type="Texture2D" uid="uid://wm2ukybtxvu3" path="res://Graphics/Environment/Background/Sun.png" id="3_34d1u"]
+[ext_resource type="PackedScene" uid="uid://1cd50b03me1x" path="res://Utils/InsanityFlicker.tscn" id="4_jk3mw"]
+
+[node name="Character" type="Node2D" unique_id=453373948]
+
+[node name="CrayChar" type="Sprite2D" parent="." unique_id=857612121]
+texture = ExtResource("1_52hjd")
+offset = Vector2(-40, -244)
+
+[node name="NiceChar" type="Sprite2D" parent="." unique_id=275871617]
+texture = ExtResource("2_jk3mw")
+offset = Vector2(-40, -244)
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=2123922092]
+self_modulate = Color(0.16078432, 0.13333334, 0.14901961, 0.627451)
+show_behind_parent = true
+position = Vector2(-11.000008, -27)
+scale = Vector2(0.4487777, 0.10485235)
+texture = ExtResource("3_34d1u")
+offset = Vector2(2.3701477, 268.17383)
+
+[node name="InsanityFlicker" parent="." unique_id=1741190488 instance=ExtResource("4_jk3mw")]
+sane_node = NodePath("../CrayChar")
+insane_node = NodePath("../NiceChar")
+always_sane_threshold = 2
+always_insane_threshold = 3

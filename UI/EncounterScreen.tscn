@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://doyb4lch3sljq"]
 
 [ext_resource type="Script" uid="uid://ddiqd0ytqcmd5" path="res://UI/encounter_screen.gd" id="1_5xpqn"]
+[ext_resource type="Theme" uid="uid://mb5qq4bujc1o" path="res://UI/EncounterTheme.tres" id="1_lr62w"]
 [ext_resource type="PackedScene" uid="uid://vsdfgedtjxmu" path="res://UI/Encounter.tscn" id="2_dfmul"]
-[ext_resource type="Texture2D" uid="uid://bke0grn62pj5l" path="res://Graphics/Cards/SaneFront.png" id="2_f6xpe"]
+[ext_resource type="Texture2D" uid="uid://tdacvwrfw4fa" path="res://Graphics/Cards/BasicFront.png" id="3_cag06"]
 [ext_resource type="PackedScene" uid="uid://dr655u2lnolwc" path="res://Cards/Blindfold.tscn" id="3_f6xpe"]
 [ext_resource type="PackedScene" uid="uid://c6b5xcocr7s1x" path="res://Cards/AxeCard.tscn" id="3_nqibp"]
 [ext_resource type="PackedScene" uid="uid://dm0ffbcko3vym" path="res://Cards/GreyShroomCard.tscn" id="4_bn0te"]
+[ext_resource type="Texture2D" uid="uid://wjuqiqw3qg4o" path="res://Graphics/Cards/BasicBack.png" id="4_emdfk"]
 [ext_resource type="PackedScene" uid="uid://cymvt7hb2bqu3" path="res://Cards/BowCard.tscn" id="4_f6xpe"]
 [ext_resource type="PackedScene" uid="uid://blq6wsj11p8y3" path="res://Cards/BlueShroomCard.tscn" id="5_ak22r"]
+[ext_resource type="Script" uid="uid://bpvvtw7o2iibm" path="res://Utils/RandomAnimationPlayer.gd" id="5_cag06"]
 [ext_resource type="PackedScene" uid="uid://bwn2y8s7hx6fo" path="res://Cards/MorselCard.tscn" id="6_evykb"]
 [ext_resource type="PackedScene" uid="uid://ciejvoikntgvy" path="res://Cards/MapCard.tscn" id="7_ak22r"]
 [ext_resource type="PackedScene" uid="uid://gcf07sq4ejht" path="res://Cards/SharpAxeCard.tscn" id="10_mq3g3"]
@@ -17,6 +20,128 @@
 [ext_resource type="PackedScene" uid="uid://ciiepjw8a3it5" path="res://Cards/BeatingHeartCard.tscn" id="14_1jpto"]
 [ext_resource type="PackedScene" uid="uid://bx3o860qx0vg7" path="res://Cards/SignalCard.tscn" id="16_lr62w"]
 
+[sub_resource type="Animation" id="Animation_emdfk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_cag06"]
+resource_name = "Wiggle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.7, 1),
+"transitions": PackedFloat32Array(0.73204285, 1.5157168, 0.5358867, 1),
+"update": 0,
+"values": [0.0, 0.017453292519943295, -0.017453292519943295, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.7, 1),
+"transitions": PackedFloat32Array(0.73204285, 1.5157168, 0.5358867, 1),
+"update": 0,
+"values": [0.0, -0.017453292519943295, 0.017453292519943295, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qrg2f"]
+_data = {
+&"RESET": SubResource("Animation_emdfk"),
+&"Wiggle": SubResource("Animation_cag06")
+}
+
+[sub_resource type="Animation" id="Animation_mmmvy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ChoiceB:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ChoiceB:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2fqwy"]
+resource_name = "Wiggle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ChoiceB:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.7, 1),
+"transitions": PackedFloat32Array(1.1892072, 1.5157168, 0.5358867, 1),
+"update": 0,
+"values": [0.0, 0.017453292519943295, -0.017453292519943295, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ChoiceB:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.7, 1),
+"transitions": PackedFloat32Array(1.5691684, 0.46651655, 2.378415, 1),
+"update": 0,
+"values": [0.0, -0.017453292519943295, 0.017453292519943295, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eo1pc"]
+_data = {
+&"RESET": SubResource("Animation_mmmvy"),
+&"Wiggle": SubResource("Animation_2fqwy")
+}
+
 [node name="EncounterScreen" type="Control" unique_id=1234357728]
 layout_mode = 3
 anchors_preset = 15
@@ -25,7 +150,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_lr62w")
 script = ExtResource("1_5xpqn")
+
+[node name="WiggleA" type="AnimationPlayer" parent="." unique_id=1855117555]
+root_node = NodePath("../ChoiceA")
+libraries/ = SubResource("AnimationLibrary_qrg2f")
+autoplay = &"Wiggle"
+script = ExtResource("5_cag06")
+random_speed = true
+min_speed = 0.8
+max_speed = 1.2
+
+[node name="WiggleB" type="AnimationPlayer" parent="." unique_id=1939262172]
+root_node = NodePath("../ChoiceA")
+libraries/ = SubResource("AnimationLibrary_eo1pc")
+autoplay = &"Wiggle"
+script = ExtResource("5_cag06")
+random_speed = true
+min_speed = 0.8
+max_speed = 1.2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=8606669]
 layout_mode = 1
@@ -34,9 +178,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_lr62w")
 color = Color(0, 0, 0, 0.15294118)
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1870166455]
+modulate = Color(0.69921875, 0.69921875, 0.69921875, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -50,15 +196,37 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_lr62w")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer" unique_id=1257243019]
+[node name="Backing" type="NinePatchRect" parent="PanelContainer" unique_id=1257243019]
+self_modulate = Color(1, 1, 1, 0.72156864)
+show_behind_parent = true
 layout_mode = 2
-texture = ExtResource("2_f6xpe")
-region_rect = Rect2(19.399994, 17.7, 248.98001, 412.16)
+theme = ExtResource("1_lr62w")
+texture = ExtResource("3_cag06")
+region_rect = Rect2(18, 18, 249, 410)
+patch_margin_left = 16
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 18
+
+[node name="BackingLine" type="NinePatchRect" parent="PanelContainer" unique_id=1092152343]
+self_modulate = Color(1, 1, 1, 0.9647059)
+show_behind_parent = true
+layout_mode = 2
+theme = ExtResource("1_lr62w")
+texture = ExtResource("4_emdfk")
+draw_center = false
+region_rect = Rect2(20.57631, 14.364899, 62.136734, 99.90146)
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 15
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1641315755]
 layout_mode = 2
 mouse_filter = 2
+theme = ExtResource("1_lr62w")
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
@@ -67,17 +235,19 @@ theme_override_constants/margin_bottom = 20
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=779602721]
 layout_mode = 2
 mouse_filter = 2
+theme = ExtResource("1_lr62w")
 theme_override_constants/separation = 10
 
 [node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=159997744]
 layout_mode = 2
-theme_override_font_sizes/font_size = 18
+theme = ExtResource("1_lr62w")
 text = "Hope"
 
 [node name="MainText" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=767463149]
 custom_minimum_size = Vector2(600, 400)
 layout_mode = 2
 mouse_filter = 2
+theme = ExtResource("1_lr62w")
 bbcode_enabled = true
 text = "The Bazaar stands in front of you, one of the few constructions left in this world."
 horizontal_alignment = 1
@@ -89,6 +259,7 @@ visible_characters_behavior = 1
 custom_minimum_size = Vector2(400, 200)
 layout_mode = 2
 mouse_filter = 2
+theme = ExtResource("1_lr62w")
 bbcode_enabled = true
 text = "Crumbling and filthy, half of the spaced out inhabitants appear to be looking straight through you.
 
@@ -101,15 +272,20 @@ visible_characters_behavior = 1
 
 [node name="ChoiceButtons" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=471395289]
 layout_mode = 2
+theme = ExtResource("1_lr62w")
 theme_override_constants/separation = 10
 
 [node name="ChoiceA" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ChoiceButtons" unique_id=1449204598]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("1_lr62w")
 
 [node name="ChoiceB" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ChoiceButtons" unique_id=1123002852]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("1_lr62w")
+icon_alignment = 2
+expand_icon = true
 
 [node name="SkipButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1052698962]
 layout_mode = 2
@@ -117,10 +293,12 @@ size_flags_horizontal = 3
 text = "Restart"
 
 [node name="ChoiceA" type="Node2D" parent="." unique_id=1467480916]
-position = Vector2(340, 507)
+position = Vector2(333.99997, 531)
+scale = Vector2(0.8880696, 0.8880696)
 
 [node name="ChoiceB" type="Node2D" parent="." unique_id=2062458482]
-position = Vector2(1622, 490)
+position = Vector2(1611, 531)
+scale = Vector2(0.8880696, 0.8880696)
 
 [node name="TravelEncounters" type="Node" parent="." unique_id=590883524]
 
@@ -307,23 +485,6 @@ choiceb_text = "Reach in and grab the stone"
 choiceb_card = ExtResource("13_1u4xi")
 choiceb_stat_delta = -1
 
-[node name="MaxHealth" parent="RandomEncounters" unique_id=1530974567 instance=ExtResource("2_dfmul")]
-title = "The Heart that Beats"
-encounter_text = "From the shadows, an exhausted creature approaches and collapses by your fire."
-encounter_text_sane = "Its chest gapes revealing a beating heart under toxic purple ooze."
-encounter_text_insane = "It carries a small cage that looks like it can be pried open with an axe."
-choicea_text = "Grab the heart"
-choicea_card = ExtResource("14_1jpto")
-choicea_stat_delta = -1
-choicea_card_required = "Fishing Rod"
-choicea_lose_required_card = false
-choiceb_text = "Grab the heart"
-choiceb_card = ExtResource("14_1jpto")
-choiceb_card_required = "Sharp Axe"
-skip_text = "Let the creature rest"
-requires_fire = true
-must_be_after_encounter = NodePath("../AxeMan")
-
 [node name="SpecificEncounters" type="Node" parent="." unique_id=999975657]
 
 [node name="JourneyStart" parent="SpecificEncounters" unique_id=1367821565 instance=ExtResource("2_dfmul")]
@@ -376,3 +537,20 @@ skip_text = "Restart"
 game_complete_screen = true
 
 [node name="ActiveEncounter" type="Node" parent="." unique_id=200731604]
+
+[node name="MaxHealth" parent="ActiveEncounter" unique_id=1530974567 instance=ExtResource("2_dfmul")]
+title = "The Heart that Beats"
+encounter_text = "From the shadows, an exhausted creature approaches and collapses by your fire."
+encounter_text_sane = "Its chest gapes revealing a beating heart under toxic purple ooze."
+encounter_text_insane = "It carries a small cage that looks like it can be pried open with an axe."
+choicea_text = "Grab the heart"
+choicea_card = ExtResource("14_1jpto")
+choicea_stat_delta = -1
+choicea_card_required = "Fishing Rod"
+choicea_lose_required_card = false
+choiceb_text = "Grab the heart"
+choiceb_card = ExtResource("14_1jpto")
+choiceb_card_required = "Sharp Axe"
+skip_text = "Let the creature rest"
+requires_fire = true
+must_be_after_encounter = NodePath("../../RandomEncounters/AxeMan")

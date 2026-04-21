@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_oguja"]
 [ext_resource type="Material" uid="uid://618td7xfqke6" path="res://Shaders/UnplayableCard.tres" id="2_ocb6i"]
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_v2yov"]
 [ext_resource type="Script" uid="uid://d8qv2anm8jn5" path="res://Cards/hunger_card.gd" id="2_xvk0l"]
+[ext_resource type="Texture2D" uid="uid://ce7lrwf42eifk" path="res://Graphics/Cards/Icons/hunger.png" id="4_xvk0l"]
 
 [node name="HungerCard" unique_id=105035990 instance=ExtResource("1_oguja")]
 self_modulate = Color(0.8, 0.8, 0.8, 1)
@@ -15,12 +15,12 @@ description = "Lose one [b]energy[/b] on draw
 Gain one energy if burned from hand
 
 [i]Unplayable[/i]"
-image = ExtResource("2_v2yov")
+image = ExtResource("4_xvk0l")
 status = true
 unplayable = true
 
 [node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
-texture = ExtResource("2_v2yov")
+texture = ExtResource("4_xvk0l")
 
 [node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="3" unique_id=933147433]
 text = "Hunger"

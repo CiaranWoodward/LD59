@@ -2,18 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_v8riw"]
 [ext_resource type="Script" uid="uid://c63cetddjhghx" path="res://Cards/sharp_axe_card.gd" id="2_pfidx"]
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_s8l3b"]
+[ext_resource type="Texture2D" uid="uid://dl8hsv23ly288" path="res://Graphics/Cards/Icons/fishing rod.png" id="3_v8riw"]
 
 [node name="FishingRodCard" unique_id=105035990 instance=ExtResource("1_v8riw")]
 script = ExtResource("2_pfidx")
 card_name = "Fishing Rod"
 description = "Gain one [b]fish[/b] card"
-image = ExtResource("3_s8l3b")
+image = ExtResource("3_v8riw")
 cost = 2
 card_type = 2
 
 [node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
-texture = ExtResource("3_s8l3b")
+texture = ExtResource("3_v8riw")
 
 [node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="3" unique_id=933147433]
 text = "Fishing Rod"

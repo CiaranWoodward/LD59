@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_p44jv"]
 [ext_resource type="Script" uid="uid://ccninartbwd5x" path="res://Cards/blindfold.gd" id="2_mqbym"]
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_8ubwm"]
+[ext_resource type="Texture2D" uid="uid://bdhbyjitsi4wn" path="res://Graphics/Cards/Icons/blindfold.png" id="3_mqbym"]
 
 [node name="Blindfold" unique_id=105035990 instance=ExtResource("1_p44jv")]
 script = ExtResource("2_mqbym")
@@ -10,12 +10,12 @@ card_name = "Blindfold"
 description = "Free yourself from the gift of sight
 
 Burns all environment cards in your deck."
-image = ExtResource("3_8ubwm")
+image = ExtResource("3_mqbym")
 cost = 2
 card_type = 2
 
 [node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
-texture = ExtResource("3_8ubwm")
+texture = ExtResource("3_mqbym")
 
 [node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="3" unique_id=933147433]
 text = "Blindfold"

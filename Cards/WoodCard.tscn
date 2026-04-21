@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dj03uo7wdtqaa"]
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_nt6l4"]
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_8ru3x"]
 [ext_resource type="Script" uid="uid://clhhnvsplf11u" path="res://Cards/wood_card.gd" id="2_v4xih"]
+[ext_resource type="Texture2D" uid="uid://dsypyvquh1bpi" path="res://Graphics/Cards/Icons/small wood.png" id="3_8ru3x"]
 
 [node name="WoodCard" unique_id=105035990 instance=ExtResource("1_nt6l4")]
 script = ExtResource("2_v4xih")
@@ -10,17 +10,17 @@ card_name = "Wood"
 description = "Add one [b]wood[/b] to the campfire
 
 [i]Removed from deck when played"
-image = ExtResource("2_8ru3x")
+image = ExtResource("3_8ru3x")
 card_type = 3
 consumable = true
 
-[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="0" unique_id=933147433]
+[node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
+texture = ExtResource("3_8ru3x")
+
+[node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="3" unique_id=933147433]
 text = "Wood"
 
-[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="1" unique_id=376343130]
+[node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="4" unique_id=376343130]
 text = "Add one [b]wood[/b] to the campfire
 
 [i]Removed from deck when played"
-
-[node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(1569601050) index="2" unique_id=1941202912]
-texture = ExtResource("2_8ru3x")

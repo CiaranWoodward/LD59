@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_jd5v7"]
 [ext_resource type="Script" uid="uid://dj711mts11ok7" path="res://Cards/travel_card.gd" id="2_grx5e"]
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_g725k"]
+[ext_resource type="Texture2D" uid="uid://cpwso6j4tk7ui" path="res://Graphics/Cards/Icons/day look ahead.png" id="3_jd5v7"]
 
 [node name="TravelCard" unique_id=105035990 instance=ExtResource("1_jd5v7")]
 script = ExtResource("2_grx5e")
@@ -10,7 +10,7 @@ card_name = "Travel"
 description = "Travel to the next environment
 
 [i]Another step closer..."
-image = ExtResource("3_g725k")
+image = ExtResource("3_jd5v7")
 cost = 2
 card_type = 2
 card_timing = 0
@@ -23,7 +23,8 @@ frame = 1
 frame = 1
 
 [node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
-texture = ExtResource("3_g725k")
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("3_jd5v7")
 
 [node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="3" unique_id=933147433]
 text = "Travel"

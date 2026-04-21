@@ -25,9 +25,10 @@ script = ExtResource("1_rcskp")
 [node name="HealthPip" parent="Pips" unique_id=2057596518 instance=ExtResource("2_mnq2p")]
 position = Vector2(51, 46)
 rotation = 0.30806023
+scale = Vector2(1.079695, 1.079695)
 
 [node name="HealthPip2" parent="Pips" unique_id=1355773261 instance=ExtResource("2_mnq2p")]
-position = Vector2(143, 41)
+position = Vector2(142.00002, 46.000004)
 rotation = -0.09394486
 scale = Vector2(0.71542907, 0.71542907)
 pip_threshold = 2
@@ -39,74 +40,70 @@ scale = Vector2(0.76100504, 0.76100504)
 pip_threshold = 3
 
 [node name="HealthPip4" parent="Pips" unique_id=218072832 instance=ExtResource("2_mnq2p")]
-position = Vector2(157, 118)
+position = Vector2(147.00002, 121.000015)
 rotation = -0.4440097
-scale = Vector2(1.3189925, 1.3189925)
+scale = Vector2(1.0247935, 1.0247935)
 pip_threshold = 4
 
 [node name="HealthPip5" parent="Pips" unique_id=1776858530 instance=ExtResource("2_mnq2p")]
-position = Vector2(249, 49)
+position = Vector2(232.00002, 37.000004)
 rotation = 0.3385997
-scale = Vector2(1.2407901, 1.2407901)
+scale = Vector2(0.9247769, 0.9247769)
 pip_threshold = 5
 
 [node name="HealthPip6" parent="Pips" unique_id=833038583 instance=ExtResource("2_mnq2p")]
-position = Vector2(274, 151)
+position = Vector2(238.99998, 103.00001)
 rotation = -0.030368328
-scale = Vector2(1.2407901, 1.2407901)
+scale = Vector2(0.74987066, 0.74987066)
 pip_threshold = 6
 
 [node name="EnergyPip" parent="Pips" unique_id=1187635481 instance=ExtResource("3_fyblx")]
 position = Vector2(65, 690)
+scale = Vector2(0.78345597, 0.78345597)
 
 [node name="EnergyPip2" parent="Pips" unique_id=1839112666 instance=ExtResource("3_fyblx")]
-position = Vector2(164, 698.00006)
-scale = Vector2(0.8582375, 0.8582375)
+position = Vector2(135, 713.99994)
+scale = Vector2(0.6723913, 0.6723913)
 pip_threshold = 2
 
 [node name="EnergyPip3" parent="Pips" unique_id=358638727 instance=ExtResource("3_fyblx")]
-position = Vector2(265, 673)
-scale = Vector2(1.1425544, 1.1425544)
+position = Vector2(206.00003, 676.00006)
+scale = Vector2(0.8034858, 0.8034858)
 pip_threshold = 3
 
 [node name="EnergyPip4" parent="Pips" unique_id=262138397 instance=ExtResource("3_fyblx")]
-position = Vector2(364.99997, 707)
-scale = Vector2(0.9460392, 0.9020539)
+position = Vector2(283.00003, 697)
+scale = Vector2(0.74118006, 0.7067195)
 pip_threshold = 4
-
-[node name="PathPip" parent="Pips" unique_id=553718804 instance=ExtResource("4_t0t1g")]
-position = Vector2(1839, 726)
-rotation = 0.18262434
-scale = Vector2(1.7947034, 1.7947034)
-
-[node name="PathPip2" parent="Pips" unique_id=468452821 instance=ExtResource("4_t0t1g")]
-position = Vector2(1847, 665)
-rotation = 0.06159615
-scale = Vector2(2.026538, 2.026538)
-pip_threshold = 2
-
-[node name="PathPip3" parent="Pips" unique_id=308721590 instance=ExtResource("4_t0t1g")]
-position = Vector2(1843, 597)
-rotation = -0.14221323
-scale = Vector2(1.888189, 1.888189)
-pip_threshold = 3
-
-[node name="PathPip4" parent="Pips" unique_id=1621605952 instance=ExtResource("4_t0t1g")]
-position = Vector2(1840.9999, 533)
-rotation = -0.16183136
-scale = Vector2(1.970179, 1.970179)
-pip_threshold = 4
-
-[node name="PathPip5" parent="Pips" unique_id=673862281 instance=ExtResource("4_t0t1g")]
-position = Vector2(1839, 465)
-scale = Vector2(2.0538201, 2.0538201)
-pip_threshold = 5
 
 [node name="PathPip6" parent="Pips" unique_id=1833445058 instance=ExtResource("4_t0t1g")]
-position = Vector2(1846.0001, 390.00003)
-rotation = 0.16273502
-scale = Vector2(2.0551739, 2.0551739)
+position = Vector2(1827, 339)
+scale = Vector2(1.2, 1.2)
 pip_threshold = 6
+
+[node name="PathPip5" parent="Pips" unique_id=673862281 instance=ExtResource("4_t0t1g")]
+position = Vector2(1826, 377)
+scale = Vector2(1.2, 1.2)
+pip_threshold = 5
+
+[node name="PathPip4" parent="Pips" unique_id=1621605952 instance=ExtResource("4_t0t1g")]
+position = Vector2(1826, 414)
+scale = Vector2(1.2, 1.2)
+pip_threshold = 4
+
+[node name="PathPip3" parent="Pips" unique_id=308721590 instance=ExtResource("4_t0t1g")]
+position = Vector2(1826, 453)
+scale = Vector2(1.2, 1.2)
+pip_threshold = 3
+
+[node name="PathPip2" parent="Pips" unique_id=468452821 instance=ExtResource("4_t0t1g")]
+position = Vector2(1826, 491)
+scale = Vector2(1.2, 1.2)
+pip_threshold = 2
+
+[node name="PathPip" parent="Pips" unique_id=553718804 instance=ExtResource("4_t0t1g")]
+position = Vector2(1826, 529)
+scale = Vector2(1.2, 1.2)
 
 [node name="Cards" type="Node2D" parent="." unique_id=630168821]
 
@@ -123,7 +120,7 @@ position = Vector2(2796, 2256)
 position = Vector2(-1587, 2489)
 
 [node name="WoodCard2" parent="Cards" unique_id=105035990 instance=ExtResource("11_xmklv")]
-position = Vector2(-1587, 2489)
+position = Vector2(-371, 2252)
 
 [node name="ExploreCard" parent="Cards" unique_id=1573522068 instance=ExtResource("9_m6m0j")]
 position = Vector2(689, 2069)

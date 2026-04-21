@@ -3,4 +3,4 @@
 extends BaseCard
 
 func on_play():
-    Global.change_statistic(Global.Statistic.FIRE_LIT, 1)
+	Global.change_statistic(Global.Statistic.FIRE_LIT, 1)

@@ -31,6 +31,7 @@ func _process(delta: float) -> void:
 	_parallax_velocity += (spring_force - damping_force) * delta
 	_parallax_point += _parallax_velocity * delta
 	var props := get_tree().get_nodes_in_group("Prop")
+	props += get_tree().get_nodes_in_group("character")
 	for prop in props:
 		if prop.has_meta("original_position"):
 			var original_position: Vector2 = prop.get_meta("original_position")
@@ -41,6 +42,7 @@ func _process(delta: float) -> void:
 
 func _bind_meta_position():
 	var props = get_tree().get_nodes_in_group("Prop")
+	props += get_tree().get_nodes_in_group("character")
 	for prop in props:
 		if !prop.has_meta("original_position"):
 			prop.set_meta("original_position", prop.global_position)
@@ -81,4 +83,3 @@ func transition_scene_out() -> void:
 	_current_scene.queue_free()
 	_current_scene = null
 	_suspend_parallax = false
-
