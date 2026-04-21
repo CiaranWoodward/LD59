@@ -94,10 +94,10 @@ func _has_required_card(card_required: String) -> bool:
 		return true
 	if Engine.is_editor_hint():
 		return true
-	return Global.table.all_cards().any(func(c): return c is BaseCard and c.card_name == card_required)
+	return Global.table.all_cards().any(func(c): return c is BaseCard and c.card_name.contains(card_required))
 
 func _find_required_card(card_required: String) -> BaseCard:
-	var cards = Global.table.all_cards().filter(func(c): return c is BaseCard and c.card_name == card_required)
+	var cards = Global.table.all_cards().filter(func(c): return c is BaseCard and c.card_name.contains(card_required))
 	if cards.is_empty():
 		return null
 	return cards[0]
@@ -229,7 +229,9 @@ func activate_random_encounter() -> bool:
 			candidates.append(child)
 	if candidates.is_empty():
 		return false
-	var chosen := candidates[randi() % candidates.size()]
+	var unplayed := candidates.filter(func(e): return not e.played)
+	var pool := unplayed if not unplayed.is_empty() else candidates
+	var chosen := pool[randi() % pool.size()]
 	chosen.set_meta("_source_parent", $RandomEncounters)
 	await _activate_encounter(chosen)
 	return true
@@ -241,7 +243,9 @@ func activate_random_travel_encounter() -> bool:
 			candidates.append(child)
 	if candidates.is_empty():
 		return false
-	var chosen := candidates[randi() % candidates.size()]
+	var unplayed := candidates.filter(func(e): return not e.played)
+	var pool := unplayed if not unplayed.is_empty() else candidates
+	var chosen := pool[randi() % pool.size()]
 	chosen.set_meta("_source_parent", $TravelEncounters)
 	await _activate_encounter(chosen)
 	return true

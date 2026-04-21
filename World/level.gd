@@ -63,7 +63,7 @@ func resume_parallax():
 	_suspend_parallax = false
 
 func transition_scene_in(sceneNo: int, skip_animation: bool = false) -> void:
-	var scene: PackedScene = scenes[sceneNo]
+	var scene: PackedScene = scenes[sceneNo % scenes.size()]
 	assert(_current_scene == null, "Can't transition in a new scene while another is active")
 	var scene_instance = scene.instantiate()
 	$Scene.add_child(scene_instance)

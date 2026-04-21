@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://bpvvtw7o2iibm" path="res://Utils/RandomAnimationPlayer.gd" id="5_cag06"]
 [ext_resource type="PackedScene" uid="uid://bwn2y8s7hx6fo" path="res://Cards/MorselCard.tscn" id="6_evykb"]
 [ext_resource type="PackedScene" uid="uid://ciejvoikntgvy" path="res://Cards/MapCard.tscn" id="7_ak22r"]
+[ext_resource type="PackedScene" uid="uid://2nlh77u60d14" path="res://Cards/PurpleShroomCard.tscn" id="9_mmmvy"]
 [ext_resource type="PackedScene" uid="uid://gcf07sq4ejht" path="res://Cards/SharpAxeCard.tscn" id="10_mq3g3"]
 [ext_resource type="PackedScene" uid="uid://c2datgy20s53o" path="res://Cards/StrongBowCard.tscn" id="11_p876l"]
 [ext_resource type="PackedScene" uid="uid://ds3bko8i1s0x7" path="res://Cards/FishingRodCard.tscn" id="12_etrvt"]
@@ -322,7 +323,7 @@ choiceb_card = ExtResource("5_ak22r")
 title = "Allure of Shroom"
 encounter_text = "You come across a mushroom patch."
 choicea_text = "Pick a purple shroom"
-choicea_card = ExtResource("4_bn0te")
+choicea_card = ExtResource("9_mmmvy")
 
 [node name="RandomEncounters" type="Node" parent="." unique_id=1771354991]
 
@@ -349,11 +350,11 @@ encounter_text = "A creature drifts downstream.
 encounter_text_sane = "The water rushes past as red as blood."
 encounter_text_insane = "The water shimmers invitingly."
 choicea_text = "Go for a swim"
-choicea_sanity = 1
+choicea_sanity = 2
 choicea_stat = 8
 choicea_stat_delta = 2
 choiceb_text = "Go for a swim"
-choiceb_sanity = 2
+choiceb_sanity = 1
 choiceb_stat_delta = -1
 repeatable = true
 must_be_scene_type = 2
@@ -463,12 +464,12 @@ encounter_text = "A creatures searches the riverbank. It stops to look at you.
 For cures, you fish. For hearts, I fish\"[/i]
 
 Cryptic..."
-choicea_text = "Offer a grey shroom"
+choicea_text = "Offer some blood"
 choicea_card = ExtResource("12_etrvt")
-choicea_card_required = "Grey Shroom"
-choiceb_text = "Offer a red shrrom"
+choicea_stat_delta = -1
+choiceb_text = "Offer a red shroom"
 choiceb_card = ExtResource("12_etrvt")
-choiceb_card_required = "Red Shroom"
+choiceb_card_required = "Shroom"
 skip_text = "You wish for no fish"
 must_be_scene_type = 2
 
