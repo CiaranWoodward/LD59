@@ -107,7 +107,7 @@ sprite_frames = SubResource("SpriteFrames_tygsg")
 [node name="Image" type="Sprite2D" parent="CardFront" unique_id=1941202912]
 show_behind_parent = true
 use_parent_material = true
-position = Vector2(2, -139.00005)
+scale = Vector2(2, 2)
 
 [node name="Name" type="Label" parent="CardFront" unique_id=933147433]
 use_parent_material = true

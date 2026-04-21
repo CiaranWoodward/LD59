@@ -2,17 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_hvc22"]
 [ext_resource type="Script" uid="uid://c63cetddjhghx" path="res://Cards/sharp_axe_card.gd" id="2_lx35g"]
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_e2qsg"]
+[ext_resource type="Texture2D" uid="uid://dc1cbyj7kr47k" path="res://Graphics/Cards/Icons/big axe.png" id="3_lx35g"]
 
 [node name="SharpAxeCard" unique_id=105035990 instance=ExtResource("1_hvc22")]
 script = ExtResource("2_lx35g")
 card_name = "Sharp Axe"
 description = "Gain one [b] large log[/b] card"
-image = ExtResource("3_e2qsg")
+image = ExtResource("3_lx35g")
 card_type = 2
 
 [node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
-texture = ExtResource("3_e2qsg")
+texture = ExtResource("3_lx35g")
 
 [node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="3" unique_id=933147433]
 text = "Sharp Axe"

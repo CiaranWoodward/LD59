@@ -30,6 +30,7 @@ window/stretch/mode="canvas_items"
 [global_group]
 
 Prop="Level props that will fly onto the screen when a level loads"
+character="player character"
 
 [physics]
 

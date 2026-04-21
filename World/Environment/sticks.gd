@@ -13,4 +13,3 @@ func activate():
 				sticks[stick].visible = false
 			)
 			Global.table.initialise_card_to_discard_pile(card)
-

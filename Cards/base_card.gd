@@ -177,7 +177,7 @@ func _sync_front_visuals():
 		_set_unplayable_visuals(!is_playable())
 	
 	if card_timing == CardTiming.All:
-		if Global.is_insane():
+		if Engine.is_editor_hint() || Global.is_insane():
 			$CardBack.frame = 0
 			$CardFront/CardFront.frame = 0
 			$CardFront/CardFill.frame = 0

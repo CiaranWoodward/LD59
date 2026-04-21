@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_687k0"]
 [ext_resource type="Script" uid="uid://cm46kns5lijhc" path="res://Cards/beating_heart_card.gd" id="2_36s77"]
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="4_cq7mm"]
+[ext_resource type="Texture2D" uid="uid://crvofykakb3vi" path="res://Graphics/Cards/Icons/heart.png" id="3_36s77"]
 
 [node name="BeatingHeartCard" unique_id=105035990 instance=ExtResource("1_687k0")]
 script = ExtResource("2_36s77")
@@ -12,18 +12,15 @@ description = "Increase max health by one
 Lose one [b]health[/b]
 
 [i]Removed from deck on use[/i]"
-image = ExtResource("4_cq7mm")
+image = ExtResource("3_36s77")
 cost = 2
 consumable = true
 
 [node name="CardFront" parent="." index="1" unique_id=519823740]
 self_modulate = Color(0.8, 0.8, 0.8, 1)
 
-[node name="CardFront" parent="CardFront" index="0" unique_id=1390792272]
-frame = 2
-
 [node name="Image" parent="CardFront" index="2" unique_id=1941202912]
-texture = ExtResource("4_cq7mm")
+texture = ExtResource("3_36s77")
 
 [node name="Name" parent="CardFront" index="3" unique_id=933147433]
 text = "Beating Heart"

@@ -1,8 +1,32 @@
 [gd_scene format=3 uid="uid://dlcvto3andy8x"]
 
+[ext_resource type="Texture2D" uid="uid://pn8oc7nus4rb" path="res://Graphics/MV Sketch/White0000.png" id="1_i00ma"]
 [ext_resource type="Script" uid="uid://dragg4qxx8ki6" path="res://UI/play.gd" id="1_oq7qy"]
+[ext_resource type="Texture2D" uid="uid://wm2ukybtxvu3" path="res://Graphics/Environment/Background/Sun.png" id="2_431ns"]
+[ext_resource type="Texture2D" uid="uid://sony8h07krbr" path="res://Graphics/Environment/Background/SunGlow.png" id="3_mcsiw"]
+[ext_resource type="Texture2D" uid="uid://fjx0uh4e8rxj" path="res://Graphics/Environment/Background/mountain.png" id="4_qpmya"]
+[ext_resource type="Texture2D" uid="uid://385vmc5hw70y" path="res://Graphics/Environment/Background/ground.png" id="5_4gdyn"]
+[ext_resource type="Texture2D" uid="uid://btbfvt8qrrpbt" path="res://Graphics/winged creature.png" id="6_wvinm"]
+[ext_resource type="PackedScene" uid="uid://sm6uk6e3vdyu" path="res://World/Environment/Tree.tscn" id="7_kxy5c"]
+[ext_resource type="PackedScene" uid="uid://ht24sldfu5cf" path="res://World/Environment/Bush.tscn" id="8_j1sgt"]
+[ext_resource type="Texture2D" uid="uid://dyrgl4mkv2a37" path="res://Graphics/Environment/Setting/River.png" id="9_ge5ru"]
+[ext_resource type="Texture2D" uid="uid://bleturivl63fr" path="res://Graphics/Environment/Setting/blue water sparkle 2.png" id="10_xubrw"]
+[ext_resource type="Texture2D" uid="uid://rdu755lf3siu" path="res://Graphics/Environment/Setting/blue water sparkle 3.png" id="11_wvinm"]
+[ext_resource type="Texture2D" uid="uid://b5qbbkmb3q27j" path="res://Graphics/Environment/Setting/blue water sparkle.png" id="12_a4ytu"]
+[ext_resource type="PackedScene" uid="uid://1cd50b03me1x" path="res://Utils/InsanityFlicker.tscn" id="13_7rcug"]
+[ext_resource type="FontFile" uid="uid://hclqa34m777k" path="res://Graphics/UI/Font/Winky/WinkyRough-Medium.ttf" id="13_kxy5c"]
+[ext_resource type="Texture2D" uid="uid://dj6nyamybbdjm" path="res://Graphics/title.png" id="15_j1sgt"]
+[ext_resource type="PackedScene" uid="uid://dwd7u36cmknci" path="res://World/Character.tscn" id="16_ge5ru"]
+[ext_resource type="Texture2D" uid="uid://cpkes8o8kmrym" path="res://Graphics/stream creature.png" id="17_xubrw"]
 
-[node name="CenterContainer" type="CenterContainer" unique_id=15537329]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1sgt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ge5ru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xubrw"]
+
+[node name="CenterContainer" type="Control" unique_id=429268681]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -11,16 +35,282 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1023115968]
-layout_mode = 2
+[node name="Sky" type="Sprite2D" parent="." unique_id=1232046650]
+modulate = Color(0.32156864, 0.52156866, 0.72156864, 1)
+position = Vector2(1050.5, 213.50003)
+scale = Vector2(135.35, 41.35)
+texture = ExtResource("1_i00ma")
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=619034340]
-layout_mode = 2
-text = "Our Cool Game"
+[node name="Sun" type="Sprite2D" parent="." unique_id=1918124416]
+modulate = Color(0.91764706, 0.94509804, 0.7411765, 1)
+texture = ExtResource("2_431ns")
+offset = Vector2(2.128357, 20.227966)
 
-[node name="Play" type="Button" parent="VBoxContainer" unique_id=1792030433]
-layout_mode = 2
-text = "Play
+[node name="SunGlow" type="Sprite2D" parent="Sun" unique_id=1056241891]
+show_behind_parent = true
+scale = Vector2(1.237526, 1.237526)
+texture = ExtResource("3_mcsiw")
+
+[node name="Mountain" type="Sprite2D" parent="." unique_id=1217660251]
+self_modulate = Color(0.13824463, 0.14425278, 0.234375, 1)
+position = Vector2(888.5, 545)
+scale = Vector2(0.5997396, 0.5833333)
+texture = ExtResource("4_qpmya")
+
+[node name="Ground" type="Sprite2D" parent="." unique_id=1664321722]
+position = Vector2(1181.0001, 416.00003)
+scale = Vector2(0.7504341, 0.7055556)
+texture = ExtResource("5_4gdyn")
+
+[node name="WingedCreature" type="Sprite2D" parent="." unique_id=1208765119]
+position = Vector2(1704, 190)
+rotation = 3.1415927
+scale = Vector2(0.2, -0.2)
+texture = ExtResource("6_wvinm")
+
+[node name="River" type="Node2D" parent="." unique_id=851701542 groups=["Prop"]]
+
+[node name="Right Bank" type="Sprite2D" parent="River" unique_id=1071270705]
+self_modulate = Color(0.33984375, 0.3385992, 0.33187866, 0.25490198)
+position = Vector2(1258, 935)
+texture = ExtResource("9_ge5ru")
+
+[node name="LeftBank" type="Sprite2D" parent="River" unique_id=375055454]
+self_modulate = Color(0.33984375, 0.3385992, 0.33187866, 0.25490198)
+position = Vector2(1168, 935)
+texture = ExtResource("9_ge5ru")
+
+[node name="River" type="Sprite2D" parent="River" unique_id=1486448182]
+modulate = Color(0.32941177, 0.54901963, 0.75686276, 1)
+position = Vector2(1220, 935)
+texture = ExtResource("9_ge5ru")
+
+[node name="BlueWaterSparkle2" type="Sprite2D" parent="River/River" unique_id=1411165896]
+self_modulate = Color(1, 1, 1, 0.25490198)
+position = Vector2(-230.64417, -515.5393)
+scale = Vector2(0.8434145, 0.9263525)
+texture = ExtResource("10_xubrw")
+
+[node name="BlueWaterSparkle3" type="Sprite2D" parent="River/River" unique_id=1239240610]
+self_modulate = Color(1, 1, 1, 0.25490198)
+position = Vector2(-230.64417, -515.5393)
+scale = Vector2(0.8434145, 0.9263525)
+texture = ExtResource("11_wvinm")
+
+[node name="BlueWaterSparkle" type="Sprite2D" parent="River/River" unique_id=224784559]
+self_modulate = Color(1, 1, 1, 0.25490198)
+position = Vector2(-230.64417, -515.5393)
+scale = Vector2(0.8434145, 0.9263525)
+texture = ExtResource("12_a4ytu")
+
+[node name="Foreground" type="Node2D" parent="." unique_id=1790366465]
+y_sort_enabled = true
+
+[node name="Tree5" parent="Foreground" unique_id=38779123 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.3046875, 0.3046875, 0.3046875, 0.74509805)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
+position = Vector2(57.999992, 1166)
+scale = Vector2(1.1454545, 1.1454545)
+
+[node name="Tree6" parent="Foreground" unique_id=503406017 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.40234375, 0.40234375, 0.40234375, 0.74509805)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(1802.9999, 1182)
+scale = Vector2(1.1454545, 1.1454545)
+
+[node name="Bush11" parent="Foreground" unique_id=1047087959 instance=ExtResource("8_j1sgt")]
+modulate = Color(0.37109375, 0.37109375, 0.37109375, 0.7294118)
+position = Vector2(131, 1195)
+scale = Vector2(1.5, 1.5)
+
+[node name="Bush12" parent="Foreground" unique_id=2001538272 instance=ExtResource("8_j1sgt")]
+modulate = Color(0.4140625, 0.4140625, 0.4140625, 0.7294118)
+position = Vector2(1798, 1291.9999)
+scale = Vector2(1.2063168, 1.2063168)
+
+[node name="Bush14" parent="Foreground" unique_id=112355317 instance=ExtResource("8_j1sgt")]
+modulate = Color(0.4140625, 0.4140625, 0.4140625, 0.7294118)
+position = Vector2(1640, 1274)
+scale = Vector2(1.2063168, 1.2063168)
+
+[node name="Bush13" parent="Foreground" unique_id=1157445125 instance=ExtResource("8_j1sgt")]
+modulate = Color(0.37109375, 0.37109375, 0.37109375, 0.7294118)
+position = Vector2(396, 1199.9999)
+scale = Vector2(1.3, 1.3)
+
+[node name="Trees" type="Node2D" parent="." unique_id=633402629]
+y_sort_enabled = true
+scale = Vector2(0.5, 0.5)
+
+[node name="Tree" parent="Trees" unique_id=773410998 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.41428572, 0.41428572, 0.41428572, 1)
+position = Vector2(74, 990)
+
+[node name="Tree2" parent="Trees" unique_id=1344702587 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.4457143, 0.4457143, 0.4457143, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
+position = Vector2(3716, 1012)
+
+[node name="Tree3" parent="Trees" unique_id=1602806950 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.5657143, 0.5657143, 0.5657143, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(1686, 1096)
+
+[node name="Tree4" parent="Trees" unique_id=214280914 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.57714283, 0.57714283, 0.57714283, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(160, 1104)
+
+[node name="Tree6" parent="Trees" unique_id=846804904 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.5914286, 0.5914286, 0.5914286, 1)
+position = Vector2(482, 1114)
+
+[node name="Tree7" parent="Trees" unique_id=565926781 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.62285715, 0.62285715, 0.62285715, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(774, 1136)
+
+[node name="Tree8" parent="Trees" unique_id=674832295 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.70285714, 0.70285714, 0.70285714, 1)
+position = Vector2(928, 1228)
+
+[node name="Tree9" parent="Trees" unique_id=340260885 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.64285713, 0.64285713, 0.64285713, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
+position = Vector2(1182, 1150)
+
+[node name="Tree10" parent="Trees" unique_id=55918938 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.74, 0.74, 0.74, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(1396, 1218)
+
+[node name="Tree11" parent="Trees" unique_id=1889405863 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.6542857, 0.6542857, 0.6542857, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(1486, 1158)
+
+[node name="Tree12" parent="Trees" unique_id=1811162633 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.7885714, 0.7885714, 0.7885714, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(1968, 1252)
+
+[node name="Tree13" parent="Trees" unique_id=1124968498 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.70285714, 0.70285714, 0.70285714, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(2298, 1192)
+
+[node name="Tree14" parent="Trees" unique_id=2061189345 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.72, 0.72, 0.72, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(2542, 1204)
+
+[node name="Tree15" parent="Trees" unique_id=620359514 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.82285714, 0.82285714, 0.82285714, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(2842, 1276)
+
+[node name="Tree17" parent="Trees" unique_id=1431128368 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.7114286, 0.7114286, 0.7114286, 1)
+position = Vector2(1978, 1170)
+
+[node name="Tree19" parent="Trees" unique_id=1051338382 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.46857142, 0.46857142, 0.46857142, 1)
+position = Vector2(2182, 1028)
+
+[node name="Tree20" parent="Trees" unique_id=802918938 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.32857144, 0.32857144, 0.32857144, 1)
+position = Vector2(532, 930)
+
+[node name="Tree21" parent="Trees" unique_id=949900021 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.25428572, 0.25428572, 0.25428572, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
+position = Vector2(412, 878)
+
+[node name="Tree23" parent="Trees" unique_id=501144951 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.5542857, 0.5542857, 0.5542857, 1)
+position = Vector2(2946, 1088)
+
+[node name="Tree24" parent="Trees" unique_id=1345680406 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.34, 0.34, 0.34, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
+position = Vector2(910, 938)
+
+[node name="Tree25" parent="Trees" unique_id=1224871813 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.6942857, 0.6942857, 0.6942857, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
+position = Vector2(1798, 1186)
+
+[node name="Tree26" parent="Trees" unique_id=1349774789 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.8142857, 0.8142857, 0.8142857, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(3668, 1270)
+
+[node name="Tree28" parent="Trees" unique_id=1149701747 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.6685714, 0.6685714, 0.6685714, 1)
+self_modulate = Color(0.24313726, 0.16862746, 0.15294118, 1)
+position = Vector2(3772, 1168)
+
+[node name="Tree29" parent="Trees" unique_id=1192961062 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.64285713, 0.64285713, 0.64285713, 1)
+self_modulate = Color(0.28235295, 0.23529412, 0.18039216, 1)
+position = Vector2(2714, 1150)
+
+[node name="Tree30" parent="Trees" unique_id=1916106465 instance=ExtResource("7_kxy5c")]
+modulate = Color(0.4, 0.4, 0.4, 1)
+position = Vector2(3206, 980)
+
+[node name="InsanityFlicker" parent="." unique_id=1741190488 instance=ExtResource("13_7rcug")]
+modulate_node = NodePath("../River/River")
+sane_color = Color(0.54901963, 0.21568628, 0.27058825, 1)
+insane_color = Color(0.32941177, 0.54901963, 0.75686276, 1)
+always_sane_threshold = 3
+always_insane_threshold = 4
+chance_to_flicker = 0.0
+chance_to_stick_early = 1.0
+flicker_time = 1.5
+
+[node name="Play" type="Button" parent="." unique_id=1792030433]
+layout_mode = 0
+offset_left = 1285.0001
+offset_top = 772.0
+offset_right = 1528.0001
+offset_bottom = 917.0
+rotation = -0.22908297
+theme_override_colors/font_color = Color(0.11764706, 0.047058824, 0.02745098, 1)
+theme_override_colors/font_pressed_color = Color(0.07450981, 0.047058824, 0.015686275, 1)
+theme_override_colors/font_hover_color = Color(0.36328125, 0.20428118, 0.15751648, 1)
+theme_override_fonts/font = ExtResource("13_kxy5c")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j1sgt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ge5ru")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xubrw")
+text = "Start
 "
 script = ExtResource("1_oq7qy")
 target_scene_path = "res://World/Level.tscn"
+
+[node name="TitleShadow" type="Sprite2D" parent="." unique_id=936993453]
+self_modulate = Color(0, 0, 0, 0.13333334)
+position = Vector2(946, 826)
+rotation = -0.17805795
+scale = Vector2(0.37914142, 0.37914142)
+texture = ExtResource("15_j1sgt")
+
+[node name="Title" type="Sprite2D" parent="TitleShadow" unique_id=854493702]
+position = Vector2(13.187622, -15.825195)
+texture = ExtResource("15_j1sgt")
+
+[node name="Character" parent="." unique_id=453373948 instance=ExtResource("16_ge5ru")]
+position = Vector2(363, 887)
+
+[node name="StreamCreature" type="Sprite2D" parent="." unique_id=1261011591]
+position = Vector2(1230, 1015)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("17_xubrw")
+
+[node name="StreamCreature2" type="Sprite2D" parent="StreamCreature" unique_id=1141121761]
+modulate = Color(0.2512207, 0.26286316, 0.4375, 0.3019608)
+show_behind_parent = true
+position = Vector2(5, 2.5)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("17_xubrw")

@@ -1,29 +1,24 @@
 [gd_scene format=3 uid="uid://1g05vmmrrig6"]
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_fol33"]
-[ext_resource type="Material" uid="uid://618td7xfqke6" path="res://Shaders/UnplayableCard.tres" id="2_lf7bq"]
+[ext_resource type="Texture2D" uid="uid://uh2dthxxqsti" path="res://Graphics/Cards/Icons/energy stone.png" id="3_pnng7"]
 [ext_resource type="Script" uid="uid://c4tqjof2dop3d" path="res://Cards/energy_stone_card.gd" id="3_r2u8w"]
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="4_5mite"]
 
 [node name="EnergyStoneCard" unique_id=105035990 instance=ExtResource("1_fol33")]
-material = ExtResource("2_lf7bq")
 script = ExtResource("3_r2u8w")
 card_name = "Energy Stone"
 description = "Increase max energy by one
 
 [i]Removed from deck on use[/i]"
-image = ExtResource("4_5mite")
+image = ExtResource("3_pnng7")
 cost = 3
 consumable = true
 
 [node name="CardFront" parent="." index="1" unique_id=519823740]
 self_modulate = Color(0.8, 0.8, 0.8, 1)
 
-[node name="CardFront" parent="CardFront" index="0" unique_id=1390792272]
-frame = 2
-
 [node name="Image" parent="CardFront" index="2" unique_id=1941202912]
-texture = ExtResource("4_5mite")
+texture = ExtResource("3_pnng7")
 
 [node name="Name" parent="CardFront" index="3" unique_id=933147433]
 text = "Energy Stone"
@@ -34,4 +29,4 @@ text = "Increase max energy by one
 [i]Removed from deck on use[/i]"
 
 [node name="Cost" parent="CardFront" index="5" unique_id=1544021586]
-text = "X"
+text = "3"
