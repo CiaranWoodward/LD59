@@ -160,7 +160,6 @@ gizmo_extents = 36.3
 layer = 10
 
 [node name="EncounterScreen" parent="HUD" unique_id=1234357728 instance=ExtResource("12_ljc0k")]
-visible = false
 debug_visible = false
 
 [node name="Game Over" parent="HUD" unique_id=498905838 instance=ExtResource("11_mnq2p")]
