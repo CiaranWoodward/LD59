@@ -511,7 +511,7 @@ skip_text = "On with the day"
 skip_stat = 1
 skip_stat_delta = -1
 
-[node name="First Step" parent="SpecificEncounters" unique_id=433325646 instance=ExtResource("2_dfmul")]
+[node name="FirstStep" parent="SpecificEncounters" unique_id=433325646 instance=ExtResource("2_dfmul")]
 title = "First Steps"
 encounter_text = "You're getting closer. The Bazaar's signals are still distant, but you're making progress.
 
