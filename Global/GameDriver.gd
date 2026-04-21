@@ -73,8 +73,6 @@ func forever_game_loop():
 		Global.set_statistic(Global.Statistic.ACTION_POINTS, Global.max_statistic_values[Global.Statistic.ACTION_POINTS])
 		await table.draw_cards()
 
-		await table.get_encounter_screen().activate_random_encounter()
-
 		# If there are 3 hunger cards, burn them all and take 1 damage
 		var hunger_cards = table.hand.filter(func(c): return c.card_name == "Hunger")
 		if hunger_cards.size() >= 3:
