@@ -50,7 +50,7 @@ var min_statistic_values = {
 	Statistic.FIRE_LIT: 0,
 	Statistic.DAY: 0,
 	Statistic.ROUND: 0,
-	Statistic.PATHFINDING: 0,
+	Statistic.PATHFINDING: 2,
 	Statistic.LEVEL: 0,
 }
 
@@ -59,11 +59,11 @@ var max_statistic_values = {
 	Statistic.INSANITY: 5,
 	Statistic.ACTION_POINTS: 3,
 	Statistic.HAND_SIZE: 15,
-	Statistic.FIRE_SIZE: 3,
+	Statistic.FIRE_SIZE: 4,
 	Statistic.FIRE_LIT: 1,
 	Statistic.DAY: 10,
 	Statistic.ROUND: 6,
-	Statistic.PATHFINDING: 6,
+	Statistic.PATHFINDING: 3,
 	Statistic.LEVEL: 5,
 }
 

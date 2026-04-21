@@ -132,7 +132,7 @@ func reshuffle():
 	_change_state(TableState.ShufflingDeck)
 	await _discard_hand()
 	await _discard_draw_and_idle_pile()
-	await _shuffle_discard_pile_into_draw_pile()
+	await _shuffle_discard_pile_into_draw_pile(!Global.is_daytime())
 	_change_state(TableState.Idle)
 
 ## Game over
@@ -433,10 +433,18 @@ func _calculate_card_hand_z_index(index: int) -> int:
 	return 30 - index
 
 # Every Day I'm Shuffling
-func _shuffle_discard_pile_into_draw_pile():
+func _shuffle_discard_pile_into_draw_pile(tinderbox_top: bool = false):
 	discard_pile += draw_pile
 	draw_pile.clear()
 	discard_pile.shuffle()
+	if tinderbox_top:
+		# Move the tinderbox to the back of the array
+		var i = discard_pile.find_custom(func(c): return c.card_name == "Tinderbox")
+		if i != -1:
+				var tinderbox_card = discard_pile.pop_at(i)
+				discard_pile.append(tinderbox_card)
+
+		
 	var new_draw_pile = discard_pile.filter(func(c): return c.is_valid_at_current_time())
 	var new_idle_pile = discard_pile.filter(func(c): return not c.is_valid_at_current_time())
 	discard_pile = []

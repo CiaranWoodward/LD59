@@ -2,24 +2,27 @@
 
 [ext_resource type="PackedScene" uid="uid://dqtidrexl63xw" path="res://Cards/base_card.tscn" id="1_qxypt"]
 [ext_resource type="Script" uid="uid://cnisn8piel21n" path="res://Cards/search_card.gd" id="2_qxypt"]
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="3_biuhv"]
+[ext_resource type="Texture2D" uid="uid://cd2g56hbya5ob" path="res://Graphics/Cards/Icons/search.png" id="3_qxypt"]
+[ext_resource type="Texture2D" uid="uid://cqclqbbbuwrwh" path="res://Graphics/Cards/Icons/severed hand.png" id="4_m32ph"]
 
 [node name="SearchCard" unique_id=105035990 instance=ExtResource("1_qxypt")]
 script = ExtResource("2_qxypt")
-card_name = "Search"
+card_name = "Search Pile"
 description = "Search the pile to see what goodies may be hidden
 
 [i]Removed from deck when played"
-image = ExtResource("3_biuhv")
+image = ExtResource("3_qxypt")
 card_type = 3
 consumable = true
 environment = true
+sanity_effect = 1
+sanity_effect_image = ExtResource("4_m32ph")
 
 [node name="Image" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="2" unique_id=1941202912]
-texture = ExtResource("3_biuhv")
+texture = ExtResource("3_qxypt")
 
 [node name="Name" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="3" unique_id=933147433]
-text = "Search"
+text = "Search Pile"
 
 [node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="4" unique_id=376343130]
 text = "Search the pile to see what goodies may be hidden

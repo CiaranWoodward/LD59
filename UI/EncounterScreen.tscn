@@ -60,7 +60,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.33333334, 0.7, 1),
 "transitions": PackedFloat32Array(0.73204285, 1.5157168, 0.5358867, 1),
 "update": 0,
-"values": [0.0, 0.017453292519943295, -0.017453292519943295, 0.0]
+"values": [0.0, 0.01745329251994329, -0.01745329251994329, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -72,7 +72,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.33333334, 0.7, 1),
 "transitions": PackedFloat32Array(0.73204285, 1.5157168, 0.5358867, 1),
 "update": 0,
-"values": [0.0, -0.017453292519943295, 0.017453292519943295, 0.0]
+"values": [0.0, -0.01745329251994329, 0.01745329251994329, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qrg2f"]
@@ -121,7 +121,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.33333334, 0.7, 1),
 "transitions": PackedFloat32Array(1.1892072, 1.5157168, 0.5358867, 1),
 "update": 0,
-"values": [0.0, 0.017453292519943295, -0.017453292519943295, 0.0]
+"values": [0.0, 0.01745329251994329, -0.01745329251994329, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -133,7 +133,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.33333334, 0.7, 1),
 "transitions": PackedFloat32Array(1.5691684, 0.46651655, 2.378415, 1),
 "update": 0,
-"values": [0.0, -0.017453292519943295, 0.017453292519943295, 0.0]
+"values": [0.0, -0.01745329251994329, 0.01745329251994329, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eo1pc"]
@@ -157,6 +157,7 @@ script = ExtResource("1_5xpqn")
 root_node = NodePath("../ChoiceA")
 libraries/ = SubResource("AnimationLibrary_qrg2f")
 autoplay = &"Wiggle"
+speed_scale = 1.0105131
 script = ExtResource("5_cag06")
 random_speed = true
 min_speed = 0.8
@@ -166,6 +167,7 @@ max_speed = 1.2
 root_node = NodePath("../ChoiceA")
 libraries/ = SubResource("AnimationLibrary_eo1pc")
 autoplay = &"Wiggle"
+speed_scale = 1.1634866
 script = ExtResource("5_cag06")
 random_speed = true
 min_speed = 0.8
@@ -241,7 +243,7 @@ theme_override_constants/separation = 10
 [node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=159997744]
 layout_mode = 2
 theme = ExtResource("1_lr62w")
-text = "Hope"
+text = "The Heart that Beats"
 
 [node name="MainText" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=767463149]
 custom_minimum_size = Vector2(600, 400)
@@ -249,10 +251,10 @@ layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("1_lr62w")
 bbcode_enabled = true
-text = "The Bazaar stands in front of you, one of the few constructions left in this world."
+text = "From the shadows, an exhausted creature approaches and collapses by your fire."
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 83
+visible_characters = 78
 visible_characters_behavior = 1
 
 [node name="SanityDependentText" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=195280547]
@@ -261,11 +263,7 @@ layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("1_lr62w")
 bbcode_enabled = true
-text = "Crumbling and filthy, half of the spaced out inhabitants appear to be looking straight through you.
-
-The other half look like they want to eat you.
-
-Thanks for Playing!"
+text = "Its chest gapes revealing a beating heart under toxic purple ooze."
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters_behavior = 1
@@ -279,18 +277,20 @@ theme_override_constants/separation = 10
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_lr62w")
+text = "Grab the heart"
 
 [node name="ChoiceB" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ChoiceButtons" unique_id=1123002852]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_lr62w")
+text = "Grab the heart"
 icon_alignment = 2
 expand_icon = true
 
 [node name="SkipButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1052698962]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Restart"
+text = "Let the creature rest"
 
 [node name="ChoiceA" type="Node2D" parent="." unique_id=1467480916]
 position = Vector2(333.99997, 531)

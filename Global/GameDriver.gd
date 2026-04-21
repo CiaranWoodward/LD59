@@ -49,6 +49,7 @@ func handle_travel():
 		await Global.table.burn_card(card)
 	# Increase the level
 	Global.change_statistic(Global.Statistic.LEVEL, 1)
+	Global.set_statistic_max(Global.Statistic.PATHFINDING, Global.max_statistic_values[Global.Statistic.PATHFINDING] + 1)
 	Global.set_statistic(Global.Statistic.PATHFINDING, 0)
 
 	if Global.statistics[Global.Statistic.LEVEL] == 1:
@@ -75,7 +76,7 @@ func forever_game_loop():
 			return
 
 		# Wait for the player to finish their turn
-		while table.state != Table.TableState.Idle || table.any_playable_cards_in_hand():
+		while true:
 			await table.state_changed
 			if table.state == Table.TableState.GameOver:
 				return
