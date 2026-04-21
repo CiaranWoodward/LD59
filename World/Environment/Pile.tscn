@@ -50,6 +50,7 @@ chance_to_stick_early = 1.0
 
 [node name="Insane" type="Node2D" parent="." unique_id=1744868567]
 visible = false
+scale = Vector2(0.5, 0.5)
 
 [node name="Shadow" type="Sprite2D" parent="Insane" unique_id=102016576]
 modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.60784316)
@@ -59,12 +60,13 @@ scale = Vector2(1.484425, 0.6376253)
 texture = ExtResource("2_3ylcj")
 
 [node name="Leaf" type="AnimatedSprite2D" parent="Insane" unique_id=1052079598]
-scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_j3n1y")
+frame = 1
 offset = Vector2(5, -43)
 script = ExtResource("3_rd8g4")
 
 [node name="Sane" type="Node2D" parent="." unique_id=559201287]
+scale = Vector2(0.5, 0.5)
 
 [node name="Shadow" type="Sprite2D" parent="Sane" unique_id=93586213]
 modulate = Color(0.1254902, 0.09411765, 0.0627451, 0.60784316)

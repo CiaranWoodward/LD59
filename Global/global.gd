@@ -13,7 +13,22 @@ enum Statistic {
 	DAY,
 	ROUND,
 	PATHFINDING,
-	LEVEL
+	LEVEL,
+	HANDS_PLAYED,
+}
+
+var StatisticNames = {
+	Statistic.HEALTH: "Health",
+	Statistic.INSANITY: "Insanity",
+	Statistic.ACTION_POINTS: "Energy",
+	Statistic.HAND_SIZE: "Hand Size",
+	Statistic.FIRE_SIZE: "Fire Size",
+	Statistic.FIRE_LIT: "Fire Lit",
+	Statistic.DAY: "Day",
+	Statistic.ROUND: "Round",
+	Statistic.PATHFINDING: "Pathfinding",
+	Statistic.LEVEL: "Level",
+	Statistic.HANDS_PLAYED: "Hands Played",
 }
 
 enum TurnEndImpact {
@@ -39,6 +54,7 @@ var initial_statistic_values = {
 	Statistic.ROUND: 0, # First 50% rounds are day, next 50% rounds are night
 	Statistic.PATHFINDING: 0,
 	Statistic.LEVEL: 0,
+	Statistic.HANDS_PLAYED: 0,
 }
 
 var min_statistic_values = {
@@ -52,6 +68,7 @@ var min_statistic_values = {
 	Statistic.ROUND: 0,
 	Statistic.PATHFINDING: 0,
 	Statistic.LEVEL: 0,
+	Statistic.HANDS_PLAYED: 0,
 }
 
 var max_statistic_values = {
@@ -61,13 +78,15 @@ var max_statistic_values = {
 	Statistic.HAND_SIZE: 15,
 	Statistic.FIRE_SIZE: 4,
 	Statistic.FIRE_LIT: 1,
-	Statistic.DAY: 10,
-	Statistic.ROUND: 6,
+	Statistic.DAY: 200,
+	Statistic.ROUND: 8,
 	Statistic.PATHFINDING: 3,
 	Statistic.LEVEL: 5,
+	Statistic.HANDS_PLAYED: 99999,
 }
 
 var statistics = initial_statistic_values.duplicate()
+var current_scene_type: SceneType = SceneType.ANY
 
 signal game_started()
 signal statistic_changed(stat: Statistic, new_value: int, old_value: int)
@@ -95,13 +114,16 @@ func change_statistic(stat: Statistic, delta: int):
 	set_statistic(stat, statistics[stat] + delta)
 
 func is_daytime() -> bool:
-	return statistics[Statistic.ROUND] < 3
+	return statistics[Statistic.ROUND] < 4
 
 func is_insane() -> bool:
 	return statistics[Statistic.INSANITY] >= 3
 
 func is_warm() -> bool:
 	return is_daytime() or (statistics[Statistic.FIRE_LIT] > 0)
+
+func is_smoking() -> bool:
+	return statistics[Statistic.FIRE_LIT] > 0 && statistics[Statistic.FIRE_SIZE] > 1
 
 func next_round() -> TurnEndImpact:
 	var next_day_coming = statistics[Statistic.ROUND] == max_statistic_values[Statistic.ROUND]

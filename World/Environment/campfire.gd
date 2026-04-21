@@ -27,7 +27,7 @@ func _update_visuals():
 		$SmallFire.visible = fire_size > 0
 		$MidFire.visible = fire_size > 1
 		$BigFire.visible = fire_size > 2
-		$Smoke.visible = fire_size > 2
+		$Smoke.visible = Global.is_smoking()
 	else:
 		$FireCrackle.stop()
 		$Sparks.visible = false

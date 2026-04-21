@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://na7qrnohprp7"]
 
 [ext_resource type="PackedScene" uid="uid://sm6uk6e3vdyu" path="res://World/Environment/Tree.tscn" id="1_7f2jf"]
+[ext_resource type="Script" uid="uid://dw4ttpbkud1l6" path="res://World/river.gd" id="1_cfrr8"]
 [ext_resource type="PackedScene" uid="uid://ht24sldfu5cf" path="res://World/Environment/Bush.tscn" id="2_gkbg8"]
 [ext_resource type="Texture2D" uid="uid://dyrgl4mkv2a37" path="res://Graphics/Environment/Setting/River.png" id="3_o3ukc"]
 [ext_resource type="Texture2D" uid="uid://bleturivl63fr" path="res://Graphics/Environment/Setting/blue water sparkle 2.png" id="4_3xjdw"]
@@ -9,8 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://1cd50b03me1x" path="res://Utils/InsanityFlicker.tscn" id="7_okmdk"]
 [ext_resource type="PackedScene" uid="uid://cfhexshl20e7w" path="res://World/EnvironmentObject.tscn" id="8_o3ukc"]
 
-[node name="Forest" type="Node2D" unique_id=1178282790]
+[node name="River" type="Node2D" unique_id=1178282790]
 y_sort_enabled = true
+script = ExtResource("1_cfrr8")
 
 [node name="Foreground" type="Node2D" parent="." unique_id=1519588160]
 y_sort_enabled = true

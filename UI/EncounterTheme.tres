@@ -7,6 +7,8 @@
 [ext_resource type="FontFile" uid="uid://bbl7fsuhii552" path="res://Graphics/UI/Font/Winky/WinkyRough-LightItalic.ttf" id="4_2otv3"]
 [ext_resource type="FontFile" uid="uid://bo0hys4cq4b62" path="res://Graphics/UI/Font/Winky/WinkyRough-Light.ttf" id="5_ge7m2"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axkvb"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jciy1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lwvgw"]
@@ -18,9 +20,11 @@
 [resource]
 default_font_size = 40
 Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.3269049, 0.2509467, 0.2218203, 0.8862745)
 Button/colors/font_hover_color = Color(0.19215687, 0.36078432, 0.50980395, 1)
 Button/font_sizes/font_size = 30
 Button/fonts/font = ExtResource("1_jciy1")
+Button/styles/disabled = SubResource("StyleBoxEmpty_axkvb")
 Button/styles/hover = SubResource("StyleBoxEmpty_jciy1")
 Button/styles/normal = SubResource("StyleBoxEmpty_lwvgw")
 Button/styles/pressed = SubResource("StyleBoxEmpty_shktp")

@@ -10,9 +10,7 @@ self_modulate = Color(0.8, 0.8, 0.8, 1)
 material = ExtResource("2_ocb6i")
 script = ExtResource("2_xvk0l")
 card_name = "Hunger"
-description = "Lose one [b]energy[/b] on draw
-
-Gain one energy if burned from hand
+description = "If three [b]hunger[/b] in hand, burn all three and lose one health
 
 [i]Unplayable[/i]"
 image = ExtResource("4_xvk0l")
@@ -26,9 +24,7 @@ texture = ExtResource("4_xvk0l")
 text = "Hunger"
 
 [node name="Description" parent="CardFront" parent_id_path=PackedInt32Array(519823740) index="4" unique_id=376343130]
-text = "Lose one [b]energy[/b] on draw
-
-Gain one energy if burned from hand
+text = "If three [b]hunger[/b] in hand, burn all three and lose one health
 
 [i]Unplayable[/i]"
 

@@ -9,7 +9,7 @@
 material = ExtResource("2_25n5t")
 script = ExtResource("2_h5fcr")
 card_name = "Poison"
-description = "Lose one [b]health[/b] on draw
+description = "Lose one [b]energy[/b] on draw
 
 [i]Unplayable[/i]"
 image = ExtResource("4_h5fcr")
@@ -26,7 +26,7 @@ texture = ExtResource("4_h5fcr")
 text = "Poison"
 
 [node name="Description" parent="CardFront" index="4" unique_id=376343130]
-text = "Lose one [b]health[/b] on draw
+text = "Lose one [b]energy[/b] on draw
 
 [i]Unplayable[/i]"
 

@@ -73,6 +73,6 @@ func can_encounter() -> bool:
 		if prereq is Encounter and not prereq.played:
 			return false
 	if must_be_scene_type != Global.SceneType.ANY:
-		if Global.table and Global.table.scene_type != must_be_scene_type:
+		if Global.current_scene_type != must_be_scene_type:
 			return false
 	return true

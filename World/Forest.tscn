@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dvwafkf3yemgq"]
 
 [ext_resource type="PackedScene" uid="uid://sm6uk6e3vdyu" path="res://World/Environment/Tree.tscn" id="1_bt8yb"]
+[ext_resource type="Script" uid="uid://dwrx71wisa4ot" path="res://World/forest.gd" id="1_ulu3x"]
 [ext_resource type="PackedScene" uid="uid://ht24sldfu5cf" path="res://World/Environment/Bush.tscn" id="2_5oflu"]
 [ext_resource type="PackedScene" uid="uid://cfhexshl20e7w" path="res://World/EnvironmentObject.tscn" id="3_avmcu"]
 
 [node name="Forest" type="Node2D" unique_id=1178282790]
 y_sort_enabled = true
+script = ExtResource("1_ulu3x")
 
 [node name="Foreground" type="Node2D" parent="." unique_id=278810515]
 y_sort_enabled = true
