@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bke0grn62pj5l" path="res://Graphics/Cards/SaneFront.png" id="12_tygsg"]
 [ext_resource type="Texture2D" uid="uid://cvd1dfn6t5065" path="res://Graphics/Cards/DayBack.png" id="13_5q4vu"]
 [ext_resource type="Texture2D" uid="uid://wjuqiqw3qg4o" path="res://Graphics/Cards/BasicBack.png" id="15_gbc7y"]
+[ext_resource type="PackedScene" uid="uid://cdoqtn57klkfl" path="res://Sound/RandomAudio.tscn" id="15_ws7lp"]
+[ext_resource type="AudioStream" uid="uid://bjw2adgosgrc" path="res://Sound/Burn.wav" id="16_6s8qy"]
 [ext_resource type="Texture2D" uid="uid://e0mgn6ydwpeb" path="res://Graphics/Cards/SaneBack.png" id="17_fjvuj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bmyxb"]
@@ -152,3 +154,9 @@ sprite_frames = SubResource("SpriteFrames_y0nfu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardArea" unique_id=1189758737]
 visible = false
 shape = SubResource("RectangleShape2D_e55ge")
+
+[node name="BurnSound" parent="." unique_id=429262948 instance=ExtResource("15_ws7lp")]
+stream = ExtResource("16_6s8qy")
+volume_db = -8.914
+min_pitch = 0.4
+max_pitch = 0.8

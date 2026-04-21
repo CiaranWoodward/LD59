@@ -174,6 +174,7 @@ func add_card_to_discard_pile(card: BaseCard, delay: float = 0.0, skip_action: b
 	if not skip_action:
 		if await card.action_discard() == false:
 			return
+	$Sounds/Draw.play_rand()
 	var tween = _tween_card_discard(card, delay)
 	discard_pile.append(card)
 	await tween.finished
@@ -344,6 +345,7 @@ func _play_selected_card():
 	_set_currently_selected_card(null)
 	_reorder_hand()
 
+	$Sounds/Play.play_rand()
 	await card.action_play()
 	if state == TableState.PlayingCard:
 		_change_state(TableState.Idle)
@@ -367,6 +369,7 @@ func _set_currently_hovered_card(card: BaseCard):
 		_apply_unhover_visual(currently_hovered_card)
 		currently_hovered_card.hovered = false
 
+	$Sounds/Hover.play_rand()
 	currently_hovered_card = card
 
 	if currently_hovered_card != null and currently_hovered_card in hand:
@@ -466,6 +469,7 @@ func _tween_card_shuffle(card: BaseCard, new_z_index: int, to_idle: bool = false
 	tween.parallel().tween_property(card, "rotation_degrees", random_rotation_shuffle, duration / 2).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property(card, "scale", Vector2.ONE * (card_scale + randf_range(-shuffle_scale_randomness, shuffle_scale_randomness)), duration / 2).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
 	tween.tween_callback(card.hide_face.bind())
+	tween.tween_callback($Sounds/Shuffle.play_rand.bind())
 	tween.tween_property(card, "z_index", new_z_index, 0)
 	tween.tween_property(card, "global_position", destination_position, duration / 2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property(card, "rotation_degrees", random_rotation_draw, duration / 2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
@@ -507,6 +511,7 @@ func _tween_card_draw(card: BaseCard, hand_index: int, delay: float) -> Tween:
 
 	var tween = create_tween()
 	tween.tween_interval(delay)
+	tween.tween_callback($Sounds/Draw.play_rand.bind())
 	tween.tween_property(card, "global_position", target_position, duration).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property(card, "rotation_degrees", target_rotation, duration).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_callback(card.show_face.bind())

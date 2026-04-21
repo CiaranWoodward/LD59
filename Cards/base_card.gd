@@ -207,10 +207,12 @@ func _do_burn():
 	var update_progress = func(value):
 		shaderMaterial.set_shader_parameter("progress", value)
 	
+	$BurnSound.play_rand()
 	var tween := create_tween()
 	tween.tween_method(update_progress, -1.5, 1.5, 0.5).set_trans(Tween.TRANS_SINE)
 	await tween.finished
 	emit_signal("discard", self, true)
+	await get_tree().create_timer(0.5).timeout # Wait for the burn sound to finish before freeing the card
 
 	self.queue_free()
 

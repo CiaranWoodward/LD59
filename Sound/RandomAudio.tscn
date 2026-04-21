@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cdoqtn57klkfl"]
+
+[ext_resource type="Script" uid="uid://73ul8raoiox7" path="res://Sound/random_audio.gd" id="1_eqsfq"]
+
+[node name="RandomAudio" type="AudioStreamPlayer2D" unique_id=429262948]
+script = ExtResource("1_eqsfq")

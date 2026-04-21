@@ -21,6 +21,7 @@ func _update_visuals():
 		$Logs.frame = fire_size-1
 
 	if fire_lit > 0:
+		$FireCrackle.play()
 		$Sparks.visible = true
 		$Ash.visible = true
 		$SmallFire.visible = fire_size > 0
@@ -28,6 +29,7 @@ func _update_visuals():
 		$BigFire.visible = fire_size > 2
 		$Smoke.visible = fire_size > 2
 	else:
+		$FireCrackle.stop()
 		$Sparks.visible = false
 		$SmallFire.visible = false
 		$MidFire.visible = false

@@ -14,6 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://dj03uo7wdtqaa" path="res://Cards/WoodCard.tscn" id="11_xmklv"]
 [ext_resource type="PackedScene" uid="uid://doyb4lch3sljq" path="res://UI/EncounterScreen.tscn" id="12_ljc0k"]
 [ext_resource type="PackedScene" uid="uid://debjq2hfbif7" path="res://Cards/TravelCard.tscn" id="12_rhal8"]
+[ext_resource type="PackedScene" uid="uid://cdoqtn57klkfl" path="res://Sound/RandomAudio.tscn" id="15_t0t1g"]
+[ext_resource type="AudioStream" uid="uid://cnefip7x2coqw" path="res://Sound/DrawCard.wav" id="17_bdv7a"]
+[ext_resource type="AudioStream" uid="uid://ba3214dau4gf4" path="res://Sound/hover.wav" id="18_3kxa6"]
+[ext_resource type="AudioStream" uid="uid://uu6uhtusu6gg" path="res://Sound/playcard.wav" id="19_co6xw"]
+[ext_resource type="AudioStream" uid="uid://bb1pm1se7k5on" path="res://Sound/shuffle.wav" id="20_82db3"]
 
 [node name="Table" type="Node2D" unique_id=1954673422]
 script = ExtResource("1_rcskp")
@@ -178,5 +183,20 @@ offset_top = 1033.0
 offset_right = 1904.0
 offset_bottom = 1064.0
 text = "End Turn"
+
+[node name="Sounds" type="Node2D" parent="." unique_id=581794569]
+
+[node name="Draw" parent="Sounds" unique_id=1146551578 instance=ExtResource("15_t0t1g")]
+stream = ExtResource("17_bdv7a")
+
+[node name="Hover" parent="Sounds" unique_id=1153460115 instance=ExtResource("15_t0t1g")]
+stream = ExtResource("18_3kxa6")
+
+[node name="Play" parent="Sounds" unique_id=348991819 instance=ExtResource("15_t0t1g")]
+stream = ExtResource("19_co6xw")
+
+[node name="Shuffle" parent="Sounds" unique_id=1236353955 instance=ExtResource("15_t0t1g")]
+stream = ExtResource("20_82db3")
+volume_db = -5.349
 
 [connection signal="pressed" from="HUD/End Turn" to="." method="_on_end_turn_pressed"]
