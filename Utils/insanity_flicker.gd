@@ -53,7 +53,7 @@ func _ready() -> void:
 		if stat == Global.Statistic.INSANITY:
 			var is_becoming_insane := new_value > old_value
 			var is_becoming_sane := new_value < old_value
-			var should_be_on := (is_becoming_insane and new_value >= always_insane_threshold) or (is_becoming_sane and new_value <= always_sane_threshold)
+			var should_be_on := (is_becoming_insane and new_value >= always_insane_threshold and not _currently_insane) or (is_becoming_sane and new_value <= always_sane_threshold and _currently_insane)
 			var maybe_on = ((is_becoming_insane && !_currently_insane) or (is_becoming_sane && _currently_insane)) and (randf() < chance_to_flicker)
 			if maybe_on or should_be_on:
 				start_flicker(Direction.BECOMING_INSANE if is_becoming_insane else Direction.BECOMING_SANE)

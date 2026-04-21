@@ -89,6 +89,19 @@ func _meets_sanity_requirement(req: Encounter.SanityRequirement) -> bool:
 			return _is_insane()
 	return true
 
+func _has_required_card(card_required: String) -> bool:
+	if card_required == "":
+		return true
+	if Engine.is_editor_hint():
+		return true
+	return Global.table.all_cards().any(func(c): return c is BaseCard and c.card_name == card_required)
+
+func _find_required_card(card_required: String) -> BaseCard:
+	var cards = Global.table.all_cards().filter(func(c): return c is BaseCard and c.card_name == card_required)
+	if cards.is_empty():
+		return null
+	return cards[0]
+
 func _clear_choice_cards() -> void:
 	for child in $ChoiceA.get_children():
 		child.queue_free()
@@ -128,6 +141,9 @@ func _update_display() -> void:
 	main_text.text = _active_encounter.encounter_text
 	main_text.visible_characters = 0
 
+	if _active_encounter.game_complete_screen:
+		main_text.text += "\n\n You made it here in " + str(Global.statistics[Global.Statistic.DAY]) + " days, with " + str(Global.statistics[Global.Statistic.INSANITY]) + " insanity."
+
 	# Sanity-dependent text
 	var insane := _is_insane()
 	var sanity_string: String
@@ -144,10 +160,10 @@ func _update_display() -> void:
 	# Choice buttons
 	choice_a_btn.visible = _active_encounter.choicea_text != ""
 	choice_a_btn.text = _active_encounter.choicea_text
-	choice_a_btn.disabled = not _meets_sanity_requirement(_active_encounter.choicea_sanity)
+	choice_a_btn.disabled = not _meets_sanity_requirement(_active_encounter.choicea_sanity) or not _has_required_card(_active_encounter.choicea_card_required)
 	choice_b_btn.visible = _active_encounter.choiceb_text != ""
 	choice_b_btn.text = _active_encounter.choiceb_text
-	choice_b_btn.disabled = not _meets_sanity_requirement(_active_encounter.choiceb_sanity)
+	choice_b_btn.disabled = not _meets_sanity_requirement(_active_encounter.choiceb_sanity) or not _has_required_card(_active_encounter.choiceb_card_required)
 
 	# Skip button
 	skip_btn.visible = _active_encounter.skip_text != ""
@@ -203,6 +219,18 @@ func activate_random_encounter() -> bool:
 	await _activate_encounter(chosen)
 	return true
 
+func activate_random_travel_encounter() -> bool:
+	var candidates: Array[Encounter] = []
+	for child in $TravelEncounters.get_children():
+		if child is Encounter and child.can_encounter():
+			candidates.append(child)
+	if candidates.is_empty():
+		return false
+	var chosen := candidates[randi() % candidates.size()]
+	chosen.set_meta("_source_parent", $TravelEncounters)
+	await _activate_encounter(chosen)
+	return true
+
 func activate_specific_encounter(encounter_name: String) -> bool:
 	var encounter := $SpecificEncounters.get_node_or_null(encounter_name) as Encounter
 	if encounter == null:
@@ -247,6 +275,21 @@ func _choose(choice: Choice) -> void:
 			chosen_node.remove_child(chosen_card)
 			initialiseCallable = Global.table.initialise_card_to_discard_pile.bind(chosen_card, 0.3, gp)
 			choice_made.emit(chosen_card)
+
+	# Burn the required card if lose_required_card is set
+	var required_card_name: String = ""
+	var lose_required: bool = false
+	match choice:
+		Choice.A:
+			required_card_name = _active_encounter.choicea_card_required
+			lose_required = _active_encounter.choicea_lose_required_card
+		Choice.B:
+			required_card_name = _active_encounter.choiceb_card_required
+			lose_required = _active_encounter.choiceb_lose_required_card
+	if required_card_name != "" and lose_required:
+		var req_card := _find_required_card(required_card_name)
+		if req_card:
+			await Global.table.burn_card(req_card)
 
 	if delta != 0:
 		Global.change_statistic(stat, delta)

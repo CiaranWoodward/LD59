@@ -10,7 +10,9 @@ func activate():
 		if sticks[stick].visible:
 			var card: BaseCard = stickCard.instantiate()
 			card.played.connect(func(_card) -> void:
-				sticks[stick].visible = false
+				# Fade out with tween
+				var tween = create_tween()
+				tween.tween_property(sticks[stick], "modulate:a", 0, 0.5)
 			)
 			Global.table.initialise_card_to_discard_pile(card)
 

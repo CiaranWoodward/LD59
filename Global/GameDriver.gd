@@ -2,6 +2,7 @@ extends Node
 
 var hungerCard: PackedScene = preload("res://Cards/HungerCard.tscn")
 var chillCard: PackedScene = preload("res://Cards/ChillCard.tscn")
+var travelCard: PackedScene = preload("res://Cards/TravelCard.tscn")
 
 var _travelState = 0
 
@@ -16,6 +17,10 @@ func _ready() -> void:
 func stat_watcher(stat, new_value, _old_value):
 	if stat == Global.Statistic.HEALTH and new_value <= 0:
 		Global.table.game_over()
+	if stat == Global.Statistic.PATHFINDING and new_value == Global.max_statistic_values[Global.Statistic.PATHFINDING]:
+		var travel_card = travelCard.instantiate()
+		Global.set_statistic(Global.Statistic.PATHFINDING, 0)
+		await Global.table.initialise_card_to_discard_pile(travel_card)
 		
 func turn_ticker():
 	if !Global.is_warm():
@@ -44,7 +49,15 @@ func handle_travel():
 		await Global.table.burn_card(card)
 	# Increase the level
 	Global.change_statistic(Global.Statistic.LEVEL, 1)
-	#TODO: Encounter?
+	Global.set_statistic(Global.Statistic.PATHFINDING, 0)
+
+	if Global.statistics[Global.Statistic.LEVEL] == 1:
+		await Global.table.get_encounter_screen().activate_specific_encounter("FirstStep")
+	elif Global.statistics[Global.Statistic.LEVEL] == 5:
+		await Global.table.get_encounter_screen().activate_specific_encounter("GameComplete")
+	else:
+		await Global.table.get_encounter_screen().activate_random_travel_encounter()
+
 	# Load the new scene in
 	await Global.level.transition_scene_in(Global.statistics[Global.Statistic.LEVEL] - 1)
 
@@ -88,6 +101,8 @@ func forever_game_loop():
 		await table.initialise_card_to_discard_pile(hungerCard.instantiate())
 
 		if turn_end_impact != Global.TurnEndImpact.NORMAL:
+			if turn_end_impact == Global.TurnEndImpact.NEW_DAY:
+				await Global.table.get_encounter_screen().activate_specific_encounter("DayBreak")
 			await table.reshuffle()
 		
 		# Process end of turn effects

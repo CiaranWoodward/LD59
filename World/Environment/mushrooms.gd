@@ -13,6 +13,8 @@ func activate():
 			shrooms[shroom].frame = shroomType
 			card.shroom_type = shroomType as ForageShroomCard.ShroomType
 			card.played.connect(func(_card) -> void:
-				shrooms[shroom].visible = false
+				# Fade out with tween
+				var tween = create_tween()
+				tween.tween_property(shrooms[shroom], "modulate:a", 0, 0.5)
 			)
 			Global.table.initialise_card_to_discard_pile(card)

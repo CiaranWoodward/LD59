@@ -46,6 +46,8 @@ enum SanityRequirement {
 @export var must_be_after_encounter: NodePath = ""
 @export var must_be_scene_type: Global.SceneType = Global.SceneType.ANY
 
+@export var game_complete_screen: bool = false
+
 var played: bool = false
 
 func can_encounter() -> bool:

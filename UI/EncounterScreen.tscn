@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ddiqd0ytqcmd5" path="res://UI/encounter_screen.gd" id="1_5xpqn"]
 [ext_resource type="PackedScene" uid="uid://vsdfgedtjxmu" path="res://UI/Encounter.tscn" id="2_dfmul"]
-[ext_resource type="PackedScene" uid="uid://dr655u2lnolwc" path="res://Cards/Blindfold.tscn" id="3_f6xpe"]
 [ext_resource type="Texture2D" uid="uid://bke0grn62pj5l" path="res://Graphics/Cards/SaneFront.png" id="2_f6xpe"]
+[ext_resource type="PackedScene" uid="uid://dr655u2lnolwc" path="res://Cards/Blindfold.tscn" id="3_f6xpe"]
 [ext_resource type="PackedScene" uid="uid://c6b5xcocr7s1x" path="res://Cards/AxeCard.tscn" id="3_nqibp"]
 [ext_resource type="PackedScene" uid="uid://dm0ffbcko3vym" path="res://Cards/GreyShroomCard.tscn" id="4_bn0te"]
 [ext_resource type="PackedScene" uid="uid://cymvt7hb2bqu3" path="res://Cards/BowCard.tscn" id="4_f6xpe"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ds3bko8i1s0x7" path="res://Cards/FishingRodCard.tscn" id="12_etrvt"]
 [ext_resource type="PackedScene" uid="uid://1g05vmmrrig6" path="res://Cards/EnergyStoneCard.tscn" id="13_1u4xi"]
 [ext_resource type="PackedScene" uid="uid://ciiepjw8a3it5" path="res://Cards/BeatingHeartCard.tscn" id="14_1jpto"]
+[ext_resource type="PackedScene" uid="uid://bx3o860qx0vg7" path="res://Cards/SignalCard.tscn" id="16_lr62w"]
 
 [node name="EncounterScreen" type="Control" unique_id=1234357728]
 layout_mode = 3
@@ -71,17 +72,17 @@ theme_override_constants/separation = 10
 [node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=159997744]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
-text = "The Heart that Beats"
+text = "Hope"
 
 [node name="MainText" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=767463149]
 custom_minimum_size = Vector2(600, 400)
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "From the shadows, an exhausted creature approaches and collapses by your fire."
+text = "The Bazaar stands in front of you, one of the few constructions left in this world."
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 78
+visible_characters = 83
 visible_characters_behavior = 1
 
 [node name="SanityDependentText" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=195280547]
@@ -89,7 +90,11 @@ custom_minimum_size = Vector2(400, 200)
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "Its chest gapes revealing a beating heart under toxic purple ooze."
+text = "Crumbling and filthy, half of the spaced out inhabitants appear to be looking straight through you.
+
+The other half look like they want to eat you.
+
+Thanks for Playing!"
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters_behavior = 1
@@ -101,17 +106,15 @@ theme_override_constants/separation = 10
 [node name="ChoiceA" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ChoiceButtons" unique_id=1449204598]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Grab the heart"
 
 [node name="ChoiceB" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ChoiceButtons" unique_id=1123002852]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Grab the heart"
 
 [node name="SkipButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1052698962]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Let the creature rest"
+text = "Restart"
 
 [node name="ChoiceA" type="Node2D" parent="." unique_id=1467480916]
 position = Vector2(340, 507)
@@ -335,5 +338,41 @@ choicea_card = ExtResource("4_f6xpe")
 choiceb_text = "My Axe"
 choiceb_card = ExtResource("3_nqibp")
 skip_text = ""
+
+[node name="DayBreak" parent="SpecificEncounters" unique_id=429885594 instance=ExtResource("2_dfmul")]
+title = "Morning has Broken"
+encounter_text = "A fresh morning,
+
+But reality reaches ever closer."
+encounter_text_sane = "Need something to take the edge off..."
+encounter_text_insane = "Time to press on"
+skip_text = "On with the day"
+skip_stat = 1
+skip_stat_delta = -1
+
+[node name="First Step" parent="SpecificEncounters" unique_id=433325646 instance=ExtResource("2_dfmul")]
+title = "First Steps"
+encounter_text = "You're getting closer. The Bazaar's signals are still distant, but you're making progress.
+
+Perhaps there are others heading the same way.
+
+You recall a distant memory of how to communicate."
+choicea_text = "I Can Signal Them"
+choicea_card = ExtResource("16_lr62w")
+skip_text = ""
+
+[node name="GameComplete" parent="SpecificEncounters" unique_id=667859661 instance=ExtResource("2_dfmul")]
+title = "Hope"
+encounter_text = "The Bazaar stands in front of you, one of the few constructions left in this world."
+encounter_text_sane = "Crumbling and filthy, half of the spaced out inhabitants appear to be looking straight through you.
+
+The other half look like they want to eat you.
+
+Thanks for Playing!"
+encounter_text_insane = "A beautiful paradise, bustling with life. It really is back! A utopia, rich with opportunity and prosperity, the last bastion of society!
+
+Thank you for playing!"
+skip_text = "Restart"
+game_complete_screen = true
 
 [node name="ActiveEncounter" type="Node" parent="." unique_id=200731604]

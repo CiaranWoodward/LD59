@@ -10,6 +10,8 @@ func activate():
 		if berries[berry].visible:
 			var card: BaseCard = berryCard.instantiate()
 			card.played.connect(func(_card) -> void:
-				berries[berry].visible = false
+				# Fade out with tween
+				var tween = create_tween()
+				tween.tween_property(berries[berry], "modulate:a", 0, 0.5)
 			)
 			Global.table.initialise_card_to_discard_pile(card)
