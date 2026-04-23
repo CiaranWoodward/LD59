@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://blq6wsj11p8y3" path="res://Cards/BlueShroomCard.tscn" id="5_ak22r"]
 [ext_resource type="Script" uid="uid://bpvvtw7o2iibm" path="res://Utils/RandomAnimationPlayer.gd" id="5_cag06"]
 [ext_resource type="PackedScene" uid="uid://bwn2y8s7hx6fo" path="res://Cards/MorselCard.tscn" id="6_evykb"]
+[ext_resource type="PackedScene" uid="uid://8j4celb3dluf" path="res://Cards/StrangeShroomCard.tscn" id="7_2fqwy"]
 [ext_resource type="PackedScene" uid="uid://ciejvoikntgvy" path="res://Cards/MapCard.tscn" id="7_ak22r"]
 [ext_resource type="PackedScene" uid="uid://2nlh77u60d14" path="res://Cards/PurpleShroomCard.tscn" id="9_mmmvy"]
 [ext_resource type="PackedScene" uid="uid://gcf07sq4ejht" path="res://Cards/SharpAxeCard.tscn" id="10_mq3g3"]
@@ -308,8 +309,8 @@ title = "A Fungal Temptation"
 encounter_text = "As you travel along, strange mushroom catches your eye."
 encounter_text_sane = "It oozes with the promise of a beatiful lie."
 encounter_text_insane = "It glimmers with the promise of a beautiful world."
-choicea_text = "Put the Blindfold On"
-skip_text = "Refuse"
+choicea_text = "Take the shroom"
+choicea_card = ExtResource("7_2fqwy")
 
 [node name="MushroomChoice1" parent="TravelEncounters" unique_id=257550182 instance=ExtResource("2_dfmul")]
 title = "Allure of Shroom"
@@ -340,7 +341,6 @@ choiceb_text = "Toss it a berry"
 choiceb_card_required = "Berry"
 skip_text = "Attempt to run..."
 skip_stat_delta = -1
-repeatable = true
 
 [node name="Swim" parent="RandomEncounters" unique_id=838724570 instance=ExtResource("2_dfmul")]
 title = "A Refreshing Swim"
@@ -389,7 +389,6 @@ choiceb_card_required = "Bow"
 choiceb_lose_required_card = false
 skip_text = "The beast charges in panic"
 skip_stat_delta = -1
-repeatable = true
 
 [node name="BlindfoldMan" parent="RandomEncounters" unique_id=1113694585 instance=ExtResource("2_dfmul")]
 title = "A Sight not Seen"
@@ -514,7 +513,7 @@ After so much time, is it really open for business once more?
 Its a long journey - what do you take with you?"
 choicea_text = "My Bow"
 choicea_card = ExtResource("4_f6xpe")
-choiceb_text = "My Axe"
+choiceb_text = "My Second Axe"
 choiceb_card = ExtResource("3_nqibp")
 skip_text = ""
 

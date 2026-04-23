@@ -245,24 +245,24 @@ position = Vector2(1168, 935)
 texture = ExtResource("3_o3ukc")
 
 [node name="River" type="Sprite2D" parent="River" unique_id=894612649]
-position = Vector2(1220, 935)
+position = Vector2(1262, 939)
 texture = ExtResource("3_o3ukc")
 
 [node name="BlueWaterSparkle2" type="Sprite2D" parent="River/River" unique_id=351592908]
 self_modulate = Color(1, 1, 1, 0.25490198)
-position = Vector2(-230.64417, -515.5393)
+position = Vector2(-68, 248)
 scale = Vector2(0.8434145, 0.9263525)
 texture = ExtResource("4_3xjdw")
 
 [node name="BlueWaterSparkle3" type="Sprite2D" parent="River/River" unique_id=923778006]
 self_modulate = Color(1, 1, 1, 0.25490198)
-position = Vector2(-230.64417, -515.5393)
+position = Vector2(-6, 182)
 scale = Vector2(0.8434145, 0.9263525)
 texture = ExtResource("5_okmdk")
 
 [node name="BlueWaterSparkle" type="Sprite2D" parent="River/River" unique_id=1520569290]
 self_modulate = Color(1, 1, 1, 0.25490198)
-position = Vector2(-230.64417, -515.5393)
+position = Vector2(-107, 199)
 scale = Vector2(0.8434145, 0.9263525)
 texture = ExtResource("6_o3ukc")
 

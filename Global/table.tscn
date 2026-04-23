@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bwn2y8s7hx6fo" path="res://Cards/MorselCard.tscn" id="8_m6m0j"]
 [ext_resource type="PackedScene" uid="uid://b4v58etacv1dc" path="res://Cards/ExploreCard.tscn" id="9_m6m0j"]
 [ext_resource type="PackedScene" uid="uid://brd1msi1vo5u" path="res://Cards/TinderboxCard.tscn" id="10_jgnfc"]
+[ext_resource type="PackedScene" uid="uid://c6b5xcocr7s1x" path="res://Cards/AxeCard.tscn" id="10_xmklv"]
 [ext_resource type="PackedScene" uid="uid://du0wsm5kles7k" path="res://UI/GameOver.tscn" id="11_mnq2p"]
 [ext_resource type="PackedScene" uid="uid://dj03uo7wdtqaa" path="res://Cards/WoodCard.tscn" id="11_xmklv"]
 [ext_resource type="PackedScene" uid="uid://doyb4lch3sljq" path="res://UI/EncounterScreen.tscn" id="12_ljc0k"]
@@ -128,6 +129,9 @@ position = Vector2(689, 2069)
 
 [node name="ExploreCard2" parent="Cards" unique_id=233577358 instance=ExtResource("9_m6m0j")]
 position = Vector2(689, 2069)
+
+[node name="AxeCard" parent="Cards" unique_id=2089477084 instance=ExtResource("10_xmklv")]
+position = Vector2(938, 3304)
 
 [node name="ShufflePoint" type="Marker2D" parent="." unique_id=526775094]
 position = Vector2(954, 362)

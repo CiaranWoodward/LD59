@@ -335,7 +335,7 @@ offset = Vector2(2.128357, 20.227966)
 
 [node name="SunGlow" type="Sprite2D" parent="SunPath/PathFollow2D/Sun" unique_id=1980788903]
 show_behind_parent = true
-scale = Vector2(1.237526, 1.237526)
+scale = Vector2(2.476, 2.476)
 texture = ExtResource("3_24re5")
 
 [node name="Clouds" type="CPUParticles2D" parent="." unique_id=1816916226]
@@ -355,12 +355,12 @@ color_ramp = SubResource("Gradient_p72nv")
 [node name="Mountain" type="Sprite2D" parent="." unique_id=2103425597]
 self_modulate = Color(0.13824463, 0.14425278, 0.234375, 1)
 position = Vector2(888.5, 545)
-scale = Vector2(0.5997396, 0.5833333)
+scale = Vector2(1.2, 1.166)
 texture = ExtResource("3_aoint")
 
 [node name="Ground" type="Sprite2D" parent="." unique_id=844886155]
 position = Vector2(1181.0001, 416.00003)
-scale = Vector2(0.7504341, 0.7055556)
+scale = Vector2(1.508, 1.42)
 texture = ExtResource("3_joegy")
 
 [node name="Scene" type="Node2D" parent="." unique_id=1502524707]
