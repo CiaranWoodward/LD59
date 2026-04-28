@@ -78,6 +78,16 @@ position = Vector2(283.00003, 697)
 scale = Vector2(0.74118006, 0.7067195)
 pip_threshold = 4
 
+[node name="PathPip8" parent="Pips" unique_id=1544792296 instance=ExtResource("4_t0t1g")]
+position = Vector2(1826, 254)
+scale = Vector2(1.2, 1.2)
+pip_threshold = 8
+
+[node name="PathPip7" parent="Pips" unique_id=1553772294 instance=ExtResource("4_t0t1g")]
+position = Vector2(1826.0001, 296)
+scale = Vector2(1.2, 1.2)
+pip_threshold = 7
+
 [node name="PathPip6" parent="Pips" unique_id=1833445058 instance=ExtResource("4_t0t1g")]
 position = Vector2(1827, 339)
 scale = Vector2(1.2, 1.2)

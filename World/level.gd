@@ -31,17 +31,19 @@ func _ready():
 func _process(delta: float) -> void:
 	if _suspend_parallax:
 		return
-	var mouse_target := get_global_mouse_position() - get_viewport().get_visible_rect().size / 2
+	var viewport_size := get_viewport().get_visible_rect().size
+	var mouse_target := get_global_mouse_position() - viewport_size / 2
 	var spring_force := (mouse_target - _parallax_point) * parallax_spring_stiffness
 	var damping_force := _parallax_velocity * parallax_spring_damping
 	_parallax_velocity += (spring_force - damping_force) * delta
 	_parallax_point += _parallax_velocity * delta
 	var props := get_tree().get_nodes_in_group("Prop")
 	props += get_tree().get_nodes_in_group("character")
+	
 	for prop in props:
 		if prop.has_meta("original_position"):
 			var original_position: Vector2 = prop.get_meta("original_position")
-			var weight: float = (prop.global_position.y - parallax_far_distance_deadzone) / (get_viewport().get_visible_rect().size.y - parallax_far_distance_deadzone)
+			var weight: float = (prop.global_position.y - parallax_far_distance_deadzone) / (viewport_size.y - parallax_far_distance_deadzone)
 			weight = clampf(weight, 0.0, 1.0)
 			var parallax_strength := lerpf(parallax_strength_far, parallax_strength_near, weight)
 			prop.global_position = original_position + Vector2(_parallax_point.x * parallax_strength, _parallax_point.y * (parallax_strength / parallax_y_divider))

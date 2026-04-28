@@ -95,11 +95,13 @@ signal game_started()
 signal statistic_changed(stat: Statistic, new_value: int, old_value: int)
 signal travel_requested()
 
-func start_game():
+func initialise():
 	min_statistic_values = initial_min_statistic_values.duplicate()
 	max_statistic_values = initial_max_statistic_values.duplicate()
 	statistics = initial_statistic_values.duplicate()
 	randomize()
+
+func start_game():
 	emit_signal("game_started")
 
 func set_statistic(stat: Statistic, value: int):

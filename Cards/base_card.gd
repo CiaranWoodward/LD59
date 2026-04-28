@@ -114,6 +114,8 @@ func _ready():
 		# Ignore if we're inactive
 		if not is_face_up():
 			return
+		if not _in_hand:
+			return
 		if event is InputEventMouseButton:
 			emit_signal("mouse_event", self, event)
 	)
@@ -244,6 +246,10 @@ func action_draw() -> void:
 	await on_post_draw()
 
 func action_play():
+	if not _in_hand:
+		return
+	print("Playing card: ", card_name)
+	_in_hand = false
 	Global.change_statistic(Global.Statistic.ACTION_POINTS, -effective_cost())
 	var play_timer = get_tree().create_timer(play_time)
 	await on_play()

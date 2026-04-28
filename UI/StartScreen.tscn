@@ -53,13 +53,13 @@ texture = ExtResource("3_mcsiw")
 self_modulate = Color(0.13824463, 0.14425278, 0.234375, 1)
 z_index = -5
 position = Vector2(888.5, 545)
-scale = Vector2(0.5997396, 0.5833333)
+scale = Vector2(1.2, 1.166)
 texture = ExtResource("4_qpmya")
 
 [node name="Ground" type="Sprite2D" parent="." unique_id=1664321722]
 z_index = -2
 position = Vector2(1181.0001, 416.00003)
-scale = Vector2(0.7504341, 0.7055556)
+scale = Vector2(1.5, 1.412)
 texture = ExtResource("5_4gdyn")
 
 [node name="WingedCreature" type="Sprite2D" parent="." unique_id=1208765119 groups=["Prop"]]
